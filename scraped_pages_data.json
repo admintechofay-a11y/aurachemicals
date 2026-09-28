@@ -1,0 +1,3277 @@
+[
+  {
+    "type": "page",
+    "id": 1203,
+    "slug": "get-a-quote",
+    "wp_title": "Get a Quote",
+    "doc_title": "Get a Quote",
+    "url": "https://aurachemicals.in/get-a-quote/",
+    "date": "2024-12-21T07:38:38",
+    "modified": "2024-12-31T16:00:57",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "Request a Quote"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [
+      {
+        "id": "fluentform_4",
+        "action": "",
+        "method": "POST",
+        "classes": "frm-fluent-form fluent_form_4 ff-el-form-top ff_form_instance_4_1 ff-form-loading ffs_default",
+        "fields": [
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "__fluent_form_embded_post_id",
+            "id": "",
+            "placeholder": "",
+            "value": "1203",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "_fluentform_4_fluentformnonce",
+            "id": "_fluentform_4_fluentformnonce",
+            "placeholder": "",
+            "value": "1adf5a5e4f",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "_wp_http_referer",
+            "id": "",
+            "placeholder": "",
+            "value": "/get-a-quote/",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "names[first_name]",
+            "id": "ff_4_names_first_name_",
+            "placeholder": "First Name",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "email",
+            "name": "email",
+            "id": "ff_4_email",
+            "placeholder": "Email Address",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "names_1[first_name]",
+            "id": "ff_4_names_1_first_name_",
+            "placeholder": "Individual / Firm / Company Name",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "names_2[first_name]",
+            "id": "ff_4_names_2_first_name_",
+            "placeholder": "Contact",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "textarea",
+            "type": "",
+            "name": "description",
+            "id": "ff_4_description",
+            "placeholder": "Ask for Quote",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "button",
+            "type": "submit",
+            "name": "",
+            "id": "",
+            "placeholder": "",
+            "value": "",
+            "required": false,
+            "options": []
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Request a Quote\nBlank Form (#4)\nName\nEmail\nCompany Name\nContact Number\nMessage\nSubmit",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h2>Request a Quote</h2>\n<div class='fluentform ff-default fluentform_wrapper_4 ffs_default_wrap'><form data-form_id=\"4\" id=\"fluentform_4\" class=\"frm-fluent-form fluent_form_4 ff-el-form-top ff_form_instance_4_1 ff-form-loading ffs_default\" data-form_instance=\"ff_form_instance_4_1\" method=\"POST\" ><fieldset  style=\"border: none!important;margin: 0!important;padding: 0!important;background-color: transparent!important;box-shadow: none!important;outline: none!important; min-inline-size: 100%;\">\n                    <legend class=\"ff_screen_reader_title\" style=\"display: block; margin: 0!important;padding: 0!important;height: 0!important;text-indent: -999999px;width: 0!important;overflow:hidden;\">Blank Form (#4)</legend><input type='hidden' name='__fluent_form_embded_post_id' value='1203' /><input type=\"hidden\" id=\"_fluentform_4_fluentformnonce\" name=\"_fluentform_4_fluentformnonce\" value=\"1adf5a5e4f\" /><input type=\"hidden\" name=\"_wp_http_referer\" value=\"/wp-json/wp/v2/pages?per_page=100\" /><div data-type=\"name-element\" data-name=\"names\" class=\" ff-field_container ff-name-field-wrapper\" ><div class='ff-t-container'><div class='ff-t-cell '><div class='ff-el-group  ff-el-form-top'><div class=\"ff-el-input--label ff-el-is-required asterisk-right\"><label for='ff_4_names_first_name_' aria-label=\"Name\">Name</label></div><div class='ff-el-input--content'><input type=\"text\" name=\"names[first_name]\" id=\"ff_4_names_first_name_\" class=\"ff-el-form-control\" placeholder=\"First Name\" aria-invalid=\"false\" aria-required=false></div></div></div></div></div><div class='ff-el-group'><div class=\"ff-el-input--label ff-el-is-required asterisk-right\"><label for='ff_4_email' aria-label=\"Email\">Email</label></div><div class='ff-el-input--content'><input type=\"email\" name=\"email\" id=\"ff_4_email\" class=\"ff-el-form-control\" placeholder=\"Email Address\" data-name=\"email\"  aria-invalid=\"false\" aria-required=true></div></div><div data-type=\"name-element\" data-name=\"names_1\" class=\" ff-field_container ff-name-field-wrapper\" ><div class='ff-t-container'><div class='ff-t-cell '><div class='ff-el-group  ff-el-form-top'><div class=\"ff-el-input--label ff-el-is-required asterisk-right\"><label for='ff_4_names_1_first_name_' aria-label=\"Company Name\">Company Name</label></div><div class='ff-el-input--content'><input type=\"text\" name=\"names_1[first_name]\" id=\"ff_4_names_1_first_name_\" class=\"ff-el-form-control\" placeholder=\"Individual / Firm / Company Name\" aria-invalid=\"false\" aria-required=false></div></div></div></div></div><div data-type=\"name-element\" data-name=\"names_2\" class=\" ff-field_container ff-name-field-wrapper\" ><div class='ff-t-container'><div class='ff-t-cell '><div class='ff-el-group  ff-el-form-top'><div class=\"ff-el-input--label asterisk-right\"><label for='ff_4_names_2_first_name_' aria-label=\"Contact Number\">Contact Number</label></div><div class='ff-el-input--content'><input type=\"text\" name=\"names_2[first_name]\" id=\"ff_4_names_2_first_name_\" class=\"ff-el-form-control\" placeholder=\"Contact\" aria-invalid=\"false\" aria-required=false></div></div></div></div></div><div class='ff-el-group'><div class=\"ff-el-input--label asterisk-right\"><label for='ff_4_description' aria-label=\"Message\">Message</label></div><div class='ff-el-input--content'><textarea aria-invalid=\"false\" aria-required=false name=\"description\" id=\"ff_4_description\" class=\"ff-el-form-control\" placeholder=\"Ask for Quote\" rows=\"4\" data-name=\"description\" ></textarea></div></div><div class='ff-el-group ff-text-center ff_submit_btn_wrapper'><button type=\"submit\" class=\"ff-btn ff-btn-submit ff-btn-md ff_btn_style\" >Submit</button></div></fieldset></form><div id='fluentform_4_errors' class='ff-errors-in-stack ff_form_instance_4_1 ff-form-loading_errors ff_form_instance_4_1_errors'></div></div>        <script type=\"text/javascript\">\n            window.fluent_form_ff_form_instance_4_1 = {\"id\":\"4\",\"settings\":{\"layout\":{\"labelPlacement\":\"top\",\"helpMessagePlacement\":\"with_label\",\"errorMessagePlacement\":\"inline\",\"cssClassName\":\"\",\"asteriskPlacement\":\"asterisk-right\"},\"restrictions\":{\"denyEmptySubmission\":{\"enabled\":false}}},\"form_instance\":\"ff_form_instance_4_1\",\"form_id_selector\":\"fluentform_4\",\"rules\":{\"names[first_name]\":{\"required\":{\"value\":true,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"names[middle_name]\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"names[last_name]\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"email\":{\"required\":{\"value\":true,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true},\"email\":{\"value\":true,\"message\":\"This field must contain a valid email\",\"global_message\":\"This field must contain a valid email\",\"global\":true}},\"names_1[first_name]\":{\"required\":{\"value\":true,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"names_1[middle_name]\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"names_1[last_name]\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"names_2[first_name]\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"names_2[middle_name]\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"names_2[last_name]\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}},\"description\":{\"required\":{\"value\":false,\"message\":\"This field is required\",\"global_message\":\"This field is required\",\"global\":true}}}};\n                    </script>\n        \n"
+  },
+  {
+    "type": "page",
+    "id": 1201,
+    "slug": "request-a-quote",
+    "wp_title": "Request a Quote",
+    "doc_title": "Request a Quote",
+    "url": "https://aurachemicals.in/request-a-quote/",
+    "date": "2024-12-21T07:14:50",
+    "modified": "2024-12-21T07:14:50",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Request a Quote"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Request a Quote",
+    "wp_content": ""
+  },
+  {
+    "type": "page",
+    "id": 1200,
+    "slug": "request-quote",
+    "wp_title": "Request a Quote",
+    "doc_title": "Request a Quote",
+    "url": "https://aurachemicals.in/request-quote/",
+    "date": "2024-12-21T07:13:16",
+    "modified": "2025-08-24T07:58:18",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Request a Quote"
+      },
+      {
+        "tag": "h1",
+        "text": "Aura Space Infra Pvt. Ltd. – Comprehensive Inspection & Quality Assurance Services"
+      },
+      {
+        "tag": "h2",
+        "text": "🔎 Inspection & Testing Services Offered by Aura Space Infra Pvt. Ltd."
+      },
+      {
+        "tag": "h3",
+        "text": "1. Non-Destructive Testing (NDT) Services"
+      },
+      {
+        "tag": "h3",
+        "text": "2. Metallurgical & Corrosion Investigation"
+      },
+      {
+        "tag": "h3",
+        "text": "3. Welding & Fabrication Inspection"
+      },
+      {
+        "tag": "h3",
+        "text": "4. In-Service Inspection & RBI"
+      },
+      {
+        "tag": "h3",
+        "text": "5. Calibration & Dimensional Inspection"
+      },
+      {
+        "tag": "h3",
+        "text": "6. Civil & Infrastructure Quality Services"
+      },
+      {
+        "tag": "h3",
+        "text": "7. Third-Party Inspection & Certification"
+      },
+      {
+        "tag": "h2",
+        "text": "🌍 Why Choose Aura Space Infra Pvt. Ltd.?"
+      },
+      {
+        "tag": "h2",
+        "text": "🚀 Delivering Trust, Reliability & Excellence"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Request a Quote\n[yith_ywraq_request_quote]\nAura Space Infra Pvt. Ltd. – Comprehensive Inspection & Quality Assurance Services\nIn today’s highly competitive engineering and infrastructure environment, the role of\ninspection and quality assurance services\nhas become more critical than ever. Companies must not only comply with international codes and standards but also ensure reliability, safety, and long-term performance of their assets.\nAura Space Infra Pvt. Ltd.\nhas positioned itself as a trusted partner in this mission, offering a wide spectrum of\ninspection, testing, and quality control solutions\ntailored to the needs of industries such as Oil & Gas, Power, Petrochemicals, Refining, Infrastructure, and Manufacturing. Much like industry leaders such as\nTCR Advanced Engineering\nand\nQuest Global\n, Aura Space Infra delivers world-class services backed by technical expertise, certified professionals, and a customer-first approach.\n🔎 Inspection & Testing Services Offered by Aura Space Infra Pvt. Ltd.\n1.\nNon-Destructive Testing (NDT) Services\nUltrasonic Testing (UT)\nRadiographic Testing (RT) & Film Interpretation\nMagnetic Particle Testing (MPT)\nDye Penetrant Testing (DPT)\nVisual Testing (VT)\nEddy Current Testing (ECT)\nAdvanced NDT (Phased Array Ultrasonic Testing – PAUT, Time of Flight Diffraction – TOFD, Digital Radiography)\n2.\nMetallurgical & Corrosion Investigation\nFailure Analysis & Root Cause Investigation\nMetallography (Field & Lab)\nPositive Material Identification (PMI)\nCorrosion Assessment & Monitoring\nCoating & Lining Inspection\n3.\nWelding & Fabrication Inspection\nWelder and Procedure Qualification (WPS/PQR/WPQ)\nThird-Party Welding Inspection\nWelding Defect Assessment & Repair Approval\nHeat Treatment (Pre/Post Weld) Supervision\n4.\nIn-Service Inspection & RBI\nFitness-for-Service (FFS) Assessments\nRisk-Based Inspection (RBI) Studies\nPressure Vessel, Piping, and Tank Inspection\nIntegrity Management for Static Equipment\nAPI 510/570/653 Certified Services\n5.\nCalibration & Dimensional Inspection\nInstrument Calibration (Pressure, Temperature, Flow, Electrical)\nDimensional & Geometrical Inspection for Components and Structures\nGA/As-Built Drawing Verification\n6.\nCivil & Infrastructure Quality Services\nConcrete Testing & Reinforcement Inspection\nNon-Destructive Civil Tests (Rebound Hammer, Ultrasonic Pulse Velocity)\nStructural Integrity Assessment of Buildings, Bridges, and Infrastructure\n7.\nThird-Party Inspection & Certification\nVendor Inspection & Expediting Services\nWitnessing & Certification as per International Standards (ASME, ASTM, ISO, API, AWS)\nQuality Assurance/Quality Control (QA/QC) Documentation & Review\n🌍 Why Choose Aura Space Infra Pvt. Ltd.?\n✅\nTechnical Expertise:\nTeam of experienced metallurgists, inspection engineers, welding inspectors, and NDT Level-II/III professionals.\n✅\nIndustry Standards:\nCompliance with ASME, API, ISO, AWS, ASTM, BIS, and NABL/ILAC guidelines.\n✅\nClient-Centric Approach:\nCustomized inspection programs aligned with project timelines and regulatory requirements.\n✅\nIntegrated Solutions:\nCombining engineering expertise with AI-driven inspection methodologies for next-generation quality assurance.\n✅\nPan-India Reach:\nServing refineries, petrochemical complexes, EPC projects, fabrication shops, and industrial plants across India.\n🚀 Delivering Trust, Reliability & Excellence\nAt Aura Space Infra Pvt. Ltd., inspection is not just about detecting defects—it’s about ensuring\nsafety, performance, and reliability throughout the lifecycle of assets\n. From design verification to fabrication, from commissioning to in-service inspection, Aura Space Infra provides an end-to-end assurance framework for industries that cannot afford to compromise on quality.",
+    "wp_content": "<p>[yith_ywraq_request_quote]</p>\n\n\n<h1 class=\"wp-block-heading\">Aura Space Infra Pvt. Ltd. – Comprehensive Inspection &amp; Quality Assurance Services</h1>\n\n\n\n<p>In today’s highly competitive engineering and infrastructure environment, the role of <strong>inspection and quality assurance services</strong> has become more critical than ever. Companies must not only comply with international codes and standards but also ensure reliability, safety, and long-term performance of their assets.</p>\n\n\n\n<p><strong>Aura Space Infra Pvt. Ltd.</strong> has positioned itself as a trusted partner in this mission, offering a wide spectrum of <strong>inspection, testing, and quality control solutions</strong> tailored to the needs of industries such as Oil &amp; Gas, Power, Petrochemicals, Refining, Infrastructure, and Manufacturing. Much like industry leaders such as <strong>TCR Advanced Engineering</strong> and <strong>Quest Global</strong>, Aura Space Infra delivers world-class services backed by technical expertise, certified professionals, and a customer-first approach.</p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\"/>\n\n\n\n<h2 class=\"wp-block-heading\">🔎 Inspection &amp; Testing Services Offered by Aura Space Infra Pvt. Ltd.</h2>\n\n\n\n<h3 class=\"wp-block-heading\">1. <strong>Non-Destructive Testing (NDT) Services</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Ultrasonic Testing (UT)</li>\n\n\n\n<li>Radiographic Testing (RT) &amp; Film Interpretation</li>\n\n\n\n<li>Magnetic Particle Testing (MPT)</li>\n\n\n\n<li>Dye Penetrant Testing (DPT)</li>\n\n\n\n<li>Visual Testing (VT)</li>\n\n\n\n<li>Eddy Current Testing (ECT)</li>\n\n\n\n<li>Advanced NDT (Phased Array Ultrasonic Testing – PAUT, Time of Flight Diffraction – TOFD, Digital Radiography)</li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\">2. <strong>Metallurgical &amp; Corrosion Investigation</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Failure Analysis &amp; Root Cause Investigation</li>\n\n\n\n<li>Metallography (Field &amp; Lab)</li>\n\n\n\n<li>Positive Material Identification (PMI)</li>\n\n\n\n<li>Corrosion Assessment &amp; Monitoring</li>\n\n\n\n<li>Coating &amp; Lining Inspection</li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\">3. <strong>Welding &amp; Fabrication Inspection</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Welder and Procedure Qualification (WPS/PQR/WPQ)</li>\n\n\n\n<li>Third-Party Welding Inspection</li>\n\n\n\n<li>Welding Defect Assessment &amp; Repair Approval</li>\n\n\n\n<li>Heat Treatment (Pre/Post Weld) Supervision</li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\">4. <strong>In-Service Inspection &amp; RBI</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Fitness-for-Service (FFS) Assessments</li>\n\n\n\n<li>Risk-Based Inspection (RBI) Studies</li>\n\n\n\n<li>Pressure Vessel, Piping, and Tank Inspection</li>\n\n\n\n<li>Integrity Management for Static Equipment</li>\n\n\n\n<li>API 510/570/653 Certified Services</li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\">5. <strong>Calibration &amp; Dimensional Inspection</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Instrument Calibration (Pressure, Temperature, Flow, Electrical)</li>\n\n\n\n<li>Dimensional &amp; Geometrical Inspection for Components and Structures</li>\n\n\n\n<li>GA/As-Built Drawing Verification</li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\">6. <strong>Civil &amp; Infrastructure Quality Services</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Concrete Testing &amp; Reinforcement Inspection</li>\n\n\n\n<li>Non-Destructive Civil Tests (Rebound Hammer, Ultrasonic Pulse Velocity)</li>\n\n\n\n<li>Structural Integrity Assessment of Buildings, Bridges, and Infrastructure</li>\n</ul>\n\n\n\n<h3 class=\"wp-block-heading\">7. <strong>Third-Party Inspection &amp; Certification</strong></h3>\n\n\n\n<ul class=\"wp-block-list\">\n<li>Vendor Inspection &amp; Expediting Services</li>\n\n\n\n<li>Witnessing &amp; Certification as per International Standards (ASME, ASTM, ISO, API, AWS)</li>\n\n\n\n<li>Quality Assurance/Quality Control (QA/QC) Documentation &amp; Review</li>\n</ul>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\"/>\n\n\n\n<h2 class=\"wp-block-heading\">🌍 Why Choose Aura Space Infra Pvt. Ltd.?</h2>\n\n\n\n<p>✅ <strong>Technical Expertise:</strong> Team of experienced metallurgists, inspection engineers, welding inspectors, and NDT Level-II/III professionals.<br>✅ <strong>Industry Standards:</strong> Compliance with ASME, API, ISO, AWS, ASTM, BIS, and NABL/ILAC guidelines.<br>✅ <strong>Client-Centric Approach:</strong> Customized inspection programs aligned with project timelines and regulatory requirements.<br>✅ <strong>Integrated Solutions:</strong> Combining engineering expertise with AI-driven inspection methodologies for next-generation quality assurance.<br>✅ <strong>Pan-India Reach:</strong> Serving refineries, petrochemical complexes, EPC projects, fabrication shops, and industrial plants across India.</p>\n\n\n\n<hr class=\"wp-block-separator has-alpha-channel-opacity\"/>\n\n\n\n<h2 class=\"wp-block-heading\">🚀 Delivering Trust, Reliability &amp; Excellence</h2>\n\n\n\n<p>At Aura Space Infra Pvt. Ltd., inspection is not just about detecting defects—it’s about ensuring <strong>safety, performance, and reliability throughout the lifecycle of assets</strong>. From design verification to fabrication, from commissioning to in-service inspection, Aura Space Infra provides an end-to-end assurance framework for industries that cannot afford to compromise on quality.</p>\n"
+  },
+  {
+    "type": "page",
+    "id": 1119,
+    "slug": "apis",
+    "wp_title": "API",
+    "doc_title": "API",
+    "url": "https://aurachemicals.in/apis/",
+    "date": "2024-12-17T07:41:59",
+    "modified": "2025-01-02T14:10:05",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "API"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "API\nProducts\nCase No\nTherapeutic Category\nAceclofenac\n89796-99-6\nAnti-inflammatory\nAcyclovir\n59277-89-3\nSynthetic nucleoside analogues\nAdapalene\n106685-40-9\nTopical retinoid\nAlbendazole\n54965-21-8\nAntihelmintics\nAmantadine\n665-66-7\nAdamantanes\nAmbroxol HCL\n23828-92-4\nMucolytic agent\nAmikacin Sulfate\n39831-55-5\nAminoglycoside antibiotics\nAmoxapine\n14028-44-5\nAntidepressant\nAmoxicillin Trihydrate\n61336-70-7\nAntibiotic\nAmpicillin Trihydrate\n7177-48-2\nAntibiotics\nArtemether\n71963-77-4\nAnti-malarial\nAtorvastatin Calcium Trihydrate\n344423-98-9\nReductase inhibitors\nAzithromycin\n83905-01-5\nMacrolide antibiotics\nBenzhexol HCL\n52-49-3\nAntispasmodic\nBisoprolol fumarate\n104344-23-2\nBeta blockers\nCabergoline\n81409-90-7\nDopamine receptor\nCaffeine Anhydrous\n58-08-2\nMethylxanthine\nCefixime\n79350-37-1\nCephalosporins\nCeftriaxone Sodium\n104376-79-6\nCephalosporin antibiotics\nCelecoxib\n169590-42-5\nAnti-inflammatory\nCetirizine\n83881-52-1\nAntihistamines\nChlordiazepoxide\n58-25-3\nAnxiolytic\nChlordiazepoxide HCL\n438-41-5\nAnxiolytic\nCilostazol\n73963-72-1\nInhibitors\nCinnarizine\n298-57-7\nAntihistaminic\nCiprofloxacin HCL\n86393-32-0\nAntibiotic\nCiticoline\n987-78-0\nPsychostimulants\nClarithromycin\n81103-11-9\nMacrolide antibiotics\nClobazam\n22316-47-8\nAntiepileptic\nClobenzorex HCI\n5843-53-8\nAnorectic\nClotrimazole\n23593-75-1\nImidazole\nCloxacillin Sodium\n642-78-4\nAntibiotic\nCyclobenzaprine HCI\n6202-23-9\nMuscle relaxant\nDapagliflozin\n461432-26-8\nInhibitors\nDeflazacort\n14484-47-0\nAnti-inflammatory\nDesvenlafaxine\n93413-62-8\nInhibitors\nDiacerein\n13739-02-1\nAnthraquinones\nDiazepam\n439-14-5\nAnxiolytic\nDuloxetine HCI\n136434-34-9\nAntidepressant\nEtoricoxib\n202409-33-4\nInhibitor\nFaropenem Sodium\n122547-49-3\nBeta-lactamase\nFenbendazole\n43210-67-9\nBroad-spectrum anthelmintic\nFluconazole\n86386-73-4\nAntifungals\nFlupentixol Decanoate\n30909-51-4\nAntipsychotic\nFlupentixol Di HCI\n51529-01-2\nAntipsychotic\nFluvoxamine Maleate\n61718-82-9\nAntidepressant\nGabapentin\n60142-96-3\nAnticonvulsants\nLansoprazole\n103577-45-3\nInhibitor\nLeflunomide\n75706-12-6\nAntirheumatic\nLevetiracetam\n102767-28-2\nAnticonvulsants\nLevocetirizine\n130018-77-8\nAntihistamines\nLinagliptin\n668270-12-0\nInhibitors\nLincomycin\n154-21-2\nAntibiotic\nLinezolid\n165800-03-3\nAntibacterials\nLithium Carbonate\n554-13-2\nAntimanic medication\nLoxapine\n27833-64-3\nAntipsychotic\nMefenamic Acid\n61-68-7\nAnalgesics\nMeloxicam\n71125-38-7\nAnti-inflammatory\nMemantine\n41100-52-1\nAntagonists\nMeropenem\n96036-03-2\nPenem\nMesalamine\n89-57-6\nAnti-inflammatory\nMetaxalone\n1665-48-1\nMedications\nMetformin HCL\n1115-70-4\nAnti-diabetic\nMethimazole\n60-56-0\nThionamide Antithyroid\nMinoxidil\n38304-91-5\nVasodilator\nMontelukast Sodium\n151767-02-1\nAnti-asthmatic\nNaftopidil\n57149-07-2\nAlpha-blocker\nNebivolol\n152520-56-4\nBeta Blockers\nNefopam\n13669-70-0\nAnalgesic\nOlmesartan Medoxomil\n144689-63-4\nHypertension\nOmeprazole\n73590-58-6\nAnti-ulcer\nOxaprozin\n21256-18-8\nNSAID\nPantoprazole Sodium\n138786-67-1\nAnti-ulcer\nParacetamol\n103-90-2\nAnalgesics\nPiperacillin & Tazobactam Sodium\n59703-84-3\nPenicillin Antibiotics\nPramoxine HCL\n637-58-1\nTopical Anesthetic\nPregabalin\n148553-50-8\nAnti-convulsant\nPrilocaine Base\n721-50-6\nAnesthetic\nPrimidone\n125-33-7\nAnticonvulsants\nPyrazinamide\n98-96-4\nAnti-infectives\nRibavirin\n36791-04-5\nNucleoside Analogues\nRivastigmine Tartrate\n129101-54-8\nAlzheimer’s Medication\nRosuvastatin\n287714-41-4\nHypolipidemic\nSilodosin\n160970-54-7\nAlpha-blockers\nSulbactam Sodium\n69388-84-7\nBeta-lactamase\nTapentadol HCL\n175591-09-0\nAnalgesic\nTiemonium Methyisulphate\n6504-57-0\nAntispasmodic\nTigecycline\n220620-09-7\nAnti-infectives\nTizanidine\n64461-82-1\nMuscle Relaxants\nTorsemide\n56211-40-6\nLoop Diuretics\nTranexamic Acid\n1197-18-8\nAntifibrinolytic Agent\nVenlafaxine\n99300-78-4\nInhibitor\nZopiclone\n43200-80-2\nNonbenzodiazepine Hypnotic",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h2>API</h2>\n<style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f9f9f9;\n            color: #333;\n        }\n        h1 {\n            text-align: center;\n            color: #333;\n            margin-bottom: 20px;\n        }\n        .table-container {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-top: 20px;\n        }\n        table {\n            width: 90%;\n            border-collapse: collapse;\n            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n            background-color: #fff;\n            border-radius: 8px;\n            overflow: hidden;\n        }\n        thead {\n            background-color: #f8981d;\n            color: #fff;\n        }\n        th, td {\n            padding: 12px 15px;\n            text-align: left;\n            border-bottom: 1px solid #ddd;\n        }\n        tbody tr:nth-child(even) {\n            background-color: #f2f2f2;\n        }\n        tbody tr:hover {\n            background-color: #f1f1f1;\n            transition: background-color 0.2s ease;\n        }\n        th {\n            text-transform: uppercase;\n            letter-spacing: 0.1em;\n        }\n        footer {\n            text-align: center;\n            margin-top: 30px;\n            font-size: 14px;\n            color: #777;\n        }\n    </style>\n<table>\n<thead>\n<tr>\n<th>Products</th>\n<th>Case No</th>\n<th>Therapeutic Category</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Aceclofenac</td>\n<td>89796-99-6</td>\n<td>Anti-inflammatory</td>\n</tr>\n<tr>\n<td>Acyclovir</td>\n<td>59277-89-3</td>\n<td>Synthetic nucleoside analogues</td>\n</tr>\n<tr>\n<td>Adapalene</td>\n<td>106685-40-9</td>\n<td>Topical retinoid</td>\n</tr>\n<tr>\n<td>Albendazole</td>\n<td>54965-21-8</td>\n<td>Antihelmintics</td>\n</tr>\n<tr>\n<td>Amantadine</td>\n<td>665-66-7</td>\n<td>Adamantanes</td>\n</tr>\n<tr>\n<td>Ambroxol HCL</td>\n<td>23828-92-4</td>\n<td>Mucolytic agent</td>\n</tr>\n<tr>\n<td>Amikacin Sulfate</td>\n<td>39831-55-5</td>\n<td>Aminoglycoside antibiotics</td>\n</tr>\n<tr>\n<td>Amoxapine</td>\n<td>14028-44-5</td>\n<td>Antidepressant</td>\n</tr>\n<tr>\n<td>Amoxicillin Trihydrate</td>\n<td>61336-70-7</td>\n<td>Antibiotic</td>\n</tr>\n<tr>\n<td>Ampicillin Trihydrate</td>\n<td>7177-48-2</td>\n<td>Antibiotics</td>\n</tr>\n<tr>\n<td>Artemether</td>\n<td>71963-77-4</td>\n<td>Anti-malarial</td>\n</tr>\n<tr>\n<td>Atorvastatin Calcium Trihydrate</td>\n<td>344423-98-9</td>\n<td>Reductase inhibitors</td>\n</tr>\n<tr>\n<td>Azithromycin</td>\n<td>83905-01-5</td>\n<td>Macrolide antibiotics</td>\n</tr>\n<tr>\n<td>Benzhexol HCL</td>\n<td>52-49-3</td>\n<td>Antispasmodic</td>\n</tr>\n<tr>\n<td>Bisoprolol fumarate</td>\n<td>104344-23-2</td>\n<td>Beta blockers</td>\n</tr>\n<tr>\n<td>Cabergoline</td>\n<td>81409-90-7</td>\n<td>Dopamine receptor</td>\n</tr>\n<tr>\n<td>Caffeine Anhydrous</td>\n<td>58-08-2</td>\n<td>Methylxanthine</td>\n</tr>\n<tr>\n<td>Cefixime</td>\n<td>79350-37-1</td>\n<td>Cephalosporins</td>\n</tr>\n<tr>\n<td>Ceftriaxone Sodium</td>\n<td>104376-79-6</td>\n<td>Cephalosporin antibiotics</td>\n</tr>\n<tr>\n<td>Celecoxib</td>\n<td>169590-42-5</td>\n<td>Anti-inflammatory</td>\n</tr>\n<tr>\n<td>Cetirizine</td>\n<td>83881-52-1</td>\n<td>Antihistamines</td>\n</tr>\n<tr>\n<td>Chlordiazepoxide</td>\n<td>58-25-3</td>\n<td>Anxiolytic</td>\n</tr>\n<tr>\n<td>Chlordiazepoxide HCL</td>\n<td>438-41-5</td>\n<td>Anxiolytic</td>\n</tr>\n<tr>\n<td>Cilostazol</td>\n<td>73963-72-1</td>\n<td>Inhibitors</td>\n</tr>\n<tr>\n<td>Cinnarizine</td>\n<td>298-57-7</td>\n<td>Antihistaminic</td>\n</tr>\n<tr>\n<td>Ciprofloxacin HCL</td>\n<td>86393-32-0</td>\n<td>Antibiotic</td>\n</tr>\n<tr>\n<td>Citicoline</td>\n<td>987-78-0</td>\n<td>Psychostimulants</td>\n</tr>\n<tr>\n<td>Clarithromycin</td>\n<td>81103-11-9</td>\n<td>Macrolide antibiotics</td>\n</tr>\n<tr>\n<td>Clobazam</td>\n<td>22316-47-8</td>\n<td>Antiepileptic</td>\n</tr>\n<tr>\n<td>Clobenzorex HCI</td>\n<td>5843-53-8</td>\n<td>Anorectic</td>\n</tr>\n<tr>\n<td>Clotrimazole</td>\n<td>23593-75-1</td>\n<td>Imidazole</td>\n</tr>\n<tr>\n<td>Cloxacillin Sodium</td>\n<td>642-78-4</td>\n<td>Antibiotic</td>\n</tr>\n<tr>\n<td>Cyclobenzaprine HCI</td>\n<td>6202-23-9</td>\n<td>Muscle relaxant</td>\n</tr>\n<tr>\n<td>Dapagliflozin</td>\n<td>461432-26-8</td>\n<td>Inhibitors</td>\n</tr>\n<tr>\n<td>Deflazacort</td>\n<td>14484-47-0</td>\n<td>Anti-inflammatory</td>\n</tr>\n<tr>\n<td>Desvenlafaxine</td>\n<td>93413-62-8</td>\n<td>Inhibitors</td>\n</tr>\n<tr>\n<td>Diacerein</td>\n<td>13739-02-1</td>\n<td>Anthraquinones</td>\n</tr>\n<tr>\n<td>Diazepam</td>\n<td>439-14-5</td>\n<td>Anxiolytic</td>\n</tr>\n<tr>\n<td>Duloxetine HCI</td>\n<td>136434-34-9</td>\n<td>Antidepressant</td>\n</tr>\n<tr>\n<td>Etoricoxib</td>\n<td>202409-33-4</td>\n<td>Inhibitor</td>\n</tr>\n<tr>\n<td>Faropenem Sodium</td>\n<td>122547-49-3</td>\n<td>Beta-lactamase</td>\n</tr>\n<tr>\n<td>Fenbendazole</td>\n<td>43210-67-9</td>\n<td>Broad-spectrum anthelmintic</td>\n</tr>\n<tr>\n<td>Fluconazole</td>\n<td>86386-73-4</td>\n<td>Antifungals</td>\n</tr>\n<tr>\n<td>Flupentixol Decanoate</td>\n<td>30909-51-4</td>\n<td>Antipsychotic</td>\n</tr>\n<tr>\n<td>Flupentixol Di HCI</td>\n<td>51529-01-2</td>\n<td>Antipsychotic</td>\n</tr>\n<tr>\n<td>Fluvoxamine Maleate</td>\n<td>61718-82-9</td>\n<td>Antidepressant</td>\n</tr>\n<tr>\n<td>Gabapentin</td>\n<td>60142-96-3</td>\n<td>Anticonvulsants</td>\n</tr>\n<tr>\n<td>Lansoprazole</td>\n<td>103577-45-3</td>\n<td>Inhibitor</td>\n</tr>\n<tr>\n<td>Leflunomide</td>\n<td>75706-12-6</td>\n<td>Antirheumatic</td>\n</tr>\n<tr>\n<td>Levetiracetam</td>\n<td>102767-28-2</td>\n<td>Anticonvulsants</td>\n</tr>\n<tr>\n<td>Levocetirizine</td>\n<td>130018-77-8</td>\n<td>Antihistamines</td>\n</tr>\n<tr>\n<td>Linagliptin</td>\n<td>668270-12-0</td>\n<td>Inhibitors</td>\n</tr>\n<tr>\n<td>Lincomycin</td>\n<td>154-21-2</td>\n<td>Antibiotic</td>\n</tr>\n<tr>\n<td>Linezolid</td>\n<td>165800-03-3</td>\n<td>Antibacterials</td>\n</tr>\n<tr>\n<td>Lithium Carbonate</td>\n<td>554-13-2</td>\n<td>Antimanic medication</td>\n</tr>\n<tr>\n<td>Loxapine</td>\n<td>27833-64-3</td>\n<td>Antipsychotic</td>\n</tr>\n<tr>\n<td>Mefenamic Acid</td>\n<td>61-68-7</td>\n<td>Analgesics</td>\n</tr>\n<tr>\n<td>Meloxicam</td>\n<td>71125-38-7</td>\n<td>Anti-inflammatory</td>\n</tr>\n<tr>\n<td>Memantine</td>\n<td>41100-52-1</td>\n<td>Antagonists</td>\n</tr>\n<tr>\n<td>Meropenem</td>\n<td>96036-03-2</td>\n<td>Penem</td>\n</tr>\n<tr>\n<td>Mesalamine</td>\n<td>89-57-6</td>\n<td>Anti-inflammatory</td>\n</tr>\n<tr>\n<td>Metaxalone</td>\n<td>1665-48-1</td>\n<td>Medications</td>\n</tr>\n<tr>\n<td>Metformin HCL</td>\n<td>1115-70-4</td>\n<td>Anti-diabetic</td>\n</tr>\n<tr>\n<td>Methimazole</td>\n<td>60-56-0</td>\n<td>Thionamide Antithyroid</td>\n</tr>\n<tr>\n<td>Minoxidil</td>\n<td>38304-91-5</td>\n<td>Vasodilator</td>\n</tr>\n<tr>\n<td>Montelukast Sodium</td>\n<td>151767-02-1</td>\n<td>Anti-asthmatic</td>\n</tr>\n<tr>\n<td>Naftopidil</td>\n<td>57149-07-2</td>\n<td>Alpha-blocker</td>\n</tr>\n<tr>\n<td>Nebivolol</td>\n<td>152520-56-4</td>\n<td>Beta Blockers</td>\n</tr>\n<tr>\n<td>Nefopam</td>\n<td>13669-70-0</td>\n<td>Analgesic</td>\n</tr>\n<tr>\n<td>Olmesartan Medoxomil</td>\n<td>144689-63-4</td>\n<td>Hypertension</td>\n</tr>\n<tr>\n<td>Omeprazole</td>\n<td>73590-58-6</td>\n<td>Anti-ulcer</td>\n</tr>\n<tr>\n<td>Oxaprozin</td>\n<td>21256-18-8</td>\n<td>NSAID</td>\n</tr>\n<tr>\n<td>Pantoprazole Sodium</td>\n<td>138786-67-1</td>\n<td>Anti-ulcer</td>\n</tr>\n<tr>\n<td>Paracetamol</td>\n<td>103-90-2</td>\n<td>Analgesics</td>\n</tr>\n<tr>\n<td>Piperacillin &#038; Tazobactam Sodium</td>\n<td>59703-84-3</td>\n<td>Penicillin Antibiotics</td>\n</tr>\n<tr>\n<td>Pramoxine HCL</td>\n<td>637-58-1</td>\n<td>Topical Anesthetic</td>\n</tr>\n<tr>\n<td>Pregabalin</td>\n<td>148553-50-8</td>\n<td>Anti-convulsant</td>\n</tr>\n<tr>\n<td>Prilocaine Base</td>\n<td>721-50-6</td>\n<td>Anesthetic</td>\n</tr>\n<tr>\n<td>Primidone</td>\n<td>125-33-7</td>\n<td>Anticonvulsants</td>\n</tr>\n<tr>\n<td>Pyrazinamide</td>\n<td>98-96-4</td>\n<td>Anti-infectives</td>\n</tr>\n<tr>\n<td>Ribavirin</td>\n<td>36791-04-5</td>\n<td>Nucleoside Analogues</td>\n</tr>\n<tr>\n<td>Rivastigmine Tartrate</td>\n<td>129101-54-8</td>\n<td>Alzheimer&#8217;s Medication</td>\n</tr>\n<tr>\n<td>Rosuvastatin</td>\n<td>287714-41-4</td>\n<td>Hypolipidemic</td>\n</tr>\n<tr>\n<td>Silodosin</td>\n<td>160970-54-7</td>\n<td>Alpha-blockers</td>\n</tr>\n<tr>\n<td>Sulbactam Sodium</td>\n<td>69388-84-7</td>\n<td>Beta-lactamase</td>\n</tr>\n<tr>\n<td>Tapentadol HCL</td>\n<td>175591-09-0</td>\n<td>Analgesic</td>\n</tr>\n<tr>\n<td>Tiemonium Methyisulphate</td>\n<td>6504-57-0</td>\n<td>Antispasmodic</td>\n</tr>\n<tr>\n<td>Tigecycline</td>\n<td>220620-09-7</td>\n<td>Anti-infectives</td>\n</tr>\n<tr>\n<td>Tizanidine</td>\n<td>64461-82-1</td>\n<td>Muscle Relaxants</td>\n</tr>\n<tr>\n<td>Torsemide</td>\n<td>56211-40-6</td>\n<td>Loop Diuretics</td>\n</tr>\n<tr>\n<td>Tranexamic Acid</td>\n<td>1197-18-8</td>\n<td>Antifibrinolytic Agent</td>\n</tr>\n<tr>\n<td>Venlafaxine</td>\n<td>99300-78-4</td>\n<td>Inhibitor</td>\n</tr>\n<tr>\n<td>Zopiclone</td>\n<td>43200-80-2</td>\n<td>Nonbenzodiazepine Hypnotic</td>\n</tr>\n</tbody>\n</table>\n"
+  },
+  {
+    "type": "page",
+    "id": 1117,
+    "slug": "solvents",
+    "wp_title": "Solvents",
+    "doc_title": "Solvents",
+    "url": "https://aurachemicals.in/solvents/",
+    "date": "2024-12-17T07:41:33",
+    "modified": "2024-12-21T07:01:12",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1.0",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "SOLVENTS"
+      },
+      {
+        "tag": "h1",
+        "text": "Solvents Table"
+      },
+      {
+        "tag": "h1",
+        "text": "Our Manufacturing Products"
+      },
+      {
+        "tag": "h1",
+        "text": "Our Own Import Products"
+      },
+      {
+        "tag": "h1",
+        "text": "Acid Products"
+      },
+      {
+        "tag": "h1",
+        "text": "Other Products"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "SOLVENTS\nSolvents Table\nSolvents Table\nSolvents\nCase No\nTherapeutic Category\nBleaching Powder (Vikram Brand)\n7778-54-3\nSanitation and disinfecting agent\nAluminium Chloride\n7446-70-0\nAntiperspirant\nSodium Sulphate\n7757-82-6\nParenteral and osmotic laxatives\nBleaching Granules (RANSA)\n7778-54-3\nInorganic compound\nCaustic Flakes & Lye\n1310-73-2\nTherapeutics\nPoly Aluminium Chloride (Powder & Liq.)\n1327-41-9\nAntiperspirants\nMEG Monoethylene Glycol\n107-21-1\nAnesthetics or hypnotics\nDMF Dimethyl fumarate\n68-12-2\nInflammation\nAcetone\n67-64-1\nFlammable liquid\nToluene\n108-88-3\n–\nN-Hexene\n592-41-6\n–\nEthyl Acetate\n141-78-6\n–\nIPA\n67-63-0\n–\nSodium Bicarbonate\n144-55-8\n–\nSoda Ash\n497-19-8\n–\nDi Calcium Phosphate-feed grade\n7789-77-7\n–\nSodium Acetate trihydrate & Anhydrous\n6131-90-4\n–\nSodium Nitrite & Nitrate\n7631-99-4\n–\nBKC 50% & 80%\n8001-54-5\n–\nCalcium Carbonate (Lime Stone)\n1317-65-3\n–",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h2>SOLVENTS</h2>\n<p>\t\t<!DOCTYPE html><br />\n<html lang=\"en\"><br />\n<head><br />\n    <meta charset=\"UTF-8\"><br />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><br />\n    <title>Solvents Table</title></p>\n<style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f9f9f9;\n        }\n        h1 {\n            text-align: center;\n            color: #333;\n        }\n        .table-container {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-top: 20px;\n        }\n        table {\n            width: 90%;\n            border-collapse: collapse;\n            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n            background-color: #fff;\n            border-radius: 8px;\n            overflow: hidden;\n        }\n        thead {\n            background-color: #f8981d;\n            color: #fff;\n        }\n        th, td {\n            padding: 12px 15px;\n            text-align: left;\n            border-bottom: 1px solid #ddd;\n        }\n        tbody tr:nth-child(even) {\n            background-color: #f2f2f2;\n        }\n        tbody tr:hover {\n            background-color: #f1f1f1;\n            transition: background-color 0.2s ease;\n        }\n        th {\n            text-transform: uppercase;\n            letter-spacing: 0.1em;\n        }\n    </style>\n<p></head><br />\n<body></p>\n<h1>Solvents Table</h1>\n<table>\n<thead>\n<tr>\n<th>Solvents</th>\n<th>Case No</th>\n<th>Therapeutic Category</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Bleaching Powder (Vikram Brand)</td>\n<td>7778-54-3</td>\n<td>Sanitation and disinfecting agent</td>\n</tr>\n<tr>\n<td>Aluminium Chloride</td>\n<td>7446-70-0</td>\n<td>Antiperspirant</td>\n</tr>\n<tr>\n<td>Sodium Sulphate</td>\n<td>7757-82-6</td>\n<td>Parenteral and osmotic laxatives</td>\n</tr>\n<tr>\n<td>Bleaching Granules (RANSA)</td>\n<td>7778-54-3</td>\n<td>Inorganic compound</td>\n</tr>\n<tr>\n<td>Caustic Flakes &#038; Lye</td>\n<td>1310-73-2</td>\n<td>Therapeutics</td>\n</tr>\n<tr>\n<td>Poly Aluminium Chloride (Powder &#038; Liq.)</td>\n<td>1327-41-9</td>\n<td>Antiperspirants</td>\n</tr>\n<tr>\n<td>MEG Monoethylene Glycol</td>\n<td>107-21-1</td>\n<td>Anesthetics or hypnotics</td>\n</tr>\n<tr>\n<td>DMF Dimethyl fumarate</td>\n<td>68-12-2</td>\n<td>Inflammation</td>\n</tr>\n<tr>\n<td>Acetone</td>\n<td>67-64-1</td>\n<td>Flammable liquid</td>\n</tr>\n<tr>\n<td>Toluene</td>\n<td>108-88-3</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>N-Hexene</td>\n<td>592-41-6</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>Ethyl Acetate</td>\n<td>141-78-6</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>IPA</td>\n<td>67-63-0</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>Sodium Bicarbonate</td>\n<td>144-55-8</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>Soda Ash</td>\n<td>497-19-8</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>Di Calcium Phosphate-feed grade</td>\n<td>7789-77-7</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>Sodium Acetate trihydrate &#038; Anhydrous</td>\n<td>6131-90-4</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>Sodium Nitrite &#038; Nitrate</td>\n<td>7631-99-4</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>BKC 50% &#038; 80%</td>\n<td>8001-54-5</td>\n<td>&#8211;</td>\n</tr>\n<tr>\n<td>Calcium Carbonate (Lime Stone)</td>\n<td>1317-65-3</td>\n<td>&#8211;</td>\n</tr>\n</tbody>\n</table>\n<p></body><br />\n</html><br />\n<!DOCTYPE html><br />\n<html lang=\"en\"><br />\n<head><br />\n    <meta charset=\"UTF-8\"><br />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><br />\n    <title>Manufacturing Products Table</title></p>\n<style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f9f9f9;\n        }\n        h1 {\n            text-align: center;\n            color: #333;\n        }\n        .table-container {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-top: 20px;\n        }\n        table {\n            width: 90%;\n            border-collapse: collapse;\n            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n            background-color: #fff;\n            border-radius: 8px;\n            overflow: hidden;\n        }\n        thead {\n            background-color: #f8981d;\n            color: #fff;\n        }\n        th, td {\n            padding: 12px 15px;\n            text-align: left;\n            border-bottom: 1px solid #ddd;\n        }\n        tbody tr:nth-child(even) {\n            background-color: #f2f2f2;\n        }\n        tbody tr:hover {\n            background-color: #f1f1f1;\n            transition: background-color 0.2s ease;\n        }\n        th {\n            text-transform: uppercase;\n            letter-spacing: 0.1em;\n        }\n    </style>\n<p></head><br />\n<body></p>\n<h1>Our Manufacturing Products</h1>\n<table>\n<thead>\n<tr>\n<th>Product Name</th>\n<th>Case No</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Mono Sodium Phosphate (Anhydrous &#038; Crystals)</td>\n<td>7558-80-7</td>\n</tr>\n<tr>\n<td>Di Sodium Phosphate (Anhydrous &#038; Crystals)</td>\n<td>7558-79-4</td>\n</tr>\n<tr>\n<td>Tri Sodium Phosphate (Anhydrous &#038; Crystals)</td>\n<td>7601-54-9</td>\n</tr>\n<tr>\n<td>Tetra Sodium Pyro Phosphate</td>\n<td>231-767-1</td>\n</tr>\n<tr>\n<td>Mono Potassium Phosphate</td>\n<td>7778-77-0</td>\n</tr>\n<tr>\n<td>Tri Potassium Phosphate</td>\n<td>7778-53-2</td>\n</tr>\n<tr>\n<td>Mono Ammonium Phosphate</td>\n<td>7722-76-1</td>\n</tr>\n<tr>\n<td>Sodium Acid Pyro Phosphate</td>\n<td>7722-88-5</td>\n</tr>\n<tr>\n<td>Di Potassium Phosphate</td>\n<td>04-11-7758</td>\n</tr>\n<tr>\n<td>Tetra Potassium Pyro Phosphate</td>\n<td>7320-34-5</td>\n</tr>\n<tr>\n<td>Di Ammonium Phosphate</td>\n<td>7783-28-0</td>\n</tr>\n</tbody>\n</table>\n<p></body><br />\n</html><br />\n<!DOCTYPE html><br />\n<html lang=\"en\"><br />\n<head><br />\n    <meta charset=\"UTF-8\"><br />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><br />\n    <title>Import Products Table</title></p>\n<style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f9f9f9;\n        }\n        h1 {\n            text-align: center;\n            color: #333;\n        }\n        .table-container {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-top: 20px;\n        }\n        table {\n            width: 90%;\n            border-collapse: collapse;\n            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n            background-color: #fff;\n            border-radius: 8px;\n            overflow: hidden;\n        }\n        thead {\n            background-color: #f8981d;\n            color: #fff;\n        }\n        th, td {\n            padding: 12px 15px;\n            text-align: left;\n            border-bottom: 1px solid #ddd;\n        }\n        tbody tr:nth-child(even) {\n            background-color: #f2f2f2;\n        }\n        tbody tr:hover {\n            background-color: #f1f1f1;\n            transition: background-color 0.2s ease;\n        }\n        th {\n            text-transform: uppercase;\n            letter-spacing: 0.1em;\n        }\n    </style>\n<p></head><br />\n<body></p>\n<h1>Our Own Import Products</h1>\n<table>\n<thead>\n<tr>\n<th>Product Name</th>\n<th>Case No</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>EDTA di sodium / Tetra Sodium &#038; EDTA Acid Jack Chem China</td>\n<td>6381-92-6</td>\n</tr>\n<tr>\n<td>Sodium Percabonate Coated Granules &#038; Tablets China Make</td>\n<td>15630-89-4</td>\n</tr>\n<tr>\n<td>Citric Acid Mono / Anhydrous China Make</td>\n<td>5949-29-1</td>\n</tr>\n<tr>\n<td>Sodium Gluconate</td>\n<td>527-07-1</td>\n</tr>\n<tr>\n<td>Xanthum Gum</td>\n<td>11138-66-2</td>\n</tr>\n</tbody>\n</table>\n<p></body><br />\n</html><br />\n<!DOCTYPE html><br />\n<html lang=\"en\"><br />\n<head><br />\n    <meta charset=\"UTF-8\"><br />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><br />\n    <title>Acid Products Table</title></p>\n<style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f9f9f9;\n        }\n        h1 {\n            text-align: center;\n            color: #333;\n        }\n        .table-container {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-top: 20px;\n        }\n        table {\n            width: 90%;\n            border-collapse: collapse;\n            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n            background-color: #fff;\n            border-radius: 8px;\n            overflow: hidden;\n        }\n        thead {\n            background-color: #f8981d;\n            color: #fff;\n        }\n        th, td {\n            padding: 12px 15px;\n            text-align: left;\n            border-bottom: 1px solid #ddd;\n        }\n        tbody tr:nth-child(even) {\n            background-color: #f2f2f2;\n        }\n        tbody tr:hover {\n            background-color: #f1f1f1;\n            transition: background-color 0.2s ease;\n        }\n        th {\n            text-transform: uppercase;\n            letter-spacing: 0.1em;\n        }\n    </style>\n<p></head><br />\n<body></p>\n<h1>Acid Products</h1>\n<table>\n<thead>\n<tr>\n<th>Product Name</th>\n<th>Case No</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Acetic Acid – Imported &#038; GNFC</td>\n<td>64-19-7</td>\n</tr>\n<tr>\n<td>Formic Acid 85% – GNFC</td>\n<td>64-18-6</td>\n</tr>\n<tr>\n<td>HCL</td>\n<td>7647-01-0</td>\n</tr>\n<tr>\n<td>Sulphuric Acid 98%</td>\n<td>7664-93-9</td>\n</tr>\n<tr>\n<td>Phosphoric Acid Tech. 85%</td>\n<td>7664-38-2</td>\n</tr>\n<tr>\n<td>Sulphamic Acid</td>\n<td>5329-14-6</td>\n</tr>\n</tbody>\n</table>\n<p></body><br />\n</html><br />\n<!DOCTYPE html><br />\n<html lang=\"en\"><br />\n<head><br />\n    <meta charset=\"UTF-8\"><br />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><br />\n    <title>Other Products Table</title></p>\n<style>\n        body {\n            font-family: Arial, sans-serif;\n            margin: 20px;\n            background-color: #f9f9f9;\n        }\n        h1 {\n            text-align: center;\n            color: #333;\n        }\n        .table-container {\n            display: flex;\n            justify-content: center;\n            align-items: center;\n            margin-top: 20px;\n        }\n        table {\n            width: 90%;\n            border-collapse: collapse;\n            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);\n            background-color: #fff;\n            border-radius: 8px;\n            overflow: hidden;\n        }\n        thead {\n            background-color: #f8981d;\n            color: #fff;\n        }\n        th, td {\n            padding: 12px 15px;\n            text-align: left;\n            border-bottom: 1px solid #ddd;\n        }\n        tbody tr:nth-child(even) {\n            background-color: #f2f2f2;\n        }\n        tbody tr:hover {\n            background-color: #f1f1f1;\n            transition: background-color 0.2s ease;\n        }\n        th {\n            text-transform: uppercase;\n            letter-spacing: 0.1em;\n        }\n    </style>\n<p></head><br />\n<body></p>\n<h1>Other Products</h1>\n<table>\n<thead>\n<tr>\n<th>Product Name</th>\n<th>Case No</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>HP (Hydrogen Peroxide)</td>\n<td>7722-84-1</td>\n</tr>\n<tr>\n<td>Caustic Potash</td>\n<td>1310-58-3</td>\n</tr>\n<tr>\n<td>Caustic Prills</td>\n<td>1310-73-2</td>\n</tr>\n<tr>\n<td>Potassium Carbonate Granules &#038; Powder</td>\n<td>584-08-7</td>\n</tr>\n<tr>\n<td>PAC powder &#038; Liquid</td>\n<td>1327-41-9</td>\n</tr>\n</tbody>\n</table>\n<p></body><br />\n</html></p>\n"
+  },
+  {
+    "type": "page",
+    "id": 864,
+    "slug": "industries-copy",
+    "wp_title": "INDUSTRIES",
+    "doc_title": "INDUSTRIES",
+    "url": "https://aurachemicals.in/industries-copy/",
+    "date": "2024-12-13T18:05:22",
+    "modified": "2025-08-26T11:52:46",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "INDUSTRIES WE SERVE"
+      },
+      {
+        "tag": "h3",
+        "text": "Pharmaceutical Industries"
+      },
+      {
+        "tag": "h3",
+        "text": "Healthcare and Diagnostics Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Cosmetics and Personal Care Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Food and Beverage Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Water Treatment Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Electronics and Semiconductor Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Adhesives and Sealants Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Leather and Tanning Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Plastics and Polymers Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Mining and Mettalurgy"
+      },
+      {
+        "tag": "h3",
+        "text": "Rubber and Tyre Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Paintings and Coatings Industry"
+      },
+      {
+        "tag": "h3",
+        "text": "Construction Industry"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/phrama.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/healthcare.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/cosmetic.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/food-and-bevearge.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/water-treatment-plant-1.jpg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/semiconductor.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/adhesives.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/leather.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/plastics.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/mining.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/tyre.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/paint.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/constuction.jpeg",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "INDUSTRIES WE SERVE\nPharmaceutical Industries\nAura plays a vital role in empowering the pharmaceutical industry with high-quality chemical solutions. We provide a diverse range of raw materials, intermediates, and specialty chemicals essential for drug manufacturing and formulation.\nOur products adhere to stringent quality and safety standards, ensuring compliance with global pharmaceutical regulations. Our offerings enhance efficiency, reliability, and innovation in pharmaceutical manufacturing.\nWith a commitment to excellence and sustainability, Aura Chemicals supports the pharmaceutical industry in delivering safe and effective medicines to improve lives worldwide.\nHealthcare and Diagnostics Industry\nAura plays a pivotal role in advancing the health and diagnostics industry by supplying high-purity chemicals and reagents essential for accurate and reliable diagnostics.\nOur product portfolio includes biochemicals, diagnostic reagents, stabilizers, and specialty solvents tailored for use in medical diagnostics, laboratory testing, and healthcare applications. These solutions meet stringent quality standards, ensuring precision and consistency in diagnostic results.\nWith our expertise and commitment to excellence, Aura Chemicals supports the health and diagnostics industry in delivering innovative solutions that improve patient care and contribute to better healthcare outcomes.\nCosmetics and Personal Care Industry\nAura  is a trusted partner for the cosmetic and personal care industry, offering a wide range of premium-grade ingredients tailored to enhance product performance and consumer satisfaction.\nOur portfolio includes emollients, surfactants, active ingredients, stabilizers, and preservatives designed for applications in skincare, haircare, and beauty formulations. We prioritize quality, safety, and sustainability, ensuring our products meet stringent regulatory standards while enabling innovative product development.\nBy providing high-quality raw materials and expert guidance, Aura Chemicals empowers the cosmetic and personal care industry to create effective, safe, and environmentally responsible products that resonate with modern consumers.\nFood and Beverage Industry\nAura is a trusted supplier to the food and beverage industry, providing high-quality ingredients and additives that ensure safety, consistency, and enhanced product appeal.\nOur range includes preservatives, emulsifiers, flavor enhancers, stabilizers, and food-grade processing aids that comply with global safety standards. These solutions help manufacturers improve shelf life, maintain product integrity, and meet consumer expectations for quality and taste.\nWith a focus on innovation and sustainability, Aura Chemicals empowers the food and beverage industry to deliver safe, nutritious, and high-quality products that cater to the evolving needs of modern consumers.\nWater Treatment Industry\nAura  is a trusted partner for the water treatment industry, offering a wide range of premium chemicals designed to optimize water quality and treatment processes.\nOur products include coagulants, flocculants, pH adjusters, and anti-scalants, tailored to meet the specific requirements of water purification, wastewater management, and industrial water treatment. With a focus on efficiency and sustainability, our solutions help industries achieve cleaner water, comply with environmental regulations, and reduce operational costs.\nBy combining innovative products with expert technical support, Aura Chemicals ensures the water treatment industry has the tools needed to address today’s water challenges effectively and\nElectronics and Semiconductor Industry\nAura is a key partner for the electronics and semiconductor industry, delivering high-purity chemicals essential for precision manufacturing and advanced technology development.\nOur portfolio includes etchants, solvents, cleaning agents, and deposition materials tailored to meet the stringent requirements of semiconductor fabrication, PCB manufacturing, and electronic assembly. We ensure consistent quality and compliance with global standards, enabling superior performance and reliability in electronic components.\nBy providing innovative chemical solutions and expert technical support, Aura Chemicals empowers the electronics and semiconductor industry to drive innovation, enhance efficiency, and meet the demands of a rapidly evolving market.\nAdhesives and Sealants Industry\nAura provides the adhesives and sealants industry with a comprehensive range of high-performance chemical solutions essential for product innovation and reliability.\nOur offerings include resins, curing agents, stabilizers, and specialty additives that enhance adhesion, durability, and flexibility across a wide array of applications. Whether for industrial bonding, construction, packaging, or automotive needs, our chemicals are formulated to meet stringent quality and performance standards.\nWith a commitment to sustainability and technical excellence, Aura Chemicals empowers the adhesives and sealants industry to create stronger, more efficient, and eco-friendly solutions for a diverse market.\nLeather and Tanning Industry\nAt Aura we pride ourselves on being a reliable partner to the textile industry. Our comprehensive range of high-quality chemicals is tailored to meet the diverse needs of textile manufacturing processes, from dyeing and printing to finishing.\nWe provide eco-friendly and performance-enhancing solutions that ensure vibrant colors, durable fabrics, and efficient production. Our products are rigorously tested for quality and comply with global standards, helping textile manufacturers achieve superior results while maintaining sustainability.\nBy delivering innovative chemical solutions and unparalleled customer support, Aura Chemicals empowers the textile industry to stay competitive and environmentally responsible.\nPlastics and Polymers Industry\nAura is a trusted partner to the plastic and polymers industry, providing a wide range of high-performance chemicals designed to enhance production processes and product quality.\nOur portfolio includes plasticizers, stabilizers, additives, and catalysts that improve the flexibility, durability, and strength of plastic products. These chemicals are essential for manufacturing a variety of applications, from packaging materials to automotive components, ensuring high-quality and sustainable polymer products.\nBy offering innovative solutions and expert technical support, Aura Chemicals empowers the plastic and polymers industry to meet growing market demands, optimize manufacturing efficiency, and maintain environmental compliance.\nMining and Mettalurgy\nAura is a trusted supplier to the mining and metallurgy industry, offering a diverse range of chemicals designed to optimize mineral extraction, processing, and metal production.\nOur products include flotation agents, leaching chemicals, corrosion inhibitors, and solvent extraction reagents, all tailored to enhance efficiency, recovery rates, and environmental sustainability. These chemicals help streamline processes in ore refining, metal extraction, and the treatment of mining by-products.\nWith a focus on performance and environmental responsibility, Aura Chemicals supports the mining and metallurgy industry in achieving higher productivity, lower environmental impact, and better resource utilization.\nRubber and Tyre Industry\nAura  is a reliable partner for the rubber and tyre industry, supplying a comprehensive range of high-quality chemicals essential for manufacturing durable and high-performance products.\nOur offerings include vulcanizing agents, accelerators, fillers, antioxidants, and specialty additives that enhance elasticity, strength, and resistance in rubber formulations. These solutions are tailored to meet the demanding requirements of tyre production and other rubber-based applications, ensuring consistency and superior quality.\nWith a commitment to innovation and sustainability, Aura Chemicals supports the rubber and tyre industry in achieving efficient production processes, improved product performance, and environmental compliance.\nPaintings and Coatings Industry\nAura is a reliable partner for the painting and coating industry, offering a wide range of high-quality chemicals designed to enhance the performance, durability, and aesthetics of coatings.\nOur product offerings include resins, binders, pigments, solvents, and additives that improve color retention, texture, adhesion, and resistance to environmental factors. Whether for industrial coatings, decorative paints, or automotive finishes, our chemicals are formulated to meet the highest standards of quality and performance.\nBy providing innovative solutions and expert support, Aura Chemicals helps the painting and coating industry deliver superior, long-lasting finishes while maintaining sustainability and regulatory compliance.\nConstruction Industry\nAura is a trusted partner for the construction industry, offering a wide range of high-performance chemicals designed to enhance building materials and construction processes.\nOur products include concrete additives, waterproofing agents, sealants, accelerators, and retarders that improve the durability, strength, and workability of construction materials. These solutions help ensure better quality, faster project completion, and enhanced resistance to weathering and wear.\nWith a focus on sustainability and innovation, Aura Chemicals supports the construction industry in building safer, more efficient, and environmentally-friendly structures, helping meet the evolving demands of modern construction projects.",
+    "wp_content": "\n<p><style>/*! elementor - v3.18.0 - 20-12-2023 */<br />\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style></p>\n\n\n\n<h1 class=\"wp-block-heading\">INDUSTRIES WE SERVE</h1>\n\n\n\n<p><style>.elementor-widget-image-box .elementor-image-box-content{width:100%}@media (min-width:103px){.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper,.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{display:flex}.elementor-widget-image-box.elementor-position-right .elementor-image-box-wrapper{text-align:right;flex-direction:row-reverse}.elementor-widget-image-box.elementor-position-left .elementor-image-box-wrapper{text-align:left;flex-direction:row}.elementor-widget-image-box.elementor-position-top .elementor-image-box-img{margin:auto}.elementor-widget-image-box.elementor-vertical-align-top .elementor-image-box-wrapper{align-items:flex-start}.elementor-widget-image-box.elementor-vertical-align-middle .elementor-image-box-wrapper{align-items:center}.elementor-widget-image-box.elementor-vertical-align-bottom .elementor-image-box-wrapper{align-items:flex-end}}@media (max-width:102px){.elementor-widget-image-box .elementor-image-box-img{margin-left:auto!important;margin-right:auto!important;margin-bottom:15px}}.elementor-widget-image-box .elementor-image-box-img{display:inline-block}.elementor-widget-image-box .elementor-image-box-title a{color:inherit}.elementor-widget-image-box .elementor-image-box-wrapper{text-align:center}.elementor-widget-image-box .elementor-image-box-description{margin:0}</style></p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/phrama.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Pharmaceutical Industries</h3>\n\n\n\n<p>Aura plays a vital role in empowering the pharmaceutical industry with high-quality chemical solutions. We provide a diverse range of raw materials, intermediates, and specialty chemicals essential for drug manufacturing and formulation.<br>Our products adhere to stringent quality and safety standards, ensuring compliance with global pharmaceutical regulations. Our offerings enhance efficiency, reliability, and innovation in pharmaceutical manufacturing.<br>With a commitment to excellence and sustainability, Aura Chemicals supports the pharmaceutical industry in delivering safe and effective medicines to improve lives worldwide.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/healthcare.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Healthcare and Diagnostics Industry</h3>\n\n\n\n<p>Aura plays a pivotal role in advancing the health and diagnostics industry by supplying high-purity chemicals and reagents essential for accurate and reliable diagnostics.<br>Our product portfolio includes biochemicals, diagnostic reagents, stabilizers, and specialty solvents tailored for use in medical diagnostics, laboratory testing, and healthcare applications. These solutions meet stringent quality standards, ensuring precision and consistency in diagnostic results.<br>With our expertise and commitment to excellence, Aura Chemicals supports the health and diagnostics industry in delivering innovative solutions that improve patient care and contribute to better healthcare outcomes.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/cosmetic.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Cosmetics and Personal Care Industry</h3>\n\n\n\n<p>Aura&nbsp; is a trusted partner for the cosmetic and personal care industry, offering a wide range of premium-grade ingredients tailored to enhance product performance and consumer satisfaction.<br>Our portfolio includes emollients, surfactants, active ingredients, stabilizers, and preservatives designed for applications in skincare, haircare, and beauty formulations. We prioritize quality, safety, and sustainability, ensuring our products meet stringent regulatory standards while enabling innovative product development.<br>By providing high-quality raw materials and expert guidance, Aura Chemicals empowers the cosmetic and personal care industry to create effective, safe, and environmentally responsible products that resonate with modern consumers.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/food-and-bevearge.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Food and Beverage Industry</h3>\n\n\n\n<p>Aura is a trusted supplier to the food and beverage industry, providing high-quality ingredients and additives that ensure safety, consistency, and enhanced product appeal.<br>Our range includes preservatives, emulsifiers, flavor enhancers, stabilizers, and food-grade processing aids that comply with global safety standards. These solutions help manufacturers improve shelf life, maintain product integrity, and meet consumer expectations for quality and taste.<br>With a focus on innovation and sustainability, Aura Chemicals empowers the food and beverage industry to deliver safe, nutritious, and high-quality products that cater to the evolving needs of modern consumers.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/water-treatment-plant-1.jpg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Water Treatment Industry</h3>\n\n\n\n<p>Aura  is a trusted partner for the water treatment industry, offering a wide range of premium chemicals designed to optimize water quality and treatment processes.<br>Our products include coagulants, flocculants, pH adjusters, and anti-scalants, tailored to meet the specific requirements of water purification, wastewater management, and industrial water treatment. With a focus on efficiency and sustainability, our solutions help industries achieve cleaner water, comply with environmental regulations, and reduce operational costs.<br>By combining innovative products with expert technical support, Aura Chemicals ensures the water treatment industry has the tools needed to address today’s water challenges effectively and</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/semiconductor.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Electronics and Semiconductor Industry</h3>\n\n\n\n<p>Aura is a key partner for the electronics and semiconductor industry, delivering high-purity chemicals essential for precision manufacturing and advanced technology development.<br>Our portfolio includes etchants, solvents, cleaning agents, and deposition materials tailored to meet the stringent requirements of semiconductor fabrication, PCB manufacturing, and electronic assembly. We ensure consistent quality and compliance with global standards, enabling superior performance and reliability in electronic components.<br>By providing innovative chemical solutions and expert technical support, Aura Chemicals empowers the electronics and semiconductor industry to drive innovation, enhance efficiency, and meet the demands of a rapidly evolving market.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/adhesives.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Adhesives and Sealants Industry</h3>\n\n\n\n<p>Aura provides the adhesives and sealants industry with a comprehensive range of high-performance chemical solutions essential for product innovation and reliability.<br>Our offerings include resins, curing agents, stabilizers, and specialty additives that enhance adhesion, durability, and flexibility across a wide array of applications. Whether for industrial bonding, construction, packaging, or automotive needs, our chemicals are formulated to meet stringent quality and performance standards.<br>With a commitment to sustainability and technical excellence, Aura Chemicals empowers the adhesives and sealants industry to create stronger, more efficient, and eco-friendly solutions for a diverse market.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/leather.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Leather and Tanning Industry</h3>\n\n\n\n<p>At Aura we pride ourselves on being a reliable partner to the textile industry. Our comprehensive range of high-quality chemicals is tailored to meet the diverse needs of textile manufacturing processes, from dyeing and printing to finishing.<br>We provide eco-friendly and performance-enhancing solutions that ensure vibrant colors, durable fabrics, and efficient production. Our products are rigorously tested for quality and comply with global standards, helping textile manufacturers achieve superior results while maintaining sustainability.<br>By delivering innovative chemical solutions and unparalleled customer support, Aura Chemicals empowers the textile industry to stay competitive and environmentally responsible.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/plastics.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Plastics and Polymers Industry</h3>\n\n\n\n<p>Aura is a trusted partner to the plastic and polymers industry, providing a wide range of high-performance chemicals designed to enhance production processes and product quality.<br>Our portfolio includes plasticizers, stabilizers, additives, and catalysts that improve the flexibility, durability, and strength of plastic products. These chemicals are essential for manufacturing a variety of applications, from packaging materials to automotive components, ensuring high-quality and sustainable polymer products.<br>By offering innovative solutions and expert technical support, Aura Chemicals empowers the plastic and polymers industry to meet growing market demands, optimize manufacturing efficiency, and maintain environmental compliance.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/mining.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Mining and Mettalurgy</h3>\n\n\n\n<p>Aura is a trusted supplier to the mining and metallurgy industry, offering a diverse range of chemicals designed to optimize mineral extraction, processing, and metal production.<br>Our products include flotation agents, leaching chemicals, corrosion inhibitors, and solvent extraction reagents, all tailored to enhance efficiency, recovery rates, and environmental sustainability. These chemicals help streamline processes in ore refining, metal extraction, and the treatment of mining by-products.<br>With a focus on performance and environmental responsibility, Aura Chemicals supports the mining and metallurgy industry in achieving higher productivity, lower environmental impact, and better resource utilization.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/tyre.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Rubber and Tyre Industry</h3>\n\n\n\n<p>Aura  is a reliable partner for the rubber and tyre industry, supplying a comprehensive range of high-quality chemicals essential for manufacturing durable and high-performance products.<br>Our offerings include vulcanizing agents, accelerators, fillers, antioxidants, and specialty additives that enhance elasticity, strength, and resistance in rubber formulations. These solutions are tailored to meet the demanding requirements of tyre production and other rubber-based applications, ensuring consistency and superior quality.<br>With a commitment to innovation and sustainability, Aura Chemicals supports the rubber and tyre industry in achieving efficient production processes, improved product performance, and environmental compliance.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/paint.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Paintings and Coatings Industry</h3>\n\n\n\n<p>Aura is a reliable partner for the painting and coating industry, offering a wide range of high-quality chemicals designed to enhance the performance, durability, and aesthetics of coatings.<br>Our product offerings include resins, binders, pigments, solvents, and additives that improve color retention, texture, adhesion, and resistance to environmental factors. Whether for industrial coatings, decorative paints, or automotive finishes, our chemicals are formulated to meet the highest standards of quality and performance.<br>By providing innovative solutions and expert support, Aura Chemicals helps the painting and coating industry deliver superior, long-lasting finishes while maintaining sustainability and regulatory compliance.</p>\n\n\n\n<figure class=\"wp-block-image\"><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/constuction.jpeg\" alt=\"\"/></figure>\n\n\n\n<h3 class=\"wp-block-heading\">Construction Industry</h3>\n\n\n\n<p>Aura is a trusted partner for the construction industry, offering a wide range of high-performance chemicals designed to enhance building materials and construction processes.<br>Our products include concrete additives, waterproofing agents, sealants, accelerators, and retarders that improve the durability, strength, and workability of construction materials. These solutions help ensure better quality, faster project completion, and enhanced resistance to weathering and wear.<br>With a focus on sustainability and innovation, Aura Chemicals supports the construction industry in building safer, more efficient, and environmentally-friendly structures, helping meet the evolving demands of modern construction projects.</p>\n"
+  },
+  {
+    "type": "page",
+    "id": 103,
+    "slug": "privacy-policy-2",
+    "wp_title": "Privacy Policy",
+    "doc_title": "Privacy Policy",
+    "url": "https://aurachemicals.in/privacy-policy-2/",
+    "date": "2024-01-27T21:14:52",
+    "modified": "2024-12-12T06:41:53",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "PRIVACY POLICY"
+      },
+      {
+        "tag": "h2",
+        "text": "1. Information We Collect"
+      },
+      {
+        "tag": "h3",
+        "text": "1.1 Personal Information"
+      },
+      {
+        "tag": "h3",
+        "text": "1.2 Non-Personal Information"
+      },
+      {
+        "tag": "h3",
+        "text": "1.3 Information from Third Parties"
+      },
+      {
+        "tag": "h2",
+        "text": "2. How We Use Your Information"
+      },
+      {
+        "tag": "h2",
+        "text": "3. Sharing Your Information"
+      },
+      {
+        "tag": "h2",
+        "text": "4. Cookies and Tracking Technologies"
+      },
+      {
+        "tag": "h2",
+        "text": "5. Data Security"
+      },
+      {
+        "tag": "h2",
+        "text": "6. Retention of Information"
+      },
+      {
+        "tag": "h2",
+        "text": "7. Your Rights"
+      },
+      {
+        "tag": "h2",
+        "text": "8. Third-Party Links"
+      },
+      {
+        "tag": "h2",
+        "text": "9. Children’s Privacy"
+      },
+      {
+        "tag": "h2",
+        "text": "10. Updates to This Privacy Policy"
+      },
+      {
+        "tag": "h2",
+        "text": "11. Contact Us"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "PRIVACY POLICY\nWe are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website, interact with us, or use our services.\n1. Information We Collect\n1.1 Personal Information\nName\nEmail address\nPhone number\nCompany name\nAddress\nJob title or role\n1.2 Non-Personal Information\nBrowser type and version\nIP address\nDevice type\nPages visited on our website\nDate and time of access\nReferring website URLs\n1.3 Information from Third Parties\nWe may receive information about you from third parties, such as public databases, marketing partners, or social media platforms, as permitted by applicable laws.\n2. How We Use Your Information\nProcess inquiries and orders related to our products and services.\nProvide customer support and respond to your requests.\nImprove our website, products, and services.\nSend you marketing communications, updates, and promotional offers (if you have opted in).\nComply with legal obligations and enforce our terms of service.\n3. Sharing Your Information\nWe do not sell your personal information. However, we may share your information with:\nService Providers:\nThird-party vendors who assist us in providing services such as payment processing, delivery, marketing, and website hosting.\nLegal Authorities:\nIf required to comply with legal obligations or protect our rights, property, or safety.\nBusiness Transfers:\nIn the event of a merger, acquisition, or sale of our business, your information may be transferred to the new owner.\n4. Cookies and Tracking Technologies\nWe use cookies and similar technologies to:\nEnhance website functionality and user experience.\nAnalyze website traffic and performance.\nDeliver personalized content and advertisements.\nYou can manage your cookie preferences through your browser settings. Disabling cookies may affect certain features of our website.\n5. Data Security\nWe implement appropriate technical and organizational measures to safeguard your information against unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure. We encourage you to take precautions to protect your information.\n6. Retention of Information\nWe retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy unless a longer retention period is required or permitted by law.\n7. Your Rights\nDepending on your jurisdiction, you may have the following rights regarding your personal information:\nAccess:\nRequest access to the personal data we hold about you.\nCorrection:\nRequest corrections to inaccurate or incomplete data.\nDeletion:\nRequest deletion of your personal data (subject to legal and contractual obligations).\nObjection:\nObject to the processing of your personal data for specific purposes, such as marketing.\nData Portability:\nRequest transfer of your data to another service provider.\nTo exercise these rights, please contact us at [Insert Contact Email].\n8. Third-Party Links\nOur website may contain links to third-party websites. We are not responsible for the privacy practices or content of these websites. We encourage you to review their privacy policies before providing any personal information.\n9. Children’s Privacy\nOur services are not directed at children under the age of 13, and we do not knowingly collect personal information from children. If we become aware that we have inadvertently collected information from a child, we will delete it immediately.\n10. Updates to This Privacy Policy\nWe may update this Privacy Policy from time to time to reflect changes in our practices or for legal, regulatory, or operational reasons. Any changes will be posted on this page with an updated “Effective Date.” We encourage you to review this Privacy Policy periodically.\n11. Contact Us\nIf you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us at:\nAura Chemicals\nmanagement.aurachemicals@gmail.com\nBy using our website and services, you agree to the terms of this Privacy Policy.",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h2>PRIVACY POLICY</h2>\n<p>We are committed to protecting your privacy. This Privacy Policy outlines how we collect, use, and protect your personal information when you visit our website, interact with us, or use our services.</p>\n<h2>1. Information We Collect</h2>\n<h3>1.1 Personal Information</h3>\n<ul>\n<li>Name</li>\n<li>Email address</li>\n<li>Phone number</li>\n<li>Company name</li>\n<li>Address</li>\n<li>Job title or role</li>\n</ul>\n<h3>1.2 Non-Personal Information</h3>\n<ul>\n<li>Browser type and version</li>\n<li>IP address</li>\n<li>Device type</li>\n<li>Pages visited on our website</li>\n<li>Date and time of access</li>\n<li>Referring website URLs</li>\n</ul>\n<h3>1.3 Information from Third Parties</h3>\n<p>We may receive information about you from third parties, such as public databases, marketing partners, or social media platforms, as permitted by applicable laws.</p>\n<h2>2. How We Use Your Information</h2>\n<ul>\n<li>Process inquiries and orders related to our products and services.</li>\n<li>Provide customer support and respond to your requests.</li>\n<li>Improve our website, products, and services.</li>\n<li>Send you marketing communications, updates, and promotional offers (if you have opted in).</li>\n<li>Comply with legal obligations and enforce our terms of service.</li>\n</ul>\n<h2>3. Sharing Your Information</h2>\n<p>We do not sell your personal information. However, we may share your information with:</p>\n<ul>\n<li><strong>Service Providers:</strong> Third-party vendors who assist us in providing services such as payment processing, delivery, marketing, and website hosting.</li>\n<li><strong>Legal Authorities:</strong> If required to comply with legal obligations or protect our rights, property, or safety.</li>\n<li><strong>Business Transfers:</strong> In the event of a merger, acquisition, or sale of our business, your information may be transferred to the new owner.</li>\n</ul>\n<h2>4. Cookies and Tracking Technologies</h2>\n<p>We use cookies and similar technologies to:</p>\n<ul>\n<li>Enhance website functionality and user experience.</li>\n<li>Analyze website traffic and performance.</li>\n<li>Deliver personalized content and advertisements.</li>\n</ul>\n<p>You can manage your cookie preferences through your browser settings. Disabling cookies may affect certain features of our website.</p>\n<h2>5. Data Security</h2>\n<p>We implement appropriate technical and organizational measures to safeguard your information against unauthorized access, disclosure, alteration, or destruction. However, no method of transmission over the internet or electronic storage is 100% secure. We encourage you to take precautions to protect your information.</p>\n<h2>6. Retention of Information</h2>\n<p>We retain your personal information for as long as necessary to fulfill the purposes outlined in this Privacy Policy unless a longer retention period is required or permitted by law.</p>\n<h2>7. Your Rights</h2>\n<p>Depending on your jurisdiction, you may have the following rights regarding your personal information:</p>\n<ul>\n<li><strong>Access:</strong> Request access to the personal data we hold about you.</li>\n<li><strong>Correction:</strong> Request corrections to inaccurate or incomplete data.</li>\n<li><strong>Deletion:</strong> Request deletion of your personal data (subject to legal and contractual obligations).</li>\n<li><strong>Objection:</strong> Object to the processing of your personal data for specific purposes, such as marketing.</li>\n<li><strong>Data Portability:</strong> Request transfer of your data to another service provider.</li>\n</ul>\n<p>To exercise these rights, please contact us at [Insert Contact Email].</p>\n<h2>8. Third-Party Links</h2>\n<p>Our website may contain links to third-party websites. We are not responsible for the privacy practices or content of these websites. We encourage you to review their privacy policies before providing any personal information.</p>\n<h2>9. Children&#8217;s Privacy</h2>\n<p>Our services are not directed at children under the age of 13, and we do not knowingly collect personal information from children. If we become aware that we have inadvertently collected information from a child, we will delete it immediately.</p>\n<h2>10. Updates to This Privacy Policy</h2>\n<p>We may update this Privacy Policy from time to time to reflect changes in our practices or for legal, regulatory, or operational reasons. Any changes will be posted on this page with an updated &#8220;Effective Date.&#8221; We encourage you to review this Privacy Policy periodically.</p>\n<h2>11. Contact Us</h2>\n<p>If you have any questions or concerns about this Privacy Policy or how we handle your personal information, please contact us at:</p>\n<p><strong>Aura Chemicals</strong><br />management.aurachemicals@gmail.com</p>\n<p>By using our website and services, you agree to the terms of this Privacy Policy.</p>\n"
+  },
+  {
+    "type": "page",
+    "id": 110,
+    "slug": "my-account",
+    "wp_title": "My account",
+    "doc_title": "My account",
+    "url": "https://aurachemicals.in/my-account/",
+    "date": "2024-01-26T09:08:08",
+    "modified": "2024-01-26T09:08:08",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large, noindex, follow",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "My account"
+      },
+      {
+        "tag": "h2",
+        "text": "Login"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [
+      {
+        "id": "",
+        "action": "",
+        "method": "post",
+        "classes": "woocommerce-form woocommerce-form-login login",
+        "fields": [
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "username",
+            "id": "username",
+            "placeholder": "",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "password",
+            "name": "password",
+            "id": "password",
+            "placeholder": "",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "name": "rememberme",
+            "id": "rememberme",
+            "placeholder": "",
+            "value": "forever",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "woocommerce-login-nonce",
+            "id": "woocommerce-login-nonce",
+            "placeholder": "",
+            "value": "ff0b4c36a9",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "_wp_http_referer",
+            "id": "",
+            "placeholder": "",
+            "value": "/my-account/",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "button",
+            "type": "submit",
+            "name": "login",
+            "id": "",
+            "placeholder": "",
+            "value": "Log in",
+            "required": false,
+            "options": []
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/my-account/lost-password/",
+        "text": "Lost your password?"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "My account\nLogin\nUsername or email address\n*\nPassword\n*\nRemember me\nLog in\nLost your password?",
+    "wp_content": "<div class=\"woocommerce\"></div>\n"
+  },
+  {
+    "type": "page",
+    "id": 109,
+    "slug": "checkout",
+    "wp_title": "Checkout",
+    "doc_title": "Cart",
+    "url": "https://aurachemicals.in/checkout/",
+    "date": "2024-01-26T09:08:08",
+    "modified": "2024-01-26T09:08:08",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large, noindex, follow",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Cart"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/shop/",
+        "text": "Return to shop"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Cart\nYour cart is currently empty.\nReturn to shop",
+    "wp_content": "<div class=\"woocommerce\"></div>\n"
+  },
+  {
+    "type": "page",
+    "id": 108,
+    "slug": "cart",
+    "wp_title": "Cart",
+    "doc_title": "Cart",
+    "url": "https://aurachemicals.in/cart/",
+    "date": "2024-01-26T09:08:08",
+    "modified": "2024-01-26T09:08:08",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large, noindex, follow",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Cart"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/shop/",
+        "text": "Return to shop"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Cart\nYour cart is currently empty.\nReturn to shop",
+    "wp_content": "\n"
+  },
+  {
+    "type": "page",
+    "id": 107,
+    "slug": "shop",
+    "wp_title": "Shop",
+    "doc_title": "Shop",
+    "url": "https://aurachemicals.in/shop/",
+    "date": "2024-01-26T09:08:08",
+    "modified": "2024-01-26T09:08:08",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Shop"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Home\n/ Shop\nShop\nNo products were found matching your selection.",
+    "wp_content": ""
+  },
+  {
+    "type": "page",
+    "id": 27,
+    "slug": "home",
+    "wp_title": "Home",
+    "doc_title": "Home",
+    "url": "https://aurachemicals.in/",
+    "date": "2024-01-18T12:20:02",
+    "modified": "2025-08-26T11:28:32",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Home"
+      },
+      {
+        "tag": "h2",
+        "text": "Aura Group of Companies"
+      },
+      {
+        "tag": "h1",
+        "text": "Aura Space Infra Pvt. Ltd."
+      },
+      {
+        "tag": "h2",
+        "text": "Our Company"
+      },
+      {
+        "tag": "h2",
+        "text": "Our Services"
+      },
+      {
+        "tag": "h2",
+        "text": "our Products"
+      },
+      {
+        "tag": "h2",
+        "text": "Solvents"
+      },
+      {
+        "tag": "h2",
+        "text": "API"
+      },
+      {
+        "tag": "h4",
+        "text": "Wide Range of Products"
+      },
+      {
+        "tag": "h4",
+        "text": "Competitive Pricing"
+      },
+      {
+        "tag": "h4",
+        "text": "Reliable Supply Chain"
+      },
+      {
+        "tag": "h3",
+        "text": "Extensive Network"
+      },
+      {
+        "tag": "h2",
+        "text": "OUR CLIENTELE"
+      },
+      {
+        "tag": "h2",
+        "text": "Together We Can Make Awesome Memories"
+      },
+      {
+        "tag": "h2",
+        "text": "Join Us on the Journey to Excellence"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-1024x683.jpg",
+        "alt": "",
+        "title": "",
+        "width": "1024",
+        "height": "683",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/10/515516d9-test-bg-shape.png",
+        "alt": "",
+        "title": "",
+        "width": "242",
+        "height": "291",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/solvents.png",
+        "alt": "",
+        "title": "",
+        "width": "1024",
+        "height": "574",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/apis.jpg",
+        "alt": "",
+        "title": "",
+        "width": "737",
+        "height": "419",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/DALL·E_2024-12-14_12.10.20_-_A_circular_logo_design_with_a_clean_and_modern_aesthetic__using_shades_of_orange_and_golden_colors._The_logo_features_a_variety_of_abstract_chemical_r-transformed.webp",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/10/86142830-icon-2.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/supply.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/earth-4-removebg-preview-260x300.png",
+        "alt": "",
+        "title": "",
+        "width": "260",
+        "height": "300",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/1-150x150.png",
+        "alt": "1",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/2-150x150.png",
+        "alt": "2",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/3-150x150.png",
+        "alt": "3",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/4-150x150.png",
+        "alt": "4",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/5-150x150.png",
+        "alt": "5",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/6-150x150.png",
+        "alt": "6",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/7-150x150.png",
+        "alt": "7",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/12/Untitled-design-7-150x150.png",
+        "alt": "Untitled design (7)",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "Explore More"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "Explore Now"
+      },
+      {
+        "href": "https://aurachemicals.in/products/",
+        "text": "Your Destination"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Home\nAura Group of Companies\nAura Space Infra Pvt. Ltd.\nYour trusted partner in Chemical Excellence\nExplore More\nOur Company\nThe company has received a highly regarded for a reliable and quality suppliers and services from many decades of experiences in the market, long-term close relationship with customers; and thus good understanding of customer needs.\nOur Services\nAssured quality and security in API supplies via 400 leading suppliers around the indiaActive with many thousands customers in multiple industries.\nDirect sourcing from domestic manufacturers with expertise in chemistry, the company can efficiently secure supplies and create customized compound and deliver the high quality products to customers.\nour Products\nSolvents\nAPI\nExplore Now\nWide Range of Products\nAura Chemicals offers a diverse portfolio of chemical solutions catering to various industries. Whether you’re in manufacturing, agriculture, or healthcare, we have the right products to meet your specific needs.\nCompetitive Pricing\nExperience affordability without compromising quality. Aura Chemicals offers competitive pricing, making our products accessible to businesses of all sizes.\nReliable Supply Chain\nCount on a consistent and reliable supply chain when you choose Aura Chemicals. We understand the importance of timely deliveries, ensuring that your operations run smoothly without interruptions.\nExtensive Network\nThrough experiences over 7 years since 2014 in the API distribution business. It is classified as Non-Government company and is registered at Registrar of Companies.\nROC Ahmedabad.\nOUR CLIENTELE\nTogether We Can Make Awesome Memories\nJoin Us on the Journey to Excellence\nWhether you’re a small-scale enterprise or a large industrial player, Aura Chemicals Pvt Ltd invites you to join us on the journey to excellence. Experience the reliability, innovation, and customer satisfaction that have made us a trusted name in chemical trading.\nAt Aura Chemicals Pvt Ltd, we go beyond trading chemicals; we forge partnerships, empower industries, and contribute to a future of sustainable growth. Choose us as your preferred chemical trading partner, and let’s build success together.\nYour Destination",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */<br />\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h2>Aura Group of Companies</h2>\n<h1>Aura Space Infra Pvt. Ltd.</h1>\n<p>Your trusted partner in Chemical Excellence</p>\n<p><a href=\"https://aurachemicals.in/about-us/\"><br />\nExplore More<br />\n</a></p>\n<style>/*! elementor - v3.18.0 - 20-12-2023 */<br />\n.elementor-widget-image{text-align:center}.elementor-widget-image a{display:inline-block}.elementor-widget-image a img[src$=\".svg\"]{width:48px}.elementor-widget-image img{vertical-align:middle;display:inline-block}</style>\n<p><img loading=\"lazy\" decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-1024x683.jpg\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" srcset=\"https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-1024x683.jpg 1024w, https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-300x200.jpg 300w, https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-768x512.jpg 768w, https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-1536x1024.jpg 1536w, https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-2048x1365.jpg 2048w, https://aurachemicals.in/wp-content/uploads/2024/10/pexels-pixabay-247763-600x400.jpg 600w\" alt=\"\" width=\"1024\" height=\"683\" /></p>\n<h2>Our Company</h2>\n<p>The company has received a highly regarded for a reliable and quality suppliers and services from many decades of experiences in the market, long-term close relationship with customers; and thus good understanding of customer needs.</p>\n<p><img loading=\"lazy\" decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/10/515516d9-test-bg-shape.png\" alt=\"\" width=\"242\" height=\"291\" /></p>\n<h2>Our Services</h2>\n<p>Assured quality and security in API supplies via 400 leading suppliers around the indiaActive with many thousands customers in multiple industries.</p>\n<p>Direct sourcing from domestic manufacturers with expertise in chemistry, the company can efficiently secure supplies and create customized compound and deliver the high quality products to customers.</p>\n<h2>our Products</h2>\n<p><img loading=\"lazy\" decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/solvents.png\" sizes=\"auto, (max-width: 1024px) 100vw, 1024px\" srcset=\"https://aurachemicals.in/wp-content/uploads/2024/12/solvents.png 1024w, https://aurachemicals.in/wp-content/uploads/2024/12/solvents-300x168.png 300w, https://aurachemicals.in/wp-content/uploads/2024/12/solvents-768x431.png 768w, https://aurachemicals.in/wp-content/uploads/2024/12/solvents-600x336.png 600w\" alt=\"\" width=\"1024\" height=\"574\" /></p>\n<h2>Solvents</h2>\n<p><img loading=\"lazy\" decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/apis.jpg\" sizes=\"auto, (max-width: 737px) 100vw, 737px\" srcset=\"https://aurachemicals.in/wp-content/uploads/2024/12/apis.jpg 737w, https://aurachemicals.in/wp-content/uploads/2024/12/apis-300x171.jpg 300w, https://aurachemicals.in/wp-content/uploads/2024/12/apis-600x341.jpg 600w\" alt=\"\" width=\"737\" height=\"419\" /></p>\n<h2>API</h2>\n<p><a href=\"https://aurachemicals.in/apis/\"><br />\nExplore Now<br />\n</a><br />\n<img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/DALL·E_2024-12-14_12.10.20_-_A_circular_logo_design_with_a_clean_and_modern_aesthetic__using_shades_of_orange_and_golden_colors._The_logo_features_a_variety_of_abstract_chemical_r-transformed.webp\" alt=\"\" /></p>\n<h4>Wide Range of Products</h4>\n<p>Aura Chemicals offers a diverse portfolio of chemical solutions catering to various industries. Whether you&#8217;re in manufacturing, agriculture, or healthcare, we have the right products to meet your specific needs.</p>\n<p><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/10/86142830-icon-2.png\" alt=\"\" /></p>\n<h4>Competitive Pricing</h4>\n<p>Experience affordability without compromising quality. Aura Chemicals offers competitive pricing, making our products accessible to businesses of all sizes.</p>\n<p><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/supply.png\" alt=\"\" /></p>\n<h4>Reliable Supply Chain</h4>\n<p>Count on a consistent and reliable supply chain when you choose Aura Chemicals. We understand the importance of timely deliveries, ensuring that your operations run smoothly without interruptions.</p>\n<p><img loading=\"lazy\" decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/earth-4-removebg-preview-260x300.png\" sizes=\"auto, (max-width: 260px) 100vw, 260px\" srcset=\"https://aurachemicals.in/wp-content/uploads/2024/12/earth-4-removebg-preview-260x300.png 260w, https://aurachemicals.in/wp-content/uploads/2024/12/earth-4-removebg-preview.png 465w\" alt=\"\" width=\"260\" height=\"300\" /></p>\n<h3>Extensive Network</h3>\n<p>Through experiences over 7 years since 2014 in the API distribution business. It is classified as Non-Government company and is registered at Registrar of Companies.</p>\n<p>ROC Ahmedabad.</p>\n<h2>OUR CLIENTELE</h2>\n<style>/*! elementor - v3.18.0 - 20-12-2023 */<br />\n.elementor-widget-image-carousel .swiper,.elementor-widget-image-carousel .swiper-container{position:static}.elementor-widget-image-carousel .swiper-container .swiper-slide figure,.elementor-widget-image-carousel .swiper .swiper-slide figure{line-height:inherit}.elementor-widget-image-carousel .swiper-slide{text-align:center}.elementor-image-carousel-wrapper:not(.swiper-container-initialized):not(.swiper-initialized) .swiper-slide{max-width:calc(100% / var(--e-image-carousel-slides-to-show, 3))}</style>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/1-150x150.png\" alt=\"1\" /></figure>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/2-150x150.png\" alt=\"2\" /></figure>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/3-150x150.png\" alt=\"3\" /></figure>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/4-150x150.png\" alt=\"4\" /></figure>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/5-150x150.png\" alt=\"5\" /></figure>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/6-150x150.png\" alt=\"6\" /></figure>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/7-150x150.png\" alt=\"7\" /></figure>\n<figure><img decoding=\"async\" src=\"https://aurachemicals.in/wp-content/uploads/2024/12/Untitled-design-7-150x150.png\" alt=\"Untitled design (7)\" /></figure>\n<h2>Together We Can Make Awesome Memories</h2>\n<h2>Join Us on the Journey to Excellence</h2>\n<p>Whether you&#8217;re a small-scale enterprise or a large industrial player, Aura Chemicals Pvt Ltd invites you to join us on the journey to excellence. Experience the reliability, innovation, and customer satisfaction that have made us a trusted name in chemical trading.</p>\n<p>At Aura Chemicals Pvt Ltd, we go beyond trading chemicals; we forge partnerships, empower industries, and contribute to a future of sustainable growth. Choose us as your preferred chemical trading partner, and let&#8217;s build success together.</p>\n<p><a href=\"https://aurachemicals.in/products/\"><br />\nYour Destination<br />\n</a></p>\n"
+  },
+  {
+    "type": "page",
+    "id": 15,
+    "slug": "our-mission",
+    "wp_title": "OUR MISSION",
+    "doc_title": "OUR MISSION",
+    "url": "https://aurachemicals.in/our-mission/",
+    "date": "2024-01-18T12:15:57",
+    "modified": "2024-12-30T15:30:44",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "OUR MISSION"
+      },
+      {
+        "tag": "h3",
+        "text": "Sustainability at the Core"
+      },
+      {
+        "tag": "h3",
+        "text": "Innovation Drives Us"
+      },
+      {
+        "tag": "h3",
+        "text": "Collaboration and Growth"
+      },
+      {
+        "tag": "h3",
+        "text": "Our Vision"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "OUR MISSION\nAt Aura Chemicals, established in 2014,\nour mission is to be a trusted and innovative partner in the chemical trading industry. We are committed to delivering superior-quality chemical products and services to our clients, fostering sustainable growth, and contributing positively to the industries we serve.\nRooted in a deep understanding of the global chemical market, we strive to build long-term relationships with our customers and suppliers by consistently providing reliable, efficient, and tailored solutions. We prioritize the highest standards of integrity, transparency, and professionalism in every transaction, ensuring mutual success and satisfaction.\nSustainability at the Core\nSustainability is at the heart of our mission. We are dedicated to promoting environmentally responsible practices by sourcing and distributing eco-friendly and high-performance chemicals that align with global environmental standards. Our aim is to empower industries to achieve their goals while reducing their ecological footprint.\nInnovation Drives Us\nInnovation drives our approach as we continuously seek to adopt advanced technologies, improve supply chain efficiency, and provide unparalleled customer support. We endeavor to anticipate market demands, offering competitive pricing, timely delivery, and personalized service to exceed client expectations.\nCollaboration and Growth\nWe believe in the power of collaboration, not only within our organization but also with our stakeholders. By fostering an inclusive and growth-oriented environment, we empower our team members to contribute their expertise and passion, driving our shared vision forward.\nOur Vision\nAt Aura Chemicals, we envision a future where we are recognized as a leading chemical trading company that balances profitability with responsibility, providing value to our clients, communities, and the planet. Our journey is guided by the principle of excellence, as we continue to innovate, adapt, and lead in the dynamic world of chemical trade.\nAura Chemicals continues to expand its footprint globally with a commitment to excellence, sustainability, and innovation. For more information or inquiries, reach out to us at\n+91 7220000877\n.",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h2>OUR MISSION</h2>\n<style>﻿<br />\n    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');</p>\n<p>    body {<br />\n        font-family: 'Lora', serif;<br />\n        background-color: #f4f4f4;<br />\n        color: #333;<br />\n        margin: 0;<br />\n        padding: 10px;<br />\n        line-height: 1.6;<br />\n    }</p>\n<p>    .container {<br />\n        background-color: #ffffff;<br />\n        border-radius: 10px;<br />\n        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);<br />\n        padding: 30px;<br />\n        max-width: 90%;<br />\n        margin: 20px auto;<br />\n    }</p>\n<p>    h3 {<br />\n        color: #f8981d;<br />\n        border-bottom: 2px solid #f8981d;<br />\n        padding-bottom: 5px;<br />\n        margin-top: 20px;<br />\n    }</p>\n<p>    strong {<br />\n        color: #f8981d;<br />\n    }</p>\n<p>    ul {<br />\n        padding-left: 20px;<br />\n    }</p>\n<p>    li {<br />\n        margin-bottom: 10px;<br />\n    }</p>\n<p>    .highlight {<br />\n        color: #f8981d;<br />\n        font-weight: 600;<br />\n    }</p>\n<p>    .footer {<br />\n        margin-top: 20px;<br />\n        font-size: 1.1em;<br />\n        font-weight: 600;<br />\n    }<br />\n</style>\n<p><strong>At Aura Chemicals, established in 2014,</strong> our mission is to be a trusted and innovative partner in the chemical trading industry. We are committed to delivering superior-quality chemical products and services to our clients, fostering sustainable growth, and contributing positively to the industries we serve.<br />\nRooted in a deep understanding of the global chemical market, we strive to build long-term relationships with our customers and suppliers by consistently providing reliable, efficient, and tailored solutions. We prioritize the highest standards of integrity, transparency, and professionalism in every transaction, ensuring mutual success and satisfaction.</p>\n<h3><strong>Sustainability at the Core</strong></h3>\n<p>Sustainability is at the heart of our mission. We are dedicated to promoting environmentally responsible practices by sourcing and distributing eco-friendly and high-performance chemicals that align with global environmental standards. Our aim is to empower industries to achieve their goals while reducing their ecological footprint.</p>\n<h3><strong>Innovation Drives Us</strong></h3>\n<p>Innovation drives our approach as we continuously seek to adopt advanced technologies, improve supply chain efficiency, and provide unparalleled customer support. We endeavor to anticipate market demands, offering competitive pricing, timely delivery, and personalized service to exceed client expectations.</p>\n<h3><strong>Collaboration and Growth</strong></h3>\n<p>We believe in the power of collaboration, not only within our organization but also with our stakeholders. By fostering an inclusive and growth-oriented environment, we empower our team members to contribute their expertise and passion, driving our shared vision forward.</p>\n<h3><strong>Our Vision</strong></h3>\n<p>At Aura Chemicals, we envision a future where we are recognized as a leading chemical trading company that balances profitability with responsibility, providing value to our clients, communities, and the planet. Our journey is guided by the principle of excellence, as we continue to innovate, adapt, and lead in the dynamic world of chemical trade.</p>\n<p>Aura Chemicals continues to expand its footprint globally with a commitment to excellence, sustainability, and innovation. For more information or inquiries, reach out to us at <strong>+91 7220000877</strong>.</p>\n"
+  },
+  {
+    "type": "page",
+    "id": 11,
+    "slug": "about-us",
+    "wp_title": "ABOUT US",
+    "doc_title": "ABOUT US",
+    "url": "https://aurachemicals.in/about-us/",
+    "date": "2024-01-18T12:15:57",
+    "modified": "2025-08-26T11:49:15",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "ABOUT US"
+      },
+      {
+        "tag": "h3",
+        "text": "Business Overview"
+      },
+      {
+        "tag": "h3",
+        "text": "Why Choose Us"
+      },
+      {
+        "tag": "h3",
+        "text": "Our Vision"
+      },
+      {
+        "tag": "h3",
+        "text": "Our Mission"
+      },
+      {
+        "tag": "h3",
+        "text": "Commitment to Sustainability"
+      },
+      {
+        "tag": "h3",
+        "text": "Collaboration and Growth"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "ABOUT US\nAt Aura Space Infra\nPrivate Limited,\nwe are a trusted and reliable name in the global pharmaceutical and chemical trading industry. With over a decade of experience, we specialize in providing high-quality APIs (Active Pharmaceutical Ingredients), intermediates, and specialty chemicals that meet stringent regulatory standards. Our commitment to sourcing and trading products of the highest quality ensures that we meet the diverse needs of our clients across various industries, including pharmaceuticals, agrochemicals, biotechnology, and more.\nBusiness Overview\nAura Space Infra Private Limited is a premier distributor and service provider of a wide range of high-quality solvents and APIs for the pharmaceutical industry, as well as other key sectors such as agrochemicals, biotechnology, food and beverage, and cosmetics. We specialize in sourcing and trading products that meet the strictest regulatory standards while catering to the ever-evolving demands of our diverse client base.\nWhy Choose Us\nAura is your trusted partner for trading high-quality APIs and solvents that meet international regulatory requirements. Here’s why our clients in industries such as pharmaceuticals, agrochemicals, and biotechnology choose us:\nReliable Sourcing:\nWe have built strong relationships with leading manufacturers to ensure the highest quality products.\nRegulatory Compliance:\nAll our products comply with stringent global regulations and standards, ensuring safety and quality.\nDiverse Product Portfolio:\nWe provide a wide range of solvents and APIs suitable for various industries and applications, including cosmetics and food and beverage.\nCustomer-Centric Service:\nOur team works closely with clients to understand their needs and provide tailored solutions that exceed expectations.\nTimely Delivery:\nWe prioritize on-time delivery, helping our clients maintain smooth operations and avoid supply chain disruptions.\nOur Vision\nAt Aura Space Infra Private Limited, our vision is to be the leading trading company in the API and chemical sector, recognized for delivering exceptional products and services. We aim to provide value to our clients by sourcing and trading high-quality materials that support innovation and growth in industries across the globe, from pharmaceuticals to biotechnology. Our commitment to ethical business practices and sustainability ensures we make a positive impact on our clients, communities, and the environment.\nOur Mission\nOur mission is to provide reliable, cost-effective, and high-quality solutions to our clients. We strive to be the trusted partner of choice in the API and chemical distribution industry, continuously expanding our product offerings and services to meet the growing needs of the markets we serve, including agrochemicals, food and beverage, and cosmetics. Our focus on sustainability, regulatory compliance, and innovation drives us to constantly improve and adapt in a rapidly changing world.\nCommitment to Sustainability\nSustainability is at the core of our business practices. We ensure that the products we trade are environmentally responsible and aligned with global standards for safety and sustainability. Our commitment to sustainability extends beyond the products we offer, as we actively work to reduce our carbon footprint and promote green practices across our operations, supporting industries like environmental manufacturing and agrochemicals.\nCollaboration and Growth\nAt Aura Space Infra Pvt Ltd , we believe in the power of collaboration. We work closely with our clients, suppliers, and partners to foster innovation and drive sustainable growth. Our team is committed to fostering a work environment that encourages learning, development, and the exchange of ideas to support our shared vision for the future, especially in industries like biotechnology and food and beverage.\nFor more information or inquiries, reach out to us at\n+91 7220000877\n.",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */<br />\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h1>ABOUT US</h1>\n<style>\n    @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;600&display=swap');<br />\n    body {<br />\n        font-family: 'Lora', serif;<br />\n        background-color: #f4f4f4;<br />\n        color: #333;<br />\n        margin: 0;<br />\n        padding: 20px;<br />\n        line-height: 1.8;<br />\n    }<br />\n    .container {<br />\n        background-color: #ffffff;<br />\n        border-radius: 15px;<br />\n        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);<br />\n        padding: 40px;<br />\n        max-width: 90%;<br />\n        margin: 40px auto;<br />\n        font-size: 1.1em;<br />\n    }<br />\n    h1, h3 {<br />\n        color: #f8981d;<br />\n        font-weight: 600;<br />\n    }<br />\n    h1 {<br />\n        text-align: center;<br />\n        margin-bottom: 30px;<br />\n    }<br />\n    h3 {<br />\n        border-bottom: 3px solid #f8981d;<br />\n        padding-bottom: 10px;<br />\n        margin-top: 30px;<br />\n    }<br />\n    .highlight {<br />\n        color: #f8981d;<br />\n        font-weight: 600;<br />\n    }<br />\n    .footer {<br />\n        margin-top: 30px;<br />\n        font-size: 1.1em;<br />\n        font-weight: 600;<br />\n        text-align: center;<br />\n    }<br />\n    .service-list {<br />\n        padding-left: 20px;<br />\n    }<br />\n    .service-list li {<br />\n        margin-bottom: 15px;<br />\n        font-size: 1.1em;<br />\n    }<br />\n    .about-text {<br />\n        line-height: 1.8;<br />\n    }<br />\n    .cta-button {<br />\n        background-color: #f8981d;<br />\n        color: white;<br />\n        padding: 10px 20px;<br />\n        text-decoration: none;<br />\n        border-radius: 5px;<br />\n        display: inline-block;<br />\n        font-weight: 600;<br />\n        margin-top: 20px;<br />\n    }<br />\n    .cta-button:hover {<br />\n        background-color: #e7881a;<br />\n    }<br />\n</style>\n<p><strong>At Aura Space Infra </strong><strong>Private Limited,</strong> we are a trusted and reliable name in the global pharmaceutical and chemical trading industry. With over a decade of experience, we specialize in providing high-quality APIs (Active Pharmaceutical Ingredients), intermediates, and specialty chemicals that meet stringent regulatory standards. Our commitment to sourcing and trading products of the highest quality ensures that we meet the diverse needs of our clients across various industries, including pharmaceuticals, agrochemicals, biotechnology, and more.</p>\n<h3><strong>Business Overview</strong></h3>\n<p>Aura Space Infra Private Limited is a premier distributor and service provider of a wide range of high-quality solvents and APIs for the pharmaceutical industry, as well as other key sectors such as agrochemicals, biotechnology, food and beverage, and cosmetics. We specialize in sourcing and trading products that meet the strictest regulatory standards while catering to the ever-evolving demands of our diverse client base.</p>\n<h3><strong>Why Choose Us</strong></h3>\n<p>Aura is your trusted partner for trading high-quality APIs and solvents that meet international regulatory requirements. Here&#8217;s why our clients in industries such as pharmaceuticals, agrochemicals, and biotechnology choose us:</p>\n<ul>\n<li><strong>Reliable Sourcing:</strong> We have built strong relationships with leading manufacturers to ensure the highest quality products.</li>\n<li><strong>Regulatory Compliance:</strong> All our products comply with stringent global regulations and standards, ensuring safety and quality.</li>\n<li><strong>Diverse Product Portfolio:</strong> We provide a wide range of solvents and APIs suitable for various industries and applications, including cosmetics and food and beverage.</li>\n<li><strong>Customer-Centric Service:</strong> Our team works closely with clients to understand their needs and provide tailored solutions that exceed expectations.</li>\n<li><strong>Timely Delivery:</strong> We prioritize on-time delivery, helping our clients maintain smooth operations and avoid supply chain disruptions.</li>\n</ul>\n<h3><strong>Our Vision</strong></h3>\n<p>At Aura Space Infra Private Limited, our vision is to be the leading trading company in the API and chemical sector, recognized for delivering exceptional products and services. We aim to provide value to our clients by sourcing and trading high-quality materials that support innovation and growth in industries across the globe, from pharmaceuticals to biotechnology. Our commitment to ethical business practices and sustainability ensures we make a positive impact on our clients, communities, and the environment.</p>\n<h3><strong>Our Mission</strong></h3>\n<p>Our mission is to provide reliable, cost-effective, and high-quality solutions to our clients. We strive to be the trusted partner of choice in the API and chemical distribution industry, continuously expanding our product offerings and services to meet the growing needs of the markets we serve, including agrochemicals, food and beverage, and cosmetics. Our focus on sustainability, regulatory compliance, and innovation drives us to constantly improve and adapt in a rapidly changing world.</p>\n<h3><strong>Commitment to Sustainability</strong></h3>\n<p>Sustainability is at the core of our business practices. We ensure that the products we trade are environmentally responsible and aligned with global standards for safety and sustainability. Our commitment to sustainability extends beyond the products we offer, as we actively work to reduce our carbon footprint and promote green practices across our operations, supporting industries like environmental manufacturing and agrochemicals.</p>\n<h3><strong>Collaboration and Growth</strong></h3>\n<p>At Aura Space Infra Pvt Ltd , we believe in the power of collaboration. We work closely with our clients, suppliers, and partners to foster innovation and drive sustainable growth. Our team is committed to fostering a work environment that encourages learning, development, and the exchange of ideas to support our shared vision for the future, especially in industries like biotechnology and food and beverage.</p>\n<p>For more information or inquiries, reach out to us at <strong>+91 7220000877</strong>.</p>\n"
+  },
+  {
+    "type": "page",
+    "id": 10,
+    "slug": "products",
+    "wp_title": "PRODUCTS",
+    "doc_title": "PRODUCTS",
+    "url": "https://aurachemicals.in/products/",
+    "date": "2024-01-18T12:15:57",
+    "modified": "2024-12-17T08:24:43",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h2",
+        "text": "OUR PRODUCTS"
+      },
+      {
+        "tag": "h2",
+        "text": "M/S. GRASIM IND. LTD."
+      },
+      {
+        "tag": "h2",
+        "text": "M/S. MAGNESIA CHEMICAL LLP"
+      },
+      {
+        "tag": "h2",
+        "text": "SOLVENTS"
+      },
+      {
+        "tag": "h2",
+        "text": "OUR MANUFACTURING PRODUCTS"
+      },
+      {
+        "tag": "h2",
+        "text": "OUR OWN IMPORT PRODUCTS"
+      },
+      {
+        "tag": "h2",
+        "text": "MORE PRODUCTS FOR ETP"
+      },
+      {
+        "tag": "h2",
+        "text": "OTHER PRODUCTS"
+      },
+      {
+        "tag": "h2",
+        "text": "GACL PRODUCTS"
+      },
+      {
+        "tag": "h2",
+        "text": "ACID"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "OUR PRODUCTS\nM/S. GRASIM IND. LTD.\nBleaching Powder (Vikram Brand)\nAluminium Chloride\nSodium Sulphate\nBleaching Granules (RANSA)\nCaustic Flakes & Lye\nPoly Aluminium Chloride (Powder & Liq.)\nM/S. MAGNESIA CHEMICAL LLP\nPowder Technical\nCrystalline Granules\nNormal Crystal\nBold Crystal\nSOLVENTS\nMEG\nDMF\nTOLUENE\nACETONE\nN-HEXENE\nETHYL Acetate\nIPA\nOUR MANUFACTURING PRODUCTS\nMono Sodium Phosphate (Anhydrous & Crystals)\nDi Sodium Phosphate (Anhydrous & Crystals)\nTri Sodium Phosphate (Anhydrous & Crystals)\nTetra Sodium Pyro Phosphate\nMono Potassium Phosphate\nTri Potassium Phosphate\nMono Ammonium Phosphate\nSodium Acid Pyro Phosphate\nDi Potassium Phosphate\nTetra Potassium Pyro Phosphate\nDi Ammonium Phosphate\nOUR OWN IMPORT PRODUCTS\nEDTA di sodium / Tetra Sodium & EDTA Acid Jack Chem China\nSodium Percabonate Coated Granules & Tablets China Make\nCitric Acid Mono / Anhydrous China Make\nSodium Gluconate\nXanthum gum\nMORE PRODUCTS FOR ETP\nTechnical Urea\nAluminium Sulphate (Ferric & Non Ferric)\nFerric Chloride Powder\nSodium Hypochlorite (Hypo)\nLime\nAnti Scaling Agent\nBleaching Powder GACL Make\nPoly Electrolyte\nSodium Sulphite 96 %\nSodium Sulphide (Na2S) Yellow Flakes Iron Free\nTextile Chemicals or Commercial Grade\nTartaric Acid\nCitric Acid\nOxalic Acid\nPrecipitated Silica Powder (Powder & Granules Grade)\nPesticide grade\nTyre grade\nFood grade\nFeed grade\nFootwear grade\nToothpaste grade\nOTHER PRODUCTS\nBleaching Powder\nHP (Hydrogen Peroxide)\nCaustic Potash\nCaustic Prills\nPotassium Carbonate Granules & Powder\nPAC powder & Liquid\nGACL PRODUCTS\nSodium Bicarbonate\nSoda Ash\nDi Calcium Phosphate-feed grade\nSodium Acetate trihydrate & Anhydrous\nSodium Nitrite & Nitrate\nBKC 50% & 80%\nCalcium Carbonate (Lime Stone)\nACID\nAcetic Acid – Improted & GNFC\nFormic Acid 85% – GNFC\nHCL\nSulphuric Acid 98%\nPhosphoric Acid Tech. 85%\nSulphamic Acid",
+    "wp_content": "<style>/*! elementor - v3.18.0 - 20-12-2023 */\n.elementor-heading-title{padding:0;margin:0;line-height:1}.elementor-widget-heading .elementor-heading-title[class*=elementor-size-]>a{color:inherit;font-size:inherit;line-height:inherit}.elementor-widget-heading .elementor-heading-title.elementor-size-small{font-size:15px}.elementor-widget-heading .elementor-heading-title.elementor-size-medium{font-size:19px}.elementor-widget-heading .elementor-heading-title.elementor-size-large{font-size:29px}.elementor-widget-heading .elementor-heading-title.elementor-size-xl{font-size:39px}.elementor-widget-heading .elementor-heading-title.elementor-size-xxl{font-size:59px}</style>\n<h2>OUR PRODUCTS</h2>\n<h2>M/S. GRASIM IND. LTD.</h2>\n<ul>\n<li>Bleaching Powder (Vikram Brand)</li>\n<li>Aluminium Chloride</li>\n<li>Sodium Sulphate</li>\n<li>Bleaching Granules (RANSA)</li>\n<li>Caustic Flakes &amp; Lye</li>\n<li>Poly Aluminium Chloride (Powder &amp; Liq.)</li>\n</ul>\n<h2>M/S. MAGNESIA CHEMICAL LLP</h2>\n<ul>\n<li>Powder Technical</li>\n<li>Crystalline Granules</li>\n<li>Normal Crystal</li>\n<li>Bold Crystal</li>\n</ul>\n<h2>SOLVENTS</h2>\n<ul>\n<li>MEG</li>\n<li>DMF</li>\n<li>TOLUENE</li>\n<li>ACETONE</li>\n<li>N-HEXENE</li>\n<li>ETHYL Acetate</li>\n<li>IPA</li>\n</ul>\n<h2> OUR MANUFACTURING PRODUCTS<br />\n</h2>\n<ul>\n<li>Mono Sodium Phosphate (Anhydrous &amp; Crystals)</li>\n<li>Di Sodium Phosphate (Anhydrous &amp; Crystals)</li>\n<li>Tri Sodium Phosphate (Anhydrous &amp; Crystals)</li>\n<li>Tetra Sodium Pyro Phosphate</li>\n<li>Mono Potassium Phosphate</li>\n<li>Tri Potassium Phosphate</li>\n<li>Mono Ammonium Phosphate</li>\n<li>Sodium Acid Pyro Phosphate</li>\n<li>Di Potassium Phosphate</li>\n<li>Tetra Potassium Pyro Phosphate</li>\n<li>Di Ammonium Phosphate</li>\n</ul>\n<h2>OUR OWN IMPORT PRODUCTS</h2>\n<ul>\n<li>EDTA di sodium / Tetra Sodium &amp; EDTA Acid Jack Chem China</li>\n<li>Sodium Percabonate Coated Granules &amp; Tablets China Make</li>\n<li>Citric Acid Mono / Anhydrous China Make</li>\n<li>Sodium Gluconate</li>\n<li>Xanthum gum</li>\n</ul>\n<h2>MORE PRODUCTS FOR ETP</h2>\n<ul>\n<li>Technical Urea</li>\n<li>Aluminium Sulphate (Ferric &amp; Non Ferric)</li>\n<li>Ferric Chloride Powder</li>\n<li>Sodium Hypochlorite (Hypo)</li>\n<li>Lime</li>\n<li>Anti Scaling Agent</li>\n<li>Bleaching Powder GACL Make</li>\n<li>Poly Electrolyte</li>\n<li>Sodium Sulphite 96 %</li>\n<li>Sodium Sulphide (Na2S) Yellow Flakes Iron Free</li>\n<li>Textile Chemicals or Commercial Grade\n<ul>\n<li>Tartaric Acid</li>\n<li>Citric Acid</li>\n<li>Oxalic Acid</li>\n</ul>\n</li>\n<li>Precipitated Silica Powder (Powder &amp; Granules Grade)\n<ul>\n<li>Pesticide grade</li>\n<li>Tyre grade</li>\n<li>Food grade</li>\n<li>Feed grade</li>\n<li>Footwear grade</li>\n<li>Toothpaste grade</li>\n</ul>\n</li>\n</ul>\n<h2>OTHER PRODUCTS</h2>\n<ul>\n<li>Bleaching Powder</li>\n<li>HP (Hydrogen Peroxide)</li>\n<li>Caustic Potash</li>\n<li>Caustic Prills</li>\n<li>Potassium Carbonate Granules &amp; Powder</li>\n<li>PAC powder &amp; Liquid</li>\n</ul>\n<h2>GACL PRODUCTS</h2>\n<ul>\n<li>Sodium Bicarbonate</li>\n<li>Soda Ash</li>\n<li>Di Calcium Phosphate-feed grade</li>\n<li>Sodium Acetate trihydrate &amp; Anhydrous</li>\n<li>Sodium Nitrite &amp; Nitrate</li>\n<li>BKC 50% &amp; 80%</li>\n<li>Calcium Carbonate (Lime Stone)</li>\n</ul>\n<h2>ACID</h2>\n<ul>\n<li style=\"list-style-type: none;\">\n<ul>\n<li>Acetic Acid &#8211; Improted &amp; GNFC</li>\n<li>Formic Acid 85% &#8211; GNFC<br />HCL</li>\n<li>Sulphuric Acid 98%</li>\n<li>Phosphoric Acid Tech. 85%</li>\n<li>Sulphamic Acid</li>\n</ul>\n</li>\n</ul>\n"
+  },
+  {
+    "type": "post",
+    "id": 1105,
+    "slug": "solvents",
+    "wp_title": "Solvents",
+    "doc_title": "Solvents",
+    "url": "https://aurachemicals.in/2024/12/17/solvents/",
+    "date": "2024-12-17T06:56:22",
+    "modified": "2024-12-17T07:23:28",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "Solvents"
+      },
+      {
+        "tag": "h3",
+        "text": "Leave a Comment Cancel Reply"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [
+      {
+        "id": "ast-commentform",
+        "action": "https://aurachemicals.in/wp-comments-post.php",
+        "method": "post",
+        "classes": "comment-form",
+        "fields": [
+          {
+            "tag": "textarea",
+            "type": "",
+            "name": "comment",
+            "id": "comment",
+            "placeholder": "Type here..",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "author",
+            "id": "author",
+            "placeholder": "Name*",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "email",
+            "id": "email",
+            "placeholder": "Email*",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "url",
+            "id": "url",
+            "placeholder": "Website",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "name": "wp-comment-cookies-consent",
+            "id": "wp-comment-cookies-consent",
+            "placeholder": "",
+            "value": "yes",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "submit",
+            "name": "submit",
+            "id": "submit",
+            "placeholder": "",
+            "value": "Post Comment",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "comment_post_ID",
+            "id": "comment_post_ID",
+            "placeholder": "",
+            "value": "1105",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "comment_parent",
+            "id": "comment_parent",
+            "placeholder": "",
+            "value": "0",
+            "required": false,
+            "options": []
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/author/aura2024/",
+        "text": "Aura@2024"
+      },
+      {
+        "href": "https://aurachemicals.in/2024/12/17/apis/",
+        "text": "Previous APIs"
+      },
+      {
+        "href": "/2024/12/17/solvents/#respond",
+        "text": "Cancel Reply"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "Solvents\nBy\nAura@2024\n/\nDecember 17, 2024\nPost navigation\nPrevious\nAPIs\nLeave a Comment\nCancel Reply\nYour email address will not be published.\nRequired fields are marked\n*\nType here..\nName*\nEmail*\nWebsite\nSave my name, email, and website in this browser for the next time I comment.",
+    "wp_content": ""
+  },
+  {
+    "type": "post",
+    "id": 1099,
+    "slug": "apis",
+    "wp_title": "APIs",
+    "doc_title": "APIs",
+    "url": "https://aurachemicals.in/2024/12/17/apis/",
+    "date": "2024-12-17T06:46:24",
+    "modified": "2024-12-17T07:23:35",
+    "meta_tags": {
+      "viewport": "width=device-width, initial-scale=1",
+      "robots": "max-image-preview:large",
+      "generator": "WooCommerce 8.5.5",
+      "msapplication-TileImage": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-270x270.png"
+    },
+    "headings": [
+      {
+        "tag": "h1",
+        "text": "APIs"
+      },
+      {
+        "tag": "h3",
+        "text": "Leave a Comment Cancel Reply"
+      }
+    ],
+    "images": [
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/uploads/2024/01/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+        "alt": "",
+        "title": "",
+        "width": "652",
+        "height": "223",
+        "class": "custom-logo"
+      },
+      {
+        "src": "https://aurachemicals.in/wp-content/plugins/wa-sticky-button/assets/default.png",
+        "alt": "",
+        "title": "",
+        "width": "",
+        "height": "",
+        "class": ""
+      }
+    ],
+    "forms": [
+      {
+        "id": "ast-commentform",
+        "action": "https://aurachemicals.in/wp-comments-post.php",
+        "method": "post",
+        "classes": "comment-form",
+        "fields": [
+          {
+            "tag": "textarea",
+            "type": "",
+            "name": "comment",
+            "id": "comment",
+            "placeholder": "Type here..",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "author",
+            "id": "author",
+            "placeholder": "Name*",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "email",
+            "id": "email",
+            "placeholder": "Email*",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "text",
+            "name": "url",
+            "id": "url",
+            "placeholder": "Website",
+            "value": "",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "checkbox",
+            "name": "wp-comment-cookies-consent",
+            "id": "wp-comment-cookies-consent",
+            "placeholder": "",
+            "value": "yes",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "submit",
+            "name": "submit",
+            "id": "submit",
+            "placeholder": "",
+            "value": "Post Comment",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "comment_post_ID",
+            "id": "comment_post_ID",
+            "placeholder": "",
+            "value": "1099",
+            "required": false,
+            "options": []
+          },
+          {
+            "tag": "input",
+            "type": "hidden",
+            "name": "comment_parent",
+            "id": "comment_parent",
+            "placeholder": "",
+            "value": "0",
+            "required": false,
+            "options": []
+          }
+        ]
+      }
+    ],
+    "links": [
+      {
+        "href": "#content",
+        "text": "Skip to content"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": ""
+      },
+      {
+        "href": "https://aurachemicals.in/",
+        "text": "Home"
+      },
+      {
+        "href": "https://aurachemicals.in/about-us/",
+        "text": "ABOUT US"
+      },
+      {
+        "href": "https://aurachemicals.in/our-mission/",
+        "text": "OUR MISSION"
+      },
+      {
+        "href": "#",
+        "text": "PRODUCTS"
+      },
+      {
+        "href": "https://aurachemicals.in/apis/",
+        "text": "API"
+      },
+      {
+        "href": "https://aurachemicals.in/solvents/",
+        "text": "Solvents"
+      },
+      {
+        "href": "https://aurachemicals.in/industries-copy/",
+        "text": "INDUSTRIES"
+      },
+      {
+        "href": "https://aurachemicals.in/get-a-quote/",
+        "text": "Get a Quote"
+      },
+      {
+        "href": "https://aurachemicals.in/author/aura2024/",
+        "text": "Aura@2024"
+      },
+      {
+        "href": "https://aurachemicals.in/2024/12/17/solvents/",
+        "text": "Next Solvents"
+      },
+      {
+        "href": "/2024/12/17/apis/#respond",
+        "text": "Cancel Reply"
+      },
+      {
+        "href": "https://wa.me/919898333128?text=Hi",
+        "text": ""
+      }
+    ],
+    "clean_text": "APIs\nBy\nAura@2024\n/\nDecember 17, 2024\nPost navigation\nNext\nSolvents\nLeave a Comment\nCancel Reply\nYour email address will not be published.\nRequired fields are marked\n*\nType here..\nName*\nEmail*\nWebsite\nSave my name, email, and website in this browser for the next time I comment.",
+    "wp_content": ""
+  }
+]

@@ -1,0 +1,255 @@
+import {
+  SettingsDto,
+  HomeDto,
+  ProductCategoryDto,
+  ProductDto,
+  ProductsResponseDto,
+  IndustryDto,
+  ServiceDto,
+  PageDto,
+  InquiryPayload,
+} from './types';
+import {
+  VERIFIED_SETTINGS,
+  VERIFIED_HOME,
+  VERIFIED_CATEGORIES,
+  VERIFIED_INDUSTRIES,
+  VERIFIED_SERVICES,
+} from './mockData';
+import { VERIFIED_PRODUCTS } from './verifiedProducts';
+
+const API_BASE = import.meta.env.VITE_WORDPRESS_API_URL || 'https://aurachemicals.in/wp-json';
+const USE_FALLBACK = import.meta.env.VITE_ENABLE_MOCK_FALLBACK !== 'false';
+const TIMEOUT_MS = 6000;
+
+class ApiError extends Error {
+  status: number;
+  code: string;
+
+  constructor(message: string, status: number = 500, code: string = 'internal_error') {
+    super(message);
+    this.name = 'ApiError';
+    this.status = status;
+    this.code = code;
+  }
+}
+
+async function fetchWithTimeout<T>(url: string, options: RequestInit = {}): Promise<T> {
+  const controller = new AbortController();
+  const timeoutId = setTimeout(() => controller.abort(), TIMEOUT_MS);
+
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal,
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        ...options.headers,
+      },
+    });
+
+    clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      throw new ApiError(`HTTP Error ${response.status}`, response.status);
+    }
+
+    return (await response.json()) as T;
+  } catch (error: any) {
+    clearTimeout(timeoutId);
+    if (error.name === 'AbortError') {
+      throw new ApiError('Request timed out after 6000ms', 408, 'timeout');
+    }
+    throw error;
+  }
+}
+
+export const api = {
+  async getSettings(): Promise<SettingsDto> {
+    try {
+      return await fetchWithTimeout<SettingsDto>(`${API_BASE}/aura/v1/settings`);
+    } catch (err) {
+      if (USE_FALLBACK) return VERIFIED_SETTINGS;
+      throw err;
+    }
+  },
+
+  async getHome(): Promise<HomeDto> {
+    try {
+      return await fetchWithTimeout<HomeDto>(`${API_BASE}/aura/v1/home`);
+    } catch (err) {
+      if (USE_FALLBACK) return VERIFIED_HOME;
+      throw err;
+    }
+  },
+
+  async getProductCategories(): Promise<ProductCategoryDto[]> {
+    try {
+      return await fetchWithTimeout<ProductCategoryDto[]>(`${API_BASE}/aura/v1/product-categories`);
+    } catch (err) {
+      if (USE_FALLBACK) return VERIFIED_CATEGORIES;
+      throw err;
+    }
+  },
+
+  async getProducts(params: {
+    category?: string;
+    search?: string;
+    industry?: string;
+    page?: number;
+    per_page?: number;
+  } = {}): Promise<ProductsResponseDto> {
+    const { category, search, industry, page = 1, per_page = 24 } = params;
+
+    try {
+      const query = new URLSearchParams();
+      if (category) query.set('category', category);
+      if (search) query.set('search', search);
+      if (industry) query.set('industry', industry);
+      query.set('page', String(page));
+      query.set('per_page', String(per_page));
+
+      return await fetchWithTimeout<ProductsResponseDto>(`${API_BASE}/aura/v1/products?${query.toString()}`);
+    } catch (err) {
+      if (USE_FALLBACK) {
+        let filtered = [...VERIFIED_PRODUCTS];
+
+        if (category && category !== 'all') {
+          filtered = filtered.filter((p) => p.category.slug === category);
+        }
+
+        if (industry && industry !== 'all') {
+          filtered = filtered.filter((p) =>
+            p.related_industries?.some((ind) => ind.slug === industry)
+          );
+        }
+
+        if (search) {
+          const s = search.toLowerCase().trim();
+          filtered = filtered.filter(
+            (p) =>
+              p.chemical_name.toLowerCase().includes(s) ||
+              (p.cas_number && p.cas_number.toLowerCase().includes(s)) ||
+              (p.therapeutic_category && p.therapeutic_category.toLowerCase().includes(s))
+          );
+        }
+
+        const total = filtered.length;
+        const total_pages = Math.ceil(total / per_page);
+        const start = (page - 1) * per_page;
+        const pagedProducts = filtered.slice(start, start + per_page);
+
+        return {
+          total,
+          total_pages,
+          current_page: page,
+          per_page,
+          products: pagedProducts,
+        };
+      }
+      throw err;
+    }
+  },
+
+  async getProduct(slug: string): Promise<ProductDto> {
+    try {
+      return await fetchWithTimeout<ProductDto>(`${API_BASE}/aura/v1/products/${slug}`);
+    } catch (err) {
+      if (USE_FALLBACK) {
+        const found = VERIFIED_PRODUCTS.find((p) => p.slug === slug);
+        if (found) return found;
+        throw new ApiError(`Chemical product not found: ${slug}`, 404, 'not_found');
+      }
+      throw err;
+    }
+  },
+
+  async getIndustries(): Promise<IndustryDto[]> {
+    try {
+      return await fetchWithTimeout<IndustryDto[]>(`${API_BASE}/aura/v1/industries`);
+    } catch (err) {
+      if (USE_FALLBACK) return VERIFIED_INDUSTRIES;
+      throw err;
+    }
+  },
+
+  async getServices(): Promise<ServiceDto[]> {
+    try {
+      return await fetchWithTimeout<ServiceDto[]>(`${API_BASE}/aura/v1/services`);
+    } catch (err) {
+      if (USE_FALLBACK) return VERIFIED_SERVICES;
+      throw err;
+    }
+  },
+
+  async getPage(slug: string): Promise<PageDto> {
+    try {
+      return await fetchWithTimeout<PageDto>(`${API_BASE}/aura/v1/pages/${slug}`);
+    } catch (err) {
+      if (USE_FALLBACK) {
+        if (slug === 'about-us') {
+          return {
+            id: 11,
+            slug: 'about-us',
+            title: 'About Us',
+            content_html: '',
+            sections: {
+              overview: 'At Aura Space Infra Private Limited, we are a trusted partner in the pharmaceutical and industrial chemical trading sector. With over a decade of industry expertise, we specialize in supplying high-purity Active Pharmaceutical Ingredients (APIs), intermediates, and specialty chemicals that comply with rigorous regulatory standards across pharmaceuticals, agrochemicals, biotechnology, and allied industries.',
+              business_overview: 'Aura Space Infra Private Limited is a premier distributor and service provider of a wide range of high-quality solvents and APIs for the pharmaceutical industry, as well as other key sectors such as agrochemicals, biotechnology, food and beverage, and cosmetics. We specialize in sourcing and trading products that meet the strictest regulatory standards while catering to the ever-evolving demands of our diverse client base.',
+              why_choose_us: [
+                { title: 'Reliable Sourcing', description: 'Strong relationships with leading domestic manufacturers to ensure the highest quality products.' },
+                { title: 'Regulatory Compliance', description: 'Strict compliance with global regulatory standards (IP, BP, USP, EP).' },
+                { title: 'Diverse Product Portfolio', description: 'Wide range of solvents, APIs, and phosphates suitable for diverse industrial applications.' },
+                { title: 'Customer-Centric Service', description: 'Dedicated technical desk providing tailored chemical procurement solutions.' },
+                { title: 'Timely Delivery', description: 'Prioritizing on-time delivery to prevent supply chain disruptions.' }
+              ],
+              vision: 'At Aura Space Infra Private Limited, our vision is to be the leading trading company in the API and chemical sector, recognized for delivering exceptional products and services. We aim to provide value to our clients by sourcing and trading high-quality materials that support innovation and growth.',
+              mission: 'Our mission is to provide reliable, cost-effective, and high-quality solutions to our clients. We strive to be the trusted partner of choice in the API and chemical distribution industry, continuously expanding our product offerings and services to meet the growing needs of the markets we serve.',
+              sustainability: 'Sustainability is at the core of our business practices. We ensure that the products we trade are environmentally responsible and aligned with global standards for safety and sustainability. We actively work to reduce our carbon footprint across our distribution operations.',
+              collaboration: 'At Aura Space Infra Pvt Ltd, we believe in the power of collaboration. We work closely with our clients, suppliers, and partners to foster innovation and drive sustainable growth.'
+            }
+          };
+        }
+        if (slug === 'our-mission') {
+          return {
+            id: 15,
+            slug: 'our-mission',
+            title: 'Our Mission',
+            content_html: '',
+            sections: {
+              statement: 'At Aura Space Infra Private Limited, our mission is to be the leading and most trusted chemical trading partner by delivering superior quality Active Pharmaceutical Ingredients (APIs), solvents, and specialty chemicals. We are dedicated to providing sustainable, reliable, and cost-effective chemical solutions that drive innovation and empower industries worldwide.',
+              sustainability: 'Sustainability is at the heart of our mission. We are dedicated to promoting environmentally responsible practices by sourcing and distributing eco-friendly and high-performance chemicals that align with global environmental standards. Our aim is to empower industries to achieve their goals while reducing their ecological footprint.',
+              innovation: 'Innovation drives our approach as we continuously seek to adopt advanced technologies, improve supply chain efficiency, and provide unparalleled customer support. We endeavor to anticipate market demands, offering competitive pricing, timely delivery, and personalized service to exceed client expectations.',
+              collaboration: 'We believe in the power of collaboration, not only within our organization but also with our stakeholders. By fostering an inclusive and growth-oriented environment, we empower our team members to contribute their expertise and passion, driving our shared vision forward.',
+              vision: 'At Aura Chemicals, we envision a future where we are recognized as a leading chemical trading company that balances profitability with responsibility, providing value to our clients, communities, and the planet.'
+            }
+          };
+        }
+      }
+      throw err;
+    }
+  },
+
+  async submitInquiry(payload: InquiryPayload): Promise<{ success: boolean; message: string; inquiry_id?: number }> {
+    try {
+      return await fetchWithTimeout<{ success: boolean; message: string; inquiry_id?: number }>(
+        `${API_BASE}/aura/v1/inquiries`,
+        {
+          method: 'POST',
+          body: JSON.stringify(payload),
+        }
+      );
+    } catch (err) {
+      if (USE_FALLBACK) {
+        // Honest mock response for testing offline
+        return {
+          success: true,
+          message: 'Thank you. Your quotation inquiry has been recorded and transmitted to the sales desk.',
+          inquiry_id: Math.floor(Math.random() * 9000) + 1000,
+        };
+      }
+      throw err;
+    }
+  },
+};

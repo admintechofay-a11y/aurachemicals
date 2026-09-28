@@ -1,0 +1,28 @@
+[
+  {
+    "slug": "chemical-sourcing-distribution",
+    "title": "Chemical Sourcing & API Distribution",
+    "description": "Assured quality and security in API supplies via 400+ leading domestic manufacturers with chemistry expertise. We efficiently secure supplies, develop customized compounds, and deliver high-purity products to our clients.",
+    "capabilities": [
+      "Direct domestic manufacturer partnerships",
+      "Customized chemical synthesis and compound sourcing",
+      "Strict pharmacopeial compliance (IP, BP, USP, EP)",
+      "Reliable logistics ensuring uninterrupted supply chain continuity"
+    ]
+  },
+  {
+    "slug": "quality-assurance-inspection",
+    "title": "Comprehensive Inspection & Quality Assurance Services",
+    "description": "Engineering testing, quality control, and asset integrity solutions tailored to Oil & Gas, Petrochemicals, Refining, and Manufacturing sectors.",
+    "capabilities": [
+      "Non-Destructive Testing (UT, RT, MPT, DPT, VT, ECT, PAUT, TOFD)",
+      "Metallurgical & Corrosion Investigation (Failure Analysis, PMI)",
+      "Welding & Fabrication Inspection (WPS/PQR/WPQ qualification)",
+      "In-Service Inspection & Risk-Based Inspection (API 510/570/653)",
+      "Calibration & Dimensional Inspection",
+      "Civil & Infrastructure Non-Destructive Quality Services",
+      "Third-Party Vendor Inspection & Expediting"
+    ],
+    "standards": "ASME, API, ISO, AWS, ASTM, BIS, NABL/ILAC"
+  }
+]

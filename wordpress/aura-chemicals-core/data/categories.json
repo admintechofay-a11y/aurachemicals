@@ -1,0 +1,56 @@
+[
+  {
+    "id": 1,
+    "name": "Active Pharmaceutical Ingredients",
+    "slug": "api",
+    "count": 94
+  },
+  {
+    "id": 2,
+    "name": "Solvents & Base Chemicals",
+    "slug": "solvents",
+    "count": 20
+  },
+  {
+    "id": 3,
+    "name": "Manufacturing Products (Phosphates)",
+    "slug": "manufacturing-phosphates",
+    "count": 11
+  },
+  {
+    "id": 4,
+    "name": "Own Import Products (China Make)",
+    "slug": "imports",
+    "count": 5
+  },
+  {
+    "id": 5,
+    "name": "Technical & Commercial Acids",
+    "slug": "acids",
+    "count": 6
+  },
+  {
+    "id": 6,
+    "name": "ETP & Industrial Chemicals",
+    "slug": "industrial-chemicals",
+    "count": 14
+  },
+  {
+    "id": 7,
+    "name": "M/S. Grasim Ind. Ltd.",
+    "slug": "grasim-products",
+    "count": 6
+  },
+  {
+    "id": 8,
+    "name": "M/S. Magnesia Chemical LLP",
+    "slug": "magnesia-products",
+    "count": 4
+  },
+  {
+    "id": 9,
+    "name": "GACL Products",
+    "slug": "gacl-products",
+    "count": 7
+  }
+]

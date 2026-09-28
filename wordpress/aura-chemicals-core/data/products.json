@@ -1,0 +1,3107 @@
+[
+  {
+    "id": 1001,
+    "slug": "aceclofenac",
+    "chemical_name": "Aceclofenac",
+    "cas_number": "89796-99-6",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-inflammatory",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Aceclofenac is an Active Pharmaceutical Ingredient classified under Anti-inflammatory.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Aceclofenac API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1002,
+    "slug": "acyclovir",
+    "chemical_name": "Acyclovir",
+    "cas_number": "59277-89-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Synthetic nucleoside analogues",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Acyclovir is an Active Pharmaceutical Ingredient classified under Synthetic nucleoside analogues.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Acyclovir API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1003,
+    "slug": "adapalene",
+    "chemical_name": "Adapalene",
+    "cas_number": "106685-40-9",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Topical retinoid",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Adapalene is an Active Pharmaceutical Ingredient classified under Topical retinoid.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Adapalene API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1004,
+    "slug": "albendazole",
+    "chemical_name": "Albendazole",
+    "cas_number": "54965-21-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antihelmintics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Albendazole is an Active Pharmaceutical Ingredient classified under Antihelmintics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Albendazole API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1005,
+    "slug": "amantadine",
+    "chemical_name": "Amantadine",
+    "cas_number": "665-66-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Adamantanes",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Amantadine is an Active Pharmaceutical Ingredient classified under Adamantanes.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Amantadine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1006,
+    "slug": "ambroxolhcl",
+    "chemical_name": "Ambroxol HCL",
+    "cas_number": "23828-92-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Mucolytic agent",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Ambroxol HCL is an Active Pharmaceutical Ingredient classified under Mucolytic agent.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Ambroxol HCL API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1007,
+    "slug": "amikacinsulfate",
+    "chemical_name": "Amikacin Sulfate",
+    "cas_number": "39831-55-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Aminoglycoside antibiotics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Amikacin Sulfate is an Active Pharmaceutical Ingredient classified under Aminoglycoside antibiotics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Amikacin Sulfate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1008,
+    "slug": "amoxapine",
+    "chemical_name": "Amoxapine",
+    "cas_number": "14028-44-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antidepressant",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Amoxapine is an Active Pharmaceutical Ingredient classified under Antidepressant.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Amoxapine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1009,
+    "slug": "amoxicillintrihydrate",
+    "chemical_name": "Amoxicillin Trihydrate",
+    "cas_number": "61336-70-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antibiotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Amoxicillin Trihydrate is an Active Pharmaceutical Ingredient classified under Antibiotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Amoxicillin Trihydrate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1010,
+    "slug": "ampicillintrihydrate",
+    "chemical_name": "Ampicillin Trihydrate",
+    "cas_number": "7177-48-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antibiotics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Ampicillin Trihydrate is an Active Pharmaceutical Ingredient classified under Antibiotics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Ampicillin Trihydrate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1011,
+    "slug": "artemether",
+    "chemical_name": "Artemether",
+    "cas_number": "71963-77-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-malarial",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Artemether is an Active Pharmaceutical Ingredient classified under Anti-malarial.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Artemether API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1012,
+    "slug": "atorvastatincalciumtrihydrate",
+    "chemical_name": "Atorvastatin Calcium Trihydrate",
+    "cas_number": "344423-98-9",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Reductase inhibitors",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Atorvastatin Calcium Trihydrate is an Active Pharmaceutical Ingredient classified under Reductase inhibitors.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Atorvastatin Calcium Trihydrate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1013,
+    "slug": "azithromycin",
+    "chemical_name": "Azithromycin",
+    "cas_number": "83905-01-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Macrolide antibiotics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Azithromycin is an Active Pharmaceutical Ingredient classified under Macrolide antibiotics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Azithromycin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1014,
+    "slug": "benzhexolhcl",
+    "chemical_name": "Benzhexol HCL",
+    "cas_number": "52-49-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antispasmodic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Benzhexol HCL is an Active Pharmaceutical Ingredient classified under Antispasmodic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Benzhexol HCL API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1015,
+    "slug": "bisoprololfumarate",
+    "chemical_name": "Bisoprolol fumarate",
+    "cas_number": "104344-23-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Beta blockers",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Bisoprolol fumarate is an Active Pharmaceutical Ingredient classified under Beta blockers.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Bisoprolol fumarate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1016,
+    "slug": "cabergoline",
+    "chemical_name": "Cabergoline",
+    "cas_number": "81409-90-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Dopamine receptor",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Cabergoline is an Active Pharmaceutical Ingredient classified under Dopamine receptor.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Cabergoline API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1017,
+    "slug": "caffeineanhydrous",
+    "chemical_name": "Caffeine Anhydrous",
+    "cas_number": "58-08-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Methylxanthine",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Caffeine Anhydrous is an Active Pharmaceutical Ingredient classified under Methylxanthine.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Caffeine Anhydrous API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1018,
+    "slug": "cefixime",
+    "chemical_name": "Cefixime",
+    "cas_number": "79350-37-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Cephalosporins",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Cefixime is an Active Pharmaceutical Ingredient classified under Cephalosporins.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Cefixime API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1019,
+    "slug": "ceftriaxonesodium",
+    "chemical_name": "Ceftriaxone Sodium",
+    "cas_number": "104376-79-6",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Cephalosporin antibiotics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Ceftriaxone Sodium is an Active Pharmaceutical Ingredient classified under Cephalosporin antibiotics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Ceftriaxone Sodium API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1020,
+    "slug": "celecoxib",
+    "chemical_name": "Celecoxib",
+    "cas_number": "169590-42-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-inflammatory",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Celecoxib is an Active Pharmaceutical Ingredient classified under Anti-inflammatory.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Celecoxib API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1021,
+    "slug": "cetirizine",
+    "chemical_name": "Cetirizine",
+    "cas_number": "83881-52-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antihistamines",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Cetirizine is an Active Pharmaceutical Ingredient classified under Antihistamines.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Cetirizine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1022,
+    "slug": "chlordiazepoxide",
+    "chemical_name": "Chlordiazepoxide",
+    "cas_number": "58-25-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anxiolytic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Chlordiazepoxide is an Active Pharmaceutical Ingredient classified under Anxiolytic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Chlordiazepoxide API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1023,
+    "slug": "chlordiazepoxidehcl",
+    "chemical_name": "Chlordiazepoxide HCL",
+    "cas_number": "438-41-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anxiolytic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Chlordiazepoxide HCL is an Active Pharmaceutical Ingredient classified under Anxiolytic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Chlordiazepoxide HCL API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1024,
+    "slug": "cilostazol",
+    "chemical_name": "Cilostazol",
+    "cas_number": "73963-72-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Inhibitors",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Cilostazol is an Active Pharmaceutical Ingredient classified under Inhibitors.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Cilostazol API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1025,
+    "slug": "cinnarizine",
+    "chemical_name": "Cinnarizine",
+    "cas_number": "298-57-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antihistaminic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Cinnarizine is an Active Pharmaceutical Ingredient classified under Antihistaminic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Cinnarizine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1026,
+    "slug": "ciprofloxacinhcl",
+    "chemical_name": "Ciprofloxacin HCL",
+    "cas_number": "86393-32-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antibiotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Ciprofloxacin HCL is an Active Pharmaceutical Ingredient classified under Antibiotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Ciprofloxacin HCL API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1027,
+    "slug": "citicoline",
+    "chemical_name": "Citicoline",
+    "cas_number": "987-78-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Psychostimulants",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Citicoline is an Active Pharmaceutical Ingredient classified under Psychostimulants.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Citicoline API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1028,
+    "slug": "clarithromycin",
+    "chemical_name": "Clarithromycin",
+    "cas_number": "81103-11-9",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Macrolide antibiotics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Clarithromycin is an Active Pharmaceutical Ingredient classified under Macrolide antibiotics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Clarithromycin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1029,
+    "slug": "clobazam",
+    "chemical_name": "Clobazam",
+    "cas_number": "22316-47-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antiepileptic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Clobazam is an Active Pharmaceutical Ingredient classified under Antiepileptic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Clobazam API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1030,
+    "slug": "clobenzorexhci",
+    "chemical_name": "Clobenzorex HCI",
+    "cas_number": "5843-53-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anorectic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Clobenzorex HCI is an Active Pharmaceutical Ingredient classified under Anorectic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Clobenzorex HCI API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1031,
+    "slug": "clotrimazole",
+    "chemical_name": "Clotrimazole",
+    "cas_number": "23593-75-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Imidazole",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Clotrimazole is an Active Pharmaceutical Ingredient classified under Imidazole.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Clotrimazole API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1032,
+    "slug": "cloxacillinsodium",
+    "chemical_name": "Cloxacillin Sodium",
+    "cas_number": "642-78-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antibiotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Cloxacillin Sodium is an Active Pharmaceutical Ingredient classified under Antibiotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Cloxacillin Sodium API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1033,
+    "slug": "cyclobenzaprinehci",
+    "chemical_name": "Cyclobenzaprine HCI",
+    "cas_number": "6202-23-9",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Muscle relaxant",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Cyclobenzaprine HCI is an Active Pharmaceutical Ingredient classified under Muscle relaxant.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Cyclobenzaprine HCI API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1034,
+    "slug": "dapagliflozin",
+    "chemical_name": "Dapagliflozin",
+    "cas_number": "461432-26-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Inhibitors",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Dapagliflozin is an Active Pharmaceutical Ingredient classified under Inhibitors.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Dapagliflozin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1035,
+    "slug": "deflazacort",
+    "chemical_name": "Deflazacort",
+    "cas_number": "14484-47-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-inflammatory",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Deflazacort is an Active Pharmaceutical Ingredient classified under Anti-inflammatory.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Deflazacort API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1036,
+    "slug": "desvenlafaxine",
+    "chemical_name": "Desvenlafaxine",
+    "cas_number": "93413-62-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Inhibitors",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Desvenlafaxine is an Active Pharmaceutical Ingredient classified under Inhibitors.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Desvenlafaxine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1037,
+    "slug": "diacerein",
+    "chemical_name": "Diacerein",
+    "cas_number": "13739-02-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anthraquinones",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Diacerein is an Active Pharmaceutical Ingredient classified under Anthraquinones.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Diacerein API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1038,
+    "slug": "diazepam",
+    "chemical_name": "Diazepam",
+    "cas_number": "439-14-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anxiolytic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Diazepam is an Active Pharmaceutical Ingredient classified under Anxiolytic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Diazepam API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1039,
+    "slug": "duloxetinehci",
+    "chemical_name": "Duloxetine HCI",
+    "cas_number": "136434-34-9",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antidepressant",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Duloxetine HCI is an Active Pharmaceutical Ingredient classified under Antidepressant.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Duloxetine HCI API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1040,
+    "slug": "etoricoxib",
+    "chemical_name": "Etoricoxib",
+    "cas_number": "202409-33-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Inhibitor",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Etoricoxib is an Active Pharmaceutical Ingredient classified under Inhibitor.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Etoricoxib API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1041,
+    "slug": "faropenemsodium",
+    "chemical_name": "Faropenem Sodium",
+    "cas_number": "122547-49-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Beta-lactamase",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Faropenem Sodium is an Active Pharmaceutical Ingredient classified under Beta-lactamase.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Faropenem Sodium API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1042,
+    "slug": "fenbendazole",
+    "chemical_name": "Fenbendazole",
+    "cas_number": "43210-67-9",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Broad-spectrum anthelmintic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Fenbendazole is an Active Pharmaceutical Ingredient classified under Broad-spectrum anthelmintic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Fenbendazole API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1043,
+    "slug": "fluconazole",
+    "chemical_name": "Fluconazole",
+    "cas_number": "86386-73-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antifungals",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Fluconazole is an Active Pharmaceutical Ingredient classified under Antifungals.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Fluconazole API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1044,
+    "slug": "flupentixoldecanoate",
+    "chemical_name": "Flupentixol Decanoate",
+    "cas_number": "30909-51-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antipsychotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Flupentixol Decanoate is an Active Pharmaceutical Ingredient classified under Antipsychotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Flupentixol Decanoate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1045,
+    "slug": "flupentixoldihci",
+    "chemical_name": "Flupentixol Di HCI",
+    "cas_number": "51529-01-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antipsychotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Flupentixol Di HCI is an Active Pharmaceutical Ingredient classified under Antipsychotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Flupentixol Di HCI API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1046,
+    "slug": "fluvoxaminemaleate",
+    "chemical_name": "Fluvoxamine Maleate",
+    "cas_number": "61718-82-9",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antidepressant",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Fluvoxamine Maleate is an Active Pharmaceutical Ingredient classified under Antidepressant.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Fluvoxamine Maleate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1047,
+    "slug": "gabapentin",
+    "chemical_name": "Gabapentin",
+    "cas_number": "60142-96-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anticonvulsants",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Gabapentin is an Active Pharmaceutical Ingredient classified under Anticonvulsants.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Gabapentin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1048,
+    "slug": "lansoprazole",
+    "chemical_name": "Lansoprazole",
+    "cas_number": "103577-45-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Inhibitor",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Lansoprazole is an Active Pharmaceutical Ingredient classified under Inhibitor.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Lansoprazole API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1049,
+    "slug": "leflunomide",
+    "chemical_name": "Leflunomide",
+    "cas_number": "75706-12-6",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antirheumatic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Leflunomide is an Active Pharmaceutical Ingredient classified under Antirheumatic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Leflunomide API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1050,
+    "slug": "levetiracetam",
+    "chemical_name": "Levetiracetam",
+    "cas_number": "102767-28-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anticonvulsants",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Levetiracetam is an Active Pharmaceutical Ingredient classified under Anticonvulsants.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Levetiracetam API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1051,
+    "slug": "levocetirizine",
+    "chemical_name": "Levocetirizine",
+    "cas_number": "130018-77-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antihistamines",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Levocetirizine is an Active Pharmaceutical Ingredient classified under Antihistamines.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Levocetirizine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1052,
+    "slug": "linagliptin",
+    "chemical_name": "Linagliptin",
+    "cas_number": "668270-12-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Inhibitors",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Linagliptin is an Active Pharmaceutical Ingredient classified under Inhibitors.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Linagliptin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1053,
+    "slug": "lincomycin",
+    "chemical_name": "Lincomycin",
+    "cas_number": "154-21-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antibiotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Lincomycin is an Active Pharmaceutical Ingredient classified under Antibiotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Lincomycin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1054,
+    "slug": "linezolid",
+    "chemical_name": "Linezolid",
+    "cas_number": "165800-03-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antibacterials",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Linezolid is an Active Pharmaceutical Ingredient classified under Antibacterials.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Linezolid API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1055,
+    "slug": "lithiumcarbonate",
+    "chemical_name": "Lithium Carbonate",
+    "cas_number": "554-13-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antimanic medication",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Lithium Carbonate is an Active Pharmaceutical Ingredient classified under Antimanic medication.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Lithium Carbonate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1056,
+    "slug": "loxapine",
+    "chemical_name": "Loxapine",
+    "cas_number": "27833-64-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antipsychotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Loxapine is an Active Pharmaceutical Ingredient classified under Antipsychotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Loxapine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1057,
+    "slug": "mefenamicacid",
+    "chemical_name": "Mefenamic Acid",
+    "cas_number": "61-68-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Analgesics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Mefenamic Acid is an Active Pharmaceutical Ingredient classified under Analgesics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Mefenamic Acid API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1058,
+    "slug": "meloxicam",
+    "chemical_name": "Meloxicam",
+    "cas_number": "71125-38-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-inflammatory",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Meloxicam is an Active Pharmaceutical Ingredient classified under Anti-inflammatory.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Meloxicam API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1059,
+    "slug": "memantine",
+    "chemical_name": "Memantine",
+    "cas_number": "41100-52-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antagonists",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Memantine is an Active Pharmaceutical Ingredient classified under Antagonists.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Memantine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1060,
+    "slug": "meropenem",
+    "chemical_name": "Meropenem",
+    "cas_number": "96036-03-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Penem",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Meropenem is an Active Pharmaceutical Ingredient classified under Penem.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Meropenem API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1061,
+    "slug": "mesalamine",
+    "chemical_name": "Mesalamine",
+    "cas_number": "89-57-6",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-inflammatory",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Mesalamine is an Active Pharmaceutical Ingredient classified under Anti-inflammatory.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Mesalamine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1062,
+    "slug": "metaxalone",
+    "chemical_name": "Metaxalone",
+    "cas_number": "1665-48-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Medications",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Metaxalone is an Active Pharmaceutical Ingredient classified under Medications.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Metaxalone API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1063,
+    "slug": "metforminhcl",
+    "chemical_name": "Metformin HCL",
+    "cas_number": "1115-70-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-diabetic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Metformin HCL is an Active Pharmaceutical Ingredient classified under Anti-diabetic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Metformin HCL API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1064,
+    "slug": "methimazole",
+    "chemical_name": "Methimazole",
+    "cas_number": "60-56-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Thionamide Antithyroid",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Methimazole is an Active Pharmaceutical Ingredient classified under Thionamide Antithyroid.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Methimazole API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1065,
+    "slug": "minoxidil",
+    "chemical_name": "Minoxidil",
+    "cas_number": "38304-91-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Vasodilator",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Minoxidil is an Active Pharmaceutical Ingredient classified under Vasodilator.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Minoxidil API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1066,
+    "slug": "montelukastsodium",
+    "chemical_name": "Montelukast Sodium",
+    "cas_number": "151767-02-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-asthmatic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Montelukast Sodium is an Active Pharmaceutical Ingredient classified under Anti-asthmatic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Montelukast Sodium API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1067,
+    "slug": "naftopidil",
+    "chemical_name": "Naftopidil",
+    "cas_number": "57149-07-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Alpha-blocker",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Naftopidil is an Active Pharmaceutical Ingredient classified under Alpha-blocker.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Naftopidil API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1068,
+    "slug": "nebivolol",
+    "chemical_name": "Nebivolol",
+    "cas_number": "152520-56-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Beta Blockers",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Nebivolol is an Active Pharmaceutical Ingredient classified under Beta Blockers.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Nebivolol API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1069,
+    "slug": "nefopam",
+    "chemical_name": "Nefopam",
+    "cas_number": "13669-70-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Analgesic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Nefopam is an Active Pharmaceutical Ingredient classified under Analgesic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Nefopam API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1070,
+    "slug": "olmesartanmedoxomil",
+    "chemical_name": "Olmesartan Medoxomil",
+    "cas_number": "144689-63-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Hypertension",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Olmesartan Medoxomil is an Active Pharmaceutical Ingredient classified under Hypertension.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Olmesartan Medoxomil API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1071,
+    "slug": "omeprazole",
+    "chemical_name": "Omeprazole",
+    "cas_number": "73590-58-6",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-ulcer",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Omeprazole is an Active Pharmaceutical Ingredient classified under Anti-ulcer.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Omeprazole API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1072,
+    "slug": "oxaprozin",
+    "chemical_name": "Oxaprozin",
+    "cas_number": "21256-18-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "NSAID",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Oxaprozin is an Active Pharmaceutical Ingredient classified under NSAID.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Oxaprozin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1073,
+    "slug": "pantoprazolesodium",
+    "chemical_name": "Pantoprazole Sodium",
+    "cas_number": "138786-67-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-ulcer",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Pantoprazole Sodium is an Active Pharmaceutical Ingredient classified under Anti-ulcer.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Pantoprazole Sodium API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1074,
+    "slug": "paracetamol",
+    "chemical_name": "Paracetamol",
+    "cas_number": "103-90-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Analgesics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Paracetamol is an Active Pharmaceutical Ingredient classified under Analgesics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Paracetamol API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1075,
+    "slug": "piperacillintazobactamsodium",
+    "chemical_name": "Piperacillin & Tazobactam Sodium",
+    "cas_number": "59703-84-3",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Penicillin Antibiotics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Piperacillin & Tazobactam Sodium is an Active Pharmaceutical Ingredient classified under Penicillin Antibiotics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Piperacillin & Tazobactam Sodium API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1076,
+    "slug": "pramoxinehcl",
+    "chemical_name": "Pramoxine HCL",
+    "cas_number": "637-58-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Topical Anesthetic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Pramoxine HCL is an Active Pharmaceutical Ingredient classified under Topical Anesthetic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Pramoxine HCL API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1077,
+    "slug": "pregabalin",
+    "chemical_name": "Pregabalin",
+    "cas_number": "148553-50-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-convulsant",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Pregabalin is an Active Pharmaceutical Ingredient classified under Anti-convulsant.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Pregabalin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1078,
+    "slug": "prilocainebase",
+    "chemical_name": "Prilocaine Base",
+    "cas_number": "721-50-6",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anesthetic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Prilocaine Base is an Active Pharmaceutical Ingredient classified under Anesthetic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Prilocaine Base API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1079,
+    "slug": "primidone",
+    "chemical_name": "Primidone",
+    "cas_number": "125-33-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anticonvulsants",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Primidone is an Active Pharmaceutical Ingredient classified under Anticonvulsants.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Primidone API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1080,
+    "slug": "pyrazinamide",
+    "chemical_name": "Pyrazinamide",
+    "cas_number": "98-96-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-infectives",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Pyrazinamide is an Active Pharmaceutical Ingredient classified under Anti-infectives.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Pyrazinamide API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1081,
+    "slug": "ribavirin",
+    "chemical_name": "Ribavirin",
+    "cas_number": "36791-04-5",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Nucleoside Analogues",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Ribavirin is an Active Pharmaceutical Ingredient classified under Nucleoside Analogues.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Ribavirin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1082,
+    "slug": "rivastigminetartrate",
+    "chemical_name": "Rivastigmine Tartrate",
+    "cas_number": "129101-54-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Alzheimer\u2019s Medication",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Rivastigmine Tartrate is an Active Pharmaceutical Ingredient classified under Alzheimer\u2019s Medication.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Rivastigmine Tartrate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1083,
+    "slug": "rosuvastatin",
+    "chemical_name": "Rosuvastatin",
+    "cas_number": "287714-41-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Hypolipidemic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Rosuvastatin is an Active Pharmaceutical Ingredient classified under Hypolipidemic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Rosuvastatin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1084,
+    "slug": "silodosin",
+    "chemical_name": "Silodosin",
+    "cas_number": "160970-54-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Alpha-blockers",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Silodosin is an Active Pharmaceutical Ingredient classified under Alpha-blockers.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Silodosin API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1085,
+    "slug": "sulbactamsodium",
+    "chemical_name": "Sulbactam Sodium",
+    "cas_number": "69388-84-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Beta-lactamase",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Sulbactam Sodium is an Active Pharmaceutical Ingredient classified under Beta-lactamase.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Sulbactam Sodium API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1086,
+    "slug": "tapentadolhcl",
+    "chemical_name": "Tapentadol HCL",
+    "cas_number": "175591-09-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Analgesic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Tapentadol HCL is an Active Pharmaceutical Ingredient classified under Analgesic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Tapentadol HCL API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1087,
+    "slug": "tiemoniummethyisulphate",
+    "chemical_name": "Tiemonium Methyisulphate",
+    "cas_number": "6504-57-0",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antispasmodic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Tiemonium Methyisulphate is an Active Pharmaceutical Ingredient classified under Antispasmodic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Tiemonium Methyisulphate API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1088,
+    "slug": "tigecycline",
+    "chemical_name": "Tigecycline",
+    "cas_number": "220620-09-7",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Anti-infectives",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Tigecycline is an Active Pharmaceutical Ingredient classified under Anti-infectives.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Tigecycline API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1089,
+    "slug": "tizanidine",
+    "chemical_name": "Tizanidine",
+    "cas_number": "64461-82-1",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Muscle Relaxants",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Tizanidine is an Active Pharmaceutical Ingredient classified under Muscle Relaxants.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Tizanidine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1090,
+    "slug": "torsemide",
+    "chemical_name": "Torsemide",
+    "cas_number": "56211-40-6",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Loop Diuretics",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Torsemide is an Active Pharmaceutical Ingredient classified under Loop Diuretics.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Torsemide API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1091,
+    "slug": "tranexamicacid",
+    "chemical_name": "Tranexamic Acid",
+    "cas_number": "1197-18-8",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Antifibrinolytic Agent",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Tranexamic Acid is an Active Pharmaceutical Ingredient classified under Antifibrinolytic Agent.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Tranexamic Acid API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1092,
+    "slug": "venlafaxine",
+    "chemical_name": "Venlafaxine",
+    "cas_number": "99300-78-4",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Inhibitor",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Venlafaxine is an Active Pharmaceutical Ingredient classified under Inhibitor.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Venlafaxine API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1093,
+    "slug": "zopiclone",
+    "chemical_name": "Zopiclone",
+    "cas_number": "43200-80-2",
+    "category": {
+      "name": "Active Pharmaceutical Ingredients",
+      "slug": "api"
+    },
+    "therapeutic_category": "Nonbenzodiazepine Hypnotic",
+    "grade": "Pharma Grade (IP/BP/USP)",
+    "short_description": "Zopiclone is an Active Pharmaceutical Ingredient classified under Nonbenzodiazepine Hypnotic.",
+    "image": {
+      "url": "/images/apis.jpg",
+      "alt": "Zopiclone API"
+    },
+    "related_industries": [
+      {
+        "slug": "healthcare",
+        "title": "Healthcare & Pharmaceutical Industry"
+      }
+    ]
+  },
+  {
+    "id": 1094,
+    "slug": "bleachingpowder-vikrambrand",
+    "chemical_name": "Bleaching Powder (Vikram Brand)",
+    "cas_number": "7778-54-3",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Sanitation and disinfecting agent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Bleaching Powder (Vikram Brand) supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Bleaching Powder (Vikram Brand) Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1095,
+    "slug": "aluminiumchloride",
+    "chemical_name": "Aluminium Chloride",
+    "cas_number": "7446-70-0",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Antiperspirant",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Aluminium Chloride supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Aluminium Chloride Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1096,
+    "slug": "sodiumsulphate",
+    "chemical_name": "Sodium Sulphate",
+    "cas_number": "7757-82-6",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Parenteral and osmotic laxatives",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Sodium Sulphate supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Sodium Sulphate Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1097,
+    "slug": "bleachinggranules-ransa",
+    "chemical_name": "Bleaching Granules (RANSA)",
+    "cas_number": "7778-54-3",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Inorganic compound",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Bleaching Granules (RANSA) supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Bleaching Granules (RANSA) Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1098,
+    "slug": "causticflakeslye",
+    "chemical_name": "Caustic Flakes & Lye",
+    "cas_number": "1310-73-2",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Therapeutics",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Caustic Flakes & Lye supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Caustic Flakes & Lye Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1099,
+    "slug": "polyaluminiumchloride-powderliq",
+    "chemical_name": "Poly Aluminium Chloride (Powder & Liq.)",
+    "cas_number": "1327-41-9",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Antiperspirants",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Poly Aluminium Chloride (Powder & Liq.) supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Poly Aluminium Chloride (Powder & Liq.) Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1100,
+    "slug": "megmonoethyleneglycol",
+    "chemical_name": "MEG Monoethylene Glycol",
+    "cas_number": "107-21-1",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Anesthetics or hypnotics",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "MEG Monoethylene Glycol supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "MEG Monoethylene Glycol Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1101,
+    "slug": "dmfdimethylfumarate",
+    "chemical_name": "DMF Dimethyl fumarate",
+    "cas_number": "68-12-2",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Inflammation",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "DMF Dimethyl fumarate supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "DMF Dimethyl fumarate Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1102,
+    "slug": "acetone",
+    "chemical_name": "Acetone",
+    "cas_number": "67-64-1",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Flammable liquid",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Acetone supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Acetone Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1103,
+    "slug": "toluene",
+    "chemical_name": "Toluene",
+    "cas_number": "108-88-3",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Toluene supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Toluene Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1104,
+    "slug": "n-hexene",
+    "chemical_name": "N-Hexene",
+    "cas_number": "592-41-6",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "N-Hexene supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "N-Hexene Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1105,
+    "slug": "ethylacetate",
+    "chemical_name": "Ethyl Acetate",
+    "cas_number": "141-78-6",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Ethyl Acetate supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Ethyl Acetate Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1106,
+    "slug": "ipa",
+    "chemical_name": "IPA",
+    "cas_number": "67-63-0",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "IPA supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "IPA Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1107,
+    "slug": "sodiumbicarbonate",
+    "chemical_name": "Sodium Bicarbonate",
+    "cas_number": "144-55-8",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Sodium Bicarbonate supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Sodium Bicarbonate Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1108,
+    "slug": "sodaash",
+    "chemical_name": "Soda Ash",
+    "cas_number": "497-19-8",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Soda Ash supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Soda Ash Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1109,
+    "slug": "dicalciumphosphate-feedgrade",
+    "chemical_name": "Di Calcium Phosphate-feed grade",
+    "cas_number": "7789-77-7",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Di Calcium Phosphate-feed grade supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Di Calcium Phosphate-feed grade Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1110,
+    "slug": "sodiumacetatetrihydrateanhydrous",
+    "chemical_name": "Sodium Acetate trihydrate & Anhydrous",
+    "cas_number": "6131-90-4",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Sodium Acetate trihydrate & Anhydrous supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Sodium Acetate trihydrate & Anhydrous Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1111,
+    "slug": "sodiumnitritenitrate",
+    "chemical_name": "Sodium Nitrite & Nitrate",
+    "cas_number": "7631-99-4",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Sodium Nitrite & Nitrate supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Sodium Nitrite & Nitrate Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1112,
+    "slug": "bkc5080",
+    "chemical_name": "BKC 50% & 80%",
+    "cas_number": "8001-54-5",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "BKC 50% & 80% supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "BKC 50% & 80% Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1113,
+    "slug": "calciumcarbonate-limestone",
+    "chemical_name": "Calcium Carbonate (Lime Stone)",
+    "cas_number": "1317-65-3",
+    "category": {
+      "name": "Solvents & Base Chemicals",
+      "slug": "solvents"
+    },
+    "therapeutic_category": "Industrial Solvent",
+    "grade": "Technical / Industrial Grade",
+    "short_description": "Calcium Carbonate (Lime Stone) supplied for chemical processing and industrial applications.",
+    "image": {
+      "url": "/images/solvents.png",
+      "alt": "Calcium Carbonate (Lime Stone) Solvent"
+    },
+    "related_industries": [
+      {
+        "slug": "paints-coatings",
+        "title": "Paints and Coatings Industry"
+      }
+    ]
+  },
+  {
+    "id": 1114,
+    "slug": "monosodiumphosphate-anhydrouscrystals",
+    "chemical_name": "Mono Sodium Phosphate (Anhydrous & Crystals)",
+    "cas_number": "7558-80-7",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Mono Sodium Phosphate (Anhydrous & Crystals) available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Mono Sodium Phosphate (Anhydrous & Crystals) Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1115,
+    "slug": "disodiumphosphate-anhydrouscrystals",
+    "chemical_name": "Di Sodium Phosphate (Anhydrous & Crystals)",
+    "cas_number": "7558-79-4",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Di Sodium Phosphate (Anhydrous & Crystals) available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Di Sodium Phosphate (Anhydrous & Crystals) Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1116,
+    "slug": "trisodiumphosphate-anhydrouscrystals",
+    "chemical_name": "Tri Sodium Phosphate (Anhydrous & Crystals)",
+    "cas_number": "7601-54-9",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Tri Sodium Phosphate (Anhydrous & Crystals) available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Tri Sodium Phosphate (Anhydrous & Crystals) Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1117,
+    "slug": "tetrasodiumpyrophosphate",
+    "chemical_name": "Tetra Sodium Pyro Phosphate",
+    "cas_number": "231-767-1",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Tetra Sodium Pyro Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Tetra Sodium Pyro Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1118,
+    "slug": "monopotassiumphosphate",
+    "chemical_name": "Mono Potassium Phosphate",
+    "cas_number": "7778-77-0",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Mono Potassium Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Mono Potassium Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1119,
+    "slug": "tripotassiumphosphate",
+    "chemical_name": "Tri Potassium Phosphate",
+    "cas_number": "7778-53-2",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Tri Potassium Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Tri Potassium Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1120,
+    "slug": "monoammoniumphosphate",
+    "chemical_name": "Mono Ammonium Phosphate",
+    "cas_number": "7722-76-1",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Mono Ammonium Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Mono Ammonium Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1121,
+    "slug": "sodiumacidpyrophosphate",
+    "chemical_name": "Sodium Acid Pyro Phosphate",
+    "cas_number": "7722-88-5",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Sodium Acid Pyro Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Sodium Acid Pyro Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1122,
+    "slug": "dipotassiumphosphate",
+    "chemical_name": "Di Potassium Phosphate",
+    "cas_number": "04-11-7758",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Di Potassium Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Di Potassium Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1123,
+    "slug": "tetrapotassiumpyrophosphate",
+    "chemical_name": "Tetra Potassium Pyro Phosphate",
+    "cas_number": "7320-34-5",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Tetra Potassium Pyro Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Tetra Potassium Pyro Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1124,
+    "slug": "diammoniumphosphate",
+    "chemical_name": "Di Ammonium Phosphate",
+    "cas_number": "7783-28-0",
+    "category": {
+      "name": "Manufacturing Products (Phosphates)",
+      "slug": "manufacturing-phosphates"
+    },
+    "therapeutic_category": "Phosphate Salt",
+    "grade": "Anhydrous & Crystals",
+    "short_description": "In-house manufactured Di Ammonium Phosphate available in crystalline and anhydrous forms.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Di Ammonium Phosphate Phosphate"
+    },
+    "related_industries": [
+      {
+        "slug": "food-beverage",
+        "title": "Food and Beverage Industry"
+      }
+    ]
+  },
+  {
+    "id": 1125,
+    "slug": "edtadisodium-tetrasodiumedtaacidjackchemchina",
+    "chemical_name": "EDTA di sodium / Tetra Sodium & EDTA Acid Jack Chem China",
+    "cas_number": "6381-92-6",
+    "category": {
+      "name": "Own Import Products (China Make)",
+      "slug": "imports"
+    },
+    "therapeutic_category": "Imported Reagent",
+    "grade": "Direct Import Grade",
+    "short_description": "Directly imported EDTA di sodium / Tetra Sodium & EDTA Acid Jack Chem China with verified global manufacturer sourcing.",
+    "image": {
+      "url": "/images/supply.png",
+      "alt": "EDTA di sodium / Tetra Sodium & EDTA Acid Jack Chem China Imported Chemical"
+    },
+    "related_industries": [
+      {
+        "slug": "water-treatment",
+        "title": "Water Treatment & Environmental Management"
+      }
+    ]
+  },
+  {
+    "id": 1126,
+    "slug": "sodiumpercabonatecoatedgranulestabletschinamake",
+    "chemical_name": "Sodium Percabonate Coated Granules & Tablets China Make",
+    "cas_number": "15630-89-4",
+    "category": {
+      "name": "Own Import Products (China Make)",
+      "slug": "imports"
+    },
+    "therapeutic_category": "Imported Reagent",
+    "grade": "Direct Import Grade",
+    "short_description": "Directly imported Sodium Percabonate Coated Granules & Tablets China Make with verified global manufacturer sourcing.",
+    "image": {
+      "url": "/images/supply.png",
+      "alt": "Sodium Percabonate Coated Granules & Tablets China Make Imported Chemical"
+    },
+    "related_industries": [
+      {
+        "slug": "water-treatment",
+        "title": "Water Treatment & Environmental Management"
+      }
+    ]
+  },
+  {
+    "id": 1127,
+    "slug": "citricacidmono-anhydrouschinamake",
+    "chemical_name": "Citric Acid Mono / Anhydrous China Make",
+    "cas_number": "5949-29-1",
+    "category": {
+      "name": "Own Import Products (China Make)",
+      "slug": "imports"
+    },
+    "therapeutic_category": "Imported Reagent",
+    "grade": "Direct Import Grade",
+    "short_description": "Directly imported Citric Acid Mono / Anhydrous China Make with verified global manufacturer sourcing.",
+    "image": {
+      "url": "/images/supply.png",
+      "alt": "Citric Acid Mono / Anhydrous China Make Imported Chemical"
+    },
+    "related_industries": [
+      {
+        "slug": "water-treatment",
+        "title": "Water Treatment & Environmental Management"
+      }
+    ]
+  },
+  {
+    "id": 1128,
+    "slug": "sodiumgluconate",
+    "chemical_name": "Sodium Gluconate",
+    "cas_number": "527-07-1",
+    "category": {
+      "name": "Own Import Products (China Make)",
+      "slug": "imports"
+    },
+    "therapeutic_category": "Imported Reagent",
+    "grade": "Direct Import Grade",
+    "short_description": "Directly imported Sodium Gluconate with verified global manufacturer sourcing.",
+    "image": {
+      "url": "/images/supply.png",
+      "alt": "Sodium Gluconate Imported Chemical"
+    },
+    "related_industries": [
+      {
+        "slug": "water-treatment",
+        "title": "Water Treatment & Environmental Management"
+      }
+    ]
+  },
+  {
+    "id": 1129,
+    "slug": "xanthumgum",
+    "chemical_name": "Xanthum Gum",
+    "cas_number": "11138-66-2",
+    "category": {
+      "name": "Own Import Products (China Make)",
+      "slug": "imports"
+    },
+    "therapeutic_category": "Imported Reagent",
+    "grade": "Direct Import Grade",
+    "short_description": "Directly imported Xanthum Gum with verified global manufacturer sourcing.",
+    "image": {
+      "url": "/images/supply.png",
+      "alt": "Xanthum Gum Imported Chemical"
+    },
+    "related_industries": [
+      {
+        "slug": "water-treatment",
+        "title": "Water Treatment & Environmental Management"
+      }
+    ]
+  },
+  {
+    "id": 1130,
+    "slug": "aceticacid-importedgnfc",
+    "chemical_name": "Acetic Acid \u2013 Imported & GNFC",
+    "cas_number": "64-19-7",
+    "category": {
+      "name": "Technical & Commercial Acids",
+      "slug": "acids"
+    },
+    "therapeutic_category": "Inorganic / Organic Acid",
+    "grade": "Commercial & Technical Acid",
+    "short_description": "Acetic Acid \u2013 Imported & GNFC supplied in bulk packaging for industrial processing.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Acetic Acid \u2013 Imported & GNFC Acid"
+    },
+    "related_industries": [
+      {
+        "slug": "textile",
+        "title": "Textile Industry"
+      }
+    ]
+  },
+  {
+    "id": 1131,
+    "slug": "formicacid85-gnfc",
+    "chemical_name": "Formic Acid 85% \u2013 GNFC",
+    "cas_number": "64-18-6",
+    "category": {
+      "name": "Technical & Commercial Acids",
+      "slug": "acids"
+    },
+    "therapeutic_category": "Inorganic / Organic Acid",
+    "grade": "Commercial & Technical Acid",
+    "short_description": "Formic Acid 85% \u2013 GNFC supplied in bulk packaging for industrial processing.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Formic Acid 85% \u2013 GNFC Acid"
+    },
+    "related_industries": [
+      {
+        "slug": "textile",
+        "title": "Textile Industry"
+      }
+    ]
+  },
+  {
+    "id": 1132,
+    "slug": "hcl",
+    "chemical_name": "HCL",
+    "cas_number": "7647-01-0",
+    "category": {
+      "name": "Technical & Commercial Acids",
+      "slug": "acids"
+    },
+    "therapeutic_category": "Inorganic / Organic Acid",
+    "grade": "Commercial & Technical Acid",
+    "short_description": "HCL supplied in bulk packaging for industrial processing.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "HCL Acid"
+    },
+    "related_industries": [
+      {
+        "slug": "textile",
+        "title": "Textile Industry"
+      }
+    ]
+  },
+  {
+    "id": 1133,
+    "slug": "sulphuricacid98",
+    "chemical_name": "Sulphuric Acid 98%",
+    "cas_number": "7664-93-9",
+    "category": {
+      "name": "Technical & Commercial Acids",
+      "slug": "acids"
+    },
+    "therapeutic_category": "Inorganic / Organic Acid",
+    "grade": "Commercial & Technical Acid",
+    "short_description": "Sulphuric Acid 98% supplied in bulk packaging for industrial processing.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Sulphuric Acid 98% Acid"
+    },
+    "related_industries": [
+      {
+        "slug": "textile",
+        "title": "Textile Industry"
+      }
+    ]
+  },
+  {
+    "id": 1134,
+    "slug": "phosphoricacidtech-85",
+    "chemical_name": "Phosphoric Acid Tech. 85%",
+    "cas_number": "7664-38-2",
+    "category": {
+      "name": "Technical & Commercial Acids",
+      "slug": "acids"
+    },
+    "therapeutic_category": "Inorganic / Organic Acid",
+    "grade": "Commercial & Technical Acid",
+    "short_description": "Phosphoric Acid Tech. 85% supplied in bulk packaging for industrial processing.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Phosphoric Acid Tech. 85% Acid"
+    },
+    "related_industries": [
+      {
+        "slug": "textile",
+        "title": "Textile Industry"
+      }
+    ]
+  },
+  {
+    "id": 1135,
+    "slug": "sulphamicacid",
+    "chemical_name": "Sulphamic Acid",
+    "cas_number": "5329-14-6",
+    "category": {
+      "name": "Technical & Commercial Acids",
+      "slug": "acids"
+    },
+    "therapeutic_category": "Inorganic / Organic Acid",
+    "grade": "Commercial & Technical Acid",
+    "short_description": "Sulphamic Acid supplied in bulk packaging for industrial processing.",
+    "image": {
+      "url": "/images/chemical-2.jpg",
+      "alt": "Sulphamic Acid Acid"
+    },
+    "related_industries": [
+      {
+        "slug": "textile",
+        "title": "Textile Industry"
+      }
+    ]
+  }
+]

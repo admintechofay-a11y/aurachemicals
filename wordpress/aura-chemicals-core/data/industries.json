@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "slug": "healthcare",
+    "title": "Healthcare & Pharmaceutical Industry",
+    "overview": "At Aura Chemicals, we are dedicated to advancing the healthcare and pharmaceutical sector by supplying high-purity APIs, intermediates, and specialty chemicals. Our products comply with stringent regulatory standards, ensuring safety, efficacy, and consistency in pharmaceutical formulations.",
+    "image": {
+      "url": "/images/healthcare.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Healthcare and Pharmaceuticals"
+    }
+  },
+  {
+    "id": 2,
+    "slug": "agrochemicals",
+    "title": "Agrochemicals & Fertilizers",
+    "overview": "We provide high-quality chemicals essential for the formulation of pesticides, herbicides, and fertilizers. Our agrochemical solutions are tailored to enhance crop yield, protect against pests and diseases, and improve soil fertility.",
+    "image": {
+      "url": "/images/agriculture.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Agrochemicals and Fertilizers"
+    }
+  },
+  {
+    "id": 3,
+    "slug": "food-beverage",
+    "title": "Food and Beverage Industry",
+    "overview": "Our portfolio includes food-grade chemicals, additives, preservatives, and acidulants that comply with international food safety standards, helping food manufacturers improve shelf life and maintain texture.",
+    "image": {
+      "url": "/images/food-and-bevearge.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Food and Beverage Chemical Solutions"
+    }
+  },
+  {
+    "id": 4,
+    "slug": "cosmetics",
+    "title": "Cosmetics and Personal Care",
+    "overview": "Aura Chemicals supplies specialized raw materials, including emulsifiers, preservatives, surfactants, and active ingredients, helping formulate safe, high-performing skincare and hygiene products.",
+    "image": {
+      "url": "/images/cosmetic.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Cosmetics and Personal Care Ingredients"
+    }
+  },
+  {
+    "id": 5,
+    "slug": "energy-oil-gas",
+    "title": "Energy Sector & Oil/Gas",
+    "overview": "Essential chemical solutions tailored to the unique demands of the energy sector, from specialty chemicals for oil and gas extraction and refining to products supporting renewable energy technologies.",
+    "image": {
+      "url": "/images/energy-sector.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Energy and Petrochemical Solutions"
+    }
+  },
+  {
+    "id": 6,
+    "slug": "water-treatment",
+    "title": "Water Treatment & Environmental Management",
+    "overview": "Comprehensive range of water treatment chemicals, including coagulants, flocculants, disinfectants, biocides, and scale inhibitors for treating municipal and industrial effluent.",
+    "image": {
+      "url": "/images/water-treatment-plant.jpg",
+      "width": 800,
+      "height": 533,
+      "alt": "Water Treatment Plant Reagents"
+    }
+  },
+  {
+    "id": 7,
+    "slug": "automotive",
+    "title": "Automotive Industry",
+    "overview": "High-performance chemicals used in automotive manufacturing and maintenance, from coatings and adhesives to specialty fluids, coolants, and cleaners.",
+    "image": {
+      "url": "/images/automotive.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Automotive Chemical Solutions"
+    }
+  },
+  {
+    "id": 8,
+    "slug": "cleaning-sanitation",
+    "title": "Cleaning and Sanitation Industry",
+    "overview": "Disinfectants, surfactants, and sanitizing agents designed for industrial, commercial, and household cleaning, supporting optimal hygiene standards.",
+    "image": {
+      "url": "/images/cleaning.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Cleaning and Sanitation Chemistry"
+    }
+  },
+  {
+    "id": 9,
+    "slug": "construction",
+    "title": "Construction Industry",
+    "overview": "Concrete additives, waterproofing agents, sealants, accelerators, and retarders that improve the durability, strength, and workability of construction materials.",
+    "image": {
+      "url": "/images/constuction.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Construction Additives and Sealants"
+    }
+  },
+  {
+    "id": 10,
+    "slug": "adhesives-sealants",
+    "title": "Adhesives and Sealants Industry",
+    "overview": "High-performance resins, polymers, plasticizers, and solvents that improve bonding strength, flexibility, and resistance to environmental stress.",
+    "image": {
+      "url": "/images/adhesives.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Adhesives and Sealants Resins"
+    }
+  },
+  {
+    "id": 11,
+    "slug": "leather-tanning",
+    "title": "Leather and Tanning Industry",
+    "overview": "Chemicals essential for beamhouse, tanning, and finishing processes, producing soft, durable, and weather-resistant leather while supporting eco-friendly practices.",
+    "image": {
+      "url": "/images/leather.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Leather and Tanning Chemistry"
+    }
+  },
+  {
+    "id": 12,
+    "slug": "textile",
+    "title": "Textile Industry",
+    "overview": "Solutions for textile manufacturing processes, from dyeing and printing to finishing, providing eco-friendly chemicals that ensure vibrant colors and soft hand-feel.",
+    "image": {
+      "url": "/images/textind.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Textile Processing Chemicals"
+    }
+  },
+  {
+    "id": 13,
+    "slug": "plastics-polymers",
+    "title": "Plastics and Polymers Industry",
+    "overview": "Plasticizers, stabilizers, additives, and catalysts that improve the flexibility, durability, and strength of plastic products across packaging and industrial components.",
+    "image": {
+      "url": "/images/plastics.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Plastics and Polymer Additives"
+    }
+  },
+  {
+    "id": 14,
+    "slug": "mining-metallurgy",
+    "title": "Mining and Metallurgy",
+    "overview": "Flotation agents, leaching chemicals, corrosion inhibitors, and solvent extraction reagents designed to optimize mineral extraction and ore refining.",
+    "image": {
+      "url": "/images/mining.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Mining and Metallurgy Reagents"
+    }
+  },
+  {
+    "id": 15,
+    "slug": "rubber-tyre",
+    "title": "Rubber and Tyre Industry",
+    "overview": "Vulcanizing agents, accelerators, fillers, antioxidants, and specialty additives that enhance elasticity, tensile strength, and heat resistance.",
+    "image": {
+      "url": "/images/tyre.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Rubber and Tyre Compounding Chemicals"
+    }
+  },
+  {
+    "id": 16,
+    "slug": "paints-coatings",
+    "title": "Paints and Coatings Industry",
+    "overview": "Resins, binders, pigments, solvents, and additives that improve color retention, durability, texture, adhesion, and resistance to environmental weathering.",
+    "image": {
+      "url": "/images/paint.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Paints and Coatings Formulations"
+    }
+  },
+  {
+    "id": 17,
+    "slug": "paper-pulp",
+    "title": "Paper and Pulp Industry",
+    "overview": "Chemicals for pulping, bleaching, sizing, and water treatment that enhance paper strength, brightness, and manufacturing runnability.",
+    "image": {
+      "url": "/images/paper.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Paper and Pulp Processing Reagents"
+    }
+  },
+  {
+    "id": 18,
+    "slug": "packaging",
+    "title": "Packaging Industry",
+    "overview": "Barrier coatings, adhesives, and polymer additives that enhance the strength, shelf life, and sustainability of rigid and flexible packaging materials.",
+    "image": {
+      "url": "/images/packaging.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Packaging Barrier Coatings and Materials"
+    }
+  },
+  {
+    "id": 19,
+    "slug": "semiconductors-electronics",
+    "title": "Semiconductors and Electronics",
+    "overview": "Ultra-high-purity chemical reagents, etchants, and cleaning solvents engineered for semiconductor wafer fabrication and electronic component manufacturing.",
+    "image": {
+      "url": "/images/semiconductor.jpeg",
+      "width": 612,
+      "height": 408,
+      "alt": "Electronic Grade and Semiconductor Chemicals"
+    }
+  }
+]

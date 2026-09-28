@@ -1,0 +1,128 @@
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { RootLayout } from './layouts/RootLayout';
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { MissionPage } from './pages/MissionPage';
+import { IndustriesPage } from './pages/IndustriesPage';
+import { ServicesPage } from './pages/ServicesPage';
+import { ProductsPage } from './pages/ProductsPage';
+import { ProductDetailPage } from './pages/ProductDetailPage';
+import { QuotePage } from './pages/QuotePage';
+import { ContactPage } from './pages/ContactPage';
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { useParams } from 'react-router-dom';
+
+const CATEGORY_SLUGS = new Set([
+  'api',
+  'solvents',
+  'manufacturing-phosphates',
+  'imports',
+  'acids',
+  'industrial-chemicals',
+  'grasim-products',
+  'magnesia-products',
+  'gacl-products',
+]);
+
+const ProductRouteDispatcher: React.FC = () => {
+  const { slugOrCategory } = useParams<{ slugOrCategory: string }>();
+  if (slugOrCategory && CATEGORY_SLUGS.has(slugOrCategory.toLowerCase())) {
+    return <ProductsPage />;
+  }
+  return <ProductDetailPage />;
+};
+import { Container } from './components/common/Container';
+import { Section } from './components/common/Section';
+import { Button } from './components/common/Button';
+import { UI_LABELS } from './utils/constants';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      refetchOnWindowFocus: false,
+      retry: 1,
+    },
+  },
+});
+
+const TempPlaceholder: React.FC<{ title: string }> = ({ title }) => (
+  <Section>
+    <Container>
+      <div style={{ maxWidth: '600px', margin: '40px auto', textAlign: 'center' }}>
+        <h2>{title}</h2>
+        <p className="body-large" style={{ marginTop: '12px', marginBottom: '24px' }}>
+          This route is registered in the architecture and ready for phase implementation.
+        </p>
+        <Button to="/products" variant="primary">
+          Browse Products
+        </Button>
+      </div>
+    </Container>
+  </Section>
+);
+
+const NotFoundPage: React.FC = () => (
+  <Section>
+    <Container>
+      <div style={{ maxWidth: '500px', margin: '60px auto', textAlign: 'center' }}>
+        <span className="eyebrow">404 Error</span>
+        <h2>{UI_LABELS.NOT_FOUND_TITLE}</h2>
+        <p className="body-large" style={{ marginTop: '12px', marginBottom: '24px' }}>
+          {UI_LABELS.NOT_FOUND_DESC}
+        </p>
+        <Button to="/" variant="primary">
+          {UI_LABELS.NAV_HOME}
+        </Button>
+      </div>
+    </Container>
+  </Section>
+);
+
+import { MotionProvider } from './components/common/MotionPrimitives';
+
+export const App: React.FC = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <MotionProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<RootLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="about-us" element={<AboutPage />} />
+            <Route path="our-mission" element={<MissionPage />} />
+            <Route path="products" element={<ProductsPage />} />
+            <Route path="products/category/:category" element={<ProductsPage />} />
+            <Route path="products/detail/:slug" element={<ProductDetailPage />} />
+            <Route path="products/:category/:slug" element={<ProductDetailPage />} />
+            <Route path="products/:slugOrCategory" element={<ProductRouteDispatcher />} />
+            <Route path="industries" element={<IndustriesPage />} />
+            <Route path="industries/:slug" element={<IndustriesPage />} />
+            <Route path="services" element={<ServicesPage />} />
+            <Route path="get-a-quote" element={<QuotePage />} />
+            <Route path="contact" element={<ContactPage />} />
+            <Route path="privacy-policy" element={<PrivacyPolicyPage />} />
+
+            {/* 301-equivalent redirect routes for legacy WordPress links */}
+            <Route path="apis" element={<Navigate to="/products/api" replace />} />
+            <Route path="solvents" element={<Navigate to="/products/solvents" replace />} />
+            <Route path="industries-copy" element={<Navigate to="/industries" replace />} />
+            <Route path="request-a-quote" element={<Navigate to="/get-a-quote" replace />} />
+            <Route path="request-quote" element={<Navigate to="/services" replace />} />
+            <Route path="privacy-policy-2" element={<Navigate to="/privacy-policy" replace />} />
+            <Route path="shop" element={<Navigate to="/products" replace />} />
+            <Route path="cart" element={<Navigate to="/get-a-quote" replace />} />
+            <Route path="checkout" element={<Navigate to="/get-a-quote" replace />} />
+            <Route path="my-account" element={<Navigate to="/contact" replace />} />
+
+            {/* Catch-all 404 */}
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </MotionProvider>
+  </QueryClientProvider>
+);
+};

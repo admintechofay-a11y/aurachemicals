@@ -1,0 +1,35 @@
+{
+  "company": {
+    "brand_name": "Aura Chemicals",
+    "legal_name": "Aura Space Infra Private Limited",
+    "group_name": "Aura Group of Companies",
+    "tagline": "Your Trusted Partner in Chemical Excellence",
+    "roc_registration": "ROC Ahmedabad",
+    "experience_years": "7+ Years",
+    "supplier_count": 400,
+    "customer_count_text": "Active partnerships with thousands of industrial customers across India",
+    "phone": "+91 7220000877",
+    "email": "management.aurachemicals@gmail.com",
+    "address": null,
+    "business_hours": null,
+    "social_links": []
+  },
+  "branding": {
+    "header_logo": {
+      "url": "/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+      "width": 185,
+      "height": 58,
+      "alt": "Aura Chemicals Logo"
+    },
+    "footer_logo": {
+      "url": "/images/aa6efd8e-logo-footer.png",
+      "width": 185,
+      "height": 58,
+      "alt": "Aura Chemicals Logo"
+    }
+  },
+  "footer": {
+    "copyright_text": "Copyright © 2026 Aura Space Infra Pvt. Ltd. All rights reserved.",
+    "powered_by": "TECHOFY Global Ventures"
+  }
+}
