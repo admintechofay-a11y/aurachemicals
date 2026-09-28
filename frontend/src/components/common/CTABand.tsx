@@ -22,18 +22,19 @@ export const CTABand: React.FC<CTABandProps> = ({
 
   return (
     <section
+      className="cta-band-dark"
       style={{
-        backgroundColor: 'var(--color-primary)',
-        color: 'var(--color-text-inverse)',
-        padding: 'clamp(64px, 8vw, 96px) 0',
+        backgroundColor: 'var(--color-ink)',
+        color: 'var(--color-paper)',
+        padding: 'clamp(56px, 7vw, 96px) 0',
         position: 'relative',
-        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
+        borderTop: '1px solid rgba(213, 217, 220, 0.12)',
       }}
     >
       <Container>
         <div
           style={{
-            maxWidth: '800px',
+            maxWidth: '780px',
             margin: '0 auto',
             textAlign: 'center',
           }}
@@ -41,8 +42,9 @@ export const CTABand: React.FC<CTABandProps> = ({
           {heading && (
             <h2
               style={{
-                color: 'var(--color-text-inverse)',
+                color: 'var(--color-paper)',
                 marginBottom: 'var(--space-4)',
+                textAlign: 'center',
               }}
             >
               {heading}
@@ -52,9 +54,11 @@ export const CTABand: React.FC<CTABandProps> = ({
             <p
               className="body-large"
               style={{
-                color: 'rgba(255, 255, 255, 0.85)',
+                color: 'rgba(244, 245, 245, 0.85)',
                 marginBottom: 'var(--space-8)',
                 lineHeight: 1.6,
+                margin: '0 auto var(--space-8) auto',
+                textAlign: 'center',
               }}
             >
               {body}
@@ -74,6 +78,11 @@ export const CTABand: React.FC<CTABandProps> = ({
               to={buttonUrl}
               variant="primary"
               size="lg"
+              style={{
+                backgroundColor: 'var(--color-paper)',
+                color: 'var(--color-ink)',
+                borderColor: 'var(--color-paper)',
+              }}
               icon={<ArrowRight size={18} />}
             >
               {buttonLabel}
@@ -85,8 +94,8 @@ export const CTABand: React.FC<CTABandProps> = ({
                 variant="outline"
                 size="lg"
                 style={{
-                  color: '#FFFFFF',
-                  borderColor: 'rgba(255, 255, 255, 0.3)',
+                  color: 'var(--color-paper)',
+                  borderColor: 'rgba(244, 245, 245, 0.35)',
                 }}
                 icon={<PhoneCall size={18} />}
                 iconPosition="left"

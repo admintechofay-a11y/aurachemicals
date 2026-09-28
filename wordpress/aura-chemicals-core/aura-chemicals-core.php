@@ -52,7 +52,7 @@ register_activation_hook(__FILE__, function () {
         update_option('aura_experience_years', '7+ Years');
     }
     if (!get_option('aura_frontend_url')) {
-        update_option('aura_frontend_url', 'http://localhost:3001');
+        update_option('aura_frontend_url', 'http://localhost:3000');
     }
 });
 
@@ -61,4 +61,39 @@ register_activation_hook(__FILE__, function () {
  */
 register_deactivation_hook(__FILE__, function () {
     flush_rewrite_rules();
+});
+
+/**
+ * Content Refresh Webhook: Dispatches async non-blocking POST on content/option changes
+ */
+function aura_trigger_content_revalidation($post_id = 0) {
+    if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    if ($post_id && wp_is_post_revision($post_id)) return;
+
+    $webhook_url = get_option('aura_revalidation_webhook', '');
+    if (empty($webhook_url)) return;
+
+    $secret = get_option('aura_revalidation_secret', '');
+    $payload = [
+        'event'     => current_filter(),
+        'post_id'   => $post_id,
+        'post_type' => $post_id ? get_post_type($post_id) : 'option',
+        'timestamp' => time(),
+    ];
+
+    wp_remote_post($webhook_url, [
+        'blocking' => false,
+        'headers'  => [
+            'Content-Type'  => 'application/json',
+            'X-Aura-Secret' => $secret,
+        ],
+        'body'     => wp_json_encode($payload),
+    ]);
+}
+add_action('save_post', 'aura_trigger_content_revalidation');
+add_action('delete_post', 'aura_trigger_content_revalidation');
+add_action('updated_option', function($option) {
+    if (strpos($option, 'aura_') === 0) {
+        aura_trigger_content_revalidation(0);
+    }
 });

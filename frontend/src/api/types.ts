@@ -28,6 +28,9 @@ export interface CompanySettingsDto {
   phone?: string;
   email?: string;
   address?: string | null;
+  registered_address?: string | null;
+  head_office_address?: string | null;
+  map_embed_url?: string | null;
   business_hours?: string | null;
   social_links?: Array<{ platform: string; url: string }>;
 }
@@ -53,6 +56,7 @@ export interface SettingsDto {
   footer: {
     copyright_text?: string;
     powered_by?: string;
+    tagline?: string;
   };
 }
 

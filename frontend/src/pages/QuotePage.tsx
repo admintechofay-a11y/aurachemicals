@@ -2,16 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { useSearchParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import {
-  Send,
   CheckCircle2,
   PhoneCall,
-  Mail,
-  ShieldCheck,
-  FileCheck2,
-  Clock,
-  ArrowRight,
   AlertCircle,
-  Building2,
   FlaskConical,
 } from 'lucide-react';
 import { Container } from '../components/common/Container';
@@ -21,17 +14,16 @@ import { Button } from '../components/common/Button';
 import { FormField } from '../components/common/FormField';
 import { api } from '../api/client';
 import { InquiryPayload } from '../api/types';
+import { UI_LABELS } from '../utils/constants';
 
 export const QuotePage: React.FC = () => {
   const [searchParams] = useSearchParams();
 
-  // Initial values from query params
+  // Query params prefill
   const paramProduct = searchParams.get('product') || '';
   const paramCas = searchParams.get('cas') || '';
-  const paramIndustry = searchParams.get('industry') || '';
-  const paramService = searchParams.get('service') || '';
 
-  const [formData, setFormData] = useState<InquiryPayload>({
+  const [formData, setFormData] = useState<InquiryPayload & { unit: string; message: string; timestamp: number }>({
     name: '',
     company: '',
     email: '',
@@ -39,32 +31,41 @@ export const QuotePage: React.FC = () => {
     product: paramProduct,
     cas_number: paramCas,
     quantity: '',
-    requirement: paramService ? `Service Inquiry: ${paramService}` : paramIndustry ? `Industry requirement for ${paramIndustry}` : '',
+    unit: 'kg',
+    requirement: '',
+    message: '',
     consent: true,
     website_url_hp: '', // Honeypot
+    timestamp: Math.floor(Date.now() / 1000), // Time check for bot prevention
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitResult, setSubmitResult] = useState<{ success: boolean; message: string; inquiry_id?: number } | null>(null);
 
+  // Fetch settings for phone and company
   const { data: settings } = useQuery({
     queryKey: ['settings'],
     queryFn: () => api.getSettings(),
   });
 
-  const phone = settings?.company?.phone || '+91 7220000877';
-  const email = settings?.company?.email || 'management.aurachemicals@gmail.com';
+  // Fetch verified products for dropdown
+  const { data: productsData } = useQuery({
+    queryKey: ['products-for-quote-dropdown'],
+    queryFn: () => api.getProducts({ per_page: 200 }),
+  });
+
+  const phone = settings?.company?.phone;
 
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = 'Contact person full name is required.';
+      newErrors.name = 'Full name of representative is required.';
     }
 
     if (!formData.company?.trim()) {
-      newErrors.company = 'Company or legal entity name is required.';
+      newErrors.company = 'Company or organization name is required.';
     }
 
     if (!formData.email.trim()) {
@@ -76,31 +77,41 @@ export const QuotePage: React.FC = () => {
     if (!formData.phone.trim()) {
       newErrors.phone = 'Phone or WhatsApp contact number is required.';
     } else if (formData.phone.replace(/\D/g, '').length < 8) {
-      newErrors.phone = 'Please provide a valid phone number (at least 8 digits).';
+      newErrors.phone = 'Please provide a valid telephone or mobile number.';
     }
 
     if (!formData.product?.trim()) {
-      newErrors.product = 'Chemical product name or requirement is required.';
+      newErrors.product = 'Chemical product name or specification is required.';
     }
 
     if (!formData.quantity?.trim()) {
-      newErrors.quantity = 'Target quantity or order volume is required (e.g., 500 kg, 5 MT, 1 tanker).';
+      newErrors.quantity = 'Estimated volume or target quantity is required.';
     }
 
     if (!formData.consent) {
-      newErrors.consent = 'You must consent to being contacted regarding this quotation request.';
+      newErrors.consent = 'You must confirm that this is a commercial quotation inquiry.';
     }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
+  const handleProductSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedTitle = e.target.value;
+    if (!selectedTitle) return;
+
+    const matched = productsData?.products.find((p) => p.chemical_name === selectedTitle);
+    setFormData((prev) => ({
+      ...prev,
+      product: selectedTitle,
+      cas_number: matched?.cas_number || prev.cas_number,
+    }));
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Honeypot spam protection check
     if (formData.website_url_hp) {
-      // Silently reject bot submissions
       setSubmitResult({
         success: true,
         message: 'Inquiry received successfully.',
@@ -118,13 +129,26 @@ export const QuotePage: React.FC = () => {
 
     setIsSubmitting(true);
     try {
-      const response = await api.submitInquiry(formData);
+      const payload: InquiryPayload = {
+        name: formData.name,
+        company: formData.company,
+        email: formData.email,
+        phone: formData.phone,
+        product: formData.product,
+        cas_number: formData.cas_number,
+        quantity: `${formData.quantity} ${formData.unit}`,
+        requirement: [formData.requirement, formData.message].filter(Boolean).join('\n\nAdditional Notes: '),
+        consent: formData.consent,
+        website_url_hp: formData.website_url_hp,
+      };
+
+      const response = await api.submitInquiry(payload);
       setSubmitResult(response);
       window.scrollTo({ top: 120, behavior: 'smooth' });
     } catch (err: any) {
       setSubmitResult({
         success: false,
-        message: err.message || 'Failed to submit quotation inquiry. Please contact our sales desk directly.',
+        message: err.message || 'Failed to submit quotation inquiry. Please contact our procurement desk directly.',
       });
     } finally {
       setIsSubmitting(false);
@@ -133,66 +157,63 @@ export const QuotePage: React.FC = () => {
 
   return (
     <>
-      <Breadcrumb items={[{ label: 'Request a Quote' }]} />
+      <Breadcrumb items={[{ label: UI_LABELS.NAV_GET_A_QUOTE }]} />
 
       {/* Header */}
       <section
         style={{
           backgroundColor: 'var(--color-surface)',
           padding: 'clamp(40px, 5vw, 64px) 0',
-          borderBottom: '1px solid var(--color-border)',
+          borderBottom: '1px solid var(--color-rule)',
         }}
       >
         <Container>
           <div style={{ maxWidth: '840px' }}>
             <span className="eyebrow">Commercial Procurement</span>
-            <h1 style={{ marginBottom: 'var(--space-3)' }}>Request a Formal Quotation</h1>
-            <p className="body-large" style={{ color: 'var(--color-text)' }}>
-              Submit your chemical, API, or inspection service specifications. Our commercial sourcing desk responds within 24 business hours with verified pricing, minimum order quantities, and COA documentation.
+            <h1 style={{ marginBottom: 'var(--space-3)' }}>Request a Commercial Quotation</h1>
+            <p className="body-large">
+              Submit your required chemical volume, purity grade, and delivery specifications. Our sales desk reviews technical specifications directly against manufacturer allocations.
             </p>
           </div>
         </Container>
       </section>
 
-      {/* Form & Sidebar Grid */}
+      {/* Form Content */}
       <Section padding="normal">
         <Container>
           {submitResult?.success ? (
-            /* Success Confirmation Screen */
+            /* Success State (Shown ONLY after real 2xx response) */
             <div
               role="status"
               aria-live="polite"
               tabIndex={-1}
+              className="card"
               style={{
-                maxWidth: '720px',
+                maxWidth: '680px',
                 margin: '0 auto',
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--color-border)',
-                padding: 'clamp(36px, 6vw, 56px)',
+                padding: 'clamp(32px, 5vw, 48px)',
                 textAlign: 'center',
-                boxShadow: 'var(--shadow-sm)',
-                animation: 'feedbackFadeIn 250ms var(--motion-ease) forwards',
               }}
             >
               <div
                 style={{
-                  width: '64px',
-                  height: '64px',
-                  borderRadius: 'var(--radius-full)',
-                  backgroundColor: 'rgba(42, 127, 134, 0.12)',
-                  color: 'var(--color-accent)',
+                  width: '56px',
+                  height: '56px',
+                  borderRadius: 'var(--radius-sm)',
+                  backgroundColor: 'var(--color-surface)',
+                  border: '1px solid var(--color-rule)',
+                  color: 'var(--color-success)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  margin: '0 auto 24px',
+                  margin: '0 auto 20px',
                 }}
               >
-                <CheckCircle2 size={36} />
+                <CheckCircle2 size={32} />
               </div>
 
-              <h2 style={{ fontSize: '1.75rem', marginBottom: '12px', color: 'var(--color-primary)' }}>
-                Quotation Request Received
+              <h2 style={{ fontSize: '1.5rem', marginBottom: '12px', textAlign: 'center' }}>
+                {UI_LABELS.FORM_SUCCESS_TITLE}
               </h2>
 
               {submitResult.inquiry_id && (
@@ -200,50 +221,28 @@ export const QuotePage: React.FC = () => {
                   style={{
                     display: 'inline-block',
                     backgroundColor: 'var(--color-surface)',
-                    border: '1px solid var(--color-border)',
-                    padding: '6px 16px',
+                    border: '1px solid var(--color-rule)',
+                    padding: '4px 14px',
                     borderRadius: 'var(--radius-sm)',
-                    fontFamily: 'var(--font-family-mono)',
                     fontSize: '0.875rem',
-                    fontWeight: 600,
-                    color: 'var(--color-primary)',
-                    marginBottom: '20px',
+                    fontFamily: 'var(--font-family-mono)',
+                    marginBottom: '16px',
                   }}
                 >
                   Reference ID: #RFQ-{submitResult.inquiry_id}
                 </div>
               )}
 
-              <p className="body-large" style={{ color: 'var(--color-text)', marginBottom: '28px', lineHeight: 1.6 }}>
+              <p className="body-large" style={{ textAlign: 'center', margin: '0 auto 24px auto' }}>
                 {submitResult.message}
               </p>
 
-              <div
-                style={{
-                  backgroundColor: 'var(--color-surface-subtle)',
-                  borderRadius: 'var(--radius-md)',
-                  padding: '24px',
-                  textAlign: 'left',
-                  marginBottom: '32px',
-                  border: '1px solid var(--color-border)',
-                }}
-              >
-                <h3 style={{ fontSize: '1rem', fontWeight: 600, marginBottom: '12px' }}>
-                  Next Steps:
-                </h3>
-                <ul style={{ margin: 0, paddingLeft: '20px', fontSize: '0.875rem', color: 'var(--color-text-muted)', lineHeight: 1.6 }}>
-                  <li>Our technical sales desk will review your target specifications and delivery cluster.</li>
-                  <li>A verified pro-forma quotation with manufacturer batch availability and purity assays will be sent to <strong>{formData.email}</strong>.</li>
-                  <li>For urgent requirements, please contact our dispatch desk directly at <a href={`tel:${phone.replace(/\s+/g, '')}`} style={{ color: 'var(--color-primary)', fontWeight: 600 }}>{phone}</a>.</li>
-                </ul>
-              </div>
-
-              <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '12px', justifyContent: 'center', flexWrap: 'wrap' }}>
                 <Button to="/products" variant="primary">
                   Browse Chemical Catalog
                 </Button>
                 <Button
-                  variant="outline"
+                  variant="secondary"
                   onClick={() => {
                     setSubmitResult(null);
                     setFormData({
@@ -254,65 +253,60 @@ export const QuotePage: React.FC = () => {
                       product: '',
                       cas_number: '',
                       quantity: '',
+                      unit: 'kg',
                       requirement: '',
+                      message: '',
                       consent: true,
                       website_url_hp: '',
+                      timestamp: Math.floor(Date.now() / 1000),
                     });
                   }}
                 >
-                  Submit Another RFQ
+                  Submit Another Inquiry
                 </Button>
               </div>
             </div>
           ) : (
-            /* Active Form Grid */
+            /* Active Form */
             <div
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                gap: '48px',
+                gap: 'clamp(32px, 5vw, 56px)',
                 alignItems: 'start',
               }}
             >
               {/* Form Column */}
-              <div
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--color-border)',
-                  padding: 'clamp(28px, 4vw, 40px)',
-                  boxShadow: 'var(--shadow-sm)',
-                }}
-              >
-                <h2 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--color-primary)' }}>
-                  RFQ Specifications
+              <div className="card" style={{ padding: 'clamp(24px, 4vw, 40px)' }}>
+                <h2 style={{ fontSize: '1.35rem', marginBottom: '8px' }}>
+                  Quotation Specifications
                 </h2>
-                <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '28px' }}>
-                  Fields marked with <span style={{ color: 'var(--color-error)' }}>*</span> are required for commercial review.
+                <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', marginBottom: '24px' }}>
+                  Fields marked with * are required for formal pricing and batch allocation.
                 </p>
 
                 {submitResult?.success === false && (
                   <div
                     style={{
-                      padding: '16px',
-                      backgroundColor: 'rgba(197, 48, 48, 0.08)',
+                      padding: '14px',
+                      backgroundColor: 'var(--color-surface)',
                       border: '1px solid var(--color-error)',
                       borderRadius: 'var(--radius-sm)',
                       color: 'var(--color-error)',
                       fontSize: '0.875rem',
-                      marginBottom: '24px',
+                      marginBottom: '20px',
                       display: 'flex',
                       alignItems: 'center',
-                      gap: '12px',
+                      gap: '10px',
                     }}
                   >
-                    <AlertCircle size={20} style={{ flexShrink: 0 }} />
+                    <AlertCircle size={18} style={{ flexShrink: 0 }} />
                     <div>{submitResult.message}</div>
                   </div>
                 )}
 
                 <form onSubmit={handleSubmit} noValidate>
-                  {/* Honeypot field (hidden from real users) */}
+                  {/* Honeypot */}
                   <div style={{ display: 'none' }} aria-hidden="true">
                     <input
                       type="text"
@@ -325,99 +319,184 @@ export const QuotePage: React.FC = () => {
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                    <FormField id="name" label="Contact Person Full Name" required error={errors.name}>
+                    <FormField id="name" label="Representative Full Name" required error={errors.name}>
                       <input
+                        id="name"
                         type="text"
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="e.g., Rajesh Sharma"
+                        placeholder="e.g. Dr. Rajesh Patel"
+                        required
                       />
                     </FormField>
 
-                    <FormField id="company" label="Individual / Firm / Company Name" required error={errors.company}>
+                    <FormField id="company" label="Corporate / Firm Name" required error={errors.company}>
                       <input
+                        id="company"
                         type="text"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        placeholder="e.g., Apex Pharmaceuticals Ltd."
+                        placeholder="e.g. Apex Pharma Laboratories"
+                        required
                       />
                     </FormField>
                   </div>
 
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                    <FormField id="email" label="Business Email Address" required error={errors.email}>
+                    <FormField id="email" label="Corporate Email" required error={errors.email}>
                       <input
+                        id="email"
                         type="email"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="procurement@company.com"
+                        required
                       />
                     </FormField>
 
-                    <FormField id="phone" label="Phone / WhatsApp Contact" required error={errors.phone} hint="Include country code for export inquiries">
+                    <FormField id="phone" label="Phone / WhatsApp" required error={errors.phone}>
                       <input
+                        id="phone"
                         type="tel"
                         value={formData.phone}
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                        placeholder="+91 98765 43210"
+                        placeholder="+91 98000 00000"
+                        required
                       />
                     </FormField>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '16px' }}>
-                    <FormField id="product" label="Chemical Product / API Name" required error={errors.product}>
+                  {/* Product selection: Dropdown from CMS + Free Text Input */}
+                  <div style={{ marginBottom: '16px' }}>
+                    {productsData?.products && productsData.products.length > 0 && (
+                      <div style={{ marginBottom: '8px' }}>
+                        <label
+                          htmlFor="product-catalog-select"
+                          style={{
+                            display: 'block',
+                            fontSize: '0.8125rem',
+                            fontWeight: 500,
+                            color: 'var(--color-muted)',
+                            marginBottom: '4px',
+                          }}
+                        >
+                          Quick select from verified catalog:
+                        </label>
+                        <select
+                          id="product-catalog-select"
+                          onChange={handleProductSelect}
+                          style={{
+                            width: '100%',
+                            padding: '8px 12px',
+                            fontSize: '0.875rem',
+                            backgroundColor: 'var(--color-card)',
+                            border: '1px solid var(--color-rule)',
+                            borderRadius: 'var(--radius-sm)',
+                            color: 'var(--color-text)',
+                          }}
+                          value=""
+                        >
+                          <option value="">— Select a product to auto-fill name & CAS —</option>
+                          {productsData.products.map((p) => (
+                            <option key={p.id} value={p.chemical_name}>
+                              {p.chemical_name} {p.cas_number ? `(CAS: ${p.cas_number})` : ''}
+                            </option>
+                          ))}
+                        </select>
+                      </div>
+                    )}
+                    <FormField
+                      id="product"
+                      label="Chemical Product / API Name"
+                      required
+                      error={errors.product}
+                      hint="Specify chemical name, grade, or custom specifications"
+                    >
                       <input
+                        id="product"
                         type="text"
                         value={formData.product}
                         onChange={(e) => setFormData({ ...formData, product: e.target.value })}
-                        placeholder="e.g., Aceclofenac / Caustic Flakes"
-                      />
-                    </FormField>
-
-                    <FormField id="cas_number" label="CAS Registry Number (if known)" error={errors.cas_number}>
-                      <input
-                        type="text"
-                        value={formData.cas_number || ''}
-                        onChange={(e) => setFormData({ ...formData, cas_number: e.target.value })}
-                        placeholder="e.g., 89796-99-6"
+                        placeholder="e.g. Aceclofenac, Methanol Pure, or custom compound"
+                        required
                       />
                     </FormField>
                   </div>
 
-                  <FormField id="quantity" label="Target Quantity / Volume" required error={errors.quantity} hint="Indicate required packaging format (e.g., 500 kg in 25kg drums, 10 MT tanker, ISO tank)">
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+                    <FormField id="cas_number" label="CAS Registry Number" error={errors.cas_number}>
+                      <input
+                        id="cas_number"
+                        type="text"
+                        value={formData.cas_number || ''}
+                        onChange={(e) => setFormData({ ...formData, cas_number: e.target.value })}
+                        placeholder="e.g. 89796-99-6"
+                      />
+                    </FormField>
+
+                    {/* Quantity + Unit */}
+                    <div style={{ display: 'flex', gap: '8px' }}>
+                      <div style={{ flex: 2 }}>
+                        <FormField id="quantity" label="Target Quantity" required error={errors.quantity}>
+                          <input
+                            id="quantity"
+                            type="text"
+                            value={formData.quantity}
+                            onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
+                            placeholder="e.g. 500"
+                            required
+                          />
+                        </FormField>
+                      </div>
+                      <div style={{ flex: 1 }}>
+                        <FormField id="unit" label="Unit">
+                          <select
+                            id="unit"
+                            value={formData.unit}
+                            onChange={(e) => setFormData({ ...formData, unit: e.target.value })}
+                          >
+                            <option value="kg">kg</option>
+                            <option value="MT">MT</option>
+                            <option value="L">L</option>
+                            <option value="drums">drums</option>
+                            <option value="bags">bags</option>
+                            <option value="tanker">tanker</option>
+                          </select>
+                        </FormField>
+                      </div>
+                    </div>
+                  </div>
+
+                  <FormField id="requirement" label="Technical Grade & Pharmacopeia Standard">
                     <input
+                      id="requirement"
                       type="text"
-                      value={formData.quantity}
-                      onChange={(e) => setFormData({ ...formData, quantity: e.target.value })}
-                      placeholder="e.g., 1,000 kg (in 25kg fiber drums)"
+                      value={formData.requirement || ''}
+                      onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
+                      placeholder="e.g. Pharma Grade IP/BP/USP, ≥99% purity, 25kg fiber drum"
                     />
                   </FormField>
 
-                  <FormField id="requirement" label="Additional Technical Specifications or In-Service Requirements" error={errors.requirement}>
+                  <FormField id="message" label="Delivery Timeline & Special Requirements">
                     <textarea
-                      rows={4}
-                      value={formData.requirement}
-                      onChange={(e) => setFormData({ ...formData, requirement: e.target.value })}
-                      placeholder="Specify pharmacopeia standard (IP, BP, USP, EP), desired purity percentage, target delivery location, or special testing requirements..."
+                      id="message"
+                      rows={3}
+                      value={formData.message}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      placeholder="Specify destination port / plant location, batch delivery schedule, or COA requirements..."
                     />
                   </FormField>
 
                   {/* Consent checkbox */}
                   <div style={{ marginBottom: '24px' }}>
-                    <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', fontSize: '0.875rem', color: 'var(--color-text)' }}>
+                    <label style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', cursor: 'pointer', fontSize: '0.875rem' }}>
                       <input
                         type="checkbox"
                         checked={formData.consent}
                         onChange={(e) => setFormData({ ...formData, consent: e.target.checked })}
                         style={{ marginTop: '3px' }}
                       />
-                      <span>
-                        I consent to Aura Space Infra Pvt. Ltd. processing this business information for commercial quotation purposes in accordance with the{' '}
-                        <Link to="/privacy-policy" style={{ color: 'var(--color-secondary)', textDecoration: 'underline' }}>
-                          Privacy Policy
-                        </Link>
-                        .
-                      </span>
+                      <span>{UI_LABELS.FORM_CONSENT_LABEL}</span>
                     </label>
                     {errors.consent && (
                       <p style={{ color: 'var(--color-error)', fontSize: '0.75rem', marginTop: '4px' }}>
@@ -429,121 +508,47 @@ export const QuotePage: React.FC = () => {
                   <Button
                     type="submit"
                     variant="primary"
-                    disabled={isSubmitting}
-                    style={{ width: '100%', justifyContent: 'center' }}
+                    size="lg"
+                    isLoading={isSubmitting}
+                    style={{ width: '100%' }}
                   >
-                    {isSubmitting ? (
-                      'Processing Quotation Request...'
-                    ) : (
-                      <>
-                        <Send size={16} /> Submit Quotation Request
-                      </>
-                    )}
+                    {isSubmitting ? UI_LABELS.BTN_SUBMITTING : UI_LABELS.NAV_GET_A_QUOTE}
                   </Button>
                 </form>
               </div>
 
-              {/* Sidebar Support & Information Column */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                {/* Direct Sales Desk Card */}
-                <div
-                  style={{
-                    backgroundColor: 'var(--color-primary)',
-                    color: '#FFFFFF',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: '32px',
-                    boxShadow: 'var(--shadow-md)',
-                  }}
-                >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                    <PhoneCall size={24} style={{ color: 'var(--color-secondary)' }} />
-                    <h3 style={{ color: '#FFFFFF', margin: 0, fontSize: '1.25rem', fontWeight: 600 }}>
-                      Direct Commercial Desk
-                    </h3>
-                  </div>
-
-                  <p style={{ color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.9rem', lineHeight: 1.6, marginBottom: '24px' }}>
-                    Need immediate spot price confirmation, dispatch status, or urgent allocation? Speak directly with our trading managers:
-                  </p>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '20px' }}>
-                    <a
-                      href={`tel:${phone.replace(/\s+/g, '')}`}
-                      style={{
-                        color: '#FFFFFF',
-                        textDecoration: 'none',
-                        fontWeight: 700,
-                        fontSize: '1.15rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '10px',
-                      }}
-                    >
-                      <PhoneCall size={18} /> {phone}
-                    </a>
-
-                    <a
-                      href={`mailto:${email}`}
-                      style={{
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        textDecoration: 'none',
-                        fontSize: '0.9rem',
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '10px',
-                      }}
-                    >
-                      <Mail size={16} /> {email}
-                    </a>
-                  </div>
-
-                  <div
-                    style={{
-                      borderTop: '1px solid rgba(255, 255, 255, 0.15)',
-                      paddingTop: '16px',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      fontSize: '0.8125rem',
-                      color: 'rgba(255, 255, 255, 0.75)',
-                    }}
-                  >
-                    <Clock size={16} />
-                    <span>Response within 24 business hours guaranteed.</span>
-                  </div>
-                </div>
-
-                {/* Assurance & Documentation Card */}
-                <div
-                  style={{
-                    backgroundColor: 'var(--color-surface)',
-                    border: '1px solid var(--color-border)',
-                    borderRadius: 'var(--radius-lg)',
-                    padding: '28px',
-                  }}
-                >
+              {/* Sidebar Info */}
+              <div>
+                <div className="card" style={{ padding: '28px', marginBottom: '24px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
-                    <ShieldCheck size={22} style={{ color: 'var(--color-secondary)' }} />
-                    <h3 style={{ margin: 0, fontSize: '1.1rem', fontWeight: 600 }}>
-                      Compliance &amp; Quality Guarantee
-                    </h3>
+                    <FlaskConical size={20} style={{ color: 'var(--color-brand)' }} />
+                    <h3 style={{ fontSize: '1.125rem', margin: 0 }}>Direct Sourcing Benefits</h3>
                   </div>
-
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                    {[
-                      'Manufacturer batch Certificate of Analysis (COA) included',
-                      'Material Safety Data Sheet (MSDS / SDS) compliant with GHS',
-                      'Direct sourcing from audited domestic chemical manufacturers',
-                      'Strict adherence to IP / BP / USP / EP pharmacopeia monographs',
-                      'Registered corporate trading entity with ROC Ahmedabad',
-                    ].map((item, i) => (
-                      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.84rem', color: 'var(--color-text)' }}>
-                        <CheckCircle2 size={15} style={{ color: 'var(--color-secondary)', flexShrink: 0, marginTop: '2px' }} />
-                        <span>{item}</span>
-                      </li>
-                    ))}
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.875rem', color: 'var(--color-muted)' }}>
+                    <li>✓ Direct manufacturer allocations across 400+ domestic chemical producers</li>
+                    <li>✓ Verified batch Certificates of Analysis (COA) with regulatory traceability</li>
+                    <li>✓ Strict compliance with IP, BP, USP, and EP pharmacopeial monographs</li>
+                    <li>✓ Standardized packaging: fiber drums, ISO tankers, and moisture-barrier liners</li>
                   </ul>
                 </div>
+
+                {phone && (
+                  <div className="card" style={{ padding: '24px' }}>
+                    <h4 style={{ fontSize: '0.9375rem', marginBottom: '8px' }}>Direct Phone Inquiries</h4>
+                    <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', marginBottom: '16px' }}>
+                      Speak directly with our technical procurement desk during business hours:
+                    </p>
+                    <Button
+                      href={`tel:${phone.replace(/\s+/g, '')}`}
+                      variant="secondary"
+                      size="md"
+                      icon={<PhoneCall size={16} />}
+                      iconPosition="left"
+                    >
+                      {phone}
+                    </Button>
+                  </div>
+                )}
               </div>
             </div>
           )}

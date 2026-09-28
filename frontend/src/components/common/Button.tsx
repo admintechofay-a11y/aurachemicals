@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
@@ -43,14 +43,16 @@ export const Button: React.FC<ButtonProps> = ({
   disabled,
   ...props
 }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
   const baseStyles: React.CSSProperties = {
     display: 'inline-flex',
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    fontWeight: 600,
+    fontWeight: 500,
     borderRadius: 'var(--radius-sm)',
-    transition: 'all 0.2s ease',
+    transition: 'background-color var(--motion-duration-fast) var(--motion-ease), border-color var(--motion-duration-fast) var(--motion-ease), color var(--motion-duration-fast) var(--motion-ease), transform 100ms ease',
     cursor: disabled || isLoading ? 'not-allowed' : 'pointer',
     opacity: disabled || isLoading ? 0.65 : 1,
     whiteSpace: 'nowrap',
@@ -61,32 +63,36 @@ export const Button: React.FC<ButtonProps> = ({
     fontSize: size === 'sm' ? '0.875rem' : size === 'lg' ? '1.0625rem' : '0.9375rem',
   };
 
+  // Graphite & Mineral Button Rules:
+  // Primary: ink background, paper text, hover ink-dark
+  // Secondary: 1px ink outline, ink text, hover surface
   const variantStyles: Record<string, React.CSSProperties> = {
     primary: {
-      backgroundColor: 'var(--color-accent)',
-      color: '#FFFFFF',
-      borderColor: 'var(--color-accent)',
+      backgroundColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
+      color: 'var(--color-paper)',
+      borderColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
     },
     secondary: {
-      backgroundColor: 'var(--color-secondary)',
-      color: '#FFFFFF',
-      borderColor: 'var(--color-secondary)',
+      backgroundColor: isHovered ? 'var(--color-surface)' : 'transparent',
+      color: 'var(--color-ink)',
+      borderColor: 'var(--color-ink)',
     },
     navy: {
-      backgroundColor: 'var(--color-primary)',
-      color: '#FFFFFF',
-      borderColor: 'var(--color-primary)',
+      backgroundColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
+      color: 'var(--color-paper)',
+      borderColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
     },
     outline: {
-      backgroundColor: 'transparent',
-      color: 'var(--color-primary)',
-      borderColor: 'var(--color-border)',
+      backgroundColor: isHovered ? 'var(--color-surface)' : 'transparent',
+      color: 'var(--color-ink)',
+      borderColor: 'var(--color-rule)',
     },
     text: {
       backgroundColor: 'transparent',
-      color: 'var(--color-secondary)',
+      color: isHovered ? 'var(--color-ink)' : 'var(--color-brand)',
       padding: '4px 8px',
       minHeight: 'auto',
+      textDecoration: isHovered ? 'underline' : 'none',
     },
   };
 
@@ -98,31 +104,43 @@ export const Button: React.FC<ButtonProps> = ({
 
   const content = (
     <>
-      {isLoading && (
+      {isLoading ? (
         <span
           style={{
+            display: 'inline-block',
             width: '16px',
             height: '16px',
             border: '2px solid currentColor',
-            borderTopColor: 'transparent',
+            borderRightColor: 'transparent',
             borderRadius: '50%',
-            animation: 'spin 0.6s linear infinite',
+            animation: 'spin 0.75s linear infinite',
           }}
         />
+      ) : (
+        <>
+          {icon && iconPosition === 'left' && <span style={{ display: 'inline-flex' }}>{icon}</span>}
+          <span>{children}</span>
+          {icon && iconPosition === 'right' && <span style={{ display: 'inline-flex' }}>{icon}</span>}
+        </>
       )}
-      {!isLoading && icon && iconPosition === 'left' && icon}
-      <span>{children}</span>
-      {!isLoading && icon && iconPosition === 'right' && icon}
     </>
   );
 
+  const hoverHandlers = {
+    onMouseEnter: () => setIsHovered(true),
+    onMouseLeave: () => setIsHovered(false),
+  };
+
   if ('to' in props && props.to) {
+    const { to, ...rest } = props as ButtonAsLink;
     return (
       <Link
-        to={props.to}
+        to={disabled || isLoading ? '#' : to}
         className={clsx('btn', `btn-${variant}`, className)}
         style={style}
-        {...(props as any)}
+        aria-disabled={disabled || isLoading}
+        {...hoverHandlers}
+        {...rest}
       >
         {content}
       </Link>
@@ -130,24 +148,32 @@ export const Button: React.FC<ButtonProps> = ({
   }
 
   if ('href' in props && props.href) {
+    const { href, ...rest } = props as ButtonAsExternal;
     return (
       <a
-        href={props.href}
+        href={disabled || isLoading ? '#' : href}
         className={clsx('btn', `btn-${variant}`, className)}
         style={style}
-        {...(props as any)}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-disabled={disabled || isLoading}
+        {...hoverHandlers}
+        {...rest}
       >
         {content}
       </a>
     );
   }
 
+  const { type = 'button', ...rest } = props as ButtonAsButton;
   return (
     <button
+      type={type}
+      disabled={disabled || isLoading}
       className={clsx('btn', `btn-${variant}`, className)}
       style={style}
-      disabled={disabled || isLoading}
-      {...(props as any)}
+      {...hoverHandlers}
+      {...rest}
     >
       {content}
     </button>

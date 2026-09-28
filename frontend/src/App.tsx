@@ -48,21 +48,6 @@ const queryClient = new QueryClient({
   },
 });
 
-const TempPlaceholder: React.FC<{ title: string }> = ({ title }) => (
-  <Section>
-    <Container>
-      <div style={{ maxWidth: '600px', margin: '40px auto', textAlign: 'center' }}>
-        <h2>{title}</h2>
-        <p className="body-large" style={{ marginTop: '12px', marginBottom: '24px' }}>
-          This route is registered in the architecture and ready for phase implementation.
-        </p>
-        <Button to="/products" variant="primary">
-          Browse Products
-        </Button>
-      </div>
-    </Container>
-  </Section>
-);
 
 const NotFoundPage: React.FC = () => (
   <Section>

@@ -5,12 +5,10 @@ import {
   Mail,
   Building2,
   Clock,
-  ShieldCheck,
   Send,
   CheckCircle2,
   AlertCircle,
   MapPin,
-  Globe,
 } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { Section } from '../components/common/Section';
@@ -19,6 +17,7 @@ import { Button } from '../components/common/Button';
 import { FormField } from '../components/common/FormField';
 import { api } from '../api/client';
 import { InquiryPayload } from '../api/types';
+import { UI_LABELS } from '../utils/constants';
 
 export const ContactPage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -39,8 +38,13 @@ export const ContactPage: React.FC = () => {
     queryFn: () => api.getSettings(),
   });
 
-  const phone = settings?.company?.phone || '+91 7220000877';
-  const email = settings?.company?.email || 'management.aurachemicals@gmail.com';
+  const brandName = settings?.company?.brand_name || 'Aura Chemicals';
+  const legalName = settings?.company?.legal_name || 'Aura Space Infra Private Limited';
+  const phone = settings?.company?.phone;
+  const email = settings?.company?.email;
+  const address = settings?.company?.registered_address || 'ROC Ahmedabad, Gujarat, India';
+  const businessHours = settings?.company?.business_hours || 'Monday – Saturday: 9:00 AM – 6:00 PM IST';
+  const mapEmbed = (settings?.company as any)?.map_embed;
 
   const validate = (): boolean => {
     const newErrors: Record<string, string> = {};
@@ -106,22 +110,22 @@ export const ContactPage: React.FC = () => {
 
   return (
     <>
-      <Breadcrumb items={[{ label: 'Contact Us' }]} />
+      <Breadcrumb items={[{ label: UI_LABELS.NAV_CONTACT }]} />
 
       {/* Hero Header */}
       <section
         style={{
           backgroundColor: 'var(--color-surface)',
           padding: 'clamp(40px, 5vw, 64px) 0',
-          borderBottom: '1px solid var(--color-border)',
+          borderBottom: '1px solid var(--color-rule)',
         }}
       >
         <Container>
           <div style={{ maxWidth: '840px' }}>
-            <span className="eyebrow">Corporate Communications</span>
-            <h1 style={{ marginBottom: 'var(--space-3)' }}>Contact Aura Space Infra Pvt. Ltd.</h1>
-            <p className="body-large" style={{ color: 'var(--color-text)' }}>
-              Get in touch with our commercial trading desk, technical procurement team, or inspection services division. We are at your service for bulk allocations, pro-forma quotes, and operational inquiries.
+            <span className="eyebrow">Direct Communications</span>
+            <h1 style={{ marginBottom: 'var(--space-3)' }}>Contact {brandName}</h1>
+            <p className="body-large">
+              Connect with our corporate sales desk, technical distribution team, and regulatory documentation office.
             </p>
           </div>
         </Container>
@@ -130,145 +134,123 @@ export const ContactPage: React.FC = () => {
       {/* Contact Cards & Form Section */}
       <Section padding="normal">
         <Container>
-          {/* 3 Core Contact Cards */}
+          {/* Core Contact Cards */}
           <div
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
               gap: '24px',
-              marginBottom: '56px',
+              marginBottom: '48px',
             }}
           >
             {/* Phone Card */}
-            <div
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--color-border)',
-                padding: '32px',
-                boxShadow: 'var(--shadow-xs)',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-md)',
-                  backgroundColor: 'rgba(31, 90, 140, 0.08)',
-                  color: 'var(--color-secondary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '20px',
-                }}
-              >
-                <PhoneCall size={22} />
+            {phone && (
+              <div className="card" style={{ padding: '28px', display: 'flex', flexDirection: 'column' }}>
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: 'var(--color-surface)',
+                    border: '1px solid var(--color-rule)',
+                    color: 'var(--color-brand)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '16px',
+                  }}
+                >
+                  <PhoneCall size={20} />
+                </div>
+                <h2 style={{ fontSize: '1.15rem', marginBottom: '8px' }}>
+                  Phone &amp; WhatsApp
+                </h2>
+                <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
+                  Direct procurement desk for spot allocations and order logistics.
+                </p>
+                <a
+                  href={`tel:${phone.replace(/\s+/g, '')}`}
+                  style={{
+                    marginTop: 'auto',
+                    fontSize: '1.05rem',
+                    fontWeight: 600,
+                    color: 'var(--color-ink)',
+                    textDecoration: 'none',
+                  }}
+                >
+                  {phone}
+                </a>
               </div>
-              <h2 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--color-primary)' }}>
-                Phone &amp; WhatsApp
-              </h2>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
-                Direct access to our commercial sales managers for fast spot price confirmation and logistics coordination.
-              </p>
-              <a
-                href={`tel:${phone.replace(/\s+/g, '')}`}
-                style={{
-                  marginTop: 'auto',
-                  fontSize: '1.1rem',
-                  fontWeight: 700,
-                  color: 'var(--color-secondary)',
-                  textDecoration: 'none',
-                }}
-              >
-                {phone}
-              </a>
-            </div>
+            )}
 
             {/* Email Card */}
-            <div
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--color-border)',
-                padding: '32px',
-                boxShadow: 'var(--shadow-xs)',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
-              <div
-                style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-md)',
-                  backgroundColor: 'rgba(42, 127, 134, 0.08)',
-                  color: 'var(--color-accent)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  marginBottom: '20px',
-                }}
-              >
-                <Mail size={22} />
+            {email && (
+              <div className="card" style={{ padding: '28px', display: 'flex', flexDirection: 'column' }}>
+                <div
+                  style={{
+                    width: '44px',
+                    height: '44px',
+                    borderRadius: 'var(--radius-sm)',
+                    backgroundColor: 'var(--color-surface)',
+                    border: '1px solid var(--color-rule)',
+                    color: 'var(--color-brand)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    marginBottom: '16px',
+                  }}
+                >
+                  <Mail size={20} />
+                </div>
+                <h2 style={{ fontSize: '1.15rem', marginBottom: '8px' }}>
+                  Corporate Email
+                </h2>
+                <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
+                  Submit technical specifications, RFQ documents, and formal POs.
+                </p>
+                <a
+                  href={`mailto:${email}`}
+                  style={{
+                    marginTop: 'auto',
+                    fontSize: '0.9375rem',
+                    fontWeight: 600,
+                    color: 'var(--color-ink)',
+                    textDecoration: 'none',
+                    wordBreak: 'break-all',
+                  }}
+                >
+                  {email}
+                </a>
               </div>
-              <h2 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--color-primary)' }}>
-                Corporate Email
-              </h2>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
-                Send formal RFQs, tender documents, or purchase orders directly to executive management.
-              </p>
-              <a
-                href={`mailto:${email}`}
-                style={{
-                  marginTop: 'auto',
-                  fontSize: '0.95rem',
-                  fontWeight: 600,
-                  color: 'var(--color-secondary)',
-                  textDecoration: 'none',
-                  wordBreak: 'break-all',
-                }}
-              >
-                {email}
-              </a>
-            </div>
+            )}
 
-            {/* Entity Card */}
-            <div
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--color-border)',
-                padding: '32px',
-                boxShadow: 'var(--shadow-xs)',
-                display: 'flex',
-                flexDirection: 'column',
-              }}
-            >
+            {/* Entity & Address Card */}
+            <div className="card" style={{ padding: '28px', display: 'flex', flexDirection: 'column' }}>
               <div
                 style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: 'var(--radius-md)',
-                  backgroundColor: 'rgba(11, 37, 69, 0.08)',
-                  color: 'var(--color-primary)',
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: 'var(--radius-sm)',
+                  backgroundColor: 'var(--color-surface)',
+                  border: '1px solid var(--color-rule)',
+                  color: 'var(--color-brand)',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  marginBottom: '20px',
+                  marginBottom: '16px',
                 }}
               >
-                <Building2 size={22} />
+                <Building2 size={20} />
               </div>
-              <h2 style={{ fontSize: '1.25rem', marginBottom: '8px', color: 'var(--color-primary)' }}>
-                Registration &amp; Jurisdiction
+              <h2 style={{ fontSize: '1.15rem', marginBottom: '8px' }}>
+                Corporate Registration
               </h2>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
-                Aura Space Infra Private Limited (Non-Government private company registered with ROC Ahmedabad).
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
+                {legalName}
               </p>
-              <div style={{ marginTop: 'auto', fontSize: '0.8125rem', color: 'var(--color-text)', fontWeight: 600 }}>
-                ROC Ahmedabad, Gujarat, India
+              <div style={{ marginTop: 'auto', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '0.875rem', color: 'var(--color-text)' }}>
+                <MapPin size={16} style={{ color: 'var(--color-accent)' }} />
+                <span>{address}</span>
               </div>
             </div>
           </div>
@@ -278,25 +260,17 @@ export const ContactPage: React.FC = () => {
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-              gap: '48px',
+              gap: '40px',
               alignItems: 'start',
             }}
           >
             {/* General Inquiry Form */}
-            <div
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                border: '1px solid var(--color-border)',
-                padding: 'clamp(28px, 4vw, 40px)',
-                boxShadow: 'var(--shadow-sm)',
-              }}
-            >
-              <h2 style={{ fontSize: '1.5rem', marginBottom: '8px', color: 'var(--color-primary)' }}>
+            <div className="card" style={{ padding: 'clamp(24px, 4vw, 36px)' }}>
+              <h2 style={{ fontSize: '1.35rem', marginBottom: '8px' }}>
                 Send Us a Message
               </h2>
-              <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '24px' }}>
-                Fill out the form below and our team will get back to you promptly.
+              <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', marginBottom: '24px' }}>
+                Please specify your chemical or business requirement below:
               </p>
 
               {submitResult && (
@@ -305,20 +279,19 @@ export const ContactPage: React.FC = () => {
                   aria-live="polite"
                   tabIndex={-1}
                   style={{
-                    padding: '16px',
+                    padding: '14px',
                     borderRadius: 'var(--radius-sm)',
-                    marginBottom: '24px',
+                    marginBottom: '20px',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '12px',
-                    backgroundColor: submitResult.success ? 'rgba(42, 127, 134, 0.08)' : 'rgba(197, 48, 48, 0.08)',
-                    border: `1px solid ${submitResult.success ? 'var(--color-accent)' : 'var(--color-error)'}`,
-                    color: submitResult.success ? 'var(--color-accent)' : 'var(--color-error)',
+                    gap: '10px',
+                    backgroundColor: 'var(--color-surface)',
+                    border: `1px solid ${submitResult.success ? 'var(--color-success)' : 'var(--color-error)'}`,
+                    color: submitResult.success ? 'var(--color-success)' : 'var(--color-error)',
                     fontSize: '0.875rem',
-                    animation: 'feedbackFadeIn 250ms var(--motion-ease) forwards',
                   }}
                 >
-                  {submitResult.success ? <CheckCircle2 size={20} /> : <AlertCircle size={20} />}
+                  {submitResult.success ? <CheckCircle2 size={18} /> : <AlertCircle size={18} />}
                   <div>{submitResult.message}</div>
                 </div>
               )}
@@ -337,127 +310,97 @@ export const ContactPage: React.FC = () => {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
                   <FormField id="name" label="Full Name" required error={errors.name}>
                     <input
+                      id="name"
                       type="text"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       placeholder="Your name"
+                      required
                     />
                   </FormField>
 
                   <FormField id="email" label="Business Email" required error={errors.email}>
                     <input
+                      id="email"
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       placeholder="your.email@company.com"
+                      required
                     />
                   </FormField>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '16px' }}>
-                  <FormField id="phone" label="Phone Number" required error={errors.phone}>
+                  <FormField id="phone" label="Phone / WhatsApp" required error={errors.phone}>
                     <input
+                      id="phone"
                       type="tel"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                      placeholder="+91 98765 43210"
+                      placeholder="+91 98000 00000"
+                      required
                     />
                   </FormField>
 
-                  <FormField id="subject" label="Subject / Department">
-                    <select
+                  <FormField id="subject" label="Subject / Domain">
+                    <input
+                      id="subject"
+                      type="text"
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    >
-                      <option value="Chemical Sourcing & Distribution">Chemical Sourcing &amp; Distribution</option>
-                      <option value="Active Pharmaceutical Ingredients">Active Pharmaceutical Ingredients (APIs)</option>
-                      <option value="Inspection & Quality Assurance">Inspection &amp; QA (NDT Services)</option>
-                      <option value="Partnership & Sourcing Alliances">Partnership &amp; Manufacturer Alliances</option>
-                      <option value="General Corporate Inquiry">General Corporate Inquiry</option>
-                    </select>
+                      placeholder="e.g. Bulk Solvent Supply"
+                    />
                   </FormField>
                 </div>
 
                 <FormField id="message" label="Your Message or Request Details" required error={errors.message}>
                   <textarea
+                    id="message"
                     rows={4}
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     placeholder="Describe your requirement, products of interest, or technical specifications..."
+                    required
                   />
                 </FormField>
 
                 <Button
                   type="submit"
                   variant="primary"
-                  disabled={isSubmitting}
+                  isLoading={isSubmitting}
                   style={{ width: '100%', justifyContent: 'center' }}
+                  icon={<Send size={15} />}
                 >
-                  {isSubmitting ? (
-                    'Transmitting Message...'
-                  ) : (
-                    <>
-                      <Send size={16} /> Send Inquiry
-                    </>
-                  )}
+                  {isSubmitting ? 'Transmitting...' : 'Send Inquiry'}
                 </Button>
               </form>
             </div>
 
-            {/* Distribution Network & SLA Column */}
+            {/* Distribution Network & Hours Column */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-              <div
-                style={{
-                  backgroundColor: 'var(--color-surface)',
-                  borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--color-border)',
-                  padding: '32px',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-                  <Globe size={22} style={{ color: 'var(--color-secondary)' }} />
-                  <h3 style={{ margin: 0, fontSize: '1.15rem', fontWeight: 600 }}>
-                    Pan-India Distribution Network
+              <div className="card" style={{ padding: '28px' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                  <Clock size={20} style={{ color: 'var(--color-brand)' }} />
+                  <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600 }}>
+                    Operational Desk Hours
                   </h3>
                 </div>
-                <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', lineHeight: 1.6, marginBottom: '20px' }}>
-                  Aura Space Infra Pvt. Ltd. coordinates industrial chemical freight, bulk tanker dispatches, and warehouse allocations across all major manufacturing clusters throughout India.
+                <p style={{ fontSize: '0.875rem', color: 'var(--color-muted)', lineHeight: 1.6, margin: 0 }}>
+                  Trading desk: <strong>{businessHours}</strong>.<br />
+                  Electronic inquiries submitted via the portal are recorded immediately.
                 </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', fontSize: '0.84rem' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--color-secondary)' }} />
-                    <span>Active partnerships with 400+ leading domestic manufacturers</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--color-secondary)' }} />
-                    <span>Dedicated technical and sales desks for prompt dispatch coordination</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <CheckCircle2 size={16} style={{ color: 'var(--color-secondary)' }} />
-                    <span>Compliance with all national transportation and chemical handling guidelines</span>
-                  </div>
-                </div>
               </div>
 
-              <div
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--color-border)',
-                  padding: '28px',
-                }}
-              >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
-                  <Clock size={20} style={{ color: 'var(--color-primary)' }} />
-                  <h3 style={{ margin: 0, fontSize: '1.05rem', fontWeight: 600 }}>
-                    Operational Hours &amp; Response Times
-                  </h3>
+              {/* Optional Map Embed (only if configured in CMS) */}
+              {mapEmbed && (
+                <div className="card" style={{ padding: '16px', overflow: 'hidden' }}>
+                  <div
+                    style={{ width: '100%', height: '260px' }}
+                    dangerouslySetInnerHTML={{ __html: mapEmbed }}
+                  />
                 </div>
-                <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
-                  Trading desk hours: <strong>Monday – Saturday: 9:00 AM – 6:30 PM IST</strong>.<br />
-                  Electronic quotation requests submitted via the portal are monitored 24/7 with a 24 business hours SLA commitment.
-                </p>
-              </div>
+              )}
             </div>
           </div>
         </Container>
