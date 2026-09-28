@@ -39,6 +39,10 @@ export const LogoGrid: React.FC<LogoGridProps> = ({ clients = [], className }) =
               src={client.logo_url}
               alt={client.name}
               loading="lazy"
+              decoding="async"
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).style.visibility = 'hidden';
+              }}
               style={{
                 maxHeight: '48px',
                 maxWidth: '100%',

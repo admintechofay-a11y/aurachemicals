@@ -242,6 +242,10 @@ export const IndustriesPage: React.FC = () => {
                             src={ind.image.url}
                             alt={ind.image.alt || ind.title}
                             loading="lazy"
+                            decoding="async"
+                            onError={(e) => {
+                              (e.currentTarget as HTMLImageElement).src = '/images/water-treatment-plant.jpg';
+                            }}
                             style={{
                               width: '100%',
                               height: '100%',

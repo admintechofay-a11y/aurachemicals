@@ -26,6 +26,18 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
     queryFn: () => api.getProductCategories(),
   });
 
+  const decodeHtml = (html: string) => {
+    return html
+      .replace(/&amp;/g, '&')
+      .replace(/&#038;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#039;/g, "'");
+  };
+
+  const activeCategories = categories.filter((cat) => (cat.count ?? 0) > 0);
+
   // Close on route change
   useEffect(() => {
     onClose();
@@ -151,11 +163,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
             justifyContent: 'space-between',
             height: '60px',
             padding: '0 20px',
-            backgroundColor: 'var(--color-nav-bg)',
-            borderBottom: '2px solid var(--color-brand-warm)',
+            backgroundColor: 'var(--color-card)',
+            borderBottom: '1px solid var(--color-rule)',
           }}
         >
-          <span style={{ fontWeight: 600, color: '#FFFFFF', fontSize: '1rem' }}>
+          <span style={{ fontWeight: 600, color: 'var(--color-ink)', fontSize: '1rem' }}>
             Menu
           </span>
           <button
@@ -169,11 +181,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: 'rgba(255, 255, 255, 0.12)',
-              border: '1px solid rgba(255, 255, 255, 0.25)',
+              backgroundColor: 'transparent',
+              border: '1px solid var(--color-rule)',
               borderRadius: 'var(--radius-sm)',
               cursor: 'pointer',
-              color: '#FFFFFF',
+              color: 'var(--color-ink)',
             }}
           >
             <X size={20} />
@@ -229,7 +241,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
                 >
                   All Products Catalog
                 </Link>
-                {categories.map((cat) => (
+                {activeCategories.map((cat) => (
                   <Link
                     key={cat.id}
                     to={`/products/${cat.slug}`}
@@ -241,7 +253,7 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
                       borderBottom: '1px solid var(--color-rule)',
                     }}
                   >
-                    <span>{cat.name}</span>
+                    <span>{decodeHtml(cat.name)}</span>
                     {typeof cat.count === 'number' && (
                       <span style={{ fontSize: '0.75rem', color: 'var(--color-muted)' }}>
                         {cat.count}

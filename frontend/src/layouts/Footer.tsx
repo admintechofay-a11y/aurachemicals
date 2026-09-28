@@ -20,9 +20,9 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
   const copyright = settings?.footer?.copyright_text || 'Copyright © 2026 Aura Space Infra Pvt. Ltd. All rights reserved.';
   const legalTagline = settings?.footer?.tagline || 'ROC Ahmedabad Registered · Non-Government Industrial Supply Enterprise';
   const logoUrl =
-    settings?.branding?.footer_logo?.url && !settings.branding.footer_logo.url.includes('aa6efd8e')
-      ? settings.branding.footer_logo.url
-      : '/images/aura-chemicals-logo-white.png';
+    settings?.branding?.footer_logo?.url ||
+    settings?.branding?.header_logo?.url ||
+    '/images/aa6efd8e-logo-footer.png';
 
   // Mobile Accordion State (Contact open by default)
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -58,6 +58,10 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
               <img
                 src={logoUrl}
                 alt={brandName}
+                onError={(e) => {
+                  (e.currentTarget as HTMLImageElement).src =
+                    '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
+                }}
                 style={{
                   height: '42px',
                   width: 'auto',
@@ -232,7 +236,15 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
         <div className="mobile-footer-accordion" style={{ display: 'none', paddingTop: 'var(--space-8)' }}>
           {/* Logo & Tagline */}
           <div style={{ paddingBottom: '16px', borderBottom: '1px solid rgba(213, 217, 220, 0.12)' }}>
-            <img src={logoUrl} alt={brandName} style={{ height: '36px', width: 'auto', marginBottom: '8px' }} />
+            <img
+              src={logoUrl}
+              alt={brandName}
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src =
+                  '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
+              }}
+              style={{ height: '36px', width: 'auto', marginBottom: '8px' }}
+            />
             <p style={{ fontSize: '0.875rem', color: 'rgba(244, 245, 245, 0.75)' }}>{tagline}</p>
           </div>
 

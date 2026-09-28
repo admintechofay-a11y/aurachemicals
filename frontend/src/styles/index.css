@@ -4,36 +4,21 @@
    ========================================================================== */
 
 :root {
-  /* Core Brand Tokens (Enhanced Mineral & Brand Color System) */
-  --color-ink: #101B26;
-  --color-ink-dark: #0A121B;
-  --color-brand: #244C6B;
-  --color-brand-deep: #162B3D;
-  --color-brand-light: #EBF3F9;
-  --color-accent: #3E7E94;
-  --color-accent-on-dark: #8EC4DA;
-  --color-brand-warm: #E67E22;
-  --color-paper: #F0F5F9;
-  --color-surface: #E2ECF4;
-  --color-surface-tint: #D6E4EE;
+  /* Core Brand Tokens (Graphite & Mineral Design System) */
+  --color-ink: #16191D;
+  --color-ink-dark: #0E1013;
+  --color-brand: #33526B;
+  --color-accent: #5E8C9A;
+  --color-accent-on-dark: #8FB5C1;
+  --color-paper: #F4F5F5;
+  --color-surface: #ECEEEF;
   --color-card: #FFFFFF;
-  --color-rule: #CCDCE8;
-  --color-text: #16222D;
-  --color-muted: #536473;
-  --color-success: #256E47;
-  --color-error: #A8362B;
-  --color-warning: #B36815;
-
-  /* Navbar Specific Color Tokens (Deep Executive Mineral Marine) */
-  --color-nav-bg: #132435;
-  --color-nav-scrolled: rgba(19, 36, 53, 0.98);
-  --color-nav-border: #233E56;
-  --color-nav-text: #EDF4F9;
-  --color-nav-muted: #9BB6CC;
-  --color-nav-accent: #8EC4DA;
-  --color-nav-cta-bg: #E67E22;
-  --color-nav-cta-hover: #D36E17;
-  --color-nav-cta-text: #FFFFFF;
+  --color-rule: #D5D9DC;
+  --color-text: #1B2128;
+  --color-muted: #5A626B;
+  --color-success: #2F6E4B;
+  --color-error: #A63A2E;
+  --color-warning: #8A6212;
 
   /* Backward Compatibility Aliases */
   --color-primary: var(--color-ink);
@@ -41,7 +26,7 @@
   --color-border: var(--color-rule);
   --color-border-focus: var(--color-brand);
   --color-bg: var(--color-paper);
-  --color-text-inverse: #FFFFFF;
+  --color-text-inverse: var(--color-paper);
   --color-text-muted: var(--color-muted);
 
   /* Typography */
@@ -422,10 +407,10 @@ table.data-table tr:hover td {
    Interactive Components & States
    ========================================================================== */
 
-/* Navbar Header (Elevated Corporate Deep Marine / Mineral) */
+/* Navbar Header (Clean Corporate Theme) */
 .navbar-header {
-  background-color: var(--color-nav-bg);
-  border-bottom: 1px solid var(--color-nav-border);
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-rule);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -434,26 +419,17 @@ table.data-table tr:hover td {
               background-color var(--motion-duration-base) var(--motion-ease);
 }
 
-.navbar-header::before {
-  content: '';
-  display: block;
-  height: 3px;
-  width: 100%;
-  background: linear-gradient(90deg, #3E7E94 0%, #244C6B 35%, #E67E22 100%);
-}
-
 .navbar-scrolled {
-  background-color: var(--color-nav-scrolled) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 20px rgba(10, 18, 27, 0.25);
-  border-bottom-color: rgba(62, 126, 148, 0.35);
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 10px rgba(22, 25, 29, 0.06);
 }
 
 .nav-link {
   position: relative;
   display: inline-flex;
   align-items: center;
-  color: var(--color-nav-text);
+  color: var(--color-text);
   font-weight: 500;
   text-decoration: none;
   padding: 8px 0;
@@ -461,12 +437,12 @@ table.data-table tr:hover td {
 }
 
 .nav-link:hover {
-  color: var(--color-nav-accent);
+  color: var(--color-brand);
   text-decoration: none;
 }
 
 .nav-link.active {
-  color: #FFFFFF;
+  color: var(--color-brand);
 }
 
 .nav-link::after {
@@ -476,7 +452,7 @@ table.data-table tr:hover td {
   left: 0;
   width: 100%;
   height: 2px;
-  background-color: var(--color-nav-accent);
+  background-color: var(--color-accent);
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform var(--motion-duration-base) var(--motion-ease);
@@ -485,33 +461,6 @@ table.data-table tr:hover td {
 .nav-link:hover::after,
 .nav-link.active::after {
   transform: scaleX(1);
-}
-
-.header-quote-btn {
-  background-color: var(--color-nav-cta-bg) !important;
-  color: var(--color-nav-cta-text) !important;
-  border: 1px solid rgba(255, 255, 255, 0.2) !important;
-  font-weight: 600 !important;
-  box-shadow: 0 2px 8px rgba(230, 126, 34, 0.35) !important;
-  transition: background-color var(--motion-duration-fast) var(--motion-ease),
-              transform var(--motion-duration-fast) var(--motion-ease),
-              box-shadow var(--motion-duration-fast) var(--motion-ease) !important;
-}
-
-.header-quote-btn:hover {
-  background-color: var(--color-nav-cta-hover) !important;
-  transform: translateY(-1px);
-  box-shadow: 0 4px 12px rgba(230, 126, 34, 0.45) !important;
-}
-
-.mobile-nav-toggle {
-  color: #EDF4F9 !important;
-  border-color: rgba(255, 255, 255, 0.25) !important;
-  background-color: rgba(255, 255, 255, 0.08) !important;
-}
-
-.mobile-nav-toggle:hover {
-  background-color: rgba(255, 255, 255, 0.16) !important;
 }
 
 /* Card Hover Only Inside @media (hover: hover) */
@@ -666,10 +615,10 @@ table.data-table tr:hover td {
   pointer-events: none;
 }
 
-/* Hero 12-Column Industrial Grid (Rich Mineral Color Wash) */
+/* Hero 12-Column Industrial Grid */
 .hero-section {
   position: relative;
-  background: linear-gradient(150deg, #E6EFF6 0%, #F1F6FA 45%, #E3EDF5 100%);
+  background-color: var(--color-paper);
   border-bottom: 1px solid var(--color-rule);
   padding: clamp(48px, 6vw, 84px) 0 clamp(40px, 5vw, 64px) 0;
   overflow: hidden;

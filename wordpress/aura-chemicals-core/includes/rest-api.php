@@ -147,8 +147,8 @@ function aura_rest_get_settings() {
         ];
     }
     $footer_logo = get_option('aura_footer_logo_url');
-    if (!$footer_logo || strpos($footer_logo, 'aa6efd8e') !== false) {
-        $footer_logo = '/images/aura-chemicals-logo-white.png';
+    if (!$footer_logo || strpos($footer_logo, 'aura-chemicals-logo-white') !== false) {
+        $footer_logo = '/images/aa6efd8e-logo-footer.png';
         update_option('aura_footer_logo_url', $footer_logo);
     }
     $settings['branding']['footer_logo'] = [

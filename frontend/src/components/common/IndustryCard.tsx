@@ -35,6 +35,10 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry }) => {
             src={industry.image.url}
             alt={industry.image.alt || industry.title}
             loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/images/water-treatment-plant.jpg';
+            }}
             style={{
               width: '100%',
               height: '100%',

@@ -38,6 +38,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             src={product.image.url}
             alt={product.image.alt || product.chemical_name}
             loading="lazy"
+            decoding="async"
+            onError={(e) => {
+              (e.currentTarget as HTMLImageElement).src = '/images/apis.jpg';
+            }}
             style={{
               width: '100%',
               height: '100%',

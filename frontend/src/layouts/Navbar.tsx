@@ -62,14 +62,24 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
     };
   }, [productsOpen]);
 
+  const decodeHtml = (html: string) => {
+    return html
+      .replace(/&amp;/g, '&')
+      .replace(/&#038;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#039;/g, "'");
+  };
+
   const brandName = settings?.company?.brand_name || 'Aura Chemicals';
   const logoUrl =
-    settings?.branding?.footer_logo?.url && !settings.branding.footer_logo.url.includes('aa6efd8e')
-      ? settings.branding.footer_logo.url
-      : '/images/aura-chemicals-logo-white.png';
+    settings?.branding?.header_logo?.url ||
+    '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
   const phone = settings?.company?.phone;
 
   const isProductsActive = location.pathname.startsWith('/products');
+  const activeCategories = categories.filter((cat) => (cat.count ?? 0) > 0);
 
   return (
     <header className={`navbar-header ${isScrolled ? 'navbar-scrolled' : ''}`}>
@@ -77,21 +87,21 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
       {settings?.announcement?.enabled && settings.announcement.text && (
         <div
           style={{
-            backgroundColor: '#0F1D2B',
-            color: 'var(--color-nav-text)',
+            backgroundColor: 'var(--color-ink)',
+            color: 'var(--color-paper)',
             padding: '6px 0',
             fontSize: '0.8125rem',
             textAlign: 'center',
             letterSpacing: '0.01em',
-            borderBottom: '1px solid var(--color-nav-border)',
+            borderBottom: '1px solid var(--color-rule)',
           }}
         >
           <Container>
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>
               <span
                 style={{
-                  backgroundColor: 'var(--color-brand-warm)',
-                  color: '#FFFFFF',
+                  backgroundColor: 'var(--color-accent)',
+                  color: 'var(--color-ink-dark)',
                   fontWeight: 600,
                   padding: '2px 8px',
                   borderRadius: 'var(--radius-sm)',
@@ -106,7 +116,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
                 <Link
                   to={settings.announcement.url}
                   style={{
-                    color: 'var(--color-nav-accent)',
+                    color: 'var(--color-accent-on-dark)',
                     textDecoration: 'underline',
                     fontWeight: 500,
                     marginLeft: '4px',
@@ -145,6 +155,10 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
             <img
               src={logoUrl}
               alt={brandName}
+              onError={(e) => {
+                (e.currentTarget as HTMLImageElement).src =
+                  '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
+              }}
               style={{
                 height: 'clamp(38px, 5vw, 48px)',
                 width: 'auto',
@@ -218,12 +232,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
                     position: 'absolute',
                     top: '100%',
                     left: 0,
-                    width: '280px',
+                    width: '320px',
                     backgroundColor: 'var(--color-card)',
-                    border: '1px solid var(--color-nav-border)',
-                    borderTop: '3px solid var(--color-nav-cta-bg)',
+                    border: '1px solid var(--color-rule)',
                     borderRadius: 'var(--radius-md)',
-                    boxShadow: '0 12px 32px rgba(10, 18, 27, 0.25)',
+                    boxShadow: '0 8px 24px rgba(22, 25, 29, 0.12)',
                     padding: '8px 0',
                     zIndex: 1100,
                   }}
@@ -234,16 +247,17 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
                     role="menuitem"
                     style={{
                       display: 'block',
-                      padding: '11px 18px',
+                      padding: '10px 18px',
                       fontSize: '0.875rem',
                       fontWeight: 600,
                       color: 'var(--color-brand)',
                       borderBottom: '1px solid var(--color-rule)',
+                      textDecoration: 'none',
                     }}
                   >
                     All Products Catalog (135)
                   </Link>
-                  {categories.map((cat) => (
+                  {activeCategories.map((cat) => (
                     <Link
                       key={cat.id}
                       to={`/products/${cat.slug}`}
@@ -255,9 +269,19 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
                         padding: '10px 18px',
                         fontSize: '0.875rem',
                         color: 'var(--color-text)',
+                        textDecoration: 'none',
+                        transition: 'background-color 0.15s ease',
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'var(--color-surface)';
+                        e.currentTarget.style.color = 'var(--color-brand)';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = 'var(--color-text)';
                       }}
                     >
-                      <span style={{ fontWeight: 500 }}>{cat.name}</span>
+                      <span style={{ fontWeight: 500 }}>{decodeHtml(cat.name)}</span>
                       {typeof cat.count === 'number' && (
                         <span
                           style={{
@@ -313,7 +337,6 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
               to="/get-a-quote"
               variant="primary"
               size="md"
-              className="header-quote-btn"
               icon={<ArrowRight size={15} />}
             >
               {UI_LABELS.NAV_GET_A_QUOTE}

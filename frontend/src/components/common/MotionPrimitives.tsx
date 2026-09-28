@@ -234,6 +234,11 @@ export const ImageReveal: React.FC<ImageRevealProps> = ({
 }) => {
   const shouldReduceMotion = useReducedMotion();
   const [isLoaded, setIsLoaded] = useState(false);
+  const [imgSrc, setImgSrc] = useState(src);
+
+  useEffect(() => {
+    setImgSrc(src);
+  }, [src]);
 
   return (
     <div
@@ -251,11 +256,16 @@ export const ImageReveal: React.FC<ImageRevealProps> = ({
       }}
     >
       <m.img
-        src={src}
+        src={imgSrc}
         alt={alt}
         loading={priority ? 'eager' : 'lazy'}
         decoding="async"
         onLoad={() => setIsLoaded(true)}
+        onError={() => {
+          if (imgSrc !== '/images/chemical-2.jpg') {
+            setImgSrc('/images/chemical-2.jpg');
+          }
+        }}
         initial={
           shouldReduceMotion || priority
             ? { opacity: 1, scale: 1 }
