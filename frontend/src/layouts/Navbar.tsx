@@ -142,12 +142,17 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
           }}
         >
           {/* Brand Logo */}
+          {/* Brand Logo inside crisp contrast badge for perfect visibility on colored navbar */}
           <Link
             to="/"
             style={{
-              display: 'flex',
+              display: 'inline-flex',
               alignItems: 'center',
               textDecoration: 'none',
+              backgroundColor: '#FFFFFF',
+              padding: '6px 14px',
+              borderRadius: '8px',
+              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.18)',
               flexShrink: 0,
             }}
             aria-label={brandName}
@@ -160,9 +165,10 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
                   '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
               }}
               style={{
-                height: 'clamp(38px, 5vw, 48px)',
+                height: 'clamp(32px, 4.5vw, 40px)',
                 width: 'auto',
                 objectFit: 'contain',
+                display: 'block',
               }}
             />
           </Link>
@@ -337,6 +343,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
               to="/get-a-quote"
               variant="primary"
               size="md"
+              className="header-quote-btn"
               icon={<ArrowRight size={15} />}
             >
               {UI_LABELS.NAV_GET_A_QUOTE}
@@ -354,9 +361,9 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
                 width: '44px',
                 height: '44px',
                 backgroundColor: 'transparent',
-                border: '1px solid var(--color-rule)',
+                border: '1px solid rgba(255, 255, 255, 0.25)',
                 borderRadius: 'var(--radius-sm)',
-                color: 'var(--color-ink)',
+                color: '#FFFFFF',
                 cursor: 'pointer',
               }}
               className="mobile-nav-toggle"

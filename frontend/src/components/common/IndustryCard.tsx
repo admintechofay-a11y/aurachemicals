@@ -22,32 +22,30 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry }) => {
       }}
     >
       {/* Featured Photo */}
-      {industry.image?.url && (
-        <div
-          style={{
-            height: '180px',
-            width: '100%',
-            overflow: 'hidden',
-            backgroundColor: 'var(--color-surface)',
+      <div
+        style={{
+          height: '180px',
+          width: '100%',
+          overflow: 'hidden',
+          backgroundColor: 'var(--color-surface)',
+        }}
+      >
+        <img
+          src={industry.image?.url || '/images/water-treatment-plant.jpg'}
+          alt={industry.image?.alt || industry.title}
+          loading="lazy"
+          decoding="async"
+          onError={(e) => {
+            (e.currentTarget as HTMLImageElement).src = '/images/water-treatment-plant.jpg';
           }}
-        >
-          <img
-            src={industry.image.url}
-            alt={industry.image.alt || industry.title}
-            loading="lazy"
-            decoding="async"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = '/images/water-treatment-plant.jpg';
-            }}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              transition: 'transform 0.4s ease',
-            }}
-          />
-        </div>
-      )}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'transform 0.4s ease',
+          }}
+        />
+      </div>
 
       {/* Content */}
       <div
@@ -66,7 +64,7 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry }) => {
             color: 'var(--color-primary)',
           }}
         >
-          {industry.title}
+          {industry.title.replace(/&amp;/g, '&').replace(/&#038;/g, '&')}
         </h3>
 
         <p
@@ -79,8 +77,8 @@ export const IndustryCard: React.FC<IndustryCardProps> = ({ industry }) => {
           }}
         >
           {industry.overview.length > 180
-            ? `${industry.overview.slice(0, 180)}...`
-            : industry.overview}
+            ? `${industry.overview.slice(0, 180).replace(/&amp;/g, '&').replace(/&#038;/g, '&')}...`
+            : industry.overview.replace(/&amp;/g, '&').replace(/&#038;/g, '&')}
         </p>
 
         <Link

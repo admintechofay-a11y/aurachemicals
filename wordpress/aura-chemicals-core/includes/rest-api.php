@@ -609,16 +609,77 @@ function aura_rest_get_industries() {
         'order'          => 'ASC',
     ]);
 
+    $image_map = [
+        'adhesives'     => '/images/adhesives.jpeg',
+        'sealant'       => '/images/adhesives.jpeg',
+        'agro'          => '/images/agriculture.jpeg',
+        'fertilizer'    => '/images/agriculture.jpeg',
+        'automotive'    => '/images/automotive.jpeg',
+        'cleaning'      => '/images/cleaning.jpeg',
+        'sanitation'    => '/images/cleaning.jpeg',
+        'construction'  => '/images/constuction.jpeg',
+        'cosmetic'      => '/images/cosmetic.jpeg',
+        'personal care' => '/images/cosmetic.jpeg',
+        'energy'        => '/images/energy-sector.jpeg',
+        'oil'           => '/images/energy-sector.jpeg',
+        'gas'           => '/images/energy-sector.jpeg',
+        'food'          => '/images/food-and-bevearge.jpeg',
+        'beverage'      => '/images/food-and-bevearge.jpeg',
+        'healthcare'    => '/images/healthcare.jpeg',
+        'diagnostics'   => '/images/healthcare.jpeg',
+        'pharma'        => '/images/phrama.jpeg',
+        'leather'       => '/images/leather.jpeg',
+        'tanning'       => '/images/leather.jpeg',
+        'mining'        => '/images/mining.jpeg',
+        'metallurgy'    => '/images/mining.jpeg',
+        'packaging'     => '/images/packaging.jpeg',
+        'paint'         => '/images/paint.jpeg',
+        'coating'       => '/images/paint.jpeg',
+        'paper'         => '/images/paper.jpeg',
+        'pulp'          => '/images/paper.jpeg',
+        'plastic'       => '/images/plastics.jpeg',
+        'polymer'       => '/images/plastics.jpeg',
+        'semiconductor' => '/images/semiconductor.jpeg',
+        'electronic'    => '/images/semiconductor.jpeg',
+        'textile'       => '/images/textind.jpeg',
+        'rubber'        => '/images/tyre.jpeg',
+        'tyre'          => '/images/tyre.jpeg',
+        'water'         => '/images/water-treatment-plant.jpg',
+    ];
+
     if (!empty($posts)) {
         $industries = [];
         foreach ($posts as $post) {
             $post_id = $post->ID;
+            $slug    = $post->post_name;
+            $title   = html_entity_decode(get_the_title($post), ENT_QUOTES, 'UTF-8');
+            $img_url = has_post_thumbnail($post_id) ? get_the_post_thumbnail_url($post_id, 'large') : '';
+
+            if (empty($img_url)) {
+                $search_text = strtolower($slug . ' ' . $title);
+                foreach ($image_map as $key => $path) {
+                    if (strpos($search_text, $key) !== false) {
+                        $img_url = $path;
+                        break;
+                    }
+                }
+            }
+            if (empty($img_url)) {
+                $img_url = '/images/water-treatment-plant.jpg';
+            }
+
             $industries[] = [
                 'id'        => $post_id,
-                'title'     => get_the_title($post),
-                'slug'      => $post->post_name,
-                'overview'  => get_the_excerpt($post) ?: $post->post_content,
-                'image_url' => has_post_thumbnail($post_id) ? get_the_post_thumbnail_url($post_id, 'large') : '',
+                'title'     => $title,
+                'slug'      => $slug,
+                'overview'  => html_entity_decode(get_the_excerpt($post) ?: $post->post_content, ENT_QUOTES, 'UTF-8'),
+                'image_url' => $img_url,
+                'image'     => [
+                    'url'    => $img_url,
+                    'alt'    => $title,
+                    'width'  => 612,
+                    'height' => 408,
+                ],
             ];
         }
         return rest_ensure_response($industries);

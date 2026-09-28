@@ -23,6 +23,66 @@ import { LineDraw, Reveal } from '../components/common/MotionPrimitives';
 import { api } from '../api/client';
 import { IndustryDto } from '../api/types';
 
+const INDUSTRY_IMG_MAP: Record<string, string> = {
+  adhesives: '/images/adhesives.jpeg',
+  sealant: '/images/adhesives.jpeg',
+  agro: '/images/agriculture.jpeg',
+  fertilizer: '/images/agriculture.jpeg',
+  automotive: '/images/automotive.jpeg',
+  cleaning: '/images/cleaning.jpeg',
+  sanitation: '/images/cleaning.jpeg',
+  construction: '/images/constuction.jpeg',
+  cosmetic: '/images/cosmetic.jpeg',
+  'personal care': '/images/cosmetic.jpeg',
+  energy: '/images/energy-sector.jpeg',
+  oil: '/images/energy-sector.jpeg',
+  gas: '/images/energy-sector.jpeg',
+  food: '/images/food-and-bevearge.jpeg',
+  beverage: '/images/food-and-bevearge.jpeg',
+  healthcare: '/images/healthcare.jpeg',
+  diagnostics: '/images/healthcare.jpeg',
+  pharma: '/images/phrama.jpeg',
+  leather: '/images/leather.jpeg',
+  tanning: '/images/leather.jpeg',
+  mining: '/images/mining.jpeg',
+  metallurgy: '/images/mining.jpeg',
+  packaging: '/images/packaging.jpeg',
+  paint: '/images/paint.jpeg',
+  coating: '/images/paint.jpeg',
+  paper: '/images/paper.jpeg',
+  pulp: '/images/paper.jpeg',
+  plastic: '/images/plastics.jpeg',
+  polymer: '/images/plastics.jpeg',
+  semiconductor: '/images/semiconductor.jpeg',
+  electronic: '/images/semiconductor.jpeg',
+  textile: '/images/textind.jpeg',
+  rubber: '/images/tyre.jpeg',
+  tyre: '/images/tyre.jpeg',
+  water: '/images/water-treatment-plant.jpg',
+};
+
+const getIndustryImage = (ind: IndustryDto): string => {
+  if (ind.image?.url && ind.image.url.trim() !== '') return ind.image.url;
+  if ((ind as any).image_url && (ind as any).image_url.trim() !== '') return (ind as any).image_url;
+  const search = ((ind.slug || '') + ' ' + (ind.title || '')).toLowerCase();
+  for (const [k, v] of Object.entries(INDUSTRY_IMG_MAP)) {
+    if (search.includes(k)) return v;
+  }
+  return '/images/water-treatment-plant.jpg';
+};
+
+const decodeHtml = (text?: string): string => {
+  if (!text) return '';
+  return text
+    .replace(/&amp;/g, '&')
+    .replace(/&#038;/g, '&')
+    .replace(/&#8211;/g, '–')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#039;/g, "'");
+};
+
 export const IndustriesPage: React.FC = () => {
   const location = useLocation();
   const [searchQuery, setSearchQuery] = useState('');
@@ -237,48 +297,21 @@ export const IndustriesPage: React.FC = () => {
                           order: isEven ? 2 : 1,
                         }}
                       >
-                        {ind.image?.url ? (
-                          <img
-                            src={ind.image.url}
-                            alt={ind.image.alt || ind.title}
-                            loading="lazy"
-                            decoding="async"
-                            onError={(e) => {
-                              (e.currentTarget as HTMLImageElement).src = '/images/water-treatment-plant.jpg';
-                            }}
-                            style={{
-                              width: '100%',
-                              height: '100%',
-                              objectFit: 'cover',
-                              display: 'block',
-                            }}
-                          />
-                        ) : (
-                          <div
-                            style={{
-                              display: 'flex',
-                              alignItems: 'center',
-                              justifyContent: 'center',
-                              height: '100%',
-                              color: 'var(--color-text-muted)',
-                            }}
-                          >
-                            <div
-                              className="card-icon-box"
-                              style={{
-                                width: '72px',
-                                height: '72px',
-                                borderRadius: 'var(--radius-md)',
-                                display: 'flex',
-                                alignItems: 'center',
-                                justifyContent: 'center',
-                                backgroundColor: 'rgba(31, 90, 140, 0.08)',
-                              }}
-                            >
-                              <Factory size={40} style={{ color: 'var(--color-secondary)' }} />
-                            </div>
-                          </div>
-                        )}
+                        <img
+                          src={getIndustryImage(ind)}
+                          alt={decodeHtml(ind.image?.alt || ind.title)}
+                          loading="lazy"
+                          decoding="async"
+                          onError={(e) => {
+                            (e.currentTarget as HTMLImageElement).src = '/images/water-treatment-plant.jpg';
+                          }}
+                          style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            display: 'block',
+                          }}
+                        />
                         <div
                           style={{
                             position: 'absolute',
@@ -316,7 +349,7 @@ export const IndustriesPage: React.FC = () => {
                             color: 'var(--color-primary)',
                           }}
                         >
-                          {ind.title}
+                          {decodeHtml(ind.title)}
                         </h2>
 
                         <p
@@ -327,7 +360,7 @@ export const IndustriesPage: React.FC = () => {
                             marginBottom: '24px',
                           }}
                         >
-                          {ind.overview}
+                          {decodeHtml(ind.overview)}
                         </p>
 
                         <div
@@ -341,11 +374,11 @@ export const IndustriesPage: React.FC = () => {
                           }}
                         >
                           <Button
-                            to={`/get-a-quote?industry=${encodeURIComponent(ind.title)}`}
+                            to={`/get-a-quote?industry=${encodeURIComponent(decodeHtml(ind.title))}`}
                             variant="primary"
                             size="sm"
                           >
-                            Request Quote for {ind.title.split(' ')[0]} <ArrowRight size={14} />
+                            Request Quote for {decodeHtml(ind.title).split(' ')[0]} <ArrowRight size={14} />
                           </Button>
                           <Button
                             to="/products"

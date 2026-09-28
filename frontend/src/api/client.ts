@@ -166,8 +166,84 @@ export const api = {
   },
 
   async getIndustries(): Promise<IndustryDto[]> {
+    const lookup: Record<string, string> = {
+      adhesives: '/images/adhesives.jpeg',
+      sealant: '/images/adhesives.jpeg',
+      agro: '/images/agriculture.jpeg',
+      fertilizer: '/images/agriculture.jpeg',
+      automotive: '/images/automotive.jpeg',
+      cleaning: '/images/cleaning.jpeg',
+      sanitation: '/images/cleaning.jpeg',
+      construction: '/images/constuction.jpeg',
+      cosmetic: '/images/cosmetic.jpeg',
+      energy: '/images/energy-sector.jpeg',
+      oil: '/images/energy-sector.jpeg',
+      gas: '/images/energy-sector.jpeg',
+      food: '/images/food-and-bevearge.jpeg',
+      beverage: '/images/food-and-bevearge.jpeg',
+      healthcare: '/images/healthcare.jpeg',
+      diagnostics: '/images/healthcare.jpeg',
+      pharma: '/images/phrama.jpeg',
+      leather: '/images/leather.jpeg',
+      tanning: '/images/leather.jpeg',
+      mining: '/images/mining.jpeg',
+      metallurgy: '/images/mining.jpeg',
+      packaging: '/images/packaging.jpeg',
+      paint: '/images/paint.jpeg',
+      coating: '/images/paint.jpeg',
+      paper: '/images/paper.jpeg',
+      pulp: '/images/paper.jpeg',
+      plastic: '/images/plastics.jpeg',
+      polymer: '/images/plastics.jpeg',
+      semiconductor: '/images/semiconductor.jpeg',
+      electronic: '/images/semiconductor.jpeg',
+      textile: '/images/textind.jpeg',
+      rubber: '/images/tyre.jpeg',
+      tyre: '/images/tyre.jpeg',
+      water: '/images/water-treatment-plant.jpg',
+    };
+
     try {
-      return await fetchWithTimeout<IndustryDto[]>(`${API_BASE}/aura/v1/industries`);
+      const data = await fetchWithTimeout<any[]>(`${API_BASE}/aura/v1/industries`);
+      if (Array.isArray(data)) {
+        return data.map((item) => {
+          let imgUrl = item.image?.url || item.image_url || '';
+          if (!imgUrl) {
+            const search = ((item.slug || '') + ' ' + (item.title || '')).toLowerCase();
+            for (const [k, v] of Object.entries(lookup)) {
+              if (search.includes(k)) {
+                imgUrl = v;
+                break;
+              }
+            }
+          }
+          if (!imgUrl) imgUrl = '/images/water-treatment-plant.jpg';
+
+          const cleanTitle = (item.title || '')
+            .replace(/&amp;/g, '&')
+            .replace(/&#038;/g, '&')
+            .replace(/&#8211;/g, '–');
+
+          const cleanOverview = (item.overview || '')
+            .replace(/&amp;/g, '&')
+            .replace(/&#038;/g, '&')
+            .replace(/&#8211;/g, '–');
+
+          return {
+            id: item.id,
+            slug: item.slug,
+            title: cleanTitle,
+            overview: cleanOverview,
+            image: {
+              url: imgUrl,
+              alt: cleanTitle,
+              width: item.image?.width || 612,
+              height: item.image?.height || 408,
+            },
+          };
+        });
+      }
+      return data;
     } catch (err) {
       if (USE_FALLBACK) return VERIFIED_INDUSTRIES;
       throw err;
