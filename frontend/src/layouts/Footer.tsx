@@ -19,7 +19,10 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
   const address = settings?.company?.registered_address || 'ROC Ahmedabad, Gujarat, India';
   const copyright = settings?.footer?.copyright_text || 'Copyright © 2026 Aura Space Infra Pvt. Ltd. All rights reserved.';
   const legalTagline = settings?.footer?.tagline || 'ROC Ahmedabad Registered · Non-Government Industrial Supply Enterprise';
-  const logoUrl = settings?.branding?.footer_logo?.url || settings?.branding?.header_logo?.url || '/images/aa6efd8e-logo-footer.png';
+  const logoUrl =
+    settings?.branding?.footer_logo?.url && !settings.branding.footer_logo.url.includes('aa6efd8e')
+      ? settings.branding.footer_logo.url
+      : '/images/aura-chemicals-logo-white.png';
 
   // Mobile Accordion State (Contact open by default)
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({

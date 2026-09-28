@@ -147,12 +147,14 @@ function aura_rest_get_settings() {
         ];
     }
     $footer_logo = get_option('aura_footer_logo_url');
-    if ($footer_logo) {
-        $settings['branding']['footer_logo'] = [
-            'url' => esc_url_raw($footer_logo),
-            'alt' => get_option('aura_brand_name', 'Aura Chemicals'),
-        ];
+    if (!$footer_logo || strpos($footer_logo, 'aa6efd8e') !== false) {
+        $footer_logo = '/images/aura-chemicals-logo-white.png';
+        update_option('aura_footer_logo_url', $footer_logo);
     }
+    $settings['branding']['footer_logo'] = [
+        'url' => esc_url_raw($footer_logo),
+        'alt' => get_option('aura_brand_name', 'Aura Chemicals'),
+    ];
 
     // Client controlled announcement banner
     $settings['announcement'] = [

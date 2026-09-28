@@ -32,7 +32,7 @@ export const VERIFIED_SETTINGS: SettingsDto = {
       alt: 'Aura Chemicals Logo',
     },
     footer_logo: {
-      url: '/images/aa6efd8e-logo-footer.png',
+      url: '/images/aura-chemicals-logo-white.png',
       width: 185,
       height: 58,
       alt: 'Aura Chemicals Logo',

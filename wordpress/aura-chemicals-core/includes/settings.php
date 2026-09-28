@@ -375,7 +375,7 @@ function aura_render_settings_page() {
                             <th><label for="aura_footer_logo_url"><?php _e('Footer Brand Logo', 'aura-chemicals'); ?></label></th>
                             <td>
                                 <div style="display: flex; gap: 8px; align-items: center;">
-                                    <input type="text" id="aura_footer_logo_url" name="aura_footer_logo_url" value="<?php echo esc_attr(get_option('aura_footer_logo_url', '/images/aa6efd8e-logo-footer.png')); ?>" class="large-text" />
+                                    <input type="text" id="aura_footer_logo_url" name="aura_footer_logo_url" value="<?php echo esc_attr(get_option('aura_footer_logo_url', '/images/aura-chemicals-logo-white.png')); ?>" class="large-text" />
                                     <button type="button" class="button aura-media-upload-btn" data-target="#aura_footer_logo_url"><?php _e('Upload / Select', 'aura-chemicals'); ?></button>
                                 </div>
                                 <p class="description"><?php _e('Displayed on dark navy footer background. Light or white logo recommended.', 'aura-chemicals'); ?></p>

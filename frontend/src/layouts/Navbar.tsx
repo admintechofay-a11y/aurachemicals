@@ -63,7 +63,10 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
   }, [productsOpen]);
 
   const brandName = settings?.company?.brand_name || 'Aura Chemicals';
-  const logoUrl = settings?.branding?.footer_logo?.url || settings?.branding?.header_logo?.url || '/images/aa6efd8e-logo-footer.png';
+  const logoUrl =
+    settings?.branding?.footer_logo?.url && !settings.branding.footer_logo.url.includes('aa6efd8e')
+      ? settings.branding.footer_logo.url
+      : '/images/aura-chemicals-logo-white.png';
   const phone = settings?.company?.phone;
 
   const isProductsActive = location.pathname.startsWith('/products');
