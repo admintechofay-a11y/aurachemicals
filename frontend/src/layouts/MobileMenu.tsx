@@ -151,10 +151,11 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
             justifyContent: 'space-between',
             height: '60px',
             padding: '0 20px',
-            borderBottom: '1px solid var(--color-rule)',
+            backgroundColor: 'var(--color-nav-bg)',
+            borderBottom: '2px solid var(--color-brand-warm)',
           }}
         >
-          <span style={{ fontWeight: 600, color: 'var(--color-ink)', fontSize: '1rem' }}>
+          <span style={{ fontWeight: 600, color: '#FFFFFF', fontSize: '1rem' }}>
             Menu
           </span>
           <button
@@ -163,16 +164,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
             onClick={onClose}
             aria-label={UI_LABELS.CLOSE_MENU}
             style={{
-              width: '40px',
-              height: '40px',
+              width: '36px',
+              height: '36px',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: 'transparent',
-              border: '1px solid var(--color-rule)',
+              backgroundColor: 'rgba(255, 255, 255, 0.12)',
+              border: '1px solid rgba(255, 255, 255, 0.25)',
               borderRadius: 'var(--radius-sm)',
               cursor: 'pointer',
-              color: 'var(--color-ink)',
+              color: '#FFFFFF',
             }}
           >
             <X size={20} />
