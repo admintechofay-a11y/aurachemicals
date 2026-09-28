@@ -59,6 +59,43 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
         boxShadow: isScrolled ? 'var(--shadow-sm)' : 'none',
       }}
     >
+      {/* Client Controlled Site-Wide Announcement Bar */}
+      {settings?.announcement?.enabled && settings.announcement.text && (
+        <div
+          style={{
+            backgroundColor: 'var(--color-primary)',
+            color: '#FFFFFF',
+            padding: '7px 0',
+            fontSize: '0.8125rem',
+            textAlign: 'center',
+            letterSpacing: '0.02em',
+            borderBottom: '1px solid rgba(255, 255, 255, 0.12)',
+          }}
+        >
+          <Container>
+            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>
+              <span style={{ backgroundColor: 'var(--color-accent)', color: 'var(--color-primary)', fontWeight: 700, padding: '2px 8px', borderRadius: '2px', fontSize: '0.75rem', textTransform: 'uppercase' }}>
+                Notice
+              </span>
+              <span>{settings.announcement.text}</span>
+              {settings.announcement.url && (
+                <Link
+                  to={settings.announcement.url}
+                  style={{
+                    color: 'var(--color-accent)',
+                    textDecoration: 'underline',
+                    fontWeight: 600,
+                    marginLeft: '4px',
+                  }}
+                >
+                  Learn More →
+                </Link>
+              )}
+            </div>
+          </Container>
+        </div>
+      )}
+
       {/* Top micro contact bar if phone exists */}
       {phone && (
         <div

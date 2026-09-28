@@ -5,15 +5,19 @@ add_action('rest_api_init', 'aura_register_rest_routes');
 add_action('init', 'aura_handle_cors_preflight');
 
 /**
- * Handle CORS preflight requests
+ * Handle CORS preflight requests dynamically
  */
 function aura_handle_cors_preflight() {
     $origin = get_http_origin();
+    $allowed_frontend = get_option('aura_frontend_url', 'http://localhost:3001');
+
     if ($origin) {
         header("Access-Control-Allow-Origin: " . esc_url_raw($origin));
         header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
         header("Access-Control-Allow-Credentials: true");
         header("Access-Control-Allow-Headers: Authorization, Content-Type, X-Requested-With");
+    } elseif ($allowed_frontend) {
+        header("Access-Control-Allow-Origin: " . esc_url_raw($allowed_frontend));
     }
 
     if ('OPTIONS' === $_SERVER['REQUEST_METHOD']) {
@@ -28,14 +32,14 @@ function aura_handle_cors_preflight() {
 function aura_register_rest_routes() {
     $namespace = 'aura/v1';
 
-    // 1. Settings
+    // 1. Settings (Corporate profile, contact channels, global branding)
     register_rest_route($namespace, '/settings', [
         'methods'             => 'GET',
         'callback'            => 'aura_rest_get_settings',
         'permission_callback' => '__return_true',
     ]);
 
-    // 2. Home Aggregated
+    // 2. Home Aggregated (Hero, Intro, Pillars, Counters, Clientele, Global CTA)
     register_rest_route($namespace, '/home', [
         'methods'             => 'GET',
         'callback'            => 'aura_rest_get_home',
@@ -93,77 +97,145 @@ function aura_register_rest_routes() {
 }
 
 /**
- * Endpoint Callbacks
+ * 1. Global Settings Endpoint
+ * Merges JSON baseline with all client modifications made in WP Admin
  */
-
 function aura_rest_get_settings() {
     $settings_file = AURA_CORE_PATH . 'data/settings.json';
-    if (file_exists($settings_file)) {
-        $settings = json_decode(file_get_contents($settings_file), true);
-        // Overlay dynamically saved WP options
-        $settings['company']['phone'] = get_option('aura_company_phone', $settings['company']['phone']);
-        $settings['company']['email'] = get_option('aura_company_email', $settings['company']['email']);
-        $settings['company']['legal_name'] = get_option('aura_legal_name', $settings['company']['legal_name']);
-        $settings['company']['brand_name'] = get_option('aura_brand_name', $settings['company']['brand_name']);
-        $settings['company']['roc_registration'] = get_option('aura_roc_reg', $settings['company']['roc_registration']);
-        return rest_ensure_response($settings);
+    $settings = file_exists($settings_file) ? json_decode(file_get_contents($settings_file), true) : [];
+
+    if (!isset($settings['company'])) {
+        $settings['company'] = [];
     }
 
-    return new WP_Error('settings_not_found', 'Settings data file missing', ['status' => 500]);
+    // Dynamic Client Controlled Corporate Options
+    $settings['company']['brand_name']          = get_option('aura_brand_name', $settings['company']['brand_name'] ?? 'Aura Chemicals');
+    $settings['company']['legal_name']          = get_option('aura_legal_name', $settings['company']['legal_name'] ?? 'Aura Space Infra Private Limited');
+    $settings['company']['group_name']          = get_option('aura_group_name', $settings['company']['group_name'] ?? 'Aura Group of Companies');
+    $settings['company']['tagline']             = get_option('aura_company_tagline', 'Your Trusted Partner in Chemical Excellence');
+    $settings['company']['roc_registration']    = get_option('aura_roc_reg', $settings['company']['roc_registration'] ?? 'ROC Ahmedabad');
+    $settings['company']['cin']                 = get_option('aura_cin_number', '');
+    $settings['company']['gstin']               = get_option('aura_gstin_number', '');
+    $settings['company']['phone']               = get_option('aura_company_phone', $settings['company']['phone'] ?? '+91 7220000877');
+    $settings['company']['secondary_phone']     = get_option('aura_secondary_phone', '');
+    $settings['company']['whatsapp']            = get_option('aura_whatsapp_number', '+91 7220000877');
+    $settings['company']['email']               = get_option('aura_company_email', $settings['company']['email'] ?? 'management.aurachemicals@gmail.com');
+    $settings['company']['sales_email']         = get_option('aura_sales_email', 'management.aurachemicals@gmail.com');
+    $settings['company']['registered_address']  = get_option('aura_registered_address', 'Ahmedabad, Gujarat, India');
+    $settings['company']['head_office_address'] = get_option('aura_head_office_address', 'Aura Space Infra Pvt. Ltd., Ahmedabad, Gujarat, India');
+    $settings['company']['business_hours']      = get_option('aura_working_hours', 'Monday – Saturday: 9:00 AM – 6:00 PM IST');
+    $settings['company']['experience_years']    = get_option('aura_stat_3_val', $settings['company']['experience_years'] ?? '7+ Years');
+    $settings['company']['supplier_count']      = intval(get_option('aura_stat_1_val', $settings['company']['supplier_count'] ?? 400));
+    $settings['company']['frontend_url']        = get_option('aura_frontend_url', 'http://localhost:3001');
+
+    $settings['company']['social_links'] = [
+        ['platform' => 'linkedin', 'url' => get_option('aura_social_linkedin', 'https://linkedin.com')],
+        ['platform' => 'twitter',  'url' => get_option('aura_social_twitter', '')],
+        ['platform' => 'facebook', 'url' => get_option('aura_social_facebook', '')],
+        ['platform' => 'youtube',  'url' => get_option('aura_social_youtube', '')],
+    ];
+
+    // Client controlled branding logos
+    if (!isset($settings['branding'])) {
+        $settings['branding'] = [];
+    }
+    $header_logo = get_option('aura_header_logo_url');
+    if ($header_logo) {
+        $settings['branding']['header_logo'] = [
+            'url' => esc_url_raw($header_logo),
+            'alt' => get_option('aura_brand_name', 'Aura Chemicals'),
+        ];
+    }
+    $footer_logo = get_option('aura_footer_logo_url');
+    if ($footer_logo) {
+        $settings['branding']['footer_logo'] = [
+            'url' => esc_url_raw($footer_logo),
+            'alt' => get_option('aura_brand_name', 'Aura Chemicals'),
+        ];
+    }
+
+    // Client controlled announcement banner
+    $settings['announcement'] = [
+        'enabled' => get_option('aura_announcement_enabled', '0') === '1',
+        'text'    => get_option('aura_announcement_text', 'Now accepting technical RFQ submissions for high-purity pharma APIs and industrial solvent allocations.'),
+        'url'     => get_option('aura_announcement_url', '/get-a-quote'),
+    ];
+
+    $settings['footer'] = [
+        'copyright_text' => get_option('aura_footer_copyright', 'Copyright © ' . date('Y') . ' Aura Space Infra Pvt. Ltd. All rights reserved.'),
+        'tagline'        => get_option('aura_footer_tagline', 'ROC Ahmedabad Registered · Non-Government Industrial Supply Enterprise'),
+        'powered_by'     => 'TECHOFY Global Ventures',
+    ];
+
+    return rest_ensure_response($settings);
 }
 
+/**
+ * 2. Homepage Aggregated Endpoint
+ * Returns all client-customized homepage sections from WordPress options
+ */
 function aura_rest_get_home() {
-    // If customized posts exist in DB, build from DB, else use verified data file
-    $settings = aura_rest_get_settings()->data;
-
     $home = [
         'hero' => [
-            'eyebrow' => 'Aura Group of Companies',
-            'title'   => get_option('aura_legal_name', 'Aura Space Infra Pvt. Ltd.'),
-            'tagline' => 'Your Trusted Partner in Chemical Excellence',
-            'cta_primary' => ['label' => 'Request a Quote', 'url' => '/get-a-quote'],
-            'cta_secondary' => ['label' => 'Explore Products', 'url' => '/products'],
-            'image' => [
-                'url' => '/images/pexels-pixabay-247763-scaled.jpg',
-                'width' => 2560,
+            'eyebrow'       => get_option('aura_hero_eyebrow', 'ISO 9001:2015 & NABL Audited Supply Chain'),
+            'title'         => get_option('aura_hero_title', get_option('aura_legal_name', 'Aura Space Infra Pvt. Ltd.')),
+            'tagline'       => get_option('aura_hero_description', 'Your Trusted Partner in Chemical Excellence. Dependable sourcing and distribution of Active Pharmaceutical Ingredients (APIs), specialty chemicals, and advanced NDT engineering inspection across India.'),
+            'cta_primary'   => [
+                'label' => get_option('aura_hero_cta_primary_label', 'Request a Quote'),
+                'url'   => get_option('aura_hero_cta_primary_url', '/get-a-quote')
+            ],
+            'cta_secondary' => [
+                'label' => get_option('aura_hero_cta_secondary_label', 'Browse Products (135 Items)'),
+                'url'   => get_option('aura_hero_cta_secondary_url', '/products')
+            ],
+            'image'         => [
+                'url'    => get_option('aura_hero_image_url', '/images/pexels-pixabay-247763-scaled.jpg'),
+                'width'  => 2560,
                 'height' => 1707,
-                'alt' => 'Modern chemical and pharmaceutical laboratory facility'
-            ]
+                'alt'    => get_option('aura_hero_image_alt', 'Modern chemical and pharmaceutical laboratory facility')
+            ],
+            'capability_strip_enabled' => get_option('aura_hero_capability_strip_enabled', '1') === '1',
+        ],
+        'stats' => [
+            ['value' => get_option('aura_stat_1_val', '400+'), 'label' => get_option('aura_stat_1_label', 'Domestic Suppliers Network')],
+            ['value' => get_option('aura_stat_2_val', '135'),  'label' => get_option('aura_stat_2_label', 'Verified Chemical Catalog Products')],
+            ['value' => get_option('aura_stat_3_val', '7+'),   'label' => get_option('aura_stat_3_label', 'Years in Distribution (Since 2014)')],
+            ['value' => get_option('aura_stat_4_val', '19'),   'label' => get_option('aura_stat_4_label', 'Industrial Sectors Served')],
         ],
         'intro' => [
-            'heading' => 'Our Company',
-            'body' => 'The company has earned a strong reputation as a reliable, quality-driven supplier through decades of collective market experience, maintaining close long-term relationships with customers and developing a deep understanding of their specific chemical requirements.'
+            'heading' => get_option('aura_intro_heading', 'Aura Space Infra Pvt. Ltd. (Aura Chemicals)'),
+            'body'    => get_option('aura_intro_body', 'A premier distributor and service provider of high-quality solvents and APIs for the pharmaceutical industry, as well as other key sectors such as agrochemicals, biotechnology, food and beverage, and cosmetics. We specialize in sourcing and trading products that meet the strictest regulatory standards while catering to the ever-evolving demands of our diverse client base.'),
         ],
         'services' => [
-            'heading' => 'Our Services',
-            'body' => 'Assured quality and reliability in API distribution through 400+ leading suppliers across India, actively serving thousands of customers across diverse industries. Through direct sourcing from domestic manufacturers with proven chemical expertise, we efficiently secure supplies, develop customized compounds, and deliver high-purity products to our clients.'
+            'heading' => get_option('aura_services_heading', 'API & Solvent Distribution Network'),
+            'body'    => get_option('aura_services_body', 'Assured quality and reliability in API distribution through 400+ leading suppliers across India, actively serving thousands of customers across diverse industries. Through direct sourcing from domestic manufacturers with proven chemical expertise, we efficiently secure supplies, develop customized compounds, and deliver high-purity products to our clients.'),
         ],
         'pillars' => [
             [
-                'id' => 'wide-range',
-                'title' => 'Wide Range of Products',
-                'description' => 'Aura Chemicals offers a diverse portfolio of chemical solutions catering to various industries. Whether you are in manufacturing, agriculture, or healthcare, we have the right products to meet your specific needs.'
+                'id'          => 'wide-range',
+                'title'       => get_option('aura_pillar_1_title', 'Wide Range of Products'),
+                'description' => get_option('aura_pillar_1_desc', 'Aura Chemicals offers a diverse portfolio of chemical solutions catering to various industries. Whether you are in manufacturing, agriculture, or healthcare, we have the right products to meet your specific needs.')
             ],
             [
-                'id' => 'competitive-pricing',
-                'title' => 'Competitive Pricing',
-                'description' => 'Experience affordability without compromising quality. Aura Chemicals offers competitive pricing, making our products accessible to businesses of all sizes.'
+                'id'          => 'competitive-pricing',
+                'title'       => get_option('aura_pillar_2_title', 'Competitive Pricing'),
+                'description' => get_option('aura_pillar_2_desc', 'Experience affordability without compromising quality. Aura Chemicals offers competitive pricing, making our products accessible to businesses of all sizes.')
             ],
             [
-                'id' => 'reliable-supply-chain',
-                'title' => 'Reliable Supply Chain',
-                'description' => 'Count on a consistent and reliable supply chain when you choose Aura Chemicals. We understand the importance of timely deliveries, ensuring that your operations run smoothly without interruptions.'
+                'id'          => 'reliable-supply-chain',
+                'title'       => get_option('aura_pillar_3_title', 'Reliable Supply Chain'),
+                'description' => get_option('aura_pillar_3_desc', 'Count on a consistent and reliable supply chain when you choose Aura Chemicals. We understand the importance of timely deliveries, ensuring that your operations run smoothly without interruptions.')
             ],
             [
-                'id' => 'extensive-network',
-                'title' => 'Extensive Network',
-                'description' => 'With over 7 years of specialized experience in API distribution since 2014, the company is classified as a Non-Government private entity registered with the Registrar of Companies (ROC Ahmedabad).'
+                'id'          => 'extensive-network',
+                'title'       => get_option('aura_pillar_4_title', 'Extensive Network'),
+                'description' => get_option('aura_pillar_4_desc', 'With over 7 years of specialized experience in API distribution since 2014, the company is classified as a Non-Government private entity registered with the Registrar of Companies (ROC Ahmedabad).')
             ]
         ],
         'clientele' => [
-            'heading' => 'OUR CLIENTELE',
+            'heading'    => 'OUR CLIENTELE',
             'subheading' => 'Trusted Partners in Chemical Excellence',
-            'clients' => [
+            'clients'    => [
                 ['id' => 1, 'name' => 'Calyx Chemicals & Pharmaceuticals Ltd.', 'logo_url' => '/images/calyx_chemicals__pharmaceuticals_ltd_logo.jpg'],
                 ['id' => 2, 'name' => 'Partner Manufacturer 1', 'logo_url' => '/images/1.png'],
                 ['id' => 3, 'name' => 'Partner Manufacturer 2', 'logo_url' => '/images/2.png'],
@@ -175,23 +247,110 @@ function aura_rest_get_home() {
             ]
         ],
         'cta' => [
-            'heading' => 'Join Us on the Journey to Excellence',
-            'body' => 'Whether you are a small-scale enterprise or a large industrial manufacturer, Aura Chemicals invites you to partner with us for chemical excellence.',
-            'button' => ['label' => 'Explore Products', 'url' => '/products']
+            'heading' => get_option('aura_cta_heading', 'Join Us on the Journey to Excellence'),
+            'body'    => get_option('aura_cta_body', 'Whether you are a small-scale enterprise or a large industrial manufacturer, Aura Chemicals invites you to partner with us for chemical excellence.'),
+            'button'  => [
+                'label' => get_option('aura_cta_button_label', 'Explore Products'),
+                'url'   => get_option('aura_cta_button_url', '/products')
+            ]
+        ],
+        'announcement' => [
+            'enabled' => get_option('aura_announcement_enabled', '0') === '1',
+            'text'    => get_option('aura_announcement_text', 'Now accepting technical RFQ submissions for high-purity pharma APIs and industrial solvent allocations.'),
+            'url'     => get_option('aura_announcement_url', '/get-a-quote'),
         ],
         'seo' => [
-            'meta_title' => 'Aura Chemicals | Your Trusted Partner in Chemical Excellence',
-            'meta_description' => 'Aura Space Infra Pvt. Ltd. (Aura Chemicals) supplies high-grade APIs, industrial solvents, phosphates, and specialty chemicals across India.'
+            'meta_title'       => get_option('aura_meta_title_suffix', 'Aura Chemicals | Your Trusted Partner in Chemical Excellence'),
+            'meta_description' => get_option('aura_default_meta_desc', 'Aura Space Infra Pvt. Ltd. (Aura Chemicals) supplies high-grade APIs, industrial solvents, phosphates, and specialty chemicals across India.')
         ]
     ];
 
     return rest_ensure_response($home);
 }
 
+/**
+ * 3. Dynamic Page Endpoint (About Us, Our Mission, Privacy Policy)
+ * Merges client-saved content from WP Options with WordPress pages
+ */
 function aura_rest_get_page($request) {
     $slug = sanitize_title($request['slug']);
-    $page = get_page_by_path($slug);
 
+    // About Us Page (Fully customizable from WP Admin)
+    if ($slug === 'about-us') {
+        return rest_ensure_response([
+            'id'           => 11,
+            'slug'         => 'about-us',
+            'title'        => get_option('aura_about_title', 'About Us'),
+            'content_html' => '',
+            'sections'     => [
+                'overview'          => get_option('aura_about_overview', 'At Aura Space Infra Private Limited, we are a trusted partner in the pharmaceutical and industrial chemical trading sector. With over a decade of industry expertise, we specialize in supplying high-purity Active Pharmaceutical Ingredients (APIs), intermediates, and specialty chemicals that comply with rigorous regulatory standards across pharmaceuticals, agrochemicals, biotechnology, and allied industries.'),
+                'business_overview' => get_option('aura_about_business_overview', 'Aura Space Infra Private Limited is a premier distributor and service provider of a wide range of high-quality solvents and APIs for the pharmaceutical industry, as well as other key sectors such as agrochemicals, biotechnology, food and beverage, and cosmetics. We specialize in sourcing and trading products that meet the strictest regulatory standards while catering to the ever-evolving demands of our diverse client base.'),
+                'why_choose_us'     => [
+                    [
+                        'title'       => get_option('aura_about_wcu_1_title', 'Reliable Sourcing'),
+                        'description' => get_option('aura_about_wcu_1_desc', 'Strong relationships with leading domestic manufacturers to ensure the highest quality products.')
+                    ],
+                    [
+                        'title'       => get_option('aura_about_wcu_2_title', 'Regulatory Compliance'),
+                        'description' => get_option('aura_about_wcu_2_desc', 'Strict compliance with global regulatory standards (IP, BP, USP, EP).')
+                    ],
+                    [
+                        'title'       => get_option('aura_about_wcu_3_title', 'Diverse Product Portfolio'),
+                        'description' => get_option('aura_about_wcu_3_desc', 'Wide range of solvents, APIs, and phosphates suitable for diverse industrial applications.')
+                    ],
+                    [
+                        'title'       => get_option('aura_about_wcu_4_title', 'Customer-Centric Service'),
+                        'description' => get_option('aura_about_wcu_4_desc', 'Dedicated technical desk providing tailored chemical procurement solutions.')
+                    ],
+                    [
+                        'title'       => get_option('aura_about_wcu_5_title', 'Timely Delivery'),
+                        'description' => get_option('aura_about_wcu_5_desc', 'Prioritizing on-time delivery to prevent supply chain disruptions.')
+                    ]
+                ],
+                'vision'            => get_option('aura_about_vision', 'At Aura Space Infra Private Limited, our vision is to be the leading trading company in the API and chemical sector, recognized for delivering exceptional products and services. We aim to provide value to our clients by sourcing and trading high-quality materials that support innovation and growth.'),
+                'mission'           => get_option('aura_about_mission', 'Our mission is to provide reliable, cost-effective, and high-quality solutions to our clients. We strive to be the trusted partner of choice in the API and chemical distribution industry, continuously expanding our product offerings and services to meet the growing needs of the markets we serve.'),
+                'sustainability'    => get_option('aura_about_sustainability', 'Sustainability is at the core of our business practices. We ensure that the products we trade are environmentally responsible and aligned with global standards for safety and sustainability. We actively work to reduce our carbon footprint across our distribution operations.'),
+                'collaboration'     => get_option('aura_about_collaboration', 'At Aura Space Infra Pvt Ltd, we believe in the power of collaboration. We work closely with our clients, suppliers, and partners to foster innovation and drive sustainable growth.')
+            ]
+        ]);
+    }
+
+    // Our Mission Page (Fully customizable from WP Admin)
+    if ($slug === 'our-mission') {
+        return rest_ensure_response([
+            'id'           => 15,
+            'slug'         => 'our-mission',
+            'title'        => get_option('aura_mission_page_title', 'Our Mission'),
+            'content_html' => '',
+            'sections'     => [
+                'mission_statement' => get_option('aura_mission_hero_text', 'At Aura Space Infra Private Limited (Aura Chemicals), our mission is to empower global pharmaceutical innovation and industrial manufacturing by providing high-purity chemical compounds, reliable supply chain solutions, and uncompromising regulatory integrity.'),
+                'vision_statement'  => get_option('aura_vision_hero_text', 'To be recognized as India\'s most trusted and technically proficient chemical distribution partner, pioneering sustainable sourcing networks and setting benchmarks for transparency, speed, and safety in global chemical commerce.'),
+                'principles'        => [
+                    [
+                        'title'       => get_option('aura_mission_gp_1_title', 'Uncompromising Quality'),
+                        'description' => get_option('aura_mission_gp_1_desc', 'Every chemical batch is backed by certified manufacturer analyses, verifying exact assay levels, purity thresholds, and regulatory compliance.')
+                    ],
+                    [
+                        'title'       => get_option('aura_mission_gp_2_title', 'Regulatory Rigor'),
+                        'description' => get_option('aura_mission_gp_2_desc', 'Strict adherence to national and international pharmacopeias (IP, BP, USP, EP) with end-to-end audit traceability.')
+                    ],
+                    [
+                        'title'       => get_option('aura_mission_gp_3_title', 'Transparent Partnerships'),
+                        'description' => get_option('aura_mission_gp_3_desc', 'Open technical communication, competitive market pricing, and dedicated client desk support across all commercial stages.')
+                    ],
+                    [
+                        'title'       => get_option('aura_mission_gp_4_title', 'Environmental Stewardship'),
+                        'description' => get_option('aura_mission_gp_4_desc', 'Promoting responsible storage, compliant eco-packaging, and low-emission logistics to protect ecosystems and future generations.')
+                    ]
+                ],
+                'long_term_vision'  => get_option('aura_mission_vision_long', 'Expanding our direct manufacturing partnerships across Asia, Europe, and the Americas to offer an integrated global chemical supply network while investing in continuous quality verification.'),
+                'inquiry_support'   => get_option('aura_mission_inquiry_text', 'Our dedicated technical consultation desk is available to assist your procurement team with specific pharmacopeial grades, custom packaging, and bulk allocation schedules.')
+            ]
+        ]);
+    }
+
+    // Check WordPress Page table for custom page
+    $page = get_page_by_path($slug);
     if ($page) {
         return rest_ensure_response([
             'id'           => $page->ID,
@@ -202,26 +361,95 @@ function aura_rest_get_page($request) {
         ]);
     }
 
-    // Default static page fallback
-    if ($slug === 'about-us' || $slug === 'our-mission') {
-        return rest_ensure_response([
-            'id' => 999,
-            'slug' => $slug,
-            'title' => ucwords(str_replace('-', ' ', $slug)),
-            'content_html' => '',
-            'sections' => []
-        ]);
-    }
-
     return new WP_Error('page_not_found', 'Page not found', ['status' => 404]);
 }
 
+/**
+ * 4. Products List Endpoint
+ * Checks WordPress CPT database first, falls back seamlessly to products.json
+ */
 function aura_rest_get_products($request) {
     $category = $request->get_param('category');
     $search   = $request->get_param('search');
+    $industry = $request->get_param('industry');
     $page     = max(1, intval($request->get_param('page') ?: 1));
     $per_page = max(1, min(500, intval($request->get_param('per_page') ?: 20)));
 
+    // 1. Try WordPress Database Query
+    $args = [
+        'post_type'      => 'product',
+        'post_status'    => 'publish',
+        'posts_per_page' => $per_page,
+        'paged'          => $page,
+    ];
+
+    if ($search) {
+        $args['s'] = sanitize_text_field($search);
+    }
+
+    if ($category && $category !== 'all') {
+        $args['tax_query'] = [
+            [
+                'taxonomy' => 'product_category',
+                'field'    => 'slug',
+                'terms'    => sanitize_title($category),
+            ],
+        ];
+    }
+
+    $query = new WP_Query($args);
+
+    if ($query->have_posts()) {
+        $products = [];
+        while ($query->have_posts()) {
+            $query->the_post();
+            $post_id = get_the_ID();
+            $categories = get_the_terms($post_id, 'product_category');
+            $primary_cat = (!empty($categories) && !is_wp_error($categories)) ? [
+                'id'    => $categories[0]->term_id,
+                'name'  => $categories[0]->name,
+                'slug'  => $categories[0]->slug,
+                'count' => $categories[0]->count,
+            ] : [
+                'id'    => 1,
+                'name'  => 'Active Pharmaceutical Ingredients',
+                'slug'  => 'api',
+                'count' => 1,
+            ];
+
+            $products[] = [
+                'id'                   => $post_id,
+                'slug'                 => get_post_field('post_name', $post_id),
+                'chemical_name'        => get_the_title($post_id),
+                'cas_number'           => get_post_meta($post_id, 'cas_number', true) ?: '',
+                'grade'                => get_post_meta($post_id, 'grade', true) ?: 'Pharma Grade',
+                'therapeutic_category' => get_post_meta($post_id, 'therapeutic_category', true) ?: '',
+                'molecular_formula'    => get_post_meta($post_id, 'molecular_formula', true) ?: '',
+                'molecular_weight'     => get_post_meta($post_id, 'molecular_weight', true) ?: '',
+                'purity'               => get_post_meta($post_id, 'purity', true) ?: '≥ 99.0%',
+                'packaging'            => get_post_meta($post_id, 'packaging', true) ?: 'Standard Export Packaging',
+                'applications'         => get_post_meta($post_id, 'applications', true) ?: '',
+                'datasheet_url'        => get_post_meta($post_id, 'datasheet_url', true) ?: '',
+                'short_description'    => get_the_excerpt($post_id) ?: get_the_content($post_id),
+                'category'             => $primary_cat,
+                'image'                => has_post_thumbnail($post_id) ? [
+                    'url' => get_the_post_thumbnail_url($post_id, 'large'),
+                    'alt' => get_the_title($post_id),
+                ] : null,
+            ];
+        }
+        wp_reset_postdata();
+
+        return rest_ensure_response([
+            'total'        => (int) $query->found_posts,
+            'total_pages'  => (int) $query->max_num_pages,
+            'current_page' => $page,
+            'per_page'     => $per_page,
+            'products'     => $products,
+        ]);
+    }
+
+    // 2. Seamless Fallback to Verified Baseline JSON
     $products_file = AURA_CORE_PATH . 'data/products.json';
     if (!file_exists($products_file)) {
         return new WP_Error('no_data', 'Products data file missing', ['status' => 500]);
@@ -229,14 +457,22 @@ function aura_rest_get_products($request) {
 
     $all_products = json_decode(file_get_contents($products_file), true);
 
-    // Filter by category
     if ($category && $category !== 'all') {
         $all_products = array_filter($all_products, function($p) use ($category) {
             return isset($p['category']['slug']) && $p['category']['slug'] === $category;
         });
     }
 
-    // Filter by search
+    if ($industry && $industry !== 'all') {
+        $all_products = array_filter($all_products, function($p) use ($industry) {
+            if (!isset($p['related_industries']) || !is_array($p['related_industries'])) return false;
+            foreach ($p['related_industries'] as $ind) {
+                if (isset($ind['slug']) && $ind['slug'] === $industry) return true;
+            }
+            return false;
+        });
+    }
+
     if ($search) {
         $s = strtolower($search);
         $all_products = array_filter($all_products, function($p) use ($s) {
@@ -261,8 +497,60 @@ function aura_rest_get_products($request) {
     ]);
 }
 
+/**
+ * 5. Single Product by Slug
+ * Queries WordPress DB first, falls back to JSON
+ */
 function aura_rest_get_product_by_slug($request) {
     $slug = sanitize_title($request['slug']);
+
+    // Check WordPress DB first
+    $posts = get_posts([
+        'post_type'      => 'product',
+        'name'           => $slug,
+        'posts_per_page' => 1,
+        'post_status'    => 'publish',
+    ]);
+
+    if (!empty($posts)) {
+        $post = $posts[0];
+        $post_id = $post->ID;
+        $categories = get_the_terms($post_id, 'product_category');
+        $primary_cat = (!empty($categories) && !is_wp_error($categories)) ? [
+            'id'    => $categories[0]->term_id,
+            'name'  => $categories[0]->name,
+            'slug'  => $categories[0]->slug,
+            'count' => $categories[0]->count,
+        ] : [
+            'id'    => 1,
+            'name'  => 'Active Pharmaceutical Ingredients',
+            'slug'  => 'api',
+            'count' => 1,
+        ];
+
+        return rest_ensure_response([
+            'id'                   => $post_id,
+            'slug'                 => $post->post_name,
+            'chemical_name'        => get_the_title($post),
+            'cas_number'           => get_post_meta($post_id, 'cas_number', true) ?: '',
+            'grade'                => get_post_meta($post_id, 'grade', true) ?: 'Pharma Grade',
+            'therapeutic_category' => get_post_meta($post_id, 'therapeutic_category', true) ?: '',
+            'molecular_formula'    => get_post_meta($post_id, 'molecular_formula', true) ?: '',
+            'molecular_weight'     => get_post_meta($post_id, 'molecular_weight', true) ?: '',
+            'purity'               => get_post_meta($post_id, 'purity', true) ?: '≥ 99.0%',
+            'packaging'            => get_post_meta($post_id, 'packaging', true) ?: 'Standard Export Packaging',
+            'applications'         => get_post_meta($post_id, 'applications', true) ?: '',
+            'datasheet_url'        => get_post_meta($post_id, 'datasheet_url', true) ?: '',
+            'short_description'    => get_the_excerpt($post) ?: $post->post_content,
+            'category'             => $primary_cat,
+            'image'                => has_post_thumbnail($post_id) ? [
+                'url' => get_the_post_thumbnail_url($post_id, 'large'),
+                'alt' => get_the_title($post),
+            ] : null,
+        ]);
+    }
+
+    // Fallback to static JSON file
     $products_file = AURA_CORE_PATH . 'data/products.json';
     if (file_exists($products_file)) {
         $all_products = json_decode(file_get_contents($products_file), true);
@@ -273,10 +561,32 @@ function aura_rest_get_product_by_slug($request) {
         }
     }
 
-    return new WP_Error('product_not_found', 'Product not found', ['status' => 404]);
+    return new WP_Error('product_not_found', 'Chemical product not found in catalog', ['status' => 404]);
 }
 
+/**
+ * 6. Product Categories
+ * Queries WordPress terms first, falls back to JSON
+ */
 function aura_rest_get_categories() {
+    $terms = get_terms([
+        'taxonomy'   => 'product_category',
+        'hide_empty' => false,
+    ]);
+
+    if (!empty($terms) && !is_wp_error($terms)) {
+        $result = [];
+        foreach ($terms as $term) {
+            $result[] = [
+                'id'    => $term->term_id,
+                'name'  => $term->name,
+                'slug'  => $term->slug,
+                'count' => (int) $term->count,
+            ];
+        }
+        return rest_ensure_response($result);
+    }
+
     $file = AURA_CORE_PATH . 'data/categories.json';
     if (file_exists($file)) {
         return rest_ensure_response(json_decode(file_get_contents($file), true));
@@ -284,7 +594,34 @@ function aura_rest_get_categories() {
     return rest_ensure_response([]);
 }
 
+/**
+ * 7. Industries
+ * Queries WordPress CPT first, falls back to JSON
+ */
 function aura_rest_get_industries() {
+    $posts = get_posts([
+        'post_type'      => 'industry',
+        'posts_per_page' => 100,
+        'post_status'    => 'publish',
+        'orderby'        => 'title',
+        'order'          => 'ASC',
+    ]);
+
+    if (!empty($posts)) {
+        $industries = [];
+        foreach ($posts as $post) {
+            $post_id = $post->ID;
+            $industries[] = [
+                'id'        => $post_id,
+                'title'     => get_the_title($post),
+                'slug'      => $post->post_name,
+                'overview'  => get_the_excerpt($post) ?: $post->post_content,
+                'image_url' => has_post_thumbnail($post_id) ? get_the_post_thumbnail_url($post_id, 'large') : '',
+            ];
+        }
+        return rest_ensure_response($industries);
+    }
+
     $file = AURA_CORE_PATH . 'data/industries.json';
     if (file_exists($file)) {
         return rest_ensure_response(json_decode(file_get_contents($file), true));
@@ -292,7 +629,35 @@ function aura_rest_get_industries() {
     return rest_ensure_response([]);
 }
 
+/**
+ * 8. Services
+ * Queries WordPress CPT first, falls back to JSON
+ */
 function aura_rest_get_services() {
+    $posts = get_posts([
+        'post_type'      => 'service',
+        'posts_per_page' => 50,
+        'post_status'    => 'publish',
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+    ]);
+
+    if (!empty($posts)) {
+        $services = [];
+        foreach ($posts as $post) {
+            $post_id = $post->ID;
+            $services[] = [
+                'id'           => $post_id,
+                'title'        => get_the_title($post),
+                'slug'         => $post->post_name,
+                'description'  => get_the_excerpt($post) ?: $post->post_content,
+                'standards'    => get_post_meta($post_id, 'standards', true) ?: '',
+                'capabilities' => get_post_meta($post_id, 'capabilities', true) ?: [],
+            ];
+        }
+        return rest_ensure_response($services);
+    }
+
     $file = AURA_CORE_PATH . 'data/services.json';
     if (file_exists($file)) {
         return rest_ensure_response(json_decode(file_get_contents($file), true));

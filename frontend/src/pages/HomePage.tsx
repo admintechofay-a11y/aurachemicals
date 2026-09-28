@@ -480,7 +480,7 @@ export const HomePage: React.FC = () => {
       )}
 
       {/* 5. RESTRICTED CORPORATE FIGURES ROW (CountUp strictly on verified numeric CMS values) */}
-      {(supplierCount || experienceYears || roc) && (
+      {((homeData?.stats && homeData.stats.length > 0) || supplierCount || experienceYears || roc) && (
         <section
           style={{
             backgroundColor: 'var(--color-primary)',
@@ -494,42 +494,64 @@ export const HomePage: React.FC = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+                gridTemplateColumns: `repeat(auto-fit, minmax(200px, 1fr))`,
                 gap: 'var(--space-8)',
                 textAlign: 'center',
               }}
             >
-              {supplierCount && (
-                <div className="metric-stat-box">
-                  <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-accent)' }}>
-                    <CountUp value={supplierCount} suffix="+" />
-                  </div>
-                  <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px' }}>
-                    Leading Domestic Chemical Suppliers
-                  </div>
-                </div>
-              )}
+              {homeData?.stats && homeData.stats.length > 0 ? (
+                homeData.stats.map((stat, idx) => {
+                  const match = stat.value.match(/^(\d+)(.*)$/);
+                  return (
+                    <div key={idx} className="metric-stat-box">
+                      <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-accent)' }}>
+                        {match ? (
+                          <CountUp value={parseInt(match[1], 10)} suffix={match[2]} />
+                        ) : (
+                          stat.value
+                        )}
+                      </div>
+                      <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px' }}>
+                        {stat.label}
+                      </div>
+                    </div>
+                  );
+                })
+              ) : (
+                <>
+                  {supplierCount && (
+                    <div className="metric-stat-box">
+                      <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-accent)' }}>
+                        <CountUp value={supplierCount} suffix="+" />
+                      </div>
+                      <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px' }}>
+                        Leading Domestic Chemical Suppliers
+                      </div>
+                    </div>
+                  )}
 
-              {experienceYears && (
-                <div className="metric-stat-box">
-                  <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-accent)' }}>
-                    {experienceYears}
-                  </div>
-                  <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px' }}>
-                    Active in API & Chemical Distribution (Since 2014)
-                  </div>
-                </div>
-              )}
+                  {experienceYears && (
+                    <div className="metric-stat-box">
+                      <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-accent)' }}>
+                        {experienceYears}
+                      </div>
+                      <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px' }}>
+                        Active in API & Chemical Distribution (Since 2014)
+                      </div>
+                    </div>
+                  )}
 
-              {roc && (
-                <div className="metric-stat-box">
-                  <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-accent)' }}>
-                    {roc}
-                  </div>
-                  <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px' }}>
-                    Registered Non-Government Corporate Entity
-                  </div>
-                </div>
+                  {roc && (
+                    <div className="metric-stat-box">
+                      <div style={{ fontSize: '2.5rem', fontWeight: 700, color: 'var(--color-accent)' }}>
+                        {roc}
+                      </div>
+                      <div style={{ fontSize: '0.875rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px' }}>
+                        Registered Non-Government Corporate Entity
+                      </div>
+                    </div>
+                  )}
+                </>
               )}
             </div>
           </Container>

@@ -32,12 +32,24 @@ export interface CompanySettingsDto {
   social_links?: Array<{ platform: string; url: string }>;
 }
 
+export interface AnnouncementDto {
+  enabled: boolean;
+  text: string;
+  url?: string;
+}
+
+export interface MetricStatDto {
+  value: string;
+  label: string;
+}
+
 export interface SettingsDto {
   company: CompanySettingsDto;
   branding: {
     header_logo?: ImageDto;
     footer_logo?: ImageDto;
   };
+  announcement?: AnnouncementDto;
   footer: {
     copyright_text?: string;
     powered_by?: string;
@@ -64,6 +76,7 @@ export interface HomeDto {
     cta_primary?: { label: string; url: string };
     cta_secondary?: { label: string; url: string };
     image?: ImageDto;
+    capability_strip_enabled?: boolean;
   };
   intro: {
     heading?: string;
@@ -74,6 +87,7 @@ export interface HomeDto {
     body?: string;
   };
   pillars: StrategicPillarDto[];
+  stats?: MetricStatDto[];
   clientele: {
     heading?: string;
     subheading?: string;
@@ -84,6 +98,7 @@ export interface HomeDto {
     body?: string;
     button?: { label: string; url: string };
   };
+  announcement?: AnnouncementDto;
   seo?: SeoDto;
 }
 
