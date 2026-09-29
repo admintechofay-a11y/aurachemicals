@@ -19,10 +19,15 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
   const address = settings?.company?.registered_address || 'ROC Ahmedabad, Gujarat, India';
   const copyright = settings?.footer?.copyright_text || 'Copyright © 2026 Aura Space Infra Pvt. Ltd. All rights reserved.';
   const legalTagline = settings?.footer?.tagline || 'ROC Ahmedabad Registered · Non-Government Industrial Supply Enterprise';
-  const logoUrl =
-    settings?.branding?.footer_logo?.url ||
-    settings?.branding?.header_logo?.url ||
-    '/images/aa6efd8e-logo-footer.png';
+  const rawFooterLogo = settings?.branding?.footer_logo?.url;
+  const rawHeaderLogo = settings?.branding?.header_logo?.url;
+  const isHomesteadLogo = (url?: string) => !url || url.includes('aa6efd8e') || url.includes('Homestead');
+
+  const logoUrl = !isHomesteadLogo(rawFooterLogo)
+    ? rawFooterLogo!
+    : !isHomesteadLogo(rawHeaderLogo)
+    ? rawHeaderLogo!
+    : '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
 
   // Mobile Accordion State (Contact open by default)
   const [openSections, setOpenSections] = useState<Record<string, boolean>>({
@@ -54,20 +59,32 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
         >
           {/* Column 1: Company */}
           <div>
-            <Link to="/" style={{ display: 'inline-block', marginBottom: 'var(--space-4)' }} aria-label={brandName}>
-              <img
-                src={logoUrl}
-                alt={brandName}
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).src =
-                    '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
-                }}
+            <Link to="/" style={{ display: 'inline-block', marginBottom: 'var(--space-4)', textDecoration: 'none' }} aria-label={brandName}>
+              <div
                 style={{
-                  height: '42px',
-                  width: 'auto',
-                  objectFit: 'contain',
+                  background: '#FFFFFF',
+                  padding: '6px 14px',
+                  borderRadius: '8px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
                 }}
-              />
+              >
+                <img
+                  src={logoUrl}
+                  alt={brandName}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
+                  }}
+                  style={{
+                    height: '38px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    display: 'block',
+                  }}
+                />
+              </div>
             </Link>
             <p style={{ fontSize: '0.875rem', color: 'rgba(244, 245, 245, 0.78)', lineHeight: 1.6, marginBottom: 'var(--space-4)' }}>
               {tagline}
@@ -236,15 +253,28 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
         <div className="mobile-footer-accordion" style={{ display: 'none', paddingTop: 'var(--space-8)' }}>
           {/* Logo & Tagline */}
           <div style={{ paddingBottom: '16px', borderBottom: '1px solid rgba(213, 217, 220, 0.12)' }}>
-            <img
-              src={logoUrl}
-              alt={brandName}
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src =
-                  '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
-              }}
-              style={{ height: '36px', width: 'auto', marginBottom: '8px' }}
-            />
+            <Link to="/" style={{ display: 'inline-block', marginBottom: '10px', textDecoration: 'none' }} aria-label={brandName}>
+              <div
+                style={{
+                  background: '#FFFFFF',
+                  padding: '5px 12px',
+                  borderRadius: '8px',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
+                }}
+              >
+                <img
+                  src={logoUrl}
+                  alt={brandName}
+                  onError={(e) => {
+                    (e.currentTarget as HTMLImageElement).src =
+                      '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
+                  }}
+                  style={{ height: '34px', width: 'auto', objectFit: 'contain', display: 'block' }}
+                />
+              </div>
+            </Link>
             <p style={{ fontSize: '0.875rem', color: 'rgba(244, 245, 245, 0.75)' }}>{tagline}</p>
           </div>
 
@@ -324,27 +354,68 @@ export const Footer: React.FC<FooterProps> = ({ settings }) => {
           </div>
         </div>
 
-        {/* Legal & Copyright Line */}
+        {/* Legal, Developer Credit & Copyright Line */}
         <div
           style={{
-            padding: '20px 0',
+            padding: '20px 0 28px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
-            gap: '12px',
+            gap: '16px',
             fontSize: '0.8125rem',
-            color: 'rgba(244, 245, 245, 0.55)',
+            color: 'rgba(244, 245, 245, 0.65)',
+            borderTop: '1px solid rgba(213, 217, 220, 0.08)',
           }}
         >
-          <div>
-            {copyright} · <span style={{ color: 'rgba(244, 245, 245, 0.70)' }}>{legalTagline}</span>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
+            <div>
+              {copyright} · <span style={{ color: 'rgba(244, 245, 245, 0.50)' }}>{legalTagline}</span>
+            </div>
+            <div style={{ fontSize: '0.8125rem', color: 'rgba(244, 245, 245, 0.70)' }}>
+              Design and Developed by{' '}
+              <a
+                href="https://techofay-global-ventures.vercel.app/contact"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: 'var(--color-secondary, #E67E22)',
+                  fontWeight: 600,
+                  textDecoration: 'none',
+                  transition: 'opacity 0.15s ease',
+                }}
+                onMouseEnter={(e) => (e.currentTarget.style.textDecoration = 'underline')}
+                onMouseLeave={(e) => (e.currentTarget.style.textDecoration = 'none')}
+              >
+                Techofay Global Ventures
+              </a>
+            </div>
           </div>
-          <div style={{ display: 'flex', gap: '16px' }}>
-            <Link to="/privacy-policy" style={{ color: 'rgba(244, 245, 245, 0.65)' }}>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            <Link
+              to="/privacy-policy"
+              style={{
+                color: 'rgba(244, 245, 245, 0.70)',
+                textDecoration: 'none',
+                transition: 'color 0.15s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(244, 245, 245, 0.70)')}
+            >
               Privacy Policy
             </Link>
-            <Link to="/contact" style={{ color: 'rgba(244, 245, 245, 0.65)' }}>
+            <span style={{ opacity: 0.3 }}>·</span>
+            <Link
+              to="/contact"
+              style={{
+                color: 'rgba(244, 245, 245, 0.70)',
+                textDecoration: 'none',
+                transition: 'color 0.15s ease',
+              }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
+              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(244, 245, 245, 0.70)')}
+            >
               Contact
             </Link>
           </div>
