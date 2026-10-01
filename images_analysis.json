@@ -1,0 +1,905 @@
+[
+  {
+    "file": "0558a51c-4.jpg",
+    "size_bytes": 24433,
+    "w": 350,
+    "h": 270,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "0d1f5709-vector3.png",
+    "size_bytes": 2805,
+    "w": 305,
+    "h": 131,
+    "fmt": "PNG"
+  },
+  {
+    "file": "1-150x150.png",
+    "size_bytes": 28317,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "1.png",
+    "size_bytes": 192892,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "194afa26-vector2.png",
+    "size_bytes": 3920,
+    "w": 277,
+    "h": 118,
+    "fmt": "PNG"
+  },
+  {
+    "file": "1b1a28eb-group-230.png",
+    "size_bytes": 173330,
+    "w": 500,
+    "h": 660,
+    "fmt": "PNG"
+  },
+  {
+    "file": "1e51e9fa-carring.png",
+    "size_bytes": 119994,
+    "w": 628,
+    "h": 715,
+    "fmt": "PNG"
+  },
+  {
+    "file": "2-150x150.png",
+    "size_bytes": 7728,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "2.png",
+    "size_bytes": 40706,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "2d742c3b-group-199.png",
+    "size_bytes": 38447,
+    "w": 540,
+    "h": 590,
+    "fmt": "PNG"
+  },
+  {
+    "file": "3-150x150.png",
+    "size_bytes": 15960,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "3.png",
+    "size_bytes": 87405,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "3aaefc5a-video-icon.png",
+    "size_bytes": 2370,
+    "w": 70,
+    "h": 70,
+    "fmt": "PNG"
+  },
+  {
+    "file": "3dbb8b39-email.png",
+    "size_bytes": 1778,
+    "w": 67,
+    "h": 63,
+    "fmt": "PNG"
+  },
+  {
+    "file": "3dbb8b39-map.png",
+    "size_bytes": 2598,
+    "w": 62,
+    "h": 70,
+    "fmt": "PNG"
+  },
+  {
+    "file": "4-150x150.png",
+    "size_bytes": 7917,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "4.png",
+    "size_bytes": 42911,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "4030ed42-group-201.png",
+    "size_bytes": 2045,
+    "w": 80,
+    "h": 80,
+    "fmt": "PNG"
+  },
+  {
+    "file": "41918d2d-1.jpg",
+    "size_bytes": 17555,
+    "w": 350,
+    "h": 270,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "440f9428-tomas-nozina-up22zkjjgzo-unsplash-1.png",
+    "size_bytes": 180031,
+    "w": 500,
+    "h": 660,
+    "fmt": "PNG"
+  },
+  {
+    "file": "5-150x150.png",
+    "size_bytes": 18429,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "5.png",
+    "size_bytes": 117300,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "515516d9-test-bg-shape.png",
+    "size_bytes": 5640,
+    "w": 242,
+    "h": 291,
+    "fmt": "PNG"
+  },
+  {
+    "file": "6-150x150.png",
+    "size_bytes": 10460,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "6.png",
+    "size_bytes": 52674,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "6e9d43aa-vector1.png",
+    "size_bytes": 4880,
+    "w": 337,
+    "h": 143,
+    "fmt": "PNG"
+  },
+  {
+    "file": "7-150x150.png",
+    "size_bytes": 15039,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "7.png",
+    "size_bytes": 92338,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "702f1c4a-group-190.png",
+    "size_bytes": 4398,
+    "w": 237,
+    "h": 60,
+    "fmt": "PNG"
+  },
+  {
+    "file": "740db345-icon-3.png",
+    "size_bytes": 12387,
+    "w": 107,
+    "h": 113,
+    "fmt": "PNG"
+  },
+  {
+    "file": "79b85fa4-2.jpg",
+    "size_bytes": 20653,
+    "w": 350,
+    "h": 270,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "7f55fc89-johan-mouchet-z95viy3wazs-unsplash-1.png",
+    "size_bytes": 277151,
+    "w": 660,
+    "h": 660,
+    "fmt": "PNG"
+  },
+  {
+    "file": "8.png",
+    "size_bytes": 76443,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "86142830-icon-2.png",
+    "size_bytes": 12572,
+    "w": 107,
+    "h": 113,
+    "fmt": "PNG"
+  },
+  {
+    "file": "88f04fdf-man_women.png",
+    "size_bytes": 205869,
+    "w": 736,
+    "h": 535,
+    "fmt": "PNG"
+  },
+  {
+    "file": "8ed45988-3.jpg",
+    "size_bytes": 20919,
+    "w": 350,
+    "h": 270,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "8eece8e7-banner-image-1.png",
+    "size_bytes": 591195,
+    "w": 651,
+    "h": 750,
+    "fmt": "PNG"
+  },
+  {
+    "file": "8f4525e9-test-1.png",
+    "size_bytes": 4774,
+    "w": 46,
+    "h": 46,
+    "fmt": "PNG"
+  },
+  {
+    "file": "8fb66531-group-200.png",
+    "size_bytes": 3667,
+    "w": 630,
+    "h": 600,
+    "fmt": "PNG"
+  },
+  {
+    "file": "924d280d-icon1.png",
+    "size_bytes": 11819,
+    "w": 107,
+    "h": 113,
+    "fmt": "PNG"
+  },
+  {
+    "file": "93451bf8-ellipse-2.png",
+    "size_bytes": 4461,
+    "w": 46,
+    "h": 46,
+    "fmt": "PNG"
+  },
+  {
+    "file": "93c811b1-group-216-1.png",
+    "size_bytes": 10706,
+    "w": 200,
+    "h": 200,
+    "fmt": "PNG"
+  },
+  {
+    "file": "97611a83-mobile.png",
+    "size_bytes": 799,
+    "w": 44,
+    "h": 70,
+    "fmt": "PNG"
+  },
+  {
+    "file": "9b25795e-smiley-woman-posing-her-baggage-1.png",
+    "size_bytes": 74570,
+    "w": 522,
+    "h": 643,
+    "fmt": "PNG"
+  },
+  {
+    "file": "a1278a7d-6.jpg",
+    "size_bytes": 17262,
+    "w": 350,
+    "h": 270,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "a1ffcde9-mission-vission-22x.jpg",
+    "size_bytes": 117393,
+    "w": 1260,
+    "h": 1448,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "aa6efd8e-logo-footer.png",
+    "size_bytes": 3437,
+    "w": 218,
+    "h": 57,
+    "fmt": "PNG"
+  },
+  {
+    "file": "adhesives.jpeg",
+    "size_bytes": 10016,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "agriculture.jpeg",
+    "size_bytes": 23904,
+    "w": 259,
+    "h": 194,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "api.jpeg",
+    "size_bytes": 90996,
+    "w": 1280,
+    "h": 720,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "apis.jpg",
+    "size_bytes": 31447,
+    "w": 737,
+    "h": 419,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "AuraChemicalsVideo.mp4",
+    "size_bytes": 65322357,
+    "w": 0,
+    "h": 0,
+    "fmt": ""
+  },
+  {
+    "file": "automotive.jpeg",
+    "size_bytes": 17482,
+    "w": 277,
+    "h": 182,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "b06f92c6-5.jpg",
+    "size_bytes": 23152,
+    "w": 350,
+    "h": 270,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "b56abe97-ryan-spencer-wjdr8_qxvr8-unsplash-1.png",
+    "size_bytes": 177938,
+    "w": 500,
+    "h": 660,
+    "fmt": "PNG"
+  },
+  {
+    "file": "b841ae13-jake-blucker-tmzcrbkm99y-unsplash-1.png",
+    "size_bytes": 178709,
+    "w": 500,
+    "h": 660,
+    "fmt": "PNG"
+  },
+  {
+    "file": "bg-chem.jpg",
+    "size_bytes": 27745,
+    "w": 612,
+    "h": 456,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "bty-ace.jpeg",
+    "size_bytes": 10547,
+    "w": 267,
+    "h": 189,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "c27e6167-vector4.png",
+    "size_bytes": 3079,
+    "w": 174,
+    "h": 108,
+    "fmt": "PNG"
+  },
+  {
+    "file": "calyx_chemicals__pharmaceuticals_ltd_logo.jpg",
+    "size_bytes": 5597,
+    "w": 200,
+    "h": 200,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "chemical-2.jpg",
+    "size_bytes": 70769,
+    "w": 520,
+    "h": 400,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "cleaning.jpeg",
+    "size_bytes": 12470,
+    "w": 300,
+    "h": 168,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "constuction.jpeg",
+    "size_bytes": 15565,
+    "w": 271,
+    "h": 186,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "cosmetic.jpeg",
+    "size_bytes": 71687,
+    "w": 1024,
+    "h": 683,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "cropped-cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview.png",
+    "size_bytes": 79874,
+    "w": 512,
+    "h": 512,
+    "fmt": "PNG"
+  },
+  {
+    "file": "cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png",
+    "size_bytes": 48372,
+    "w": 652,
+    "h": 223,
+    "fmt": "PNG"
+  },
+  {
+    "file": "cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1.png",
+    "size_bytes": 47375,
+    "w": 383,
+    "h": 276,
+    "fmt": "PNG"
+  },
+  {
+    "file": "cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview.png",
+    "size_bytes": 78785,
+    "w": 512,
+    "h": 512,
+    "fmt": "PNG"
+  },
+  {
+    "file": "d01d587e-group-216.png",
+    "size_bytes": 9887,
+    "w": 200,
+    "h": 200,
+    "fmt": "PNG"
+  },
+  {
+    "file": "dalle_circular_logo.webp",
+    "size_bytes": 222436,
+    "w": 768,
+    "h": 768,
+    "fmt": "WEBP"
+  },
+  {
+    "file": "dddd2a45-ellipse-3.png",
+    "size_bytes": 5506,
+    "w": 46,
+    "h": 46,
+    "fmt": "PNG"
+  },
+  {
+    "file": "default.png",
+    "size_bytes": 6105,
+    "w": 128,
+    "h": 128,
+    "fmt": "PNG"
+  },
+  {
+    "file": "download.jpeg",
+    "size_bytes": 12701,
+    "w": 260,
+    "h": 148,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "download.jpeg.png",
+    "size_bytes": 302167,
+    "w": 520,
+    "h": 400,
+    "fmt": "PNG"
+  },
+  {
+    "file": "e006adb0-group-216-2.png",
+    "size_bytes": 10618,
+    "w": 200,
+    "h": 200,
+    "fmt": "PNG"
+  },
+  {
+    "file": "e3df923a-stanley-dai-qlfjlyeamv4-unsplash-1.png",
+    "size_bytes": 573815,
+    "w": 1600,
+    "h": 608,
+    "fmt": "PNG"
+  },
+  {
+    "file": "earth-4-removebg-preview-260x300.png",
+    "size_bytes": 97051,
+    "w": 260,
+    "h": 300,
+    "fmt": "PNG"
+  },
+  {
+    "file": "earth-4-removebg-preview.png",
+    "size_bytes": 300126,
+    "w": 465,
+    "h": 537,
+    "fmt": "PNG"
+  },
+  {
+    "file": "eb8cecee-ellipse-4.png",
+    "size_bytes": 5078,
+    "w": 46,
+    "h": 46,
+    "fmt": "PNG"
+  },
+  {
+    "file": "energy-sector.jpeg",
+    "size_bytes": 12276,
+    "w": 268,
+    "h": 188,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "f3f5353b-vector2.png",
+    "size_bytes": 5830,
+    "w": 384,
+    "h": 349,
+    "fmt": "PNG"
+  },
+  {
+    "file": "food-and-bevearge.jpeg",
+    "size_bytes": 14646,
+    "w": 299,
+    "h": 168,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "Gemini_Generated_Image_scqfw0scqfw0scqf-removebg-preview.png",
+    "size_bytes": 14517,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "google.png",
+    "size_bytes": 19680,
+    "w": 417,
+    "h": 417,
+    "fmt": "PNG"
+  },
+  {
+    "file": "healthcare.jpeg",
+    "size_bytes": 12921,
+    "w": 299,
+    "h": 168,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "hero-scaled.jpg",
+    "size_bytes": 187413,
+    "w": 1600,
+    "h": 1067,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "images-3.jpg",
+    "size_bytes": 14418,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "istockphoto-1307983649-612x612-1.jpg",
+    "size_bytes": 27309,
+    "w": 612,
+    "h": 376,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "istockphoto-855195698-612x612-1.jpg",
+    "size_bytes": 19508,
+    "w": 612,
+    "h": 612,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "istockphoto-869302164-170667a.webp",
+    "size_bytes": 45664,
+    "w": 509,
+    "h": 339,
+    "fmt": "WEBP"
+  },
+  {
+    "file": "kmno.jpeg",
+    "size_bytes": 7851,
+    "w": 242,
+    "h": 209,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "leather.jpeg",
+    "size_bytes": 18497,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "methanol.jpeg",
+    "size_bytes": 7044,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "mining.jpeg",
+    "size_bytes": 18909,
+    "w": 313,
+    "h": 161,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1.png",
+    "size_bytes": 47212,
+    "w": 652,
+    "h": 383,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview.png",
+    "size_bytes": 47212,
+    "w": 652,
+    "h": 383,
+    "fmt": "PNG"
+  },
+  {
+    "file": "packaging.jpeg",
+    "size_bytes": 20816,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "paint.jpeg",
+    "size_bytes": 13261,
+    "w": 307,
+    "h": 164,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "paper.jpeg",
+    "size_bytes": 9729,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "pexels-max-flinterman-225455-2506594-scaled.jpg",
+    "size_bytes": 411712,
+    "w": 1600,
+    "h": 2415,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "pexels-pixabay-247763-1024x683.jpg",
+    "size_bytes": 121953,
+    "w": 1024,
+    "h": 683,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "pexels-pixabay-247763-scaled.jpg",
+    "size_bytes": 289638,
+    "w": 1600,
+    "h": 1067,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "phrama.jpeg",
+    "size_bytes": 14380,
+    "w": 281,
+    "h": 179,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "plastics.jpeg",
+    "size_bytes": 19749,
+    "w": 338,
+    "h": 149,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "scientific-molecule-background-medicine-science-technology-chemistry-wallpaper-banner-with_230610-1318.avif",
+    "size_bytes": 10519,
+    "w": 626,
+    "h": 417,
+    "fmt": "AVIF"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144018.png",
+    "size_bytes": 476968,
+    "w": 818,
+    "h": 796,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144018.webp",
+    "size_bytes": 128980,
+    "w": 818,
+    "h": 796,
+    "fmt": "WEBP"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144219.png",
+    "size_bytes": 67319,
+    "w": 406,
+    "h": 175,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144254.png",
+    "size_bytes": 31252,
+    "w": 401,
+    "h": 224,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144304.png",
+    "size_bytes": 32656,
+    "w": 467,
+    "h": 156,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144312.png",
+    "size_bytes": 44351,
+    "w": 356,
+    "h": 375,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144320.png",
+    "size_bytes": 32772,
+    "w": 465,
+    "h": 204,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144320.webp",
+    "size_bytes": 12338,
+    "w": 465,
+    "h": 204,
+    "fmt": "WEBP"
+  },
+  {
+    "file": "Screenshot-2024-02-01-144630.png",
+    "size_bytes": 389094,
+    "w": 682,
+    "h": 817,
+    "fmt": "PNG"
+  },
+  {
+    "file": "semiconductor.jpeg",
+    "size_bytes": 17532,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "solvents.png",
+    "size_bytes": 609655,
+    "w": 1024,
+    "h": 574,
+    "fmt": "PNG"
+  },
+  {
+    "file": "supply.png",
+    "size_bytes": 41099,
+    "w": 512,
+    "h": 512,
+    "fmt": "PNG"
+  },
+  {
+    "file": "textind.jpeg",
+    "size_bytes": 18079,
+    "w": 300,
+    "h": 168,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "tyre.jpeg",
+    "size_bytes": 16658,
+    "w": 275,
+    "h": 183,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "Untitled-1.png",
+    "size_bytes": 290685,
+    "w": 520,
+    "h": 400,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Untitled-2.png",
+    "size_bytes": 723017,
+    "w": 736,
+    "h": 535,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Untitled-3.png",
+    "size_bytes": 624918,
+    "w": 736,
+    "h": 535,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Untitled-design-7-150x150.png",
+    "size_bytes": 31318,
+    "w": 150,
+    "h": 150,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Untitled-design-7.png",
+    "size_bytes": 220737,
+    "w": 500,
+    "h": 500,
+    "fmt": "PNG"
+  },
+  {
+    "file": "Untitled-design.png",
+    "size_bytes": 1024736,
+    "w": 1366,
+    "h": 768,
+    "fmt": "PNG"
+  },
+  {
+    "file": "water-treatment-plant-1.jpg",
+    "size_bytes": 74283,
+    "w": 750,
+    "h": 450,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "water-treatment-plant.jpg",
+    "size_bytes": 74283,
+    "w": 750,
+    "h": 450,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "WhatsApp-Image-2024-01-17-at-11.56.52-PM.jpeg",
+    "size_bytes": 8946,
+    "w": 300,
+    "h": 240,
+    "fmt": "JPEG"
+  },
+  {
+    "file": "woocommerce-placeholder.png",
+    "size_bytes": 121061,
+    "w": 1200,
+    "h": 1200,
+    "fmt": "PNG"
+  }
+]

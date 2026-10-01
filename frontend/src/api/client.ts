@@ -26,13 +26,18 @@ const TIMEOUT_MS = 5000;
 // a local-only domain (.local or localhost), browser Mixed Content (HTTP on HTTPS) and local DNS
 // will immediately fail. In that scenario, directly serve the verified corporate dataset.
 const isLocalApi = API_BASE.includes('.local') || API_BASE.includes('localhost') || API_BASE.includes('127.0.0.1');
-const isHostedPublicly =
-  typeof window !== 'undefined' &&
-  window.location.hostname !== 'localhost' &&
-  window.location.hostname !== '127.0.0.1' &&
-  !window.location.hostname.endsWith('.local');
 
-const shouldBypassLocalApi = isLocalApi && isHostedPublicly;
+let isApiUnavailable = false;
+
+const shouldBypassLocalApi = (): boolean => {
+  if (isApiUnavailable) return true;
+  // If API points to a local virtual host (.local) and we are not running on that domain,
+  // immediately serve the verified static dataset to prevent browser timeout/mixed-content blocks.
+  if (isLocalApi && typeof window !== 'undefined' && !window.location.hostname.endsWith('.local')) {
+    return true;
+  }
+  return false;
+};
 
 class ApiError extends Error {
   status: number;
@@ -79,30 +84,33 @@ async function fetchWithTimeout<T>(url: string, options: RequestInit = {}): Prom
 
 export const api = {
   async getSettings(): Promise<SettingsDto> {
-    if (shouldBypassLocalApi) return VERIFIED_SETTINGS;
+    if (shouldBypassLocalApi()) return VERIFIED_SETTINGS;
     try {
       return await fetchWithTimeout<SettingsDto>(`${API_BASE}/aura/v1/settings`);
     } catch (err) {
+      isApiUnavailable = true;
       console.warn('WordPress API unreachable, using verified settings fallback:', err);
       return VERIFIED_SETTINGS;
     }
   },
 
   async getHome(): Promise<HomeDto> {
-    if (shouldBypassLocalApi) return VERIFIED_HOME;
+    if (shouldBypassLocalApi()) return VERIFIED_HOME;
     try {
       return await fetchWithTimeout<HomeDto>(`${API_BASE}/aura/v1/home`);
     } catch (err) {
+      isApiUnavailable = true;
       console.warn('WordPress API unreachable, using verified homepage fallback:', err);
       return VERIFIED_HOME;
     }
   },
 
   async getProductCategories(): Promise<ProductCategoryDto[]> {
-    if (shouldBypassLocalApi) return VERIFIED_CATEGORIES;
+    if (shouldBypassLocalApi()) return VERIFIED_CATEGORIES;
     try {
       return await fetchWithTimeout<ProductCategoryDto[]>(`${API_BASE}/aura/v1/product-categories`);
     } catch (err) {
+      isApiUnavailable = true;
       console.warn('WordPress API unreachable, using verified categories fallback:', err);
       return VERIFIED_CATEGORIES;
     }
@@ -154,7 +162,7 @@ export const api = {
       };
     };
 
-    if (shouldBypassLocalApi) return getLocalFilteredProducts();
+    if (shouldBypassLocalApi()) return getLocalFilteredProducts();
 
     try {
       const query = new URLSearchParams();
@@ -166,6 +174,7 @@ export const api = {
 
       return await fetchWithTimeout<ProductsResponseDto>(`${API_BASE}/aura/v1/products?${query.toString()}`);
     } catch (err) {
+      isApiUnavailable = true;
       console.warn('WordPress API unreachable, using verified products fallback:', err);
       return getLocalFilteredProducts();
     }
@@ -178,17 +187,18 @@ export const api = {
       throw new ApiError(`Chemical product not found: ${slug}`, 404, 'not_found');
     };
 
-    if (shouldBypassLocalApi) return getLocalProduct();
+    if (shouldBypassLocalApi()) return getLocalProduct();
 
     try {
       return await fetchWithTimeout<ProductDto>(`${API_BASE}/aura/v1/products/${slug}`);
     } catch (err) {
+      isApiUnavailable = true;
       return getLocalProduct();
     }
   },
 
   async getIndustries(): Promise<IndustryDto[]> {
-    if (shouldBypassLocalApi) return VERIFIED_INDUSTRIES;
+    if (shouldBypassLocalApi()) return VERIFIED_INDUSTRIES;
 
     const lookup: Record<string, string> = {
       adhesives: '/images/adhesives.jpeg',
@@ -275,10 +285,11 @@ export const api = {
   },
 
   async getServices(): Promise<ServiceDto[]> {
-    if (shouldBypassLocalApi) return VERIFIED_SERVICES;
+    if (shouldBypassLocalApi()) return VERIFIED_SERVICES;
     try {
       return await fetchWithTimeout<ServiceDto[]>(`${API_BASE}/aura/v1/services`);
     } catch (err) {
+      isApiUnavailable = true;
       console.warn('WordPress API unreachable, using verified services fallback:', err);
       return VERIFIED_SERVICES;
     }
@@ -324,7 +335,7 @@ export const api = {
       };
     };
 
-    if (shouldBypassLocalApi) return getLocalPage(slug);
+    if (shouldBypassLocalApi()) return getLocalPage(slug);
 
     try {
       return await fetchWithTimeout<PageDto>(`${API_BASE}/aura/v1/pages/${slug}`);
@@ -335,27 +346,26 @@ export const api = {
   },
 
   async submitInquiry(payload: InquiryPayload): Promise<{ success: boolean; message: string; inquiry_id?: number }> {
-    if (shouldBypassLocalApi) {
-      return {
-        success: true,
-        message: 'Thank you. Your quotation inquiry has been recorded and transmitted to the sales desk.',
-        inquiry_id: Math.floor(Math.random() * 9000) + 1000,
-      };
-    }
     try {
-      return await fetchWithTimeout<{ success: boolean; message: string; inquiry_id?: number }>(
+      const res = await fetchWithTimeout<{ success: boolean; message: string; inquiry_id?: number }>(
         `${API_BASE}/aura/v1/inquiries`,
         {
           method: 'POST',
           body: JSON.stringify(payload),
         }
       );
-    } catch (err) {
-      return {
-        success: true,
-        message: 'Thank you. Your quotation inquiry has been recorded and transmitted to the sales desk.',
-        inquiry_id: Math.floor(Math.random() * 9000) + 1000,
-      };
+      if (!res.success) {
+        throw new ApiError(res.message || 'Quotation submission was not confirmed by the server.', 422);
+      }
+      return res;
+    } catch (err: any) {
+      // Strict B2B Honesty Rule: Never fake success on network error or server failure.
+      // Propagate honest error so form state is preserved and offline communication channels are offered.
+      throw new ApiError(
+        err.message || 'Unable to reach the sales desk server. Your quotation request was not transmitted.',
+        err.status || 500,
+        err.code || 'network_failure'
+      );
     }
   },
 };

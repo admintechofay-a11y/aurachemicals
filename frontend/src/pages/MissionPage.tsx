@@ -10,6 +10,8 @@ import {
   Mail,
   ArrowRight,
   ShieldCheck,
+  Building2,
+  CheckCircle2,
 } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { Section } from '../components/common/Section';
@@ -19,7 +21,6 @@ import { Button } from '../components/common/Button';
 import { CTABand } from '../components/common/CTABand';
 import { Skeleton } from '../components/common/Skeleton';
 import { ErrorState } from '../components/common/ErrorState';
-import { LineDraw, Reveal, RevealGroup } from '../components/common/MotionPrimitives';
 import { api } from '../api/client';
 
 export const MissionPage: React.FC = () => {
@@ -66,184 +67,189 @@ export const MissionPage: React.FC = () => {
   }
 
   const sections = pageData.sections || {};
-  const phone = settings?.company?.phone || '+91 7220000877';
-  const email = settings?.company?.email || 'management.aurachemicals@gmail.com';
+  const phone = settings?.company?.phone || '+91 97274 04415';
+  const email = settings?.company?.email || 'sales@aurachemicals.in';
 
   const pillars = [
     {
-      icon: <Leaf size={28} style={{ color: 'var(--color-secondary)' }} />,
-      title: 'Sustainability at the Core',
+      index: '01',
+      icon: <Leaf size={24} style={{ color: 'var(--color-teal)' }} />,
+      title: 'Environmental Stewardship & Responsible Sourcing',
       description:
         sections.sustainability ||
-        'Sustainability is at the heart of our mission. We are dedicated to promoting environmentally responsible practices by sourcing and distributing eco-friendly and high-performance chemicals that align with global environmental standards. Our aim is to empower industries to achieve their goals while reducing their ecological footprint.',
+        'We prioritize environmentally compliant synthesis partners who adhere to zero-liquid-discharge (ZLD) norms and environmental clearance guidelines. By distributing high-purity compounds with minimal batch impurities, we assist industrial formulators in achieving stringent green chemistry and effluent standards.',
     },
     {
-      icon: <Lightbulb size={28} style={{ color: 'var(--color-secondary)' }} />,
-      title: 'Innovation Drives Us',
+      index: '02',
+      icon: <Lightbulb size={24} style={{ color: 'var(--color-teal)' }} />,
+      title: 'Continuous Supply Chain & Process Optimization',
       description:
         sections.innovation ||
-        'Innovation drives our approach as we continuously seek to adopt advanced technologies, improve supply chain efficiency, and provide unparalleled customer support. We endeavor to anticipate market demands, offering competitive pricing, timely delivery, and personalized service to exceed client expectations.',
+        'Through integrated inventory monitoring, multimodal logistics scheduling, and direct plant allocation reservations, we eliminate supply friction. Our commercial desk anticipates commodity cycle shifts to safeguard institutional manufacturers against market shortages and price volatility.',
     },
     {
-      icon: <Users2 size={28} style={{ color: 'var(--color-secondary)' }} />,
-      title: 'Collaboration and Growth',
+      index: '03',
+      icon: <Users2 size={24} style={{ color: 'var(--color-teal)' }} />,
+      title: 'Stakeholder Integrity & Technical Transparency',
       description:
         sections.collaboration ||
-        'We believe in the power of collaboration, not only within our organization but also with our stakeholders. By fostering an inclusive and growth-oriented environment, we empower our team members to contribute their expertise and passion, driving our shared vision forward.',
+        'We operate with full technical clarity: sharing unadulterated manufacturer analytical records, providing sample lots for pilot qualification, and honoring contract rate commitments without spot market reneging.',
     },
   ];
 
   return (
     <>
-      <Breadcrumb items={[{ label: 'Our Mission' }]} />
+      <Breadcrumb items={[{ label: 'Our Mission & Values' }]} />
 
       {/* Hero Header */}
       <section
         style={{
           backgroundColor: 'var(--color-surface)',
           padding: 'clamp(48px, 6vw, 72px) 0',
-          borderBottom: '1px solid var(--color-border)',
+          borderBottom: '1px solid var(--color-rule)',
         }}
       >
         <Container>
           <div style={{ maxWidth: '840px' }}>
-            <LineDraw width="32px" height={2} color="var(--color-accent)" style={{ marginBottom: '16px' }} />
-            <Reveal immediate>
-              <span className="eyebrow">Strategic Purpose & Principles</span>
-              <h1 style={{ marginBottom: 'var(--space-4)' }}>Our Mission & Values</h1>
-              <p className="body-large" style={{ color: 'var(--color-text)' }}>
-                Empowering global industries with verified, sustainable chemical distribution and active pharmaceutical ingredients backed by disciplined supply assurance.
-              </p>
-            </Reveal>
+            <span className="eyebrow">Operating Ethos</span>
+            <h1 style={{ marginBottom: 'var(--space-3)' }}>Our Mission &amp; Guiding Principles</h1>
+            <p className="body-large">
+              Empowering institutional manufacturers with verified high-purity chemical distribution and certified plant asset integrity services backed by contractual supply certainty.
+            </p>
           </div>
         </Container>
       </section>
 
-      {/* Mission Statement Hero Card */}
+      {/* Mission Statement Hero Box */}
       <Section padding="normal">
         <Container>
-          <Reveal>
-            <div
-              style={{
-                backgroundColor: 'var(--color-primary)',
-                color: '#FFFFFF',
-                borderRadius: 'var(--radius-lg)',
-                padding: 'clamp(32px, 5vw, 56px)',
-                position: 'relative',
-                overflow: 'hidden',
-                boxShadow: 'var(--shadow-lg)',
-              }}
-            >
-              <div style={{ maxWidth: '860px', position: 'relative', zIndex: 1 }}>
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    backgroundColor: 'rgba(255, 255, 255, 0.12)',
-                    padding: '6px 14px',
-                    borderRadius: 'var(--radius-full)',
-                    fontSize: 'var(--font-size-xs)',
-                    fontWeight: 600,
-                    textTransform: 'uppercase',
-                    letterSpacing: '0.06em',
-                    marginBottom: '20px',
-                  }}
-                >
-                  <Target size={16} /> Mission Statement
-                </div>
-                <h2
-                  style={{
-                    color: '#FFFFFF',
-                    fontSize: 'clamp(1.5rem, 2.8vw, 2.1rem)',
-                    lineHeight: 1.35,
-                    fontWeight: 600,
-                    marginBottom: '20px',
-                  }}
-                >
-                  Delivering Excellence in Active Pharmaceutical Ingredients & Chemical Trading
-                </h2>
-                <p
-                  style={{
-                    fontSize: 'clamp(1.05rem, 1.4vw, 1.2rem)',
-                    lineHeight: 1.7,
-                    color: 'rgba(255, 255, 255, 0.92)',
-                    margin: 0,
-                  }}
-                >
-                  {sections.statement ||
-                    'At Aura Space Infra Private Limited, our mission is to be the leading and most trusted chemical trading partner by delivering superior quality Active Pharmaceutical Ingredients (APIs), solvents, and specialty chemicals. We are dedicated to providing sustainable, reliable, and cost-effective chemical solutions that drive innovation and empower industries worldwide.'}
-                </p>
+          <div
+            className="card"
+            style={{
+              padding: 'clamp(32px, 5vw, 56px)',
+              backgroundColor: 'var(--color-surface)',
+              border: '1px solid var(--color-rule)',
+              borderRadius: 'var(--radius-sm)',
+            }}
+          >
+            <div style={{ maxWidth: '840px' }}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '8px',
+                  backgroundColor: 'rgba(31, 122, 140, 0.08)',
+                  border: '1px solid var(--color-teal)',
+                  padding: '4px 12px',
+                  borderRadius: 'var(--radius-sm)',
+                  fontSize: '0.75rem',
+                  fontWeight: 600,
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.04em',
+                  color: 'var(--color-teal)',
+                  marginBottom: '20px',
+                }}
+              >
+                <Target size={14} /> Mission Statement
               </div>
+
+              <h2
+                style={{
+                  fontSize: 'clamp(1.5rem, 2.8vw, 2.2rem)',
+                  lineHeight: 1.3,
+                  marginBottom: '20px',
+                  color: 'var(--color-ink-navy)',
+                }}
+              >
+                Delivering Excellence in Chemical Distribution &amp; Industrial Inspection
+              </h2>
+
+              <p
+                style={{
+                  fontSize: 'clamp(1rem, 1.3vw, 1.125rem)',
+                  lineHeight: 1.75,
+                  color: 'var(--color-text-secondary)',
+                  margin: 0,
+                }}
+              >
+                {sections.statement ||
+                  'At Aura Space Infra Private Limited (trading as Aura Chemicals), our mission is to serve as the most reliable bridge between primary chemical manufacturers and institutional procurement teams. We deliver verified Active Pharmaceutical Ingredients (APIs), industrial solvents, and certified NDT plant inspection services that guarantee regulatory compliance, production continuity, and absolute quality assurance.'}
+              </p>
             </div>
-          </Reveal>
+          </div>
         </Container>
       </Section>
 
-      {/* Core Principles Grid */}
-      <Section padding="normal" style={{ backgroundColor: 'var(--color-surface-subtle)' }}>
+      {/* Core Guiding Principles (3 Editorial Columns) */}
+      <Section
+        padding="normal"
+        style={{
+          backgroundColor: 'var(--color-surface)',
+          borderTop: '1px solid var(--color-rule)',
+          borderBottom: '1px solid var(--color-rule)',
+        }}
+      >
         <Container>
-          <Reveal>
-            <SectionHeading
-              eyebrow="Core Guiding Principles"
-              title="How We Deliver on Our Promise"
-              description="Our operations are grounded in environmental responsibility, forward-looking process optimization, and collaborative stakeholder relationships."
-              align="center"
-            />
-          </Reveal>
+          <SectionHeading
+            index="01"
+            eyebrow="Operating Principles"
+            title="How We Fulfill Our Mandate"
+            description="Our daily distribution and inspection operations are governed by three rigorous technical tenets."
+          />
 
-          <RevealGroup
+          <div
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
               gap: '24px',
-              marginTop: '40px',
             }}
           >
-            {pillars.map((pillar, idx) => (
+            {pillars.map((pillar) => (
               <div
-                key={idx}
-                className="product-card"
+                key={pillar.index}
+                className="card"
                 style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: 'var(--radius-md)',
                   padding: '32px',
-                  border: '1px solid var(--color-border)',
-                  boxShadow: 'var(--shadow-sm)',
+                  backgroundColor: 'var(--color-card)',
                   display: 'flex',
                   flexDirection: 'column',
                   height: '100%',
                 }}
               >
-                <div
-                  className="card-icon-box"
-                  style={{
-                    width: '52px',
-                    height: '52px',
-                    borderRadius: 'var(--radius-md)',
-                    backgroundColor: 'rgba(31, 90, 140, 0.08)',
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    marginBottom: '20px',
-                    transition: 'all var(--motion-duration-fast) var(--motion-ease)',
-                  }}
-                >
-                  {pillar.icon}
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
+                  <div
+                    style={{
+                      width: '44px',
+                      height: '44px',
+                      borderRadius: 'var(--radius-sm)',
+                      backgroundColor: 'var(--color-surface)',
+                      border: '1px solid var(--color-rule)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
+                    {pillar.icon}
+                  </div>
+                  <span className="section-index" style={{ color: 'var(--color-teal)' }}>
+                    {pillar.index}
+                  </span>
                 </div>
-                <h3 style={{ fontSize: '1.25rem', marginBottom: '12px', fontWeight: 600 }}>
+
+                <h3 style={{ fontSize: '1.1875rem', marginBottom: '12px', color: 'var(--color-ink-navy)' }}>
                   {pillar.title}
                 </h3>
-                <p style={{ color: 'var(--color-text-muted)', lineHeight: 1.6, margin: 0 }}>
+
+                <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.65, fontSize: '0.875rem', margin: 0 }}>
                   {pillar.description}
                 </p>
               </div>
             ))}
-          </RevealGroup>
+          </div>
         </Container>
       </Section>
 
-      {/* Long-Term Vision Section */}
+      {/* Strategic Outlook & Direct Commercial Access */}
       <Section padding="normal">
         <Container>
           <div
@@ -254,144 +260,98 @@ export const MissionPage: React.FC = () => {
               alignItems: 'center',
             }}
           >
-            <Reveal>
-              <div>
-                <span className="eyebrow">Strategic Direction</span>
-                <h2 style={{ marginBottom: '20px' }}>Our Long-Term Vision</h2>
-                <p className="body-large" style={{ color: 'var(--color-text-muted)', marginBottom: '20px' }}>
-                  {sections.vision ||
-                    'At Aura Chemicals, we envision a future where we are recognized as a leading chemical trading company that balances profitability with responsibility, providing value to our clients, communities, and the planet. Our journey is guided by the principle of excellence, as we continue to innovate, adapt, and lead in the dynamic world of chemical trade.'}
-                </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    gap: '12px',
-                    borderLeft: '3px solid var(--color-secondary)',
-                    paddingLeft: '20px',
-                    marginTop: '24px',
-                  }}
-                >
-                  <div style={{ fontWeight: 600, color: 'var(--color-primary)' }}>
-                    Excellence · Responsibility · Reliability
-                  </div>
-                  <div style={{ fontSize: '0.92rem', color: 'var(--color-text-muted)' }}>
-                    Registered with ROC Ahmedabad as a verified corporate trading entity serving clients nationally and across global markets.
-                  </div>
-                </div>
-              </div>
-            </Reveal>
+            <div>
+              <span className="eyebrow">Strategic Outlook</span>
+              <h2 style={{ fontSize: 'clamp(1.5rem, 2.5vw, 2rem)', marginBottom: '16px' }}>
+                Long-Term Vision for Indian Chemical Supply Chains
+              </h2>
+              <p style={{ color: 'var(--color-text-secondary)', lineHeight: 1.7, fontSize: '0.9375rem', marginBottom: '20px' }}>
+                {sections.vision ||
+                  'We envision an industrial manufacturing ecosystem where supply vulnerability is eliminated through transparent, verified domestic sourcing. Aura Chemicals will continue expanding direct producer partnerships, investing in analytical traceability, and advancing asset inspection technologies to serve India’s burgeoning pharmaceutical and specialty chemical leadership.'}
+              </p>
 
-            <Reveal>
               <div
                 style={{
-                  backgroundColor: 'var(--color-surface)',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: '36px',
+                  borderLeft: '2px solid var(--color-teal)',
+                  paddingLeft: '16px',
+                  fontSize: '0.875rem',
+                  color: 'var(--color-text-secondary)',
+                  lineHeight: 1.6,
                 }}
               >
-                <div
+                <strong>ROC Ahmedabad Verified Entity:</strong> Aura Space Infra Private Limited (CIN: U51909GJ2014PTC080340), active in continuous commercial distribution since 2014.
+              </div>
+            </div>
+
+            {/* Direct Commercial Access Card */}
+            <div
+              className="card"
+              style={{
+                backgroundColor: 'var(--color-surface)',
+                border: '1px solid var(--color-rule)',
+                padding: '36px',
+              }}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
+                <ShieldCheck size={24} style={{ color: 'var(--color-teal)' }} />
+                <h3 style={{ margin: 0, fontSize: '1.15rem' }}>
+                  Institutional Procurement Coordination
+                </h3>
+              </div>
+
+              <p style={{ color: 'var(--color-muted)', fontSize: '0.875rem', marginBottom: '24px', lineHeight: 1.6 }}>
+                Speak directly with our technical sourcing engineers to review product specifications, pharmacopeia monographs, or plant inspection requirements.
+              </p>
+
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '14px', marginBottom: '24px' }}>
+                <a
+                  href={`tel:${phone.replace(/\s+/g, '')}`}
                   style={{
                     display: 'flex',
                     alignItems: 'center',
                     gap: '12px',
-                    marginBottom: '20px',
+                    color: 'var(--color-ink-navy)',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '0.9375rem',
                   }}
                 >
-                  <ShieldCheck size={28} style={{ color: 'var(--color-secondary)' }} />
-                  <h3 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 600 }}>
-                    Global Expansion & Inquiries
-                  </h3>
-                </div>
-                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.95rem', marginBottom: '24px', lineHeight: 1.6 }}>
-                  Aura Chemicals continues to expand its footprint with an unyielding commitment to quality assurance, sustainable chemistry, and supply security.
-                </p>
+                  <PhoneCall size={16} style={{ color: 'var(--color-teal)' }} />
+                  <span style={{ fontFamily: 'var(--font-family-mono)' }}>{phone}</span>
+                </a>
 
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '28px' }}>
-                  <a
-                    href={`tel:${phone.replace(/\s+/g, '')}`}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      color: 'var(--color-primary)',
-                      textDecoration: 'none',
-                      fontWeight: 600,
-                      fontSize: '1rem',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: 'var(--radius-full)',
-                        backgroundColor: 'rgba(11, 37, 69, 0.08)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <PhoneCall size={18} />
-                    </div>
-                    <div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>
-                        Direct Sales Line
-                      </div>
-                      {phone}
-                    </div>
-                  </a>
-
-                  <a
-                    href={`mailto:${email}`}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '12px',
-                      color: 'var(--color-primary)',
-                      textDecoration: 'none',
-                      fontWeight: 600,
-                      fontSize: '0.95rem',
-                    }}
-                  >
-                    <div
-                      style={{
-                        width: '40px',
-                        height: '40px',
-                        borderRadius: 'var(--radius-full)',
-                        backgroundColor: 'rgba(11, 37, 69, 0.08)',
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'center',
-                      }}
-                    >
-                      <Mail size={18} />
-                    </div>
-                    <div>
-                      <div style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', textTransform: 'uppercase' }}>
-                        Corporate Email
-                      </div>
-                      {email}
-                    </div>
-                  </a>
-                </div>
-
-                <Button to="/get-a-quote" variant="primary" style={{ width: '100%', justifyContent: 'center' }}>
-                  Submit Formal Inquiry <ArrowRight size={16} />
-                </Button>
+                <a
+                  href={`mailto:${email}`}
+                  style={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '12px',
+                    color: 'var(--color-ink-navy)',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                    fontSize: '0.9375rem',
+                  }}
+                >
+                  <Mail size={16} style={{ color: 'var(--color-teal)' }} />
+                  <span style={{ fontFamily: 'var(--font-family-mono)' }}>{email}</span>
+                </a>
               </div>
-            </Reveal>
+
+              <Button to="/get-a-quote" variant="primary" style={{ width: '100%', justifyContent: 'center' }}>
+                Submit Formal RFQ Specification <ArrowRight size={15} />
+              </Button>
+            </div>
           </div>
         </Container>
       </Section>
 
       {/* Global CTA Band */}
       <CTABand
-        heading="Looking for a Certified Chemical Trading Partner?"
-        body="Connect with our technical desk to discuss API sourcing, solvent allocations, or custom compounding requirements."
+        heading="Looking for a Certified Chemical Supply Partner?"
+        body="Connect directly with our commercial trading desk to discuss compound allocations, bulk deliveries, or inspection services."
         buttonLabel="Request a Quote"
         buttonUrl="/get-a-quote"
-        phone="+91 7220000877"
+        phone={phone}
       />
     </>
   );

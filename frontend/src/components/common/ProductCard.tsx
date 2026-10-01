@@ -1,184 +1,105 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowRight } from 'lucide-react';
-import { Card } from './Card';
-import { Button } from './Button';
+import { Plus, Check, ArrowRight, FileText } from 'lucide-react';
 import { ProductDto } from '../../api/types';
-import { UI_LABELS } from '../../utils/constants';
+import { CASBadge } from './CASBadge';
+import { SpecRow } from './SpecRow';
+import { useRFQ } from '../../context/RFQContext';
 
 interface ProductCardProps {
   product: ProductDto;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
+  const { addItem, isInBasket } = useRFQ();
+  const inBasket = isInBasket(product.slug);
+
+  const handleAdd = (e: React.MouseEvent) => {
+    e.preventDefault();
+    addItem({
+      slug: product.slug,
+      chemical_name: product.chemical_name,
+      cas_number: product.cas_number || undefined,
+      category: product.category?.name,
+      grade: product.grade || undefined,
+    });
+  };
+
   return (
-    <Card
-      hoverable
-      className="product-card"
-      style={{
+    <article className="product-card">
+      {/* Category Eyebrow & CAS Badge */}
+      <div style={{
         display: 'flex',
-        flexDirection: 'column',
-        height: '100%',
-        overflow: 'hidden',
-      }}
-    >
-      {/* Product Image if available in CMS */}
-      {product.image?.url && (
-        <div
-          className="product-card-image"
-          style={{
-            height: '160px',
-            backgroundColor: 'var(--color-surface)',
-            borderBottom: '1px solid var(--color-border)',
-            margin: 'calc(-1 * var(--space-6)) calc(-1 * var(--space-6)) var(--space-4) calc(-1 * var(--space-6))',
-            width: 'calc(100% + (2 * var(--space-6)))',
-          }}
-        >
-          <img
-            src={product.image.url}
-            alt={product.image.alt || product.chemical_name}
-            loading="lazy"
-            decoding="async"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).src = '/images/apis.jpg';
-            }}
-            style={{
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              display: 'block',
-            }}
-          />
-        </div>
-      )}
-
-      {/* Category Tag & CAS Code Badge */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '8px',
-          marginBottom: 'var(--space-3)',
-          flexWrap: 'wrap',
-        }}
-      >
-        <span
-          style={{
-            fontSize: '0.75rem',
-            fontWeight: 600,
-            textTransform: 'uppercase',
-            letterSpacing: '0.04em',
-            color: 'var(--color-secondary)',
-          }}
-        >
-          {product.category.name}
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        gap: '8px',
+        marginBottom: 'var(--space-3)',
+        paddingBottom: 'var(--space-2)',
+        borderBottom: '1px solid var(--color-rule)'
+      }}>
+        <span className="eyebrow" style={{ marginBottom: 0, fontSize: '0.6875rem' }}>
+          {product.category?.name || 'Chemical'}
         </span>
-
-        {product.cas_number && (
-          <span className="cas-badge">
-            <span style={{ color: 'var(--color-muted)', fontSize: '0.75rem' }}>CAS:</span>
-            {product.cas_number}
-          </span>
-        )}
+        {product.cas_number && <CASBadge cas={product.cas_number} />}
       </div>
 
-      {/* Chemical Title */}
-      <h3
-        style={{
-          fontSize: '1.25rem',
-          lineHeight: 1.3,
-          marginBottom: 'var(--space-2)',
-          color: 'var(--color-primary)',
-        }}
-      >
-        <Link
-          to={`/products/${product.slug}`}
-          style={{
-            color: 'inherit',
-            textDecoration: 'none',
-          }}
-        >
+      {/* Chemical Headline */}
+      <Link to={`/products/detail/${product.slug}`} style={{ textDecoration: 'none' }}>
+        <h3 className="product-card-title" style={{ fontSize: '1.25rem', marginBottom: '8px' }}>
           {product.chemical_name}
-        </Link>
-      </h3>
+        </h3>
+      </Link>
 
-      {/* Therapeutic / Technical Category */}
-      {product.therapeutic_category && (
-        <div
-          style={{
-            fontSize: '0.875rem',
-            color: 'var(--color-muted)',
-            marginBottom: 'var(--space-3)',
-          }}
-        >
-          <strong>Class:</strong> {product.therapeutic_category}
-        </div>
-      )}
-
-      {/* Grade info if present */}
-      {product.grade && (
-        <div
-          style={{
-            fontSize: '0.8125rem',
-            color: 'var(--color-secondary)',
-            marginBottom: 'var(--space-3)',
-          }}
-        >
-          <strong>Grade:</strong> {product.grade}
-        </div>
-      )}
-
-      {/* Short description if present */}
-      {product.short_description && (
-        <p
-          style={{
-            fontSize: '0.875rem',
-            color: 'var(--color-text)',
-            lineHeight: 1.5,
-            marginBottom: 'var(--space-6)',
-            flex: 1,
-          }}
-        >
-          {product.short_description}
-        </p>
-      )}
-
-      {/* Actions */}
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: 'var(--space-2)',
-          marginTop: 'auto',
-          paddingTop: 'var(--space-4)',
-          borderTop: '1px solid var(--color-border)',
-        }}
-      >
-        <Link
-          to={`/products/${product.slug}`}
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '4px',
-            fontSize: '0.875rem',
-            fontWeight: 600,
-            color: 'var(--color-secondary)',
-          }}
-        >
-          <span>{UI_LABELS.BTN_VIEW_PRODUCT}</span>
-          <ArrowRight size={14} className="product-card-arrow" />
-        </Link>
-
-        <Button
-          to={`/get-a-quote?product=${encodeURIComponent(product.chemical_name)}&cas=${encodeURIComponent(product.cas_number || '')}`}
-          variant="outline"
-          size="sm"
-        >
-          {UI_LABELS.BTN_REQUEST_QUOTE}
-        </Button>
+      {/* Technical Specification Rows */}
+      <div style={{ margin: 'var(--space-3) 0', flex: 1 }}>
+        {product.therapeutic_category && (
+          <SpecRow label="Therapeutic" value={product.therapeutic_category} />
+        )}
+        {product.grade && (
+          <SpecRow label="Monograph" value={product.grade} isMono />
+        )}
+        <SpecRow label="Regulatory" value="Commercial / Manufacturing" />
       </div>
-    </Card>
+
+      {/* Card Action Strip */}
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '8px',
+        marginTop: 'var(--space-4)',
+        paddingTop: 'var(--space-3)',
+        borderTop: '1px solid var(--color-rule)'
+      }}>
+        <button
+          type="button"
+          onClick={handleAdd}
+          className={inBasket ? 'btn btn-secondary btn-sm' : 'btn btn-teal btn-sm'}
+          style={{ flex: 1, gap: '6px' }}
+          aria-label={inBasket ? `${product.chemical_name} in quote basket` : `Add ${product.chemical_name} to quotation basket`}
+        >
+          {inBasket ? (
+            <>
+              <Check size={14} />
+              <span>In RFQ Basket</span>
+            </>
+          ) : (
+            <>
+              <Plus size={14} />
+              <span>Add to RFQ</span>
+            </>
+          )}
+        </button>
+
+        <Link
+          to={`/products/detail/${product.slug}`}
+          className="btn btn-outline btn-sm"
+          style={{ padding: '8px 12px' }}
+          title={`View full technical datasheet for ${product.chemical_name}`}
+          aria-label={`Datasheet for ${product.chemical_name}`}
+        >
+          <FileText size={14} />
+        </Link>
+      </div>
+    </article>
   );
 };

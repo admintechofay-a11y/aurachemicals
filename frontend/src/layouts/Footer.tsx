@@ -1,426 +1,283 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, MapPin, ChevronDown } from 'lucide-react';
+import { ArrowUp, Phone, Mail, ShieldCheck } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { SettingsDto } from '../api/types';
-import { UI_LABELS } from '../utils/constants';
 
 interface FooterProps {
   settings?: SettingsDto;
 }
 
 export const Footer: React.FC<FooterProps> = ({ settings }) => {
-  const brandName = settings?.company?.brand_name || 'Aura Chemicals';
-  const legalName = settings?.company?.legal_name || 'Aura Space Infra Private Limited';
-  const tagline = settings?.company?.tagline || 'Your Trusted Partner in Chemical Excellence';
-  const roc = settings?.company?.roc_registration || 'ROC Ahmedabad';
-  const phone = settings?.company?.phone;
-  const email = settings?.company?.email;
-  const address = settings?.company?.registered_address || 'ROC Ahmedabad, Gujarat, India';
-  const copyright = settings?.footer?.copyright_text || 'Copyright © 2026 Aura Space Infra Pvt. Ltd. All rights reserved.';
-  const legalTagline = settings?.footer?.tagline || 'ROC Ahmedabad Registered · Non-Government Industrial Supply Enterprise';
-  const rawFooterLogo = settings?.branding?.footer_logo?.url;
-  const rawHeaderLogo = settings?.branding?.header_logo?.url;
-  const isHomesteadLogo = (url?: string) => !url || url.includes('aa6efd8e') || url.includes('Homestead');
+  const currentYear = new Date().getFullYear();
+  const phone = settings?.company?.phone || '+91 97274 04415';
+  const email = settings?.company?.email || 'management.aurachemicals@gmail.com';
+  const logoUrl = settings?.branding?.header_logo?.url || '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
 
-  const logoUrl = !isHomesteadLogo(rawFooterLogo)
-    ? rawFooterLogo!
-    : !isHomesteadLogo(rawHeaderLogo)
-    ? rawHeaderLogo!
-    : '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
-
-  // Mobile Accordion State (Contact open by default)
-  const [openSections, setOpenSections] = useState<Record<string, boolean>>({
-    company: false,
-    products: false,
-    industries: false,
-    resources: false,
-    contact: true, // Contact open by default on mobile
-  });
-
-  const toggleSection = (key: string) => {
-    setOpenSections((prev) => ({ ...prev, [key]: !prev[key] }));
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const productCategories = [
+    { title: 'Active Pharmaceutical Ingredients (94)', path: '/products?category=api' },
+    { title: 'Industrial Solvents & Intermediates (20)', path: '/products?category=solvents' },
+    { title: 'Phosphates & Inorganic Salts (11)', path: '/products?category=manufacturing-phosphates' },
+    { title: 'Direct Global Imports (China Make) (5)', path: '/products?category=imports' },
+    { title: 'Technical & Commercial Acids (6)', path: '/products?category=acids' },
+    { title: 'Water Treatment & ETP Chemicals (14)', path: '/products?category=industrial-chemicals' },
+  ];
+
+  const principals = [
+    'Grasim Industries Ltd. (Aditya Birla Group)',
+    'Gujarat Alkalies and Chemicals Limited (GACL)',
+    'Gujarat Narmada Valley Fertilizers & Chemicals (GNFC)',
+    'Magnesia Chemical LLP',
+  ];
+
+  const quickLinks = [
+    { label: 'About Company & History', path: '/about-us' },
+    { label: 'Our Mission & Sourcing Model', path: '/our-mission' },
+    { label: 'Industries Served (19 Sectors)', path: '/industries' },
+    { label: 'Inspection & NDT Services', path: '/services' },
+    { label: 'Request a Commercial Quote (RFQ)', path: '/get-a-quote' },
+    { label: 'Corporate Contact Desk', path: '/contact' },
+    { label: 'Privacy & Data Protection Policy', path: '/privacy-policy' },
+    { label: 'Commercial Terms of Supply', path: '/terms' },
+    { label: 'Design System & Specifications', path: '/design-system' },
+  ];
+
   return (
-    <footer className="footer" style={{ marginTop: 'auto', borderTop: '1px solid rgba(213, 217, 220, 0.12)' }}>
+    <footer
+      style={{
+        backgroundColor: 'var(--color-ink-deep)',
+        color: 'var(--color-text-on-dark)',
+        borderTop: '2px solid var(--color-ink-navy)',
+        marginTop: 'auto',
+      }}
+    >
+      {/* Upper Architectural Grid */}
       <Container>
-        {/* Desktop 5-Column Grid */}
         <div
-          className="desktop-footer-grid"
           style={{
+            padding: 'clamp(48px, 6vw, 80px) 0 clamp(32px, 4vw, 48px) 0',
+            borderBottom: '1px solid var(--color-rule-dark)',
             display: 'grid',
-            gridTemplateColumns: 'repeat(5, 1fr)',
+            gridTemplateColumns: 'repeat(12, 1fr)',
             gap: 'clamp(24px, 3vw, 40px)',
-            paddingTop: 'var(--space-16)',
-            paddingBottom: 'var(--space-12)',
-            borderBottom: '1px solid rgba(213, 217, 220, 0.12)',
           }}
         >
-          {/* Column 1: Company */}
-          <div>
-            <Link to="/" style={{ display: 'inline-block', marginBottom: 'var(--space-4)', textDecoration: 'none' }} aria-label={brandName}>
-              <div
+          {/* Col 1-4: Corporate Identity & Spec Table */}
+          <div style={{ gridColumn: 'span 12' }} className="footer-col-main">
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+              <img
+                src={logoUrl}
+                alt="Aura Chemicals"
                 style={{
-                  background: '#FFFFFF',
-                  padding: '6px 14px',
-                  borderRadius: '8px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
+                  height: '32px',
+                  width: 'auto',
+                  backgroundColor: '#FFFFFF',
+                  padding: '4px 8px',
+                  borderRadius: '2px',
                 }}
-              >
-                <img
-                  src={logoUrl}
-                  alt={brandName}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src =
-                      '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
-                  }}
-                  style={{
-                    height: '38px',
-                    width: 'auto',
-                    objectFit: 'contain',
-                    display: 'block',
-                  }}
-                />
-              </div>
-            </Link>
-            <p style={{ fontSize: '0.875rem', color: 'rgba(244, 245, 245, 0.78)', lineHeight: 1.6, marginBottom: 'var(--space-4)' }}>
-              {tagline}
-            </p>
-            <div style={{ fontSize: '0.8125rem', color: 'rgba(244, 245, 245, 0.60)', lineHeight: 1.5 }}>
-              <div><strong>{legalName}</strong></div>
-              <div>Registered at {roc}</div>
-            </div>
-          </div>
-
-          {/* Column 2: Products */}
-          <div>
-            <h4 style={{ color: 'var(--color-paper)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-4)' }}>
-              {UI_LABELS.FOOTER_PRODUCTS}
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li>
-                <Link to="/products/api" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Active Pharma Ingredients (APIs)
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/solvents" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Solvents & Intermediates
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/manufacturing-phosphates" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Manufacturing Phosphates
-                </Link>
-              </li>
-              <li>
-                <Link to="/products/imports" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Own Import Products
-                </Link>
-              </li>
-              <li>
-                <Link to="/products" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)', fontWeight: 600 }}>
-                  All 135 Catalog Products →
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 3: Industries */}
-          <div>
-            <h4 style={{ color: 'var(--color-paper)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-4)' }}>
-              {UI_LABELS.FOOTER_INDUSTRIES}
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li>
-                <Link to="/industries" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Healthcare & Pharmaceuticals
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Agrochemicals & Fertilizers
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Water Treatment & Effluent Plants
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Paints & Industrial Coatings
-                </Link>
-              </li>
-              <li>
-                <Link to="/industries" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)', fontWeight: 600 }}>
-                  View All 19 Sectors →
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 4: Resources */}
-          <div>
-            <h4 style={{ color: 'var(--color-paper)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-4)' }}>
-              Resources
-            </h4>
-            <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <li>
-                <Link to="/about-us" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  About Aura Chemicals
-                </Link>
-              </li>
-              <li>
-                <Link to="/our-mission" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Corporate Mission & Stewardship
-                </Link>
-              </li>
-              <li>
-                <Link to="/services" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  NDT Inspection & Services
-                </Link>
-              </li>
-              <li>
-                <Link to="/privacy-policy" style={{ fontSize: '0.875rem', color: 'var(--color-accent-on-dark)' }}>
-                  Privacy & Compliance Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          {/* Column 5: Contact */}
-          <div>
-            <h4 style={{ color: 'var(--color-paper)', fontSize: '0.875rem', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: 'var(--space-4)' }}>
-              {UI_LABELS.FOOTER_CONTACT}
-            </h4>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
-              {phone && (
-                <a
-                  href={`tel:${phone.replace(/\s+/g, '')}`}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    color: 'var(--color-paper)',
-                    fontSize: '0.875rem',
-                  }}
-                >
-                  <Phone size={15} style={{ color: 'var(--color-accent-on-dark)' }} />
-                  <span>{phone}</span>
-                </a>
-              )}
-              {email && (
-                <a
-                  href={`mailto:${email}`}
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    color: 'var(--color-paper)',
-                    fontSize: '0.875rem',
-                  }}
-                >
-                  <Mail size={15} style={{ color: 'var(--color-accent-on-dark)' }} />
-                  <span>{email}</span>
-                </a>
-              )}
-              <div style={{ display: 'inline-flex', alignItems: 'flex-start', gap: '8px', color: 'rgba(244, 245, 245, 0.70)', fontSize: '0.8125rem' }}>
-                <MapPin size={15} style={{ color: 'var(--color-accent-on-dark)', flexShrink: 0, marginTop: '2px' }} />
-                <span>{address}</span>
-              </div>
-              <div style={{ marginTop: '6px' }}>
-                <Link
-                  to="/get-a-quote"
-                  style={{
-                    color: 'var(--color-accent-on-dark)',
-                    fontWeight: 600,
-                    fontSize: '0.875rem',
-                    textDecoration: 'underline',
-                  }}
-                >
-                  Request Commercial RFQ →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Mobile Accordion Footer (Below 768px) */}
-        <div className="mobile-footer-accordion" style={{ display: 'none', paddingTop: 'var(--space-8)' }}>
-          {/* Logo & Tagline */}
-          <div style={{ paddingBottom: '16px', borderBottom: '1px solid rgba(213, 217, 220, 0.12)' }}>
-            <Link to="/" style={{ display: 'inline-block', marginBottom: '10px', textDecoration: 'none' }} aria-label={brandName}>
-              <div
-                style={{
-                  background: '#FFFFFF',
-                  padding: '5px 12px',
-                  borderRadius: '8px',
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  boxShadow: '0 2px 8px rgba(0, 0, 0, 0.25)',
-                }}
-              >
-                <img
-                  src={logoUrl}
-                  alt={brandName}
-                  onError={(e) => {
-                    (e.currentTarget as HTMLImageElement).src =
-                      '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
-                  }}
-                  style={{ height: '34px', width: 'auto', objectFit: 'contain', display: 'block' }}
-                />
-              </div>
-            </Link>
-            <p style={{ fontSize: '0.875rem', color: 'rgba(244, 245, 245, 0.75)' }}>{tagline}</p>
-          </div>
-
-          {/* Contact Accordion (Open by default) */}
-          <div style={{ borderBottom: '1px solid rgba(213, 217, 220, 0.12)' }}>
-            <button
-              type="button"
-              onClick={() => toggleSection('contact')}
-              style={{
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '16px 0',
-                background: 'none',
-                border: 'none',
-                color: 'var(--color-paper)',
-                fontWeight: 600,
-                fontSize: '0.9375rem',
-                cursor: 'pointer',
-              }}
-            >
-              <span>{UI_LABELS.FOOTER_CONTACT}</span>
-              <ChevronDown size={16} style={{ transform: openSections.contact ? 'rotate(180deg)' : 'none' }} />
-            </button>
-            {openSections.contact && (
-              <div style={{ paddingBottom: '16px', display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                {phone && (
-                  <a href={`tel:${phone.replace(/\s+/g, '')}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-paper)' }}>
-                    <Phone size={15} style={{ color: 'var(--color-accent-on-dark)' }} />
-                    <span>{phone}</span>
-                  </a>
-                )}
-                {email && (
-                  <a href={`mailto:${email}`} style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--color-paper)' }}>
-                    <Mail size={15} style={{ color: 'var(--color-accent-on-dark)' }} />
-                    <span>{email}</span>
-                  </a>
-                )}
-                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'rgba(244, 245, 245, 0.70)', fontSize: '0.8125rem' }}>
-                  <MapPin size={15} style={{ color: 'var(--color-accent-on-dark)' }} />
-                  <span>{address}</span>
-                </div>
-              </div>
-            )}
-          </div>
-
-          {/* Products Accordion */}
-          <div style={{ borderBottom: '1px solid rgba(213, 217, 220, 0.12)' }}>
-            <button
-              type="button"
-              onClick={() => toggleSection('products')}
-              style={{
-                width: '100%',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                padding: '16px 0',
-                background: 'none',
-                border: 'none',
-                color: 'var(--color-paper)',
-                fontWeight: 600,
-                fontSize: '0.9375rem',
-                cursor: 'pointer',
-              }}
-            >
-              <span>{UI_LABELS.FOOTER_PRODUCTS}</span>
-              <ChevronDown size={16} style={{ transform: openSections.products ? 'rotate(180deg)' : 'none' }} />
-            </button>
-            {openSections.products && (
-              <div style={{ paddingBottom: '16px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <Link to="/products/api" style={{ color: 'var(--color-accent-on-dark)', fontSize: '0.875rem' }}>APIs</Link>
-                <Link to="/products/solvents" style={{ color: 'var(--color-accent-on-dark)', fontSize: '0.875rem' }}>Solvents</Link>
-                <Link to="/products" style={{ color: 'var(--color-accent-on-dark)', fontSize: '0.875rem', fontWeight: 600 }}>All Products →</Link>
-              </div>
-            )}
-          </div>
-        </div>
-
-        {/* Legal, Developer Credit & Copyright Line */}
-        <div
-          style={{
-            padding: '20px 0 28px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '16px',
-            fontSize: '0.8125rem',
-            color: 'rgba(244, 245, 245, 0.65)',
-            borderTop: '1px solid rgba(213, 217, 220, 0.08)',
-          }}
-        >
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
-            <div>
-              {copyright} · <span style={{ color: 'rgba(244, 245, 245, 0.50)' }}>{legalTagline}</span>
-            </div>
-            <div style={{ fontSize: '0.8125rem', color: 'rgba(244, 245, 245, 0.70)' }}>
-              Design and Developed by{' '}
-              <a
-                href="https://techofay-global-ventures.vercel.app/contact"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  color: 'var(--color-secondary, #E67E22)',
+              />
+              <div>
+                <span style={{
+                  fontFamily: 'var(--font-family-display)',
+                  fontSize: '1.25rem',
                   fontWeight: 600,
-                  textDecoration: 'none',
-                  transition: 'opacity 0.15s ease',
-                }}
-                onMouseEnter={(e) => (e.currentTarget.style.textDecoration = 'underline')}
-                onMouseLeave={(e) => (e.currentTarget.style.textDecoration = 'none')}
-              >
-                Techofay Global Ventures
-              </a>
+                  letterSpacing: '-0.01em',
+                  color: 'var(--color-text-on-dark)',
+                  display: 'block',
+                  lineHeight: 1.1,
+                }}>
+                  AURA CHEMICALS
+                </span>
+                <span style={{
+                  fontFamily: 'var(--font-family-mono)',
+                  fontSize: '0.625rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  color: 'var(--color-text-muted-dark)',
+                }}>
+                  Trading Brand of Aura Space Infra Pvt. Ltd.
+                </span>
+              </div>
+            </div>
+
+            <p style={{
+              fontSize: '0.875rem',
+              color: 'var(--color-text-muted-dark)',
+              lineHeight: 1.6,
+              marginBottom: '20px',
+              maxWidth: '380px',
+            }}>
+              Supplying verified Active Pharmaceutical Ingredients, industrial solvents, and manufactured phosphates to licensed manufacturers across India since 2014.
+            </p>
+
+            {/* Spec-Style Contact Details */}
+            <div style={{
+              border: '1px solid var(--color-rule-dark)',
+              borderRadius: 'var(--radius-xs)',
+              padding: '12px 16px',
+              backgroundColor: 'rgba(255, 255, 255, 0.02)',
+              fontSize: '0.75rem',
+              fontFamily: 'var(--font-family-mono)',
+            }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid var(--color-rule-dark)' }}>
+                <span style={{ color: 'var(--color-text-muted-dark)' }}>LEGAL ENTITY</span>
+                <span style={{ color: 'var(--color-text-on-dark)', fontWeight: 500 }}>Aura Space Infra Pvt. Ltd.</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid var(--color-rule-dark)' }}>
+                <span style={{ color: 'var(--color-text-muted-dark)' }}>REGISTRATION</span>
+                <span style={{ color: 'var(--color-text-on-dark)', fontWeight: 500 }}>ROC Ahmedabad · Estd. 2014</span>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0', borderBottom: '1px solid var(--color-rule-dark)' }}>
+                <span style={{ color: 'var(--color-text-muted-dark)' }}>DIRECT INQUIRY</span>
+                <a href={`tel:${phone.replace(/\s+/g, '')}`} style={{ color: 'var(--color-teal-border)' }}>{phone}</a>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', padding: '4px 0' }}>
+                <span style={{ color: 'var(--color-text-muted-dark)' }}>SALES DESK</span>
+                <a href={`mailto:${email}`} style={{ color: 'var(--color-teal-border)' }}>{email}</a>
+              </div>
             </div>
           </div>
 
-          <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-            <Link
-              to="/privacy-policy"
-              style={{
-                color: 'rgba(244, 245, 245, 0.70)',
-                textDecoration: 'none',
-                transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(244, 245, 245, 0.70)')}
-            >
-              Privacy Policy
-            </Link>
-            <span style={{ opacity: 0.3 }}>·</span>
-            <Link
-              to="/contact"
-              style={{
-                color: 'rgba(244, 245, 245, 0.70)',
-                textDecoration: 'none',
-                transition: 'color 0.15s ease',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = '#FFFFFF')}
-              onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(244, 245, 245, 0.70)')}
-            >
-              Contact
-            </Link>
+          {/* Col 5-7: Product Families */}
+          <div style={{ gridColumn: 'span 12' }} className="footer-col-products">
+            <span className="eyebrow" style={{ color: 'var(--color-teal-border)', marginBottom: '12px' }}>
+              01 / PRODUCTS DIRECTORY
+            </span>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {productCategories.map((c) => (
+                <li key={c.title}>
+                  <Link
+                    to={c.path}
+                    style={{
+                      fontSize: '0.8125rem',
+                      color: 'var(--color-text-muted-dark)',
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '6px',
+                    }}
+                  >
+                    <span>{c.title}</span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            <div style={{ marginTop: '24px' }}>
+              <span className="eyebrow" style={{ color: 'var(--color-teal-border)', marginBottom: '8px' }}>
+                02 / AUTHORIZED PRINCIPALS
+              </span>
+              <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                {principals.map((p) => (
+                  <li key={p} style={{ fontSize: '0.75rem', color: 'var(--color-text-muted-dark)', fontFamily: 'var(--font-family-mono)' }}>
+                    · {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Col 8-10: Navigation & Institutional Links */}
+          <div style={{ gridColumn: 'span 12' }} className="footer-col-nav">
+            <span className="eyebrow" style={{ color: 'var(--color-teal-border)', marginBottom: '12px' }}>
+              03 / CORPORATE GOVERNANCE
+            </span>
+            <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+              {quickLinks.map((l) => (
+                <li key={l.label}>
+                  <Link
+                    to={l.path}
+                    style={{
+                      fontSize: '0.8125rem',
+                      color: 'var(--color-text-muted-dark)',
+                    }}
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Back to Top */}
+            <div style={{ marginTop: '24px' }}>
+              <button
+                type="button"
+                onClick={scrollToTop}
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-family-mono)',
+                  color: 'var(--color-text-on-dark)',
+                  padding: '6px 12px',
+                  border: '1px solid var(--color-rule-dark)',
+                  borderRadius: 'var(--radius-xs)',
+                  background: 'transparent',
+                }}
+              >
+                <ArrowUp size={12} />
+                <span>Return to Top</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        {/* Regulatory & B2B Compliance Disclaimer */}
+        <div
+          className="footer-disclaimer"
+          style={{
+            padding: '20px 0',
+            borderBottom: '1px solid var(--color-rule-dark)',
+            fontSize: '0.6875rem',
+            lineHeight: 1.6,
+            color: 'var(--color-text-muted-dark)',
+          }}
+        >
+          <p style={{ margin: 0, color: 'var(--color-text-muted-dark)' }}>
+            <strong style={{ color: 'var(--color-text-on-dark)' }}>Regulatory & Commercial Compliance Notice:</strong> Active Pharmaceutical Ingredients (APIs), industrial solvents, and chemical substances listed herein are supplied strictly for commercial manufacturing, pharmaceutical synthesis, formulation, and industrial processing to verified, licensed entities holding requisite statutory authorizations (GST, State Drug Licensing where applicable). Products are not intended for retail, personal, or direct consumer consumption. All transactions are governed by standard commercial purchase orders and verified Certificates of Analysis (CoAs).
+          </p>
+        </div>
+
+        {/* Bottom Bar: Copyright & Tech Partner */}
+        <div style={{
+          padding: '20px 0',
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '12px',
+          fontSize: '0.75rem',
+          fontFamily: 'var(--font-family-mono)',
+          color: 'var(--color-text-muted-dark)',
+        }}>
+          <div>
+            © {currentYear} Aura Space Infra Private Limited. All rights reserved.
+          </div>
+
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <span>Powered by</span>
+            <span style={{ color: 'var(--color-text-on-dark)', fontWeight: 600 }}>TECHOFY Global Ventures</span>
           </div>
         </div>
       </Container>
+
+      {/* Responsive Grid Column Styles for Footer */}
+      <style>{`
+        @media (min-width: 1024px) {
+          .footer-col-main { grid-column: span 5 !important; }
+          .footer-col-products { grid-column: span 4 !important; }
+          .footer-col-nav { grid-column: span 3 !important; }
+        }
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .footer-col-main { grid-column: span 12 !important; }
+          .footer-col-products { grid-column: span 6 !important; }
+          .footer-col-nav { grid-column: span 6 !important; }
+        }
+      `}</style>
     </footer>
   );
 };

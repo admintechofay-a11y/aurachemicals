@@ -1,0 +1,272 @@
+[
+  {
+    "route": "Home",
+    "path": "/",
+    "passes": 36,
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 3,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 1,
+        "sampleTarget": "div:nth-child(2) > h4",
+        "sampleHtml": "<h4 style=\"color: var(--color-paper); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bot"
+      }
+    ]
+  },
+  {
+    "route": "About Us",
+    "path": "/about-us",
+    "passes": 35,
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": "div > div:nth-child(1) > div > div:nth-child(5) > h4",
+        "sampleHtml": "<h4 style=\"margin-bottom: var(--space-3); color: var(--color-primary);\">Key Operating Credentials</h4>"
+      }
+    ]
+  },
+  {
+    "route": "Our Mission",
+    "path": "/our-mission",
+    "passes": 35,
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 1,
+        "sampleTarget": "div:nth-child(2) > h4",
+        "sampleHtml": "<h4 style=\"color: var(--color-paper); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bot"
+      }
+    ]
+  },
+  {
+    "route": "Products Catalog",
+    "path": "/products",
+    "passes": 39,
+    "violationsCount": 3,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".card.card-hoverable.product-card:nth-child(1) > h3",
+        "sampleHtml": "<h3 style=\"font-size: 1.25rem; line-height: 1.3; margin-bottom: var(--space-2); color: var(--color-primary);\"><a href=\"/"
+      },
+      {
+        "id": "select-name",
+        "impact": "critical",
+        "description": "Ensures select element has an accessible name",
+        "help": "Select element must have an accessible name",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/select-name?application=axeAPI",
+        "nodesCount": 1,
+        "sampleTarget": "select",
+        "sampleHtml": "<select style=\"padding: 10px 36px 10px 14px; border-radius: var(--radius-sm); border: 1px solid var(--color-border); fon"
+      }
+    ]
+  },
+  {
+    "route": "Product Detail (Aceclofenac)",
+    "path": "/products/detail/aceclofenac",
+    "passes": 39,
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 1,
+        "sampleTarget": "div:nth-child(2) > h4",
+        "sampleHtml": "<h4 style=\"color: var(--color-paper); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bot"
+      }
+    ]
+  },
+  {
+    "route": "Industries",
+    "path": "/industries",
+    "passes": 38,
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 1,
+        "sampleTarget": "div:nth-child(2) > h4",
+        "sampleHtml": "<h4 style=\"color: var(--color-paper); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bot"
+      }
+    ]
+  },
+  {
+    "route": "Services (Inspection & QA)",
+    "path": "/services",
+    "passes": 35,
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 1,
+        "sampleTarget": "div:nth-child(2) > h4",
+        "sampleHtml": "<h4 style=\"color: var(--color-paper); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bot"
+      }
+    ]
+  },
+  {
+    "route": "Request a Quote (RFQ)",
+    "path": "/get-a-quote",
+    "passes": 42,
+    "violationsCount": 1,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      }
+    ]
+  },
+  {
+    "route": "Contact",
+    "path": "/contact",
+    "passes": 40,
+    "violationsCount": 1,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".header-quote-btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      }
+    ]
+  },
+  {
+    "route": "Privacy Policy",
+    "path": "/privacy-policy",
+    "passes": 35,
+    "violationsCount": 2,
+    "violations": [
+      {
+        "id": "color-contrast",
+        "impact": "serious",
+        "description": "Ensures the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+        "help": "Elements must meet minimum color contrast ratio thresholds",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/color-contrast?application=axeAPI",
+        "nodesCount": 2,
+        "sampleTarget": ".btn > span:nth-child(1)",
+        "sampleHtml": "<span>Request a Quote</span>"
+      },
+      {
+        "id": "heading-order",
+        "impact": "moderate",
+        "description": "Ensures the order of headings is semantically correct",
+        "help": "Heading levels should only increase by one",
+        "helpUrl": "https://dequeuniversity.com/rules/axe/4.9/heading-order?application=axeAPI",
+        "nodesCount": 1,
+        "sampleTarget": "div:nth-child(2) > h4",
+        "sampleHtml": "<h4 style=\"color: var(--color-paper); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.06em; margin-bot"
+      }
+    ]
+  }
+]

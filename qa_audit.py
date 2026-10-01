@@ -1,9 +1,9 @@
 import urllib.request
 import urllib.error
 import re
-import json
+import os
 
-BASE_URL = "http://localhost:3001"
+BASE_URL = os.environ.get("BASE_URL", "http://localhost:4173")
 
 ROUTES = [
     ("/", "Homepage"),
@@ -28,8 +28,8 @@ FORBIDDEN_PATTERNS = [
     r"client\s+2",
     r"abc\s+pharma",
     r"coming\s+soon",
-    r"undefined",
-    r"NaN",
+    r"\bundefined\b",
+    r"\bNaN\b",
     r"\[object\s+Object\]",
 ]
 

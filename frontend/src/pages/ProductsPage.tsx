@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { useParams, useSearchParams, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 import {
@@ -7,22 +7,20 @@ import {
   List,
   Filter,
   ArrowRight,
-  ExternalLink,
   ChevronDown,
   X,
   FileCheck,
-  FlaskConical,
+  Plus,
 } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { Section } from '../components/common/Section';
 import { Breadcrumb } from '../components/common/Breadcrumb';
-import { Button } from '../components/common/Button';
-import { CTABand } from '../components/common/CTABand';
-import { Skeleton } from '../components/common/Skeleton';
-import { ErrorState } from '../components/common/ErrorState';
-import { EmptyState } from '../components/common/EmptyState';
 import { ProductCard } from '../components/common/ProductCard';
+import { ProductRow } from '../components/common/ProductRow';
 import { Pagination } from '../components/common/Pagination';
+import { EmptyState } from '../components/common/EmptyState';
+import { ErrorState } from '../components/common/ErrorState';
+import { Skeleton } from '../components/common/Skeleton';
 import { api } from '../api/client';
 import { ProductDto } from '../api/types';
 
@@ -32,24 +30,24 @@ export const ProductsPage: React.FC = () => {
 
   // Search and filter state
   const [searchQuery, setSearchQuery] = useState(searchParams.get('q') || '');
-  const [selectedIndustry, setSelectedIndustry] = useState(searchParams.get('industry') || '');
-  const [viewMode, setViewMode] = useState<'grid' | 'table'>('grid');
+  const [selectedLetter, setSelectedLetter] = useState<string>('');
+  const [viewMode, setViewMode] = useState<'table' | 'grid'>('table');
   const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 16;
+  const itemsPerPage = 24;
+
+  const currentCategorySlug = routeCategory || slugOrCategory || searchParams.get('category') || 'all';
+  const selectedIndustry = searchParams.get('industry') || '';
 
   // Data fetching
-  const { data: categories, isLoading: isCatLoading } = useQuery({
+  const { data: categories = [] } = useQuery({
     queryKey: ['product-categories'],
     queryFn: () => api.getProductCategories(),
   });
 
-  const { data: industries } = useQuery({
+  const { data: industries = [] } = useQuery({
     queryKey: ['industries'],
     queryFn: () => api.getIndustries(),
   });
-
-  // Current selected category (route param takes precedence or URL search param)
-  const currentCategorySlug = routeCategory || slugOrCategory || searchParams.get('category') || 'all';
 
   const {
     data: productsData,
@@ -63,14 +61,23 @@ export const ProductsPage: React.FC = () => {
         category: currentCategorySlug !== 'all' ? currentCategorySlug : undefined,
         search: searchQuery || undefined,
         industry: selectedIndustry || undefined,
-        per_page: 500, // Fetch filtered set to allow robust client table/grid pagination
+        per_page: 500,
       }),
   });
 
-  // All products matching filters
+  // Alphabetical letters available
+  const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+
+  // Filter products by letter if selected
   const allFilteredProducts = useMemo(() => {
-    return productsData?.products || [];
-  }, [productsData]);
+    let list = productsData?.products || [];
+    if (selectedLetter) {
+      list = list.filter((p) =>
+        p.chemical_name.toUpperCase().startsWith(selectedLetter)
+      );
+    }
+    return list;
+  }, [productsData, selectedLetter]);
 
   // Client-side pagination slice
   const totalItems = allFilteredProducts.length;
@@ -82,505 +89,452 @@ export const ProductsPage: React.FC = () => {
 
   const handleCategoryChange = (slug: string) => {
     setCurrentPage(1);
+    setSelectedLetter('');
+    const newParams = new URLSearchParams(searchParams);
     if (slug === 'all') {
-      searchParams.delete('category');
-      setSearchParams(searchParams);
+      newParams.delete('category');
     } else {
-      searchParams.set('category', slug);
-      setSearchParams(searchParams);
+      newParams.set('category', slug);
     }
+    setSearchParams(newParams);
   };
 
   const handleIndustryChange = (slug: string) => {
     setCurrentPage(1);
-    setSelectedIndustry(slug);
+    const newParams = new URLSearchParams(searchParams);
     if (slug) {
-      searchParams.set('industry', slug);
+      newParams.set('industry', slug);
     } else {
-      searchParams.delete('industry');
+      newParams.delete('industry');
     }
-    setSearchParams(searchParams);
+    setSearchParams(newParams);
   };
 
   const handleSearchChange = (val: string) => {
     setSearchQuery(val);
     setCurrentPage(1);
-    if (val) {
-      searchParams.set('q', val);
+    const newParams = new URLSearchParams(searchParams);
+    if (val.trim()) {
+      newParams.set('q', val.trim());
     } else {
-      searchParams.delete('q');
+      newParams.delete('q');
     }
-    setSearchParams(searchParams);
+    setSearchParams(newParams);
   };
 
   const clearAllFilters = () => {
     setSearchQuery('');
-    setSelectedIndustry('');
-    searchParams.delete('q');
-    searchParams.delete('industry');
-    searchParams.delete('category');
-    setSearchParams(searchParams);
+    setSelectedLetter('');
     setCurrentPage(1);
+    setSearchParams({});
   };
 
-  // Find active category label
-  const activeCategoryObj = categories?.find((c) => c.slug === currentCategorySlug);
+  // Set document title
+  useEffect(() => {
+    const catName = categories.find((c) => c.slug === currentCategorySlug)?.name;
+    document.title = catName
+      ? `${catName} Supplier & Price | Aura Chemicals`
+      : 'Chemical & API Product Directory (140+ Specifications) | Aura Chemicals';
+  }, [currentCategorySlug, categories]);
 
   return (
     <>
       <Breadcrumb
         items={[
-          { label: 'Products', url: '/products' },
-          ...(activeCategoryObj ? [{ label: activeCategoryObj.name }] : []),
+          { label: 'Products', href: '/products' },
+          ...(currentCategorySlug !== 'all'
+            ? [
+                {
+                  label:
+                    categories.find((c) => c.slug === currentCategorySlug)?.name ||
+                    currentCategorySlug.toUpperCase(),
+                },
+              ]
+            : []),
         ]}
       />
 
-      {/* Header Banner */}
+      {/* Header & Faceted Filter Bar */}
       <section
         style={{
-          backgroundColor: 'var(--color-surface)',
-          padding: 'clamp(40px, 5vw, 64px) 0',
-          borderBottom: '1px solid var(--color-border)',
+          backgroundColor: 'var(--color-surface-white)',
+          borderBottom: '1px solid var(--color-rule)',
+          padding: 'clamp(36px, 4vw, 56px) 0 clamp(24px, 3vw, 36px) 0',
         }}
       >
         <Container>
-          <div style={{ maxWidth: '840px' }}>
-            <span className="eyebrow">Verified Chemical Catalog</span>
-            <h1 style={{ marginBottom: 'var(--space-3)' }}>
-              {activeCategoryObj ? activeCategoryObj.name : 'Chemical Products & APIs'}
+          <div style={{ maxWidth: '920px', marginBottom: 'var(--space-6)' }}>
+            <span className="section-index">01 / COMMERCIAL CATALOG</span>
+            <h1 style={{ fontSize: 'var(--font-size-h1)', margin: '8px 0 12px 0', color: 'var(--color-ink-navy)' }}>
+              Chemical & Pharmaceutical Product Directory
             </h1>
-            <p className="body-large" style={{ color: 'var(--color-text)' }}>
-              Explore 135 verified active pharmaceutical ingredients, industrial solvents, phosphates, and acids directly sourced through our network of 400+ domestic manufacturers.
+            <p className="body-large">
+              Browse 94 Active Pharmaceutical Ingredients (IP/BP/USP/EP/JP), high-purity industrial solvents, in-house synthesized phosphates, and direct global imports. Submit multi-item RFQs directly from the catalog.
             </p>
+          </div>
+
+          {/* Search & Category Pills */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            {/* Search Input Bar */}
+            <div style={{
+              display: 'flex',
+              gap: '12px',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+            }}>
+              <div style={{ position: 'relative', flex: 1, minWidth: '280px' }}>
+                <input
+                  type="text"
+                  value={searchQuery}
+                  onChange={(e) => handleSearchChange(e.target.value)}
+                  placeholder="Search chemicals by name, synonym, or CAS # (e.g. Paracetamol, 103-90-2)..."
+                  className="form-input"
+                  style={{ paddingLeft: '40px', paddingRight: '40px' }}
+                  aria-label="Search chemical products by name or CAS number"
+                />
+                <Search size={18} style={{ position: 'absolute', left: '14px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-text-muted)' }} />
+                {searchQuery && (
+                  <button
+                    type="button"
+                    onClick={() => handleSearchChange('')}
+                    style={{ position: 'absolute', right: '12px', top: '50%', transform: 'translateY(-50%)', color: 'var(--color-text-muted)', background: 'none', border: 'none' }}
+                    aria-label="Clear search query"
+                  >
+                    <X size={16} />
+                  </button>
+                )}
+              </div>
+
+              {/* Industry Dropdown with accessible label */}
+              <div style={{ minWidth: '220px' }}>
+                <select
+                  value={selectedIndustry}
+                  onChange={(e) => handleIndustryChange(e.target.value)}
+                  className="form-select"
+                  aria-label="Filter products by target manufacturing industry"
+                >
+                  <option value="">All 19 Industries</option>
+                  {industries.map((ind) => (
+                    <option key={ind.slug} value={ind.slug}>
+                      {ind.title.replace(' Industry', '')}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              {/* View Mode Toggle: Table (default) vs Grid */}
+              <div style={{
+                display: 'inline-flex',
+                border: '1px solid var(--color-rule-strong)',
+                borderRadius: 'var(--radius-xs)',
+                overflow: 'hidden',
+                backgroundColor: 'var(--color-surface-white)',
+              }}>
+                <button
+                  type="button"
+                  onClick={() => setViewMode('table')}
+                  style={{
+                    padding: '8px 14px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '0.8125rem',
+                    fontFamily: 'var(--font-family-mono)',
+                    backgroundColor: viewMode === 'table' ? 'var(--color-ink-navy)' : 'transparent',
+                    color: viewMode === 'table' ? '#FFFFFF' : 'var(--color-text-secondary)',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                  aria-pressed={viewMode === 'table'}
+                  title="Dense Specification Table View"
+                >
+                  <List size={16} />
+                  <span>Table</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={() => setViewMode('grid')}
+                  style={{
+                    padding: '8px 14px',
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    fontSize: '0.8125rem',
+                    fontFamily: 'var(--font-family-mono)',
+                    backgroundColor: viewMode === 'grid' ? 'var(--color-ink-navy)' : 'transparent',
+                    color: viewMode === 'grid' ? '#FFFFFF' : 'var(--color-text-secondary)',
+                    border: 'none',
+                    cursor: 'pointer',
+                  }}
+                  aria-pressed={viewMode === 'grid'}
+                  title="Card Grid View"
+                >
+                  <LayoutGrid size={16} />
+                  <span>Cards</span>
+                </button>
+              </div>
+            </div>
+
+            {/* Category Filter Pills */}
+            <div style={{
+              display: 'flex',
+              gap: '6px',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+            }}>
+              <button
+                type="button"
+                onClick={() => handleCategoryChange('all')}
+                style={{
+                  padding: '6px 12px',
+                  borderRadius: 'var(--radius-xs)',
+                  border: currentCategorySlug === 'all' ? '1px solid var(--color-teal)' : '1px solid var(--color-rule)',
+                  backgroundColor: currentCategorySlug === 'all' ? 'var(--color-teal)' : 'var(--color-paper)',
+                  color: currentCategorySlug === 'all' ? '#FFFFFF' : 'var(--color-text-primary)',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-family-mono)',
+                  cursor: 'pointer',
+                  fontWeight: currentCategorySlug === 'all' ? 600 : 400,
+                }}
+              >
+                All Products (140+)
+              </button>
+
+              {categories.map((cat) => (
+                <button
+                  key={cat.slug}
+                  type="button"
+                  onClick={() => handleCategoryChange(cat.slug)}
+                  style={{
+                    padding: '6px 12px',
+                    borderRadius: 'var(--radius-xs)',
+                    border: currentCategorySlug === cat.slug ? '1px solid var(--color-teal)' : '1px solid var(--color-rule)',
+                    backgroundColor: currentCategorySlug === cat.slug ? 'var(--color-teal)' : 'var(--color-paper)',
+                    color: currentCategorySlug === cat.slug ? '#FFFFFF' : 'var(--color-text-primary)',
+                    fontSize: '0.75rem',
+                    fontFamily: 'var(--font-family-mono)',
+                    cursor: 'pointer',
+                    fontWeight: currentCategorySlug === cat.slug ? 600 : 400,
+                  }}
+                >
+                  {cat.name} ({cat.count})
+                </button>
+              ))}
+            </div>
+
+            {/* A-Z Alphabetical Jump Bar for APIs */}
+            <div style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '4px',
+              padding: '6px 12px',
+              backgroundColor: 'var(--color-paper)',
+              borderRadius: 'var(--radius-xs)',
+              border: '1px solid var(--color-rule)',
+              overflowX: 'auto',
+            }}>
+              <span style={{
+                fontFamily: 'var(--font-family-mono)',
+                fontSize: '0.6875rem',
+                color: 'var(--color-text-muted)',
+                marginRight: '6px',
+                textTransform: 'uppercase',
+                flexShrink: 0,
+              }}>
+                A-Z Index:
+              </span>
+
+              <button
+                type="button"
+                onClick={() => { setSelectedLetter(''); setCurrentPage(1); }}
+                style={{
+                  padding: '2px 6px',
+                  borderRadius: '2px',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-family-mono)',
+                  border: 'none',
+                  backgroundColor: selectedLetter === '' ? 'var(--color-teal)' : 'transparent',
+                  color: selectedLetter === '' ? '#FFFFFF' : 'var(--color-text-secondary)',
+                  cursor: 'pointer',
+                }}
+              >
+                ALL
+              </button>
+
+              {alphabet.map((letter) => (
+                <button
+                  key={letter}
+                  type="button"
+                  onClick={() => { setSelectedLetter(letter); setCurrentPage(1); }}
+                  style={{
+                    padding: '2px 6px',
+                    borderRadius: '2px',
+                    fontSize: '0.75rem',
+                    fontFamily: 'var(--font-family-mono)',
+                    border: 'none',
+                    backgroundColor: selectedLetter === letter ? 'var(--color-teal)' : 'transparent',
+                    color: selectedLetter === letter ? '#FFFFFF' : 'var(--color-text-secondary)',
+                    cursor: 'pointer',
+                    fontWeight: selectedLetter === letter ? 600 : 400,
+                  }}
+                >
+                  {letter}
+                </button>
+              ))}
+            </div>
           </div>
         </Container>
       </section>
 
-      {/* Controls Section: Category Tabs, Search, Industry Filter, View Toggle */}
-      <Section padding="dense" style={{ borderBottom: '1px solid var(--color-border)' }}>
+      {/* Main Listing View */}
+      <Section background="paper">
         <Container>
-          {/* Category Tabs */}
-          <div
-            style={{
-              display: 'flex',
-              gap: '8px',
-              overflowX: 'auto',
-              paddingBottom: '12px',
-              marginBottom: '20px',
-              scrollbarWidth: 'thin',
-            }}
-          >
-            <button
-              onClick={() => handleCategoryChange('all')}
-              style={{
-                padding: '8px 16px',
-                borderRadius: 'var(--radius-full)',
-                border: '1px solid var(--color-border)',
-                backgroundColor: currentCategorySlug === 'all' ? 'var(--color-primary)' : '#FFFFFF',
-                color: currentCategorySlug === 'all' ? '#FFFFFF' : 'var(--color-text)',
-                fontWeight: 600,
-                fontSize: '0.8125rem',
-                cursor: 'pointer',
-                whiteSpace: 'nowrap',
-                transition: 'all 0.2s ease',
-              }}
-            >
-              All Categories (135)
-            </button>
-            {categories?.map((cat) => (
-              <button
-                key={cat.id}
-                onClick={() => handleCategoryChange(cat.slug)}
-                style={{
-                  padding: '8px 16px',
-                  borderRadius: 'var(--radius-full)',
-                  border: '1px solid var(--color-border)',
-                  backgroundColor: currentCategorySlug === cat.slug ? 'var(--color-primary)' : '#FFFFFF',
-                  color: currentCategorySlug === cat.slug ? '#FFFFFF' : 'var(--color-text)',
-                  fontWeight: 600,
-                  fontSize: '0.8125rem',
-                  cursor: 'pointer',
-                  whiteSpace: 'nowrap',
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                {cat.name} ({cat.count})
-              </button>
-            ))}
-          </div>
-
-          {/* Search, Industry Select, and View Switcher */}
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '16px',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-            }}
-          >
-            {/* Search Input */}
-            <div style={{ position: 'relative', flex: '1 1 280px', maxWidth: '420px' }}>
-              <Search
-                size={16}
-                style={{
-                  position: 'absolute',
-                  left: '12px',
-                  top: '50%',
-                  transform: 'translateY(-50%)',
-                  color: 'var(--color-text-muted)',
-                }}
-              />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => handleSearchChange(e.target.value)}
-                placeholder="Search chemical name, CAS number, or class..."
-                style={{
-                  width: '100%',
-                  padding: '10px 14px 10px 36px',
-                  borderRadius: 'var(--radius-sm)',
-                  border: '1px solid var(--color-border)',
-                  fontSize: '0.875rem',
-                  outline: 'none',
-                }}
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => handleSearchChange('')}
-                  style={{
-                    position: 'absolute',
-                    right: '10px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    background: 'none',
-                    border: 'none',
-                    cursor: 'pointer',
-                    color: 'var(--color-text-muted)',
-                  }}
-                  aria-label="Clear search"
-                >
-                  <X size={16} />
-                </button>
-              )}
-            </div>
-
-            {/* Filter controls */}
-            <div style={{ display: 'flex', gap: '12px', alignItems: 'center', flexWrap: 'wrap' }}>
-              {/* Industry Dropdown */}
-              <div style={{ position: 'relative' }}>
-                <select
-                  value={selectedIndustry}
-                  onChange={(e) => handleIndustryChange(e.target.value)}
-                  style={{
-                    padding: '10px 36px 10px 14px',
-                    borderRadius: 'var(--radius-sm)',
-                    border: '1px solid var(--color-border)',
-                    fontSize: '0.875rem',
-                    backgroundColor: '#FFFFFF',
-                    color: 'var(--color-text)',
-                    cursor: 'pointer',
-                    outline: 'none',
-                    appearance: 'none',
-                  }}
-                >
-                  <option value="">All Applications &amp; Industries</option>
-                  {industries?.map((ind) => (
-                    <option key={ind.id} value={ind.slug}>
-                      {ind.title}
-                    </option>
-                  ))}
-                </select>
-                <ChevronDown
-                  size={14}
-                  style={{
-                    position: 'absolute',
-                    right: '12px',
-                    top: '50%',
-                    transform: 'translateY(-50%)',
-                    pointerEvents: 'none',
-                    color: 'var(--color-text-muted)',
-                  }}
-                />
-              </div>
-
-              {/* View Toggle */}
-              <div
-                style={{
-                  display: 'flex',
-                  border: '1px solid var(--color-border)',
-                  borderRadius: 'var(--radius-sm)',
-                  overflow: 'hidden',
-                }}
-              >
-                <button
-                  onClick={() => setViewMode('grid')}
-                  style={{
-                    padding: '8px 12px',
-                    backgroundColor: viewMode === 'grid' ? 'var(--color-surface)' : '#FFFFFF',
-                    border: 'none',
-                    borderRight: '1px solid var(--color-border)',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    fontSize: '0.8125rem',
-                    color: viewMode === 'grid' ? 'var(--color-primary)' : 'var(--color-text-muted)',
-                    fontWeight: viewMode === 'grid' ? 600 : 400,
-                  }}
-                  title="Grid View"
-                >
-                  <LayoutGrid size={15} /> Grid
-                </button>
-                <button
-                  onClick={() => setViewMode('table')}
-                  style={{
-                    padding: '8px 12px',
-                    backgroundColor: viewMode === 'table' ? 'var(--color-surface)' : '#FFFFFF',
-                    border: 'none',
-                    cursor: 'pointer',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '4px',
-                    fontSize: '0.8125rem',
-                    color: viewMode === 'table' ? 'var(--color-primary)' : 'var(--color-text-muted)',
-                    fontWeight: viewMode === 'table' ? 600 : 400,
-                  }}
-                  title="Table View"
-                >
-                  <List size={15} /> Table
-                </button>
-              </div>
-
-              {(searchQuery || selectedIndustry || currentCategorySlug !== 'all') && (
-                <button
-                  onClick={clearAllFilters}
-                  style={{
-                    padding: '8px 12px',
-                    border: 'none',
-                    background: 'none',
-                    color: 'var(--color-secondary)',
-                    fontSize: '0.8125rem',
-                    fontWeight: 600,
-                    cursor: 'pointer',
-                    textDecoration: 'underline',
-                  }}
-                >
-                  Reset Filters
-                </button>
-              )}
-            </div>
-          </div>
-        </Container>
-      </Section>
-
-      {/* Product Content Listing */}
-      <Section padding="normal">
-        <Container>
-          {/* Status bar */}
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
-              alignItems: 'center',
-              marginBottom: '24px',
-              fontSize: '0.875rem',
-              color: 'var(--color-text-muted)',
-            }}
-          >
-            <span>
+          {/* Status Bar */}
+          <div style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginBottom: '16px',
+            fontSize: '0.8125rem',
+            fontFamily: 'var(--font-family-mono)',
+            color: 'var(--color-text-muted)',
+          }}>
+            <div aria-live="polite">
               Showing <strong>{totalItems === 0 ? 0 : startIndex + 1}–{Math.min(startIndex + itemsPerPage, totalItems)}</strong> of{' '}
-              <strong>{totalItems}</strong> chemical products
-            </span>
+              <strong>{totalItems}</strong> verified chemicals
+              {selectedLetter && <span> (Starting with &ldquo;{selectedLetter}&rdquo;)</span>}
+            </div>
+
+            {(searchQuery || selectedIndustry || currentCategorySlug !== 'all' || selectedLetter) && (
+              <button
+                type="button"
+                onClick={clearAllFilters}
+                style={{
+                  color: 'var(--color-teal)',
+                  textDecoration: 'underline',
+                  background: 'none',
+                  border: 'none',
+                  fontSize: '0.75rem',
+                  fontFamily: 'var(--font-family-mono)',
+                  cursor: 'pointer',
+                }}
+              >
+                Reset All Filters
+              </button>
+            )}
           </div>
 
-          {/* Loading State for initial fetch */}
-          {isProdLoading && paginatedProducts.length === 0 && (
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                gap: '24px',
-              }}
-            >
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <Skeleton key={i} width="100%" height="240px" />
-              ))}
+          {/* Loading Skeleton */}
+          {isProdLoading && (
+            <div style={{ padding: '40px 0' }}>
+              <Skeleton width="100%" height="320px" />
             </div>
           )}
 
           {/* Error State */}
           {isError && (
             <ErrorState
-              title="Unable to Load Chemical Catalog"
-              message="Could not retrieve the product inventory from the server."
+              title="Catalog Loading Error"
+              message="Could not retrieve chemical records. Please retry or contact our commercial desk."
               onRetry={refetch}
             />
           )}
 
-          {/* Empty State */}
+          {/* Empty Results State */}
           {!isProdLoading && !isError && totalItems === 0 && (
-            <EmptyState
-              title="No Chemical Products Found"
-              message={`No chemicals matched your criteria${
-                searchQuery ? ` for "${searchQuery}"` : ''
-              }. Try adjusting your keywords, selecting a different category, or requesting a custom procurement.`}
-              action={
-                <Button variant="outline" onClick={clearAllFilters} style={{ marginTop: '16px' }}>
-                  Clear All Filters
-                </Button>
-              }
-            />
-          )}
-
-          {/* Grid View (Crossfade transition preserves previous results at reduced opacity while loading) */}
-          {!isError && totalItems > 0 && viewMode === 'grid' && (
-            <div
-              className={`grid-crossfade ${isProdLoading ? 'loading' : ''}`}
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
-                gap: '24px',
-                marginBottom: '40px',
-              }}
-            >
-              {paginatedProducts.map((prod) => (
-                <ProductCard key={prod.id} product={prod} />
-              ))}
+            <div style={{
+              backgroundColor: 'var(--color-surface-white)',
+              border: '1px solid var(--color-rule-strong)',
+              borderRadius: 'var(--radius-xs)',
+              padding: '48px 24px',
+              textAlign: 'center',
+            }}>
+              <h3 style={{ fontSize: '1.25rem', color: 'var(--color-ink-navy)', marginBottom: '8px' }}>
+                No chemical specifications matched your search
+              </h3>
+              <p className="body-small" style={{ marginBottom: '24px', maxWidth: '540px', margin: '0 auto 24px auto' }}>
+                We source over 400 chemical compounds beyond our online catalog. If you require a specific API, high-purity solvent, or custom phosphate salt, submit your requirement directly to our sourcing desk.
+              </p>
+              <div style={{ display: 'flex', justifyContent: 'center', gap: '12px' }}>
+                <Link
+                  to={`/get-a-quote?product=${encodeURIComponent(searchQuery)}`}
+                  className="btn btn-teal"
+                >
+                  Request Custom Sourcing Quote for &ldquo;{searchQuery || 'Unlisted Chemical'}&rdquo;
+                </Link>
+                <button type="button" onClick={clearAllFilters} className="btn btn-outline">
+                  Clear Filters
+                </button>
+              </div>
             </div>
           )}
 
-          {/* Table View */}
-          {!isProdLoading && !isError && totalItems > 0 && viewMode === 'table' && (
-            <div
-              style={{
-                backgroundColor: '#FFFFFF',
-                borderRadius: 'var(--radius-md)',
-                border: '1px solid var(--color-border)',
-                overflowX: 'auto',
-                boxShadow: 'var(--shadow-xs)',
-                marginBottom: '40px',
-              }}
-            >
-              <table
-                style={{
-                  width: '100%',
-                  borderCollapse: 'collapse',
-                  textAlign: 'left',
-                  fontSize: '0.875rem',
-                }}
-              >
+          {/* Table View (Default Desktop View) */}
+          {!isError && totalItems > 0 && viewMode === 'table' && (
+            <div style={{
+              overflowX: 'auto',
+              border: '1px solid var(--color-rule)',
+              borderRadius: 'var(--radius-xs)',
+              backgroundColor: 'var(--color-surface-white)',
+              boxShadow: 'var(--shadow-sm)',
+            }}>
+              <table className="product-table" role="table" aria-label="Chemical Catalog Specifications Table">
                 <thead>
-                  <tr
-                    style={{
-                      backgroundColor: 'var(--color-surface)',
-                      borderBottom: '1px solid var(--color-border)',
-                      color: 'var(--color-primary)',
-                      fontSize: '0.75rem',
-                      textTransform: 'uppercase',
-                      letterSpacing: '0.04em',
-                    }}
-                  >
-                    <th style={{ padding: '14px 20px' }}>Chemical Name</th>
-                    <th style={{ padding: '14px 20px' }}>CAS Number</th>
-                    <th style={{ padding: '14px 20px' }}>Category</th>
-                    <th style={{ padding: '14px 20px' }}>Therapeutic / Class</th>
-                    <th style={{ padding: '14px 20px' }}>Grade</th>
-                    <th style={{ padding: '14px 20px', textAlign: 'right' }}>Actions</th>
+                  <tr>
+                    <th scope="col" style={{ width: '30%' }}>Product / Chemical Name</th>
+                    <th scope="col" style={{ width: '18%' }}>CAS Registry Number</th>
+                    <th scope="col" style={{ width: '22%' }}>Category / Application</th>
+                    <th scope="col" style={{ width: '18%' }}>Grade / Monograph</th>
+                    <th scope="col" style={{ width: '12%', textAlign: 'right' }}>RFQ Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {paginatedProducts.map((prod, idx) => (
-                    <tr
-                      key={prod.id}
-                      style={{
-                        borderBottom: '1px solid var(--color-border)',
-                        backgroundColor: idx % 2 === 0 ? '#FFFFFF' : 'var(--color-surface-subtle)',
-                        transition: 'background-color 0.15s ease',
-                      }}
-                    >
-                      <td style={{ padding: '16px 20px', fontWeight: 600 }}>
-                        <Link
-                          to={`/products/${prod.slug}`}
-                          style={{
-                            color: 'var(--color-primary)',
-                            textDecoration: 'none',
-                          }}
-                        >
-                          {prod.chemical_name}
-                        </Link>
-                      </td>
-                      <td style={{ padding: '16px 20px', fontFamily: 'var(--font-family-mono)', fontSize: '0.8125rem' }}>
-                        {prod.cas_number ? (
-                          <span className="cas-badge">{prod.cas_number}</span>
-                        ) : (
-                          <span style={{ color: 'var(--color-text-muted)' }}>—</span>
-                        )}
-                      </td>
-                      <td style={{ padding: '16px 20px', color: 'var(--color-text-muted)', fontSize: '0.8125rem' }}>
-                        {prod.category.name}
-                      </td>
-                      <td style={{ padding: '16px 20px', color: 'var(--color-text)', fontSize: '0.8125rem' }}>
-                        {prod.therapeutic_category || '—'}
-                      </td>
-                      <td style={{ padding: '16px 20px', color: 'var(--color-secondary)', fontSize: '0.8125rem' }}>
-                        {prod.grade || 'Industrial / Commercial'}
-                      </td>
-                      <td style={{ padding: '16px 20px', textAlign: 'right' }}>
-                        <div style={{ display: 'inline-flex', gap: '8px', alignItems: 'center' }}>
-                          <Link
-                            to={`/products/${prod.slug}`}
-                            style={{
-                              padding: '6px 12px',
-                              borderRadius: 'var(--radius-sm)',
-                              border: '1px solid var(--color-border)',
-                              fontSize: '0.75rem',
-                              fontWeight: 600,
-                              color: 'var(--color-primary)',
-                              textDecoration: 'none',
-                              backgroundColor: '#FFFFFF',
-                            }}
-                          >
-                            Details
-                          </Link>
-                          <Button
-                            to={`/get-a-quote?product=${encodeURIComponent(prod.chemical_name)}&cas=${encodeURIComponent(prod.cas_number || '')}`}
-                            variant="primary"
-                            size="sm"
-                          >
-                            RFQ
-                          </Button>
-                        </div>
-                      </td>
-                    </tr>
+                  {paginatedProducts.map((p) => (
+                    <ProductRow
+                      key={p.slug}
+                      slug={p.slug}
+                      chemical_name={p.chemical_name}
+                      cas_number={p.cas_number}
+                      category_name={p.category?.name}
+                      category_slug={p.category?.slug}
+                      therapeutic_category={p.therapeutic_category}
+                      grade={p.grade}
+                    />
                   ))}
                 </tbody>
               </table>
             </div>
           )}
 
+          {/* Grid View */}
+          {!isError && totalItems > 0 && viewMode === 'grid' && (
+            <div style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+              gap: '24px',
+            }}>
+              {paginatedProducts.map((p) => (
+                <ProductCard key={p.slug} product={p} />
+              ))}
+            </div>
+          )}
+
           {/* Pagination */}
-          {!isProdLoading && !isError && totalPages > 1 && (
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={(page) => {
-                setCurrentPage(page);
-                window.scrollTo({ top: 300, behavior: 'smooth' });
-              }}
-            />
+          {totalPages > 1 && (
+            <div style={{ marginTop: '32px' }}>
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={(page) => {
+                  setCurrentPage(page);
+                  window.scrollTo({ top: 320, behavior: 'smooth' });
+                }}
+              />
+            </div>
           )}
         </Container>
       </Section>
-
-      {/* Custom Procurement Callout */}
-      <CTABand
-        heading="Need a Specific Chemical Grade, Custom Compound, or Unlisted CAS?"
-        body="Through our direct alliances with 400+ domestic chemical and API manufacturers, we source, formulate, and deliver tailored chemicals on demand."
-        buttonLabel="Request Custom Chemical Sourcing"
-        buttonUrl="/get-a-quote"
-        phone="+91 7220000877"
-      />
     </>
   );
 };

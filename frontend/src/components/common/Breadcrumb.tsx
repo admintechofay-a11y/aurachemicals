@@ -6,6 +6,7 @@ import { Container } from './Container';
 export interface BreadcrumbItem {
   label: string;
   url?: string;
+  href?: string;
 }
 
 interface BreadcrumbProps {
@@ -60,9 +61,9 @@ export const Breadcrumb: React.FC<BreadcrumbProps> = ({ items }) => {
                 }}
               >
                 <ChevronRight size={14} style={{ color: 'var(--color-muted)', opacity: 0.6 }} />
-                {item.url && !isLast ? (
+                {(item.url || item.href) && !isLast ? (
                   <Link
-                    to={item.url}
+                    to={(item.url || item.href)!}
                     style={{
                       color: 'var(--color-muted)',
                       textDecoration: 'none',

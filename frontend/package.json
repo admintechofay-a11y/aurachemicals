@@ -6,7 +6,11 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "audit:banned": "node ../scripts/check_banned_patterns.js",
+    "audit:axe": "node ../scripts/axe_post_redesign.js",
+    "prerender": "node ../scripts/prerender.js",
+    "test:interactions": "node ../scripts/test_interactions.js"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.59.16",
@@ -24,6 +28,8 @@
     "@types/react": "^18.3.11",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.2",
+    "axe-core": "^4.13.0",
+    "playwright": "^1.63.0",
     "typescript": "^5.6.3",
     "vite": "^5.4.9"
   }

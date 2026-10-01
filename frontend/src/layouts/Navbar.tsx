@@ -1,30 +1,23 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { useQuery } from '@tanstack/react-query';
-import { Menu, ChevronDown, Phone, ArrowRight } from 'lucide-react';
+import { Menu, ChevronDown, Phone, Search, FileText, ArrowRight, ShieldCheck } from 'lucide-react';
 import { Container } from '../components/common/Container';
-import { Button } from '../components/common/Button';
 import { SettingsDto } from '../api/types';
-import { api } from '../api/client';
-import { UI_LABELS } from '../utils/constants';
+import { useRFQ } from '../context/RFQContext';
 
 interface NavbarProps {
   settings?: SettingsDto;
   onOpenMobileMenu: () => void;
+  onOpenSearch: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) => {
+export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOpenSearch }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [productsOpen, setProductsOpen] = useState(false);
+  const [megaMenuOpen, setMegaMenuOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   const triggerButtonRef = useRef<HTMLButtonElement>(null);
   const location = useLocation();
-
-  // Fetch product categories from CMS for dynamic dropdown
-  const { data: categories = [] } = useQuery({
-    queryKey: ['product-categories'],
-    queryFn: () => api.getProductCategories(),
-  });
+  const { totalCount, openDrawer } = useRFQ();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,23 +27,23 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close dropdown on route change
+  // Close mega menu on route change
   useEffect(() => {
-    setProductsOpen(false);
+    setMegaMenuOpen(false);
   }, [location.pathname]);
 
-  // Handle outside click & escape key for dropdown
+  // Handle outside click & escape key
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && productsOpen) {
-        setProductsOpen(false);
+      if (e.key === 'Escape' && megaMenuOpen) {
+        setMegaMenuOpen(false);
         triggerButtonRef.current?.focus();
       }
     };
 
     const handleClickOutside = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setProductsOpen(false);
+        setMegaMenuOpen(false);
       }
     };
 
@@ -60,315 +53,403 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu }) =>
       document.removeEventListener('keydown', handleKeyDown);
       document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, [productsOpen]);
+  }, [megaMenuOpen]);
 
-  const decodeHtml = (html: string) => {
-    return html
-      .replace(/&amp;/g, '&')
-      .replace(/&#038;/g, '&')
-      .replace(/&lt;/g, '<')
-      .replace(/&gt;/g, '>')
-      .replace(/&quot;/g, '"')
-      .replace(/&#039;/g, "'");
-  };
+  const phone = settings?.company?.phone || '+91 97274 04415';
+  const logoUrl = settings?.branding?.header_logo?.url || '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
 
-  const brandName = settings?.company?.brand_name || 'Aura Chemicals';
-  const logoUrl =
-    settings?.branding?.header_logo?.url ||
-    '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
-  const phone = settings?.company?.phone;
-
-  const isProductsActive = location.pathname.startsWith('/products');
-  const activeCategories = categories.filter((cat) => (cat.count ?? 0) > 0);
+  const productCategories = [
+    {
+      index: '01',
+      title: 'Active Pharmaceutical Ingredients',
+      count: '94 APIs',
+      desc: 'Analgesics, Antibiotics, NSAIDs, Antivirals under IP, BP, USP, EP, JP monographs',
+      path: '/products?category=api'
+    },
+    {
+      index: '02',
+      title: 'Industrial Solvents & Intermediates',
+      count: '20 Chemicals',
+      desc: 'MEG, DMF, Toluene, Acetone, N-Hexene, Ethyl Acetate, IPA in drums and bulk ISO tanks',
+      path: '/products?category=solvents'
+    },
+    {
+      index: '03',
+      title: 'In-House Phosphate Manufacturing',
+      count: '11 Salts',
+      desc: 'Mono, Di, Tri, Tetra Sodium, Potassium and Ammonium phosphates (Crystals & Anhydrous)',
+      path: '/products?category=manufacturing-phosphates'
+    },
+    {
+      index: '04',
+      title: 'Direct Global Imports',
+      count: '05 Lines',
+      desc: 'EDTA Salts, Sodium Percarbonate, Citric Acid, Sodium Gluconate, Xanthan Gum (China make)',
+      path: '/products?category=imports'
+    },
+    {
+      index: '05',
+      title: 'Technical & Commercial Acids',
+      count: '06 Acids',
+      desc: 'Glacial Acetic Acid 99.8% (GNFC), Formic Acid 85%, Hydrochloric, Sulphuric, Phosphoric',
+      path: '/products?category=acids'
+    },
+    {
+      index: '06',
+      title: 'Water Treatment & ETP Chemicals',
+      count: '14 Compounds',
+      desc: 'Poly Aluminium Chloride (PAC), Sodium Hypochlorite, Ferric Chloride, Flocculants',
+      path: '/products?category=industrial-chemicals'
+    },
+  ];
 
   return (
-    <header className={`navbar-header ${isScrolled ? 'navbar-scrolled' : ''}`}>
-      {/* Client Controlled Site-Wide Announcement Bar */}
-      {settings?.announcement?.enabled && settings.announcement.text && (
-        <div
-          style={{
-            backgroundColor: 'var(--color-ink)',
-            color: 'var(--color-paper)',
-            padding: '6px 0',
-            fontSize: '0.8125rem',
-            textAlign: 'center',
-            letterSpacing: '0.01em',
-            borderBottom: '1px solid var(--color-rule)',
-          }}
-        >
-          <Container>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', flexWrap: 'wrap' }}>
-              <span
-                style={{
-                  backgroundColor: 'var(--color-accent)',
-                  color: 'var(--color-ink-dark)',
-                  fontWeight: 600,
-                  padding: '2px 8px',
-                  borderRadius: 'var(--radius-sm)',
-                  fontSize: '0.75rem',
-                  textTransform: 'uppercase',
-                }}
-              >
-                Notice
+    <header
+      style={{
+        position: 'sticky',
+        top: 0,
+        zIndex: 'var(--z-header)',
+        backgroundColor: 'var(--color-surface-white)',
+        borderBottom: isScrolled ? '1px solid var(--color-rule-strong)' : '1px solid var(--color-rule)',
+        transition: 'all 200ms ease',
+        boxShadow: isScrolled ? '0 2px 12px rgba(8, 27, 51, 0.06)' : 'none',
+      }}
+    >
+      {/* Top Utility Verification Strip */}
+      <div
+        style={{
+          backgroundColor: 'var(--color-paper-subtle)',
+          borderBottom: '1px solid var(--color-rule)',
+          padding: '4px 0',
+          fontSize: '0.6875rem',
+          fontFamily: 'var(--font-family-mono)',
+          color: 'var(--color-text-muted)',
+        }}
+      >
+        <Container>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--color-ink-navy)', fontWeight: 600 }}>
+                <ShieldCheck size={12} color="var(--color-teal)" />
+                AURA SPACE INFRA PVT. LTD.
               </span>
-              <span>{settings.announcement.text}</span>
-              {settings.announcement.url && (
-                <Link
-                  to={settings.announcement.url}
-                  style={{
-                    color: 'var(--color-accent-on-dark)',
-                    textDecoration: 'underline',
-                    fontWeight: 500,
-                    marginLeft: '4px',
-                  }}
-                >
-                  Learn More →
-                </Link>
-              )}
+              <span>·</span>
+              <span>ROC AHMEDABAD</span>
+              <span>·</span>
+              <span>ESTD. 2014</span>
             </div>
-          </Container>
-        </div>
-      )}
 
-      {/* Main navigation container (60-64px mobile, 76px desktop) */}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+              <a
+                href={`tel:${phone.replace(/\s+/g, '')}`}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--color-text-primary)' }}
+              >
+                <Phone size={11} color="var(--color-teal)" />
+                <span>Desk: {phone}</span>
+              </a>
+              <span>·</span>
+              <a
+                href="https://wa.me/919727404415"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: '#0F5132', fontWeight: 600 }}
+              >
+                WhatsApp Desk
+              </a>
+            </div>
+          </div>
+        </Container>
+      </div>
+
+      {/* Main Header Row (72px) */}
       <Container>
         <div
           style={{
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            height: 'clamp(60px, 7vw, 76px)',
+            height: '72px',
             gap: 'var(--space-6)',
           }}
         >
-          {/* Brand Logo */}
-          {/* Brand Logo inside crisp contrast badge for perfect visibility on colored navbar */}
+          {/* Logo & Brand Identity */}
           <Link
             to="/"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
+              gap: '12px',
               textDecoration: 'none',
-              backgroundColor: '#FFFFFF',
-              padding: '6px 14px',
-              borderRadius: '8px',
-              boxShadow: '0 2px 8px rgba(0, 0, 0, 0.18)',
               flexShrink: 0,
             }}
-            aria-label={brandName}
+            aria-label="Aura Chemicals - Home"
           >
             <img
               src={logoUrl}
-              alt={brandName}
-              onError={(e) => {
-                (e.currentTarget as HTMLImageElement).src =
-                  '/images/cropped-Orange_Gray_Modern_Elegant_Corporate_Business_Card-removebg-preview-1-1.png';
-              }}
+              alt="Aura Chemicals"
               style={{
-                height: 'clamp(32px, 4.5vw, 40px)',
+                height: '36px',
                 width: 'auto',
                 objectFit: 'contain',
                 display: 'block',
               }}
             />
+            <div style={{ display: 'flex', flexDirection: 'column' }}>
+              <span style={{
+                fontFamily: 'var(--font-family-display)',
+                fontSize: '1.25rem',
+                fontWeight: 600,
+                color: 'var(--color-ink-navy)',
+                lineHeight: 1.1,
+                letterSpacing: '-0.01em'
+              }}>
+                AURA CHEMICALS
+              </span>
+              <span style={{
+                fontFamily: 'var(--font-family-mono)',
+                fontSize: '0.625rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.08em',
+                color: 'var(--color-text-muted)'
+              }}>
+                Chemical & API Sourcing
+              </span>
+            </div>
           </Link>
 
-          {/* Desktop Navigation (Visible at >= 1024px) */}
+          {/* Desktop Navigation */}
           <nav
             style={{
               display: 'none',
               alignItems: 'center',
-              gap: 'clamp(20px, 2.5vw, 32px)',
+              gap: 'var(--space-6)',
             }}
             className="desktop-nav"
-            aria-label="Main Navigation"
+            aria-label="Primary Navigation"
           >
-            <Link
-              to="/"
-              className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
-            >
-              {UI_LABELS.NAV_HOME}
-            </Link>
-
-            <Link
-              to="/about-us"
-              className={`nav-link ${location.pathname === '/about-us' ? 'active' : ''}`}
-            >
-              {UI_LABELS.NAV_ABOUT}
-            </Link>
-
-            {/* Products Dropdown (operable by hover, click and keyboard) */}
+            {/* Products with Mega Menu */}
             <div
               ref={dropdownRef}
               style={{ position: 'relative' }}
-              onMouseEnter={() => setProductsOpen(true)}
-              onMouseLeave={() => setProductsOpen(false)}
+              onMouseEnter={() => setMegaMenuOpen(true)}
+              onMouseLeave={() => setMegaMenuOpen(false)}
             >
               <button
                 ref={triggerButtonRef}
                 type="button"
-                onClick={() => setProductsOpen((prev) => !prev)}
-                aria-expanded={productsOpen}
+                onClick={() => setMegaMenuOpen((prev) => !prev)}
+                aria-expanded={megaMenuOpen}
                 aria-haspopup="true"
-                className={`nav-link ${isProductsActive ? 'active' : ''}`}
                 style={{
-                  background: 'none',
-                  border: 'none',
-                  cursor: 'pointer',
                   display: 'inline-flex',
                   alignItems: 'center',
                   gap: '4px',
+                  fontFamily: 'var(--font-family-base)',
                   fontSize: '0.9375rem',
-                  fontFamily: 'inherit',
+                  fontWeight: 500,
+                  color: location.pathname.startsWith('/products') ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+                  padding: '8px 0',
                 }}
               >
-                <span>{UI_LABELS.NAV_PRODUCTS}</span>
+                <span>Products</span>
                 <ChevronDown
                   size={14}
                   style={{
-                    transform: productsOpen ? 'rotate(180deg)' : 'none',
-                    transition: 'transform var(--motion-duration-fast) var(--motion-ease)',
+                    transform: megaMenuOpen ? 'rotate(180deg)' : 'none',
+                    transition: 'transform var(--motion-duration-fast)',
                   }}
                 />
               </button>
 
-              {productsOpen && (
+              {/* Mega Menu Dropdown */}
+              {megaMenuOpen && (
                 <div
-                  style={{
-                    position: 'absolute',
-                    top: '100%',
-                    left: 0,
-                    width: '320px',
-                    backgroundColor: 'var(--color-card)',
-                    border: '1px solid var(--color-rule)',
-                    borderRadius: 'var(--radius-md)',
-                    boxShadow: '0 8px 24px rgba(22, 25, 29, 0.12)',
-                    padding: '8px 0',
-                    zIndex: 1100,
-                  }}
+                  className="mega-menu"
                   role="menu"
+                  style={{ left: '-200px', width: '920px' }}
                 >
-                  <Link
-                    to="/products"
-                    role="menuitem"
-                    style={{
-                      display: 'block',
-                      padding: '10px 18px',
-                      fontSize: '0.875rem',
-                      fontWeight: 600,
-                      color: 'var(--color-brand)',
-                      borderBottom: '1px solid var(--color-rule)',
-                      textDecoration: 'none',
-                    }}
-                  >
-                    All Products Catalog (135)
-                  </Link>
-                  {activeCategories.map((cat) => (
-                    <Link
-                      key={cat.id}
-                      to={`/products/${cat.slug}`}
-                      role="menuitem"
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        justifyContent: 'space-between',
-                        padding: '10px 18px',
-                        fontSize: '0.875rem',
-                        color: 'var(--color-text)',
-                        textDecoration: 'none',
-                        transition: 'background-color 0.15s ease',
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'var(--color-surface)';
-                        e.currentTarget.style.color = 'var(--color-brand)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                        e.currentTarget.style.color = 'var(--color-text)';
-                      }}
-                    >
-                      <span style={{ fontWeight: 500 }}>{decodeHtml(cat.name)}</span>
-                      {typeof cat.count === 'number' && (
-                        <span
-                          style={{
-                            fontSize: '0.75rem',
-                            backgroundColor: 'var(--color-surface)',
-                            color: 'var(--color-brand)',
-                            padding: '2px 8px',
-                            borderRadius: '10px',
-                            fontWeight: 600,
-                          }}
-                        >
-                          {cat.count}
+                  <Container>
+                    <div style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'baseline',
+                      paddingBottom: '12px',
+                      marginBottom: '16px',
+                      borderBottom: '1px solid var(--color-rule)'
+                    }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <span className="section-index">01 / DIRECTORY</span>
+                        <span style={{ fontWeight: 600, fontSize: '0.9375rem', color: 'var(--color-ink-navy)' }}>
+                          Chemical & Pharmaceutical Product Families
                         </span>
-                      )}
-                    </Link>
-                  ))}
+                      </div>
+                      <Link
+                        to="/products"
+                        style={{ fontSize: '0.8125rem', color: 'var(--color-teal)', fontWeight: 500, display: 'inline-flex', alignItems: 'center', gap: '4px' }}
+                      >
+                        <span>View All Products (140+)</span>
+                        <ArrowRight size={14} />
+                      </Link>
+                    </div>
+
+                    <div className="mega-menu-grid" style={{ gridTemplateColumns: 'repeat(3, 1fr)', gap: '16px' }}>
+                      {productCategories.map((cat) => (
+                        <Link
+                          key={cat.index}
+                          to={cat.path}
+                          className="mega-menu-item"
+                          style={{ textDecoration: 'none', display: 'block' }}
+                        >
+                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '4px' }}>
+                            <span style={{ fontFamily: 'var(--font-family-mono)', fontSize: '0.6875rem', color: 'var(--color-teal)', fontWeight: 600 }}>
+                              {cat.index}
+                            </span>
+                            <span style={{
+                              fontFamily: 'var(--font-family-mono)',
+                              fontSize: '0.6875rem',
+                              backgroundColor: 'var(--color-paper-subtle)',
+                              padding: '2px 6px',
+                              borderRadius: 'var(--radius-xs)',
+                              color: 'var(--color-text-secondary)'
+                            }}>
+                              {cat.count}
+                            </span>
+                          </div>
+                          <div style={{ fontWeight: 600, fontSize: '0.875rem', color: 'var(--color-ink-navy)', marginBottom: '4px' }}>
+                            {cat.title}
+                          </div>
+                          <p style={{ fontSize: '0.75rem', color: 'var(--color-text-muted)', lineHeight: 1.4, margin: 0 }}>
+                            {cat.desc}
+                          </p>
+                        </Link>
+                      ))}
+                    </div>
+                  </Container>
                 </div>
               )}
             </div>
 
             <Link
               to="/industries"
-              className={`nav-link ${location.pathname.startsWith('/industries') ? 'active' : ''}`}
+              style={{
+                fontSize: '0.9375rem',
+                fontWeight: 500,
+                color: location.pathname.startsWith('/industries') ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+              }}
             >
-              {UI_LABELS.NAV_INDUSTRIES}
+              Industries (19)
             </Link>
 
             <Link
               to="/services"
-              className={`nav-link ${location.pathname.startsWith('/services') ? 'active' : ''}`}
+              style={{
+                fontSize: '0.9375rem',
+                fontWeight: 500,
+                color: location.pathname === '/services' ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+              }}
             >
-              {UI_LABELS.NAV_SERVICES}
+              Services (Inspection & QA)
             </Link>
 
             <Link
-              to="/our-mission"
-              className={`nav-link ${location.pathname === '/our-mission' ? 'active' : ''}`}
+              to="/about-us"
+              style={{
+                fontSize: '0.9375rem',
+                fontWeight: 500,
+                color: location.pathname === '/about-us' || location.pathname === '/our-mission' ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+              }}
             >
-              {UI_LABELS.NAV_MISSION}
+              About
             </Link>
 
             <Link
               to="/contact"
-              className={`nav-link ${location.pathname === '/contact' ? 'active' : ''}`}
+              style={{
+                fontSize: '0.9375rem',
+                fontWeight: 500,
+                color: location.pathname === '/contact' ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+              }}
             >
-              {UI_LABELS.NAV_CONTACT}
+              Contact
             </Link>
           </nav>
 
-          {/* Action CTAs (Desktop Request a Quote + Mobile Hamburger) */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
-            <Button
-              to="/get-a-quote"
-              variant="primary"
-              size="md"
-              className="header-quote-btn"
-              icon={<ArrowRight size={15} />}
+          {/* Right Header Actions */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            {/* Command-K Search Trigger */}
+            <button
+              type="button"
+              onClick={onOpenSearch}
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '8px 12px',
+                backgroundColor: 'var(--color-paper-subtle)',
+                border: '1px solid var(--color-rule)',
+                borderRadius: 'var(--radius-xs)',
+                color: 'var(--color-text-muted)',
+                fontSize: '0.8125rem',
+                fontFamily: 'var(--font-family-mono)',
+              }}
+              title="Search chemicals (Cmd+K or /)"
+              aria-label="Open chemical catalog search"
             >
-              {UI_LABELS.NAV_GET_A_QUOTE}
-            </Button>
+              <Search size={14} />
+              <span className="desktop-only" style={{ display: 'none' }}>Search</span>
+              <kbd style={{
+                backgroundColor: 'var(--color-surface-white)',
+                border: '1px solid var(--color-rule-strong)',
+                borderRadius: '2px',
+                padding: '1px 5px',
+                fontSize: '0.6875rem'
+              }}>
+                ⌘K
+              </kbd>
+            </button>
 
-            {/* Mobile Hamburger Button */}
+            {/* Persistent RFQ Basket Trigger */}
+            <button
+              type="button"
+              onClick={openDrawer}
+              className="rfq-basket-trigger"
+              aria-label={`View RFQ quotation basket with ${totalCount} items`}
+              title="View quotation basket"
+            >
+              <FileText size={16} />
+              <span style={{ fontWeight: 600 }}>RFQ</span>
+              {totalCount > 0 && (
+                <span className="rfq-basket-count tabular-nums">
+                  {totalCount}
+                </span>
+              )}
+            </button>
+
+            {/* Primary Quote CTA Button */}
+            <Link
+              to="/get-a-quote"
+              className="btn btn-primary btn-sm desktop-nav"
+              style={{ gap: '6px' }}
+            >
+              <span>Request Quote</span>
+              <ArrowRight size={14} />
+            </Link>
+
+            {/* Mobile Hamburger Toggle */}
             <button
               type="button"
               onClick={onOpenMobileMenu}
-              aria-label={UI_LABELS.MENU_TOGGLE}
+              className="mobile-nav-toggle"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                width: '44px',
-                height: '44px',
-                backgroundColor: 'transparent',
-                border: '1px solid rgba(255, 255, 255, 0.25)',
-                borderRadius: 'var(--radius-sm)',
-                color: '#FFFFFF',
-                cursor: 'pointer',
+                padding: '8px',
+                color: 'var(--color-ink-navy)',
               }}
-              className="mobile-nav-toggle"
+              aria-label="Open mobile menu"
             >
-              <Menu size={22} />
+              <Menu size={24} />
             </button>
           </div>
         </div>

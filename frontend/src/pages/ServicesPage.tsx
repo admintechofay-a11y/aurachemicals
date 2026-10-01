@@ -8,7 +8,6 @@ import {
   Search,
   Flame,
   Activity,
-  Layers,
   Award,
   ArrowRight,
   PhoneCall,
@@ -16,6 +15,9 @@ import {
   Scale,
   Building2,
   FlaskConical,
+  Truck,
+  FileText,
+  BadgeCheck,
 } from 'lucide-react';
 import { Container } from '../components/common/Container';
 import { Section } from '../components/common/Section';
@@ -25,7 +27,6 @@ import { Button } from '../components/common/Button';
 import { CTABand } from '../components/common/CTABand';
 import { Skeleton } from '../components/common/Skeleton';
 import { ErrorState } from '../components/common/ErrorState';
-import { LineDraw, Reveal, RevealGroup } from '../components/common/MotionPrimitives';
 import { api } from '../api/client';
 
 export const ServicesPage: React.FC = () => {
@@ -44,7 +45,7 @@ export const ServicesPage: React.FC = () => {
   if (isLoading) {
     return (
       <div>
-        <Breadcrumb items={[{ label: 'Services' }]} />
+        <Breadcrumb items={[{ label: 'Services & Capabilities' }]} />
         <Section padding="dense">
           <Container>
             <Skeleton width="180px" height="18px" style={{ marginBottom: '16px' }} />
@@ -59,7 +60,7 @@ export const ServicesPage: React.FC = () => {
   if (isError || !services) {
     return (
       <div>
-        <Breadcrumb items={[{ label: 'Services' }]} />
+        <Breadcrumb items={[{ label: 'Services & Capabilities' }]} />
         <Section>
           <Container>
             <ErrorState
@@ -73,486 +74,434 @@ export const ServicesPage: React.FC = () => {
     );
   }
 
-  const phone = settings?.company?.phone || '+91 7220000877';
+  const phone = settings?.company?.phone || '+91 97274 04415';
+  const email = settings?.company?.email || 'sales@aurachemicals.in';
+
+  const chemicalCapabilities = [
+    {
+      index: '01',
+      title: 'Direct Domestic Manufacturer Allocations',
+      desc: 'Exclusive sourcing arrangements across 400+ leading chemical manufacturing hubs in Gujarat, Maharashtra, and Andhra Pradesh, guaranteeing contractual delivery allocations.',
+      points: [
+        'Contractual monthly quotas for bulk commercial plants',
+        'Direct ex-factory dispatch with sealed packaging',
+        'Price stabilization mechanisms for high-demand compounds',
+        'Direct relationship with primary chemical synthesizers',
+      ],
+      icon: <FlaskConical size={22} style={{ color: 'var(--color-teal)' }} />,
+    },
+    {
+      index: '02',
+      title: 'Direct Maritime Import & Port Logistics',
+      desc: 'End-to-end import clearing, bonded warehouse handling, and inland transport directly from major Indian maritime gateways including Nhava Sheva (JNPT), Mundra, and Hazira.',
+      points: [
+        'Customs clearance and chemical regulatory documentation',
+        'ISO tank containers and dedicated bulk storage handling',
+        'Port-to-plant direct multimodal logistics scheduling',
+        'Traceable demurrage and import lot verification',
+      ],
+      icon: <Truck size={22} style={{ color: 'var(--color-teal)' }} />,
+    },
+    {
+      index: '03',
+      title: 'Batch Analytical CoA Verification',
+      desc: 'Every single commercial consignment is validated against pharmacopeial monographs (IP / BP / USP / EP) with manufacturer batch analytical certificates and retain sample archiving.',
+      points: [
+        'Batch-specific Certificate of Analysis (CoA) with each delivery',
+        'Safety Data Sheets (MSDS/SDS) compliant with GHS regulations',
+        'Technical Data Sheets (TDS) and solubility monographs',
+        'Full traceability from manufacturer synthesis lot to client facility',
+      ],
+      icon: <FileCheck2 size={22} style={{ color: 'var(--color-teal)' }} />,
+    },
+    {
+      index: '04',
+      title: 'Custom Packaging & Storage Conditioning',
+      desc: 'Industrial repackaging and preservation under inert or moisture-barrier conditions according to chemical sensitivity and international UN shipping regulations.',
+      points: [
+        'UN-rated fiber drums with poly-lined vacuum barriers',
+        'HDPE carboys, intermediate bulk containers (IBCs), and barrels',
+        'Nitrogen purging for hygroscopic and oxidizable APIs',
+        'Dedicated temperature and humidity monitored transit for sensitive compounds',
+      ],
+      icon: <ShieldCheck size={22} style={{ color: 'var(--color-teal)' }} />,
+    },
+  ];
 
   const ndtDisciplines = [
     {
-      title: '1. Non-Destructive Testing (NDT)',
-      icon: <Search size={22} style={{ color: 'var(--color-secondary)' }} />,
-      desc: 'Conventional and advanced NDT methodologies to verify structural integrity without damaging components.',
-      items: [
-        'Ultrasonic Testing (UT)',
-        'Radiographic Testing (RT) & Film Interpretation',
-        'Magnetic Particle Testing (MPT)',
-        'Dye Penetrant Testing (DPT)',
-        'Visual Testing (VT)',
-        'Eddy Current Testing (ECT)',
-        'Advanced NDT: Phased Array Ultrasonic (PAUT), TOFD, Digital Radiography',
+      index: '01',
+      code: 'ASME Sec V / ASNT SNT-TC-1A',
+      title: 'Ultrasonic Testing (UT) & Advanced PAUT / TOFD',
+      desc: 'Conventional and phased-array ultrasonic inspection for detecting subsurface flaws, laminar tears, and wall-thickness degradation in pressure vessels, pipelines, and heavy structural weldments.',
+      deliverables: [
+        'Digital A-scan / B-scan / C-scan flaw characterization',
+        'Precision thickness gauging and corrosion grid mapping',
+        'Phased Array Ultrasonic Testing (PAUT) of complex geometries',
+        'Time of Flight Diffraction (TOFD) for root weld sizing',
       ],
+      standards: 'ASME Sec V, ASME Sec VIII, API 510, ASTM E164',
     },
     {
-      title: '2. Metallurgical & Corrosion Investigation',
-      icon: <Flame size={22} style={{ color: 'var(--color-secondary)' }} />,
-      desc: 'Scientific root-cause analysis and material evaluation to prevent equipment breakdown.',
-      items: [
-        'Failure Analysis & Root Cause Investigation',
-        'Field & Laboratory Metallography',
-        'Positive Material Identification (PMI)',
-        'Corrosion Assessment & Continuous Monitoring',
-        'Coating & Lining Quality Inspection',
+      index: '02',
+      code: 'ASME Sec V / ASTM E94',
+      title: 'Radiographic Testing (RT) & Film Interpretation',
+      desc: 'Gamma-ray and X-ray volumetric examination of critical butt welds, casting integrity, and fabricated assemblies with calibrated optical density film evaluation.',
+      deliverables: [
+        'Iridium-192 / Cobalt-60 isotope and industrial X-ray exposure',
+        'Certified ASNT Level II / III radiographic film interpretation',
+        'Digital radiography scanning and archival storage',
+        'Porosity, lack of fusion, and slag inclusion mapping',
       ],
+      standards: 'ASME Sec I, ASME B31.3, API 1104, AWS D1.1',
     },
     {
-      title: '3. Welding & Fabrication Inspection',
-      icon: <Wrench size={22} style={{ color: 'var(--color-secondary)' }} />,
-      desc: 'Ensuring structural welds meet stringent national and international fabrication codes.',
-      items: [
-        'Welder and Procedure Qualification (WPS / PQR / WPQ)',
-        'Third-Party Welding Inspection',
-        'Welding Defect Assessment & Repair Protocol Approval',
-        'Pre & Post Weld Heat Treatment (PWHT) Supervision',
+      index: '03',
+      code: 'ASTM E709 / ASME Sec V Art 7',
+      title: 'Magnetic Particle Testing (MPT / MT)',
+      desc: 'Surface and shallow subsurface defect evaluation in ferromagnetic components utilizing electromagnetic yokes and high-contrast fluorescent or black wet particles.',
+      deliverables: [
+        'AC/DC electromagnetic yoke testing for field welds and nozzles',
+        'Fluorescent magnetic particle inspection under UV-A illumination',
+        'Fatigue crack identification in rotating equipment and shafts',
+        'Demagnetization verification and residual field measurement',
       ],
+      standards: 'ASTM E709, ASME Sec V Art 7, ISO 9934',
     },
     {
-      title: '4. In-Service Inspection & Risk-Based Inspection (RBI)',
-      icon: <Activity size={22} style={{ color: 'var(--color-secondary)' }} />,
-      desc: 'Maximizing plant safety, reducing unplanned outages, and extending asset life cycles.',
-      items: [
-        'Fitness-for-Service (FFS) Assessments',
-        'Risk-Based Inspection (RBI) Program Studies',
-        'Pressure Vessel, Piping & Tank Inspection',
-        'Static Equipment Integrity Management',
-        'API 510, API 570, API 653 Certified Services',
+      index: '04',
+      code: 'ASTM E165 / ASME Sec V Art 6',
+      title: 'Liquid Dye Penetrant Testing (DPT / PT)',
+      desc: 'Capillary-action inspection for non-porous metallic and composite materials, identifying surface-breaking discontinuities, porosity, and micro-fissures in non-magnetic alloys.',
+      deliverables: [
+        'Solvent-removable visible dye penetrant systems',
+        'High-sensitivity fluorescent post-emulsifiable penetrant examination',
+        'Austenitic stainless steel, Inconel, and non-ferrous weld inspection',
+        'Machined flange face and valve seat surface integrity',
       ],
+      standards: 'ASTM E165, ASME Sec V Art 6, ISO 3452',
     },
     {
-      title: '5. Calibration & Dimensional Inspection',
-      icon: <Scale size={22} style={{ color: 'var(--color-secondary)' }} />,
-      desc: 'High-precision metrology and instrumentation calibration for industrial equipment.',
-      items: [
-        'Instrument Calibration (Pressure, Temperature, Flow, Electrical)',
-        'Dimensional & Geometrical Inspection for Components & Structures',
-        'General Arrangement (GA) & As-Built Drawing Verification',
+      index: '05',
+      code: 'API 510 / 570 / 653',
+      title: 'In-Service Inspection & Risk-Based Inspection (RBI)',
+      desc: 'Plant integrity management, asset life calculation, and scheduled turn-around inspection for operating chemical refineries, tank terminals, and pharmaceutical utilities.',
+      deliverables: [
+        'API 510 Pressure Vessel in-service remaining life assessment',
+        'API 570 Piping circuit inspection and circuit isometric generation',
+        'API 653 Aboveground Storage Tank floor settlement and shell scanning',
+        'Fitness-for-Service (FFS) evaluation per API 579-1 / ASME FFS-1',
       ],
+      standards: 'API 510, API 570, API 653, API 580, API 579',
     },
     {
-      title: '6. Civil & Infrastructure Quality Services',
-      icon: <Building2 size={22} style={{ color: 'var(--color-secondary)' }} />,
-      desc: 'Civil quality assurance for industrial foundations, buildings, and critical infrastructure.',
-      items: [
-        'Concrete Compressive Testing & Reinforcement Inspection',
-        'Non-Destructive Civil Testing (Rebound Hammer, Ultrasonic Pulse Velocity)',
-        'Structural Integrity Assessment of Industrial Plants & Bridges',
+      index: '06',
+      code: 'ASME Sec IX / AWS D1.1',
+      title: 'Welding Inspection, Procedure & Welder Qualification',
+      desc: 'Full-cycle surveillance of industrial fabrication, from base material trace checking through Welding Procedure Specification (WPS) and Welder Performance Qualification (WPQ).',
+      deliverables: [
+        'WPS drafting, PQR test witness, and mechanical testing protocol',
+        'WPQ performance testing and welder ID card issuance',
+        'Preheat and Post-Weld Heat Treatment (PWHT) monitoring',
+        'Fit-up, root pass, and final weld visual inspection per AWS/ASME',
       ],
+      standards: 'ASME Sec IX, AWS D1.1, EN ISO 15614',
     },
     {
-      title: '7. Third-Party Inspection & Certification',
-      icon: <Award size={22} style={{ color: 'var(--color-secondary)' }} />,
-      desc: 'Independent witnessing, expediting, and global compliance verification.',
-      items: [
-        'Vendor Inspection & Expediting Services',
-        'Witnessing & Certification (ASME, ASTM, ISO, API, AWS)',
-        'QA/QC Comprehensive Documentation Review',
+      index: '07',
+      code: 'ASTM E1476 / Positive Material ID',
+      title: 'Positive Material Identification (PMI) & Metallurgy',
+      desc: 'Non-destructive elemental chemical analysis and alloy verification using handheld X-Ray Fluorescence (XRF) and Optical Emission Spectrometry (OES) instruments.',
+      deliverables: [
+        'Instant alloy grade confirmation (304L, 316L, 321, Duplex, Inconel)',
+        'Carbon and light element detection in low-carbon grade steels',
+        'Material Test Report (MTR) verification against incoming stock',
+        'On-site metallographic replica testing and failure investigations',
       ],
+      standards: 'API 578, ASTM E1476, ASTM E572',
     },
   ];
 
   return (
     <>
-      <Breadcrumb items={[{ label: 'Services' }]} />
+      <Breadcrumb items={[{ label: 'Services & Capabilities' }]} />
 
       {/* Hero Header */}
       <section
         style={{
           backgroundColor: 'var(--color-surface)',
           padding: 'clamp(48px, 6vw, 72px) 0',
-          borderBottom: '1px solid var(--color-border)',
+          borderBottom: '1px solid var(--color-rule)',
         }}
       >
         <Container>
           <div style={{ maxWidth: '840px' }}>
-            <LineDraw width="32px" height={2} color="var(--color-accent)" style={{ marginBottom: '16px' }} />
-            <Reveal immediate>
-              <span className="eyebrow">Comprehensive Capabilities</span>
-              <h1 style={{ marginBottom: 'var(--space-4)' }}>Our Services & Solutions</h1>
-              <p className="body-large" style={{ color: 'var(--color-text)' }}>
-                Aura Space Infra Pvt. Ltd. provides dual-pillar operational excellence: dependable chemical sourcing and distribution across 400+ leading domestic manufacturers, alongside world-class engineering inspection and quality assurance services.
-              </p>
-            </Reveal>
+            <span className="eyebrow">Operating Divisions</span>
+            <h1 style={{ marginBottom: 'var(--space-3)' }}>Services &amp; Technical Capabilities</h1>
+            <p className="body-large">
+              Aura Space Infra Pvt. Ltd. integrates two specialized industrial capabilities: high-purity chemical distribution across 400+ Indian synthesizers, and certified plant integrity &amp; NDT inspection services conforming to ASME, API, and ASTM engineering standards.
+            </p>
           </div>
         </Container>
       </section>
 
-      {/* Category Filter Pills */}
-      <Section padding="dense" style={{ borderBottom: '1px solid var(--color-border)' }}>
+      {/* Capability Selector Filter */}
+      <section
+        style={{
+          backgroundColor: 'var(--color-card)',
+          borderBottom: '1px solid var(--color-rule)',
+          padding: '16px 0',
+        }}
+      >
         <Container>
-          <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.8125rem', fontWeight: 600, color: 'var(--color-muted)', textTransform: 'uppercase', marginRight: '8px' }}>
+              Division View:
+            </span>
+
             <button
+              type="button"
               onClick={() => setActiveTab('all')}
-              style={{
-                padding: '8px 20px',
-                borderRadius: 'var(--radius-full)',
-                border: '1px solid var(--color-border)',
-                backgroundColor: activeTab === 'all' ? 'var(--color-primary)' : 'var(--color-surface)',
-                color: activeTab === 'all' ? '#FFFFFF' : 'var(--color-text)',
-                fontWeight: 600,
-                fontSize: '0.875rem',
-                cursor: 'pointer',
-                transition: 'all var(--motion-duration-fast) var(--motion-ease)',
-              }}
+              className={`btn btn-sm ${activeTab === 'all' ? 'btn-primary' : 'btn-outline'}`}
             >
-              All Capabilities
+              All Capabilities (Dual Division)
             </button>
+
             <button
+              type="button"
               onClick={() => setActiveTab('chemicals')}
-              style={{
-                padding: '8px 20px',
-                borderRadius: 'var(--radius-full)',
-                border: '1px solid var(--color-border)',
-                backgroundColor: activeTab === 'chemicals' ? 'var(--color-primary)' : 'var(--color-surface)',
-                color: activeTab === 'chemicals' ? '#FFFFFF' : 'var(--color-text)',
-                fontWeight: 600,
-                fontSize: '0.875rem',
-                cursor: 'pointer',
-                transition: 'all var(--motion-duration-fast) var(--motion-ease)',
-              }}
+              className={`btn btn-sm ${activeTab === 'chemicals' ? 'btn-primary' : 'btn-outline'}`}
             >
-              Chemical Sourcing & API Distribution
+              Chemical Distribution &amp; Imports
             </button>
+
             <button
+              type="button"
               onClick={() => setActiveTab('inspection')}
-              style={{
-                padding: '8px 20px',
-                borderRadius: 'var(--radius-full)',
-                border: '1px solid var(--color-border)',
-                backgroundColor: activeTab === 'inspection' ? 'var(--color-primary)' : 'var(--color-surface)',
-                color: activeTab === 'inspection' ? '#FFFFFF' : 'var(--color-text)',
-                fontWeight: 600,
-                fontSize: '0.875rem',
-                cursor: 'pointer',
-                transition: 'all var(--motion-duration-fast) var(--motion-ease)',
-              }}
+              className={`btn btn-sm ${activeTab === 'inspection' ? 'btn-primary' : 'btn-outline'}`}
             >
-              Inspection & Quality Assurance (NDT / QA)
+              NDT &amp; Engineering Inspection
             </button>
           </div>
         </Container>
-      </Section>
+      </section>
 
-      {/* Division 1: Chemical Distribution */}
+      {/* DIVISION 1: Chemical Distribution & Sourcing */}
       {(activeTab === 'all' || activeTab === 'chemicals') && (
         <Section padding="normal">
           <Container>
-            <Reveal>
-              <div
-                style={{
-                  backgroundColor: '#FFFFFF',
-                  borderRadius: 'var(--radius-lg)',
-                  border: '1px solid var(--color-border)',
-                  padding: 'clamp(32px, 5vw, 48px)',
-                  boxShadow: 'var(--shadow-sm)',
-                }}
-              >
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-secondary)', fontWeight: 600, fontSize: '0.875rem', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  <FlaskConical size={18} /> Pillar 01 · Chemical Commerce
-                </div>
-                <h2 style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2rem)', marginBottom: '16px' }}>
-                  Chemical Sourcing & API Distribution
-                </h2>
-                <p className="body-large" style={{ color: 'var(--color-text)', maxWidth: '820px', marginBottom: '32px' }}>
-                  Assured quality and security in active pharmaceutical ingredient supplies through 400+ leading domestic manufacturers. We efficiently secure raw materials, develop customized compounds, and deliver high-purity chemicals to manufacturing plants across India.
-                </p>
+            <SectionHeading
+              index="01"
+              eyebrow="Commercial Supply"
+              title="Chemical Distribution & Sourcing Infrastructure"
+              description="Direct-from-manufacturer allocation models eliminating unverified intermediaries, supported by documented batch analytical testing and compliant logistics."
+            />
 
-                <RevealGroup
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-                    gap: '20px',
-                    marginBottom: '36px',
-                  }}
-                >
-                  {[
-                    {
-                      title: 'Manufacturer Sourcing Network',
-                      desc: 'Direct sourcing alliances with 400+ audited chemical manufacturers across India.',
-                    },
-                    {
-                      title: 'Custom Synthesis & Procurement',
-                      desc: 'Procurement of specialized chemical intermediates and tailored compound specifications.',
-                    },
-                    {
-                      title: 'Strict Pharmacopeial Compliance',
-                      desc: 'Full batch traceability matching IP, BP, USP, and EP regulatory standards.',
-                    },
-                    {
-                      title: 'Uninterrupted Supply Chain',
-                      desc: 'Disciplined inventory planning preventing operational halts in continuous processing plants.',
-                    },
-                  ].map((cap, i) => (
-                    <div
-                      key={i}
-                      className="product-card"
-                      style={{
-                        backgroundColor: 'var(--color-surface-subtle)',
-                        borderRadius: 'var(--radius-md)',
-                        padding: '20px',
-                        border: '1px solid var(--color-border)',
-                        height: '100%',
-                      }}
-                    >
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '8px', fontWeight: 600, color: 'var(--color-primary)' }}>
-                        <div
-                          className="card-icon-box"
-                          style={{
-                            width: '28px',
-                            height: '28px',
-                            borderRadius: 'var(--radius-xs)',
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            backgroundColor: 'rgba(31, 90, 140, 0.08)',
-                            transition: 'all var(--motion-duration-fast) var(--motion-ease)',
-                          }}
-                        >
-                          <CheckCircle2 size={16} style={{ color: 'var(--color-secondary)' }} />
-                        </div>
-                        {cap.title}
-                      </div>
-                      <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--color-text-muted)', lineHeight: 1.5 }}>
-                        {cap.desc}
-                      </p>
-                    </div>
-                  ))}
-                </RevealGroup>
-
-                <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-                  <Button to="/get-a-quote" variant="primary">
-                    Request Chemical RFQ <ArrowRight size={14} />
-                  </Button>
-                  <Button to="/products" variant="outline">
-                    Browse Verified Products (135 Items)
-                  </Button>
-                </div>
-              </div>
-            </Reveal>
-          </Container>
-        </Section>
-      )}
-
-      {/* Division 2: Inspection & Quality Assurance */}
-      {(activeTab === 'all' || activeTab === 'inspection') && (
-        <Section padding="normal" style={{ backgroundColor: 'var(--color-surface-subtle)' }}>
-          <Container>
-            <Reveal>
-              <div style={{ maxWidth: '840px', marginBottom: '40px' }}>
-                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', color: 'var(--color-secondary)', fontWeight: 600, fontSize: '0.875rem', textTransform: 'uppercase', marginBottom: '12px' }}>
-                  <ShieldCheck size={18} /> Pillar 02 · Engineering Assurance
-                </div>
-                <h2 style={{ fontSize: 'clamp(1.5rem, 2.4vw, 2rem)', marginBottom: '16px' }}>
-                  Comprehensive Inspection & Quality Assurance Services
-                </h2>
-                <p className="body-large" style={{ color: 'var(--color-text)' }}>
-                  In today&apos;s demanding industrial environment, companies must comply with international codes while ensuring long-term asset reliability. Aura Space Infra Pvt. Ltd. delivers world-class testing and quality control solutions tailored to Oil &amp; Gas, Power, Petrochemicals, Refining, and Manufacturing sectors.
-                </p>
-
-                {/* Standards Banner */}
-                <div
-                  style={{
-                    display: 'inline-flex',
-                    alignItems: 'center',
-                    gap: '12px',
-                    backgroundColor: '#FFFFFF',
-                    border: '1px solid var(--color-border)',
-                    padding: '8px 16px',
-                    borderRadius: 'var(--radius-sm)',
-                    marginTop: '16px',
-                    fontSize: '0.8125rem',
-                  }}
-                >
-                  <span style={{ fontWeight: 600, color: 'var(--color-primary)' }}>Standards Compliance:</span>
-                  <span style={{ color: 'var(--color-text-muted)' }}>ASME, API, ISO, AWS, ASTM, BIS, NABL / ILAC</span>
-                </div>
-              </div>
-            </Reveal>
-
-            {/* 7 Disciplines Grid */}
-            <RevealGroup
+            <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                 gap: '24px',
-                marginBottom: '48px',
+                marginBottom: '32px',
               }}
             >
-              {ndtDisciplines.map((disc, idx) => (
+              {chemicalCapabilities.map((cap) => (
                 <div
-                  key={idx}
-                  className="product-card"
+                  key={cap.index}
+                  className="card"
                   style={{
-                    backgroundColor: '#FFFFFF',
-                    borderRadius: 'var(--radius-md)',
                     padding: '28px',
-                    border: '1px solid var(--color-border)',
-                    boxShadow: 'var(--shadow-xs)',
                     display: 'flex',
                     flexDirection: 'column',
-                    height: '100%',
-                    transition: 'all var(--motion-duration-base) var(--motion-ease)',
                   }}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '16px' }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px' }}>
                     <div
-                      className="card-icon-box"
                       style={{
                         width: '44px',
                         height: '44px',
                         borderRadius: 'var(--radius-sm)',
                         backgroundColor: 'var(--color-surface)',
-                        border: '1px solid var(--color-border)',
+                        border: '1px solid var(--color-rule)',
                         display: 'flex',
                         alignItems: 'center',
                         justifyContent: 'center',
-                        transition: 'all var(--motion-duration-fast) var(--motion-ease)',
                       }}
                     >
-                      {disc.icon}
+                      {cap.icon}
                     </div>
-                    <span
-                      style={{
-                        fontSize: '0.75rem',
-                        fontWeight: 600,
-                        color: 'var(--color-text-muted)',
-                        textTransform: 'uppercase',
-                        letterSpacing: '0.04em',
-                      }}
-                    >
-                      QA Standard
+                    <span className="section-index" style={{ color: 'var(--color-teal)' }}>
+                      {cap.index}
                     </span>
                   </div>
 
-                  <h3 style={{ fontSize: '1.125rem', fontWeight: 600, marginBottom: '8px', color: 'var(--color-primary)' }}>
-                    {disc.title}
+                  <h3 style={{ fontSize: '1.125rem', marginBottom: '10px', color: 'var(--color-ink-navy)' }}>
+                    {cap.title}
                   </h3>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', marginBottom: '16px', lineHeight: 1.5 }}>
-                    {disc.desc}
+
+                  <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '20px' }}>
+                    {cap.desc}
                   </p>
 
                   <ul
                     style={{
                       listStyle: 'none',
                       padding: 0,
-                      margin: '0 0 20px 0',
+                      margin: 'auto 0 0 0',
+                      borderTop: '1px solid var(--color-rule)',
+                      paddingTop: '16px',
                       display: 'flex',
                       flexDirection: 'column',
                       gap: '8px',
-                      flex: 1,
+                      fontSize: '0.8125rem',
+                      color: 'var(--color-text)',
                     }}
                   >
-                    {disc.items.map((item, i) => (
-                      <li
-                        key={i}
-                        style={{
-                          fontSize: '0.8125rem',
-                          color: 'var(--color-text)',
-                          display: 'flex',
-                          alignItems: 'flex-start',
-                          gap: '8px',
-                          lineHeight: 1.4,
-                        }}
-                      >
-                        <span
-                          style={{
-                            width: '5px',
-                            height: '5px',
-                            borderRadius: '50%',
-                            backgroundColor: 'var(--color-secondary)',
-                            marginTop: '7px',
-                            flexShrink: 0,
-                          }}
-                        />
-                        <span>{item}</span>
+                    {cap.points.map((pt, pIdx) => (
+                      <li key={pIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                        <CheckCircle2 size={14} style={{ color: 'var(--color-teal)', flexShrink: 0, marginTop: '2px' }} />
+                        <span>{pt}</span>
                       </li>
                     ))}
                   </ul>
-
-                  <Button
-                    to={`/get-a-quote?service=${encodeURIComponent(disc.title)}`}
-                    variant="outline"
-                    size="sm"
-                    style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}
-                  >
-                    Inquire for Discipline <ArrowRight size={14} />
-                  </Button>
                 </div>
               ))}
-            </RevealGroup>
+            </div>
 
-            {/* Why Choose Aura Space Infra for QA */}
-            <Reveal>
-              <div
-                style={{
-                  backgroundColor: 'var(--color-primary)',
-                  color: '#FFFFFF',
-                  borderRadius: 'var(--radius-lg)',
-                  padding: 'clamp(32px, 5vw, 48px)',
-                }}
-              >
-                <h3 style={{ color: '#FFFFFF', fontSize: '1.5rem', marginBottom: '24px' }}>
-                  Why Choose Aura Space Infra Pvt. Ltd.?
-                </h3>
+            <div style={{ textAlign: 'center' }}>
+              <Button to="/products" variant="primary" size="md" icon={<ArrowRight size={16} />}>
+                Browse High-Purity Chemical Catalog
+              </Button>
+            </div>
+          </Container>
+        </Section>
+      )}
+
+      {/* DIVISION 2: Non-Destructive Testing (NDT) & Inspection */}
+      {(activeTab === 'all' || activeTab === 'inspection') && (
+        <Section
+          padding="normal"
+          style={{
+            backgroundColor: activeTab === 'all' ? 'var(--color-surface)' : 'transparent',
+            borderTop: activeTab === 'all' ? '1px solid var(--color-rule)' : 'none',
+          }}
+        >
+          <Container>
+            <SectionHeading
+              index="02"
+              eyebrow="Asset Integrity & QA"
+              title="NDT &amp; Industrial Plant Inspection Services"
+              description="Aura Space Infra Pvt. Ltd. provides certified Level II & Level III inspection services under ASME, API, AWS, and ASTM codes to guarantee pressure vessel, piping, and structural safety."
+            />
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '24px', marginBottom: '36px' }}>
+              {ndtDisciplines.map((ndt) => (
                 <div
+                  key={ndt.index}
+                  className="card"
                   style={{
+                    padding: 'clamp(24px, 3vw, 32px)',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
                     gap: '24px',
+                    alignItems: 'start',
+                    backgroundColor: 'var(--color-card)',
                   }}
                 >
-                  <div className="metric-stat-box">
-                    <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '6px', color: '#FFFFFF' }}>
-                      Technical Expertise
+                  {/* Left: Code, Title, and Description */}
+                  <div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '8px' }}>
+                      <span className="section-index" style={{ color: 'var(--color-teal)', fontSize: '0.8125rem' }}>
+                        {ndt.index}
+                      </span>
+                      <span
+                        style={{
+                          fontSize: '0.75rem',
+                          fontFamily: 'var(--font-family-mono)',
+                          padding: '2px 8px',
+                          borderRadius: 'var(--radius-sm)',
+                          backgroundColor: 'var(--color-surface)',
+                          border: '1px solid var(--color-rule)',
+                          color: 'var(--color-teal)',
+                          fontWeight: 600,
+                        }}
+                      >
+                        {ndt.code}
+                      </span>
                     </div>
-                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
-                      Team of metallurgists, inspection engineers, certified welding inspectors, and NDT Level-II / Level-III specialists.
+
+                    <h3 style={{ fontSize: '1.25rem', marginBottom: '10px', color: 'var(--color-ink-navy)' }}>
+                      {ndt.title}
+                    </h3>
+
+                    <p style={{ fontSize: '0.875rem', color: 'var(--color-text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>
+                      {ndt.desc}
                     </p>
+
+                    <div style={{ fontSize: '0.8125rem', color: 'var(--color-muted)' }}>
+                      <strong>Governing Standards:</strong>{' '}
+                      <span style={{ fontFamily: 'var(--font-family-mono)' }}>{ndt.standards}</span>
+                    </div>
                   </div>
-                  <div className="metric-stat-box">
-                    <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '6px', color: '#FFFFFF' }}>
-                      Pan-India Footprint
+
+                  {/* Right: Technical Deliverables Table */}
+                  <div
+                    style={{
+                      backgroundColor: 'var(--color-surface)',
+                      border: '1px solid var(--color-rule)',
+                      borderRadius: 'var(--radius-sm)',
+                      padding: '20px',
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontSize: '0.8125rem',
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.04em',
+                        color: 'var(--color-ink-navy)',
+                        marginBottom: '12px',
+                        borderBottom: '1px solid var(--color-rule)',
+                        paddingBottom: '8px',
+                      }}
+                    >
+                      Technical Deliverables &amp; Protocols
                     </div>
-                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
-                      Serving refineries, petrochemical complexes, EPC projects, fabrication shops, and power plants across India.
-                    </p>
-                  </div>
-                  <div className="metric-stat-box">
-                    <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '6px', color: '#FFFFFF' }}>
-                      Code Adherence
-                    </div>
-                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
-                      Rigorous adherence to international standards including ASME, API, ISO, AWS, ASTM, BIS, and NABL/ILAC guidelines.
-                    </p>
-                  </div>
-                  <div className="metric-stat-box">
-                    <div style={{ fontWeight: 600, fontSize: '1rem', marginBottom: '6px', color: '#FFFFFF' }}>
-                      Direct Consultation
-                    </div>
-                    <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.85)', margin: 0, lineHeight: 1.5 }}>
-                      Direct desk access via <a href={`tel:${phone.replace(/\s+/g, '')}`} style={{ color: '#FFFFFF', textDecoration: 'underline' }}>{phone}</a> for rapid site deployment.
-                    </p>
+
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px', fontSize: '0.8125rem', color: 'var(--color-text)' }}>
+                      {ndt.deliverables.map((del, dIdx) => (
+                        <li key={dIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px' }}>
+                          <BadgeCheck size={15} style={{ color: 'var(--color-teal)', flexShrink: 0, marginTop: '2px' }} />
+                          <span>{del}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 </div>
-              </div>
-            </Reveal>
+              ))}
+            </div>
+
+            <div style={{ textAlign: 'center' }}>
+              <Button
+                to={`/contact?subject=${encodeURIComponent('NDT & Plant Inspection Services')}`}
+                variant="primary"
+                size="md"
+                icon={<ArrowRight size={16} />}
+              >
+                Inquire for Plant Inspection &amp; NDT Deployment
+              </Button>
+            </div>
           </Container>
         </Section>
       )}
 
       {/* Global CTA Band */}
       <CTABand
-        heading="Engage Technical Inspection or Request Chemical Sourcing"
-        body="Our engineers and chemical procurement specialists are ready to review your project scope or tender requirements."
-        buttonLabel="Request a Quote"
-        buttonUrl="/get-a-quote"
-        phone="+91 7220000877"
+        heading="Enterprise Procurement &amp; Plant Quality Assurance"
+        body="Whether sourcing high-purity chemical batches or scheduling shutdown inspection crews, our technical engineers are at your disposal."
+        buttonLabel="Request Technical Consultation"
+        buttonUrl="/contact"
+        phone={phone}
       />
     </>
   );

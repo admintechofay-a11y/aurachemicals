@@ -1,0 +1,39 @@
+# Gap Register & Owner Decisions Log — Aura Chemicals
+
+> **Document Version:** 1.0.0  
+> **Status:** Active / Pre-Design  
+> **Governing Policy:** Every fact on the website must be traceable to owner-provided documentation or clearly marked as a launch-blocking placeholder. Unverified facts, invented certifications, and fake testimonials are strictly prohibited.
+
+---
+
+## 1. Prioritization Taxonomy
+
+- **P0 — Critical Launch Blocker:** Cannot launch the production site without owner resolution. Deploying with placeholders or unverified claims in these areas risks legal liability, regulatory penalties, or silent loss of commercial purchase orders.
+- **P1 — High Priority Commercial Requirement:** Strongly recommended before marketing or public announcement; temporary compliant fallbacks exist.
+- **P2 — Enhancement & Medium Term:** Can be iterated post-launch without compromising core integrity.
+
+---
+
+## 2. Launch-Blocking Gap Register
+
+| Item ID | Domain | Item Description | Current Repository State | Risk / Consequence | Owner Action Required | Recommended Default Fallback (If Owner Unavailable) | Priority |
+|---|---|---|---|---|---|---|---|
+| **GAP-01** | **RFQ Pipeline** | **RFQ Production Endpoint & SMTP Relay Configuration** | `client.ts` fakes submission success on failure (`Math.random()`). WordPress plugin has `wp_mail()` handler without SMTP credentials. | Prospective buyers submitting RFQs for MT-scale APIs or solvents receive fake success while quotes are lost. | Provide SMTP relay (e.g. Google Workspace, SendGrid, Amazon SES) or verify WordPress hosting mail deliverability. | Display honest error on failure, save RFQ payload in browser `localStorage`, and surface one-click WhatsApp prefilled message and direct call buttons. | **P0** |
+| **GAP-02** | **Legal & Identity** | **Corporate Registration Numbers (CIN, GSTIN, IEC, Drug License)** | Missing from all repository documents. Only ROC Ahmedabad is cited. | Commercial pharmaceutical buyers and enterprise procurement officers cannot verify supplier bona fides on MCA or GST portal. | Provide official CIN, GSTIN, IEC, and Drug License (Forms 20B/21B if applicable). | Omit fields entirely from UI rather than inventing numbers. Add labelled review slots in footer and About page. | **P0** |
+| **GAP-03** | **Corporate Contact** | **Registered Office Physical Address & Operating Hours** | `company.address` is `null` in `settings.php` and `mockData.ts`. Only "Ahmedabad, Gujarat" is stated. | Lack of physical corporate address triggers red flags in enterprise procurement risk assessments. | Supply registered physical office address and warehouse dispatch locations. | Display "Ahmedabad, Gujarat, India" with direct contact phone/WhatsApp and inquiry email. | **P0** |
+| **GAP-04** | **Commercial Truth** | **Supplier Network Claim Verification ("400+ Audited/Certified")** | Repository alternates between "400+ certified" and "400+ audited" manufacturers. No audit certificates exist. | In pharmaceutical supply chains, "audited" and "certified" have strict legal meanings (cGMP, WHO-GMP, ISO). False claims risk audit failure. | Clarify exact nature of the manufacturer network and provide basis for the 400+ figure. | Phrase accurately as: *"Domestic distribution network spanning 400+ chemical and API manufacturers across India."* (Avoid "certified/audited" unless documentation is supplied). | **P0** |
+| **GAP-05** | **Intellectual Property** | **Principal & Client Logo Permissions** | Repository contains logos for Calyx Chemicals and placeholder logos `1.png`-`8.png`. Grasim, GACL, GNFC, and Magnesia are named. | Unauthorized commercial use of third-party corporate trademarks (Aditya Birla/Grasim, GACL, GNFC) creates trademark infringement liability. | Provide written distributor agreements or trademark authorization letters from principals. | Display principals as a clean typographic list: *"Authorized Distribution & Sourcing Lines: Grasim Industries, GACL, GNFC, Magnesia Chemical LLP"*. Zero unauthorized logos rendered. | **P0** |
+| **GAP-06** | **Commercial Truth** | **Customer Metric ("Thousands of corporate clients")** | Unsubstantiated marketing claim in `company_profile.md:8`. | Untrue statistical claims violate B2B credibility and truth-in-advertising guidelines. | Provide verifiable active customer account counts or client references. | Replace with factual qualitative copy: *"Supplying licensed pharmaceutical formulators, agrochemical plants, and industrial manufacturers nationwide."* | **P1** |
+| **GAP-07** | **Visual Assets** | **Authentic Operational Photography vs Stock Imagery** | Only 7 high-res assets exist, consisting of generic stock lab photos (`pexels-*`). Zero warehouse, tanker, crystal, or facility photos exist. | Generic lab stock photos undermine the authentic identity of an established industrial distributor. | Provide high-resolution authentic photos of warehousing, packaging, crystal products, or commission the Photoshoot Brief. | Use high-craft typographic editorial design, hairline specification tables, and accurate SVG chemical process diagrams in lieu of fake photos. | **P1** |
+| **GAP-08** | **Catalog Completeness** | **Chemical Datasheet Data (Formulas, Weights, Packing, CoAs)** | 94 APIs have name and CAS, but lack molecular weight, formula, typical packing specs, and downloadable CoAs/MSDS. | Procurement officers needing immediate CoA verification cannot download sheets directly from the datasheet page. | Supply standard technical datasheets (CoA / MSDS / TDS) for top 20 high-volume products. | Implement "Request CoA / TDS / MSDS" button that routes directly into the RFQ flow with those document checkboxes pre-selected. Never fake downloads. | **P1** |
+| **GAP-09** | **Corporate Profile** | **Leadership & Executive Team Information** | Zero names, biographies, or photographs of Directors/Founders exist in repo. | Serious chemical buyers want to know who leads the business and who is accountable. | Provide Director/Management names, brief bios, and corporate LinkedIn profiles if available. | Include a formal statement of corporate governance and registered ROC Ahmedabad entity details in the About section. | **P2** |
+| **GAP-10** | **Compliance** | **Legal Text Approval (Privacy Policy & Regulatory Disclaimer)** | Privacy policy in `15_privacy_policy.md` is a generic template. Disclaimers for industrial/pharma chemical use are informal. | Compliance with Digital Personal Data Protection (DPDP) Act 2023 and CDSCO pharmaceutical distribution disclaimers. | Legal counsel review of Privacy Policy and Chemical Procurement Disclaimer. | Ship strict, compliant default terms explicitly stating that chemicals and APIs are supplied only to licensed commercial manufacturers. | **P2** |
+| **GAP-11** | **Architecture** | **CMS Strategy Decision (Headless WordPress vs Static Git Data)** | The repo currently houses both a WordPress headless theme/plugin and a React Vite frontend. | Running headless WordPress requires ongoing server maintenance, PHP security patches, and database backups. | Confirm whether client admin requires WordPress dashboard for catalog edits or prefers headless CMS / static config. | Support both: build a unified static JSON catalog source of truth with build-time pre-rendering, with optional REST API synchronization. | **P2** |
+
+---
+
+## 3. Immediate Action Plan
+
+1. **Owner Confirmation Package:** Prepare an explicit, structured briefing questionnaire covering P0 items (Registration numbers, address, principal permissions, supplier claim clarification).
+2. **Design System Guardrails:** Implement build-time linters and strict TypeScript interfaces preventing unverified fields from rendering.
+3. **RFQ Hardening:** Implement a resilient submission pipeline with real server confirmation, localStorage draft recovery, and immediate offline communication options (WhatsApp/Phone/Email).

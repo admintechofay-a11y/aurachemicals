@@ -1,0 +1,86 @@
+[
+  {
+    "route": "Home",
+    "path": "/",
+    "passes": 39,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "About Us",
+    "path": "/about-us",
+    "passes": 38,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Our Mission",
+    "path": "/our-mission",
+    "passes": 35,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Products Catalog",
+    "path": "/products",
+    "passes": 48,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Product Detail (Aceclofenac)",
+    "path": "/products/detail/aceclofenac",
+    "passes": 40,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Industries",
+    "path": "/industries",
+    "passes": 38,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Services (Inspection & QA)",
+    "path": "/services",
+    "passes": 35,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Request a Quote (RFQ)",
+    "path": "/get-a-quote",
+    "passes": 42,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Contact",
+    "path": "/contact",
+    "passes": 41,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Privacy Policy",
+    "path": "/privacy-policy",
+    "passes": 35,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Terms of Supply",
+    "path": "/terms",
+    "passes": 35,
+    "violationsCount": 0,
+    "violations": []
+  },
+  {
+    "route": "Design System Showcase",
+    "path": "/design-system",
+    "passes": 43,
+    "violationsCount": 0,
+    "violations": []
+  }
+]

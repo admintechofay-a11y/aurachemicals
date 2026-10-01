@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 
 interface ButtonBaseProps {
-  variant?: 'primary' | 'secondary' | 'outline' | 'text' | 'navy';
+  variant?: 'primary' | 'secondary' | 'outline' | 'text' | 'navy' | 'ghost';
   size?: 'sm' | 'md' | 'lg';
   isLoading?: boolean;
   children: React.ReactNode;
@@ -94,6 +94,11 @@ export const Button: React.FC<ButtonProps> = ({
       minHeight: 'auto',
       textDecoration: isHovered ? 'underline' : 'none',
     },
+    ghost: {
+      backgroundColor: isHovered ? 'var(--color-surface)' : 'transparent',
+      color: 'var(--color-ink)',
+      borderColor: 'transparent',
+    },
   };
 
   const style = {
@@ -105,17 +110,21 @@ export const Button: React.FC<ButtonProps> = ({
   const content = (
     <>
       {isLoading ? (
-        <span
-          style={{
-            display: 'inline-block',
-            width: '16px',
-            height: '16px',
-            border: '2px solid currentColor',
-            borderRightColor: 'transparent',
-            borderRadius: '50%',
-            animation: 'spin 0.75s linear infinite',
-          }}
-        />
+        <>
+          <span
+            aria-hidden="true"
+            style={{
+              display: 'inline-block',
+              width: '16px',
+              height: '16px',
+              border: '2px solid currentColor',
+              borderRightColor: 'transparent',
+              borderRadius: '50%',
+              animation: 'spin 0.75s linear infinite',
+            }}
+          />
+          <span className="sr-only">Loading...</span>
+        </>
       ) : (
         <>
           {icon && iconPosition === 'left' && <span style={{ display: 'inline-flex' }}>{icon}</span>}

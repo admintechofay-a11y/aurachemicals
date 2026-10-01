@@ -4,6 +4,7 @@ import clsx from 'clsx';
 interface SectionProps extends React.HTMLAttributes<HTMLElement> {
   children: React.ReactNode;
   variant?: 'default' | 'surface' | 'navy';
+  background?: 'default' | 'surface' | 'navy' | 'paper' | 'white' | 'muted' | string;
   className?: string;
   padding?: 'normal' | 'dense' | 'hero' | 'none';
 }
@@ -11,6 +12,7 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
 export const Section: React.FC<SectionProps> = ({
   children,
   variant = 'default',
+  background,
   padding = 'normal',
   className,
   style,
@@ -19,8 +21,15 @@ export const Section: React.FC<SectionProps> = ({
   const bgStyles: Record<string, string> = {
     default: 'var(--color-bg)',
     surface: 'var(--color-surface)',
+    muted: 'var(--color-surface)',
+    white: 'var(--color-card)',
+    paper: 'var(--color-paper)',
     navy: 'var(--color-primary)',
   };
+
+  const resolvedBg = background
+    ? bgStyles[background] || background
+    : bgStyles[variant];
 
   const textStyles: Record<string, string> = {
     default: 'inherit',
@@ -39,7 +48,7 @@ export const Section: React.FC<SectionProps> = ({
     <section
       className={clsx('section', `section-${variant}`, className)}
       style={{
-        backgroundColor: bgStyles[variant],
+        backgroundColor: resolvedBg,
         color: textStyles[variant],
         padding: paddingStyles[padding],
         position: 'relative',
