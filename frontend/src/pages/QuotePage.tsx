@@ -12,6 +12,7 @@ import {
   Copy,
   Check,
   MessageSquare,
+  Mail,
   FileText,
   Clock,
   Building2,
@@ -230,6 +231,59 @@ export const QuotePage: React.FC = () => {
       `*Notes:* ${formData.notes || 'None'}`;
 
     return encodeURIComponent(message);
+  };
+
+  const buildWhatsAppMessageFromSummary = () => {
+    if (!submitResult?.summary) return buildWhatsAppMessage();
+    const s = submitResult.summary;
+    const itemsList = s.items
+      .map(
+        (i, idx) =>
+          `${idx + 1}. *${i.name}* (CAS: ${i.cas || 'N/A'}) - ${i.quantity} ${i.unit} [Grade: ${i.grade || 'Standard'}]`
+      )
+      .join('\n');
+
+    const message = `*Aura Chemicals — Commercial Quotation Request*\n` +
+      `*Reference:* #RFQ-${s.inquiry_id}\n\n` +
+      `*Company:* ${s.company || 'N/A'}\n` +
+      `*Representative:* ${s.name || 'N/A'}\n` +
+      `*Email:* ${s.email || 'N/A'}\n` +
+      `*Phone:* ${s.phone || 'N/A'}\n` +
+      `*Delivery Location:* ${s.destination}\n` +
+      `*Required Timeline:* ${s.timeline}\n` +
+      (s.docs && s.docs.length > 0 ? `*Documentation:* ${s.docs.join(', ')}\n\n` : `\n`) +
+      `*Requested Chemicals:*\n${itemsList}\n\n` +
+      `*Notes:* ${formData.notes || 'None'}`;
+
+    return encodeURIComponent(message);
+  };
+
+  const buildMailtoUrl = () => {
+    if (!submitResult?.summary) return `mailto:management.aurachemicals@gmail.com`;
+    const s = submitResult.summary;
+    const itemsList = s.items
+      .map(
+        (i, idx) =>
+          `${idx + 1}. ${i.name} (CAS: ${i.cas || 'N/A'}) - ${i.quantity} ${i.unit} [Grade: ${i.grade || 'Standard'}]`
+      )
+      .join('\n');
+
+    const subject = `[Commercial RFQ #${s.inquiry_id}] ${s.items[0]?.name || 'Chemical Inquiry'} - ${s.company}`;
+    const body = `AURA CHEMICALS — COMMERCIAL RFQ SPECIFICATION\n` +
+      `Reference ID: #RFQ-${s.inquiry_id}\n` +
+      `Date: ${s.submittedAt} IST\n\n` +
+      `Client Entity: ${s.company}\n` +
+      `Representative: ${s.name}\n` +
+      `Email: ${s.email}\n` +
+      `Phone: ${s.phone}\n` +
+      `Delivery Destination: ${s.destination}\n` +
+      `Required Timeline: ${s.timeline}\n` +
+      `Documentation: ${s.docs.join(', ')}\n\n` +
+      `Requested Chemicals:\n${itemsList}\n\n` +
+      `Special Notes:\n${formData.notes || 'Standard commercial delivery'}\n\n` +
+      `Aura Space Infra Pvt. Ltd. | ROC Ahmedabad`;
+
+    return `mailto:management.aurachemicals@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -551,8 +605,42 @@ export const QuotePage: React.FC = () => {
                   flexWrap: 'wrap',
                 }}
               >
+                <a
+                  href={`https://wa.me/${whatsappNumber}?text=${buildWhatsAppMessageFromSummary()}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-teal"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    backgroundColor: '#25D366',
+                    color: '#FFFFFF',
+                    borderColor: '#25D366',
+                    textDecoration: 'none',
+                    fontWeight: 600,
+                  }}
+                >
+                  <MessageSquare size={16} />
+                  <span>Transmit Copy via WhatsApp ({phone})</span>
+                </a>
+
+                <a
+                  href={buildMailtoUrl()}
+                  className="btn btn-secondary"
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    textDecoration: 'none',
+                  }}
+                >
+                  <Mail size={16} />
+                  <span>Email Copy to Management</span>
+                </a>
+
                 <Button
-                  variant="primary"
+                  variant="outline"
                   icon={<Printer size={16} />}
                   onClick={() => window.print()}
                 >
@@ -560,7 +648,7 @@ export const QuotePage: React.FC = () => {
                 </Button>
 
                 <Button
-                  variant="secondary"
+                  variant="ghost"
                   icon={isCopied ? <Check size={16} /> : <Copy size={16} />}
                   onClick={copySummaryToClipboard}
                 >
