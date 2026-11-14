@@ -256,7 +256,52 @@ If deployed in a traditional LAMP / cPanel environment, use the following `.htac
 
 ---
 
-## 5. Zero-Downtime Deployment Procedure
+## 5. Vercel Hosting Configuration (`vercel.json`)
+
+When deploying the Single Page Application (SPA) to Vercel, client-side routing with `react-router-dom` requires all non-file route requests (e.g. `/products`, `/about-us`, `/contact`) to be rewritten to `/index.html` to prevent Vercel from returning `404: NOT_FOUND` on browser page reloads:
+
+```json
+{
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
+      ]
+    }
+  ]
+}
+```
+
+---
+
+## 6. Zero-Downtime Deployment Procedure
 
 We recommend a release-symlink strategy on the production host:
 
