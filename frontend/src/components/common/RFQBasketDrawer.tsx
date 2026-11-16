@@ -203,7 +203,7 @@ export const RFQBasketDrawer: React.FC = () => {
         {/* Footer Actions */}
         {items.length > 0 && (
           <div style={{
-            padding: '20px 24px',
+            padding: '20px 24px calc(20px + env(safe-area-inset-bottom, 0px)) 24px',
             borderTop: '1px solid var(--color-rule)',
             backgroundColor: 'var(--color-paper-subtle)',
             display: 'flex',

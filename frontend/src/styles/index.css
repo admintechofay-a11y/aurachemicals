@@ -776,11 +776,136 @@ footer strong,
    MOBILE BOTTOM BAR & RESPONSIVE BREAKPOINTS
    ========================================================================== */
 
+/* Navigation Visibility Defaults */
+.desktop-nav {
+  display: none !important;
+}
+
+.mobile-nav-toggle {
+  display: inline-flex !important;
+}
+
+.desktop-only-inline {
+  display: none !important;
+}
+
 .mobile-bottom-bar {
   display: none;
 }
 
+/* ==========================================================================
+   BREAKPOINT 1: DESKTOP & WIDE SCREENS (min-width: 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .desktop-nav {
+    display: flex !important;
+  }
+
+  .mobile-nav-toggle {
+    display: none !important;
+  }
+
+  .desktop-only-inline {
+    display: inline !important;
+  }
+
+  /* Homepage Hero Grid */
+  .hero-left-col {
+    grid-column: span 7 !important;
+  }
+  .hero-right-col {
+    grid-column: span 5 !important;
+  }
+
+  /* Homepage Pillars Grid */
+  .pillar-col-title {
+    grid-column: span 4 !important;
+  }
+  .pillar-col-desc {
+    grid-column: span 5 !important;
+  }
+  .pillar-col-action {
+    grid-column: span 3 !important;
+    text-align: right !important;
+  }
+
+  /* Dual Capability Boxes */
+  .dual-cap-box {
+    grid-column: span 6 !important;
+  }
+
+  /* Product Datasheet Grid */
+  .datasheet-left-col {
+    grid-column: span 8 !important;
+  }
+  .datasheet-right-col {
+    grid-column: span 4 !important;
+  }
+
+  /* Footer 3-Column Architectural Grid */
+  .footer-col-main {
+    grid-column: span 5 !important;
+  }
+  .footer-col-products {
+    grid-column: span 4 !important;
+  }
+  .footer-col-nav {
+    grid-column: span 3 !important;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT 2: TABLETS & COMPACT LAPTOPS (768px to 1023px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .desktop-only-inline {
+    display: inline !important;
+  }
+
+  .hero-left-col,
+  .hero-right-col,
+  .dual-cap-box,
+  .datasheet-left-col,
+  .datasheet-right-col {
+    grid-column: span 12 !important;
+  }
+
+  .pillar-col-title {
+    grid-column: span 6 !important;
+  }
+  .pillar-col-desc {
+    grid-column: span 6 !important;
+  }
+  .pillar-col-action {
+    grid-column: span 12 !important;
+    text-align: left !important;
+  }
+
+  .footer-col-main {
+    grid-column: span 12 !important;
+  }
+  .footer-col-products {
+    grid-column: span 6 !important;
+  }
+  .footer-col-nav {
+    grid-column: span 6 !important;
+  }
+}
+
+/* ==========================================================================
+   BREAKPOINT 3: MOBILE PHONES & PHABLETS (max-width: 767px)
+   ========================================================================== */
 @media (max-width: 767px) {
+  /* Prevent horizontal micro-overflow */
+  html, body {
+    overflow-x: hidden;
+  }
+
+  /* Offset for Fixed Mobile Bottom Bar */
+  main#content {
+    padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+
   .mobile-bottom-bar {
     position: fixed;
     bottom: 0;
@@ -788,12 +913,54 @@ footer strong,
     right: 0;
     background-color: var(--color-surface-white);
     border-top: 1px solid var(--color-rule);
-    padding: 8px 16px;
+    padding: 8px 16px calc(8px + env(safe-area-inset-bottom, 0px)) 16px;
     display: flex;
     align-items: center;
     justify-content: space-around;
     z-index: var(--z-header);
-    box-shadow: 0 -2px 10px rgba(8, 27, 51, 0.06);
+    box-shadow: 0 -2px 10px rgba(8, 27, 51, 0.08);
+  }
+
+  /* Prevent iOS automatic page zoom on input focus */
+  .form-input,
+  .form-select,
+  .form-textarea {
+    font-size: 16px !important;
+  }
+
+  /* Touch-friendly interactive buttons */
+  .btn {
+    min-height: 44px;
+    padding: 10px 16px;
+  }
+
+  .btn-sm {
+    min-height: 38px;
+    padding: 8px 14px;
+  }
+
+  /* Fluid mobile card padding */
+  .card {
+    padding: var(--space-4) !important;
+  }
+
+  /* Mobile footer stacking */
+  .footer-col-main,
+  .footer-col-products,
+  .footer-col-nav {
+    grid-column: span 12 !important;
+  }
+
+  .footer-disclaimer {
+    padding-bottom: 24px !important;
+  }
+
+  /* Table overflow handling */
+  .spec-table, table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
   }
 }
 

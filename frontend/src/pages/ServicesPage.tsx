@@ -300,7 +300,7 @@ export const ServicesPage: React.FC = () => {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
                 gap: '24px',
                 marginBottom: '32px',
               }}
@@ -402,7 +402,7 @@ export const ServicesPage: React.FC = () => {
                   style={{
                     padding: 'clamp(24px, 3vw, 32px)',
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
                     gap: '24px',
                     alignItems: 'start',
                     backgroundColor: 'var(--color-card)',

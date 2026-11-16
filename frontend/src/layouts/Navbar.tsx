@@ -128,15 +128,15 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
       >
         <Container>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--color-ink-navy)', fontWeight: 600 }}>
                 <ShieldCheck size={12} color="var(--color-teal)" />
                 AURA SPACE INFRA PVT. LTD.
               </span>
-              <span>·</span>
-              <span>ROC AHMEDABAD</span>
-              <span>·</span>
-              <span>ESTD. 2014</span>
+              <span className="desktop-only-inline">·</span>
+              <span className="desktop-only-inline">ROC AHMEDABAD</span>
+              <span className="desktop-only-inline">·</span>
+              <span className="desktop-only-inline">ESTD. 2014</span>
             </div>
 
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
@@ -220,7 +220,6 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
           {/* Desktop Navigation */}
           <nav
             style={{
-              display: 'none',
               alignItems: 'center',
               gap: 'var(--space-6)',
             }}
@@ -441,7 +440,6 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               onClick={onOpenMobileMenu}
               className="mobile-nav-toggle"
               style={{
-                display: 'inline-flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 padding: '8px',

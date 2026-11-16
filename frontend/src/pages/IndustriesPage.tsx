@@ -103,7 +103,7 @@ export const IndustriesPage: React.FC = () => {
           <Container>
             <Skeleton width="180px" height="20px" style={{ marginBottom: '16px' }} />
             <Skeleton width="60%" height="40px" style={{ marginBottom: '24px' }} />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: '24px' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: '24px' }}>
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <Skeleton key={i} width="100%" height="240px" />
               ))}
@@ -278,7 +278,7 @@ export const IndustriesPage: React.FC = () => {
                       scrollMarginTop: '110px',
                       padding: 'clamp(28px, 4vw, 40px)',
                       display: 'grid',
-                      gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                      gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
                       gap: 'clamp(24px, 4vw, 48px)',
                       alignItems: 'start',
                     }}
