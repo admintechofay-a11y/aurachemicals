@@ -117,6 +117,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
     >
       {/* Top Utility Verification Strip */}
       <div
+        className="top-utility-strip"
         style={{
           backgroundColor: 'var(--color-paper-subtle)',
           borderBottom: '1px solid var(--color-rule)',
@@ -161,9 +162,10 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
         </Container>
       </div>
 
-      {/* Main Header Row (72px) */}
+      {/* Main Header Row (72px desktop, 58px mobile app header) */}
       <Container>
         <div
+          className="navbar-main-row"
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -195,23 +197,29 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               }}
             />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
-              <span style={{
-                fontFamily: 'var(--font-family-display)',
-                fontSize: '1.25rem',
-                fontWeight: 600,
-                color: 'var(--color-ink-navy)',
-                lineHeight: 1.1,
-                letterSpacing: '-0.01em'
-              }}>
+              <span
+                className="navbar-brand-title"
+                style={{
+                  fontFamily: 'var(--font-family-display)',
+                  fontSize: '1.25rem',
+                  fontWeight: 600,
+                  color: 'var(--color-ink-navy)',
+                  lineHeight: 1.1,
+                  letterSpacing: '-0.01em'
+                }}
+              >
                 AURA CHEMICALS
               </span>
-              <span style={{
-                fontFamily: 'var(--font-family-mono)',
-                fontSize: '0.625rem',
-                textTransform: 'uppercase',
-                letterSpacing: '0.08em',
-                color: 'var(--color-text-muted)'
-              }}>
+              <span
+                className="navbar-brand-subtitle"
+                style={{
+                  fontFamily: 'var(--font-family-mono)',
+                  fontSize: '0.625rem',
+                  textTransform: 'uppercase',
+                  letterSpacing: '0.08em',
+                  color: 'var(--color-text-muted)'
+                }}
+              >
                 Chemical & API Sourcing
               </span>
             </div>
@@ -375,10 +383,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
 
           {/* Right Header Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-            {/* Command-K Search Trigger */}
+            {/* Search Trigger */}
             <button
               type="button"
               onClick={onOpenSearch}
+              className="navbar-search-btn"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -394,15 +403,18 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               title="Search chemicals (Cmd+K or /)"
               aria-label="Open chemical catalog search"
             >
-              <Search size={14} />
-              <span className="desktop-only" style={{ display: 'none' }}>Search</span>
-              <kbd style={{
-                backgroundColor: 'var(--color-surface-white)',
-                border: '1px solid var(--color-rule-strong)',
-                borderRadius: '2px',
-                padding: '1px 5px',
-                fontSize: '0.6875rem'
-              }}>
+              <Search size={15} />
+              <span className="desktop-only-inline">Search</span>
+              <kbd
+                className="desktop-only-inline"
+                style={{
+                  backgroundColor: 'var(--color-surface-white)',
+                  border: '1px solid var(--color-rule-strong)',
+                  borderRadius: '2px',
+                  padding: '1px 5px',
+                  fontSize: '0.6875rem'
+                }}
+              >
                 ⌘K
               </kbd>
             </button>

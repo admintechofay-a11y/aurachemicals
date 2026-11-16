@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Outlet, useLocation, Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
-import { Phone, MessageCircle, FileText } from 'lucide-react';
+import { Home, FlaskConical, MessageCircle, FileText, Menu } from 'lucide-react';
 import { Navbar } from './Navbar';
 import { MobileMenu } from './MobileMenu';
 import { Footer } from './Footer';
@@ -86,74 +86,64 @@ const LayoutInner: React.FC = () => {
 
       <Footer settings={settings} />
 
-      {/* Mobile Persistent Bottom Bar (Phone, WhatsApp, RFQ Basket) */}
-      <div className="mobile-bottom-bar" role="navigation" aria-label="Quick Actions">
-        <a
-          href={`tel:${phone.replace(/\s+/g, '')}`}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', fontSize: '0.6875rem', color: 'var(--color-text-primary)' }}
+      {/* Mobile App-Style Bottom Tab Bar */}
+      <nav className="mobile-app-tabbar" role="navigation" aria-label="Mobile Bottom Navigation">
+        <Link
+          to="/"
+          className={`tabbar-item ${location.pathname === '/' ? 'active' : ''}`}
+          aria-label="Home"
         >
-          <Phone size={18} color="var(--color-teal)" />
-          <span>Call Desk</span>
-        </a>
+          <Home size={20} className="tabbar-icon" />
+          <span className="tabbar-label">Home</span>
+        </Link>
 
-        <a
-          href="https://wa.me/919727404415"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', fontSize: '0.6875rem', color: '#0F5132' }}
+        <Link
+          to="/products"
+          className={`tabbar-item ${location.pathname.startsWith('/products') ? 'active' : ''}`}
+          aria-label="Products Catalog"
         >
-          <MessageCircle size={18} />
-          <span>WhatsApp</span>
-        </a>
+          <FlaskConical size={20} className="tabbar-icon" />
+          <span className="tabbar-label">Catalog</span>
+        </Link>
 
         <button
           type="button"
           onClick={openDrawer}
-          style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '2px', fontSize: '0.6875rem', color: 'var(--color-ink-navy)', position: 'relative' }}
+          className="tabbar-item tabbar-basket"
+          aria-label={`RFQ Basket with ${totalCount} items`}
         >
-          <div style={{ position: 'relative' }}>
-            <FileText size={18} color="var(--color-teal)" />
+          <div className="tabbar-icon-wrap">
+            <FileText size={20} className="tabbar-icon" />
             {totalCount > 0 && (
-              <span
-                style={{
-                  position: 'absolute',
-                  top: '-4px',
-                  right: '-8px',
-                  backgroundColor: 'var(--color-teal)',
-                  color: '#FFFFFF',
-                  fontSize: '0.625rem',
-                  fontWeight: 600,
-                  width: '16px',
-                  height: '16px',
-                  borderRadius: '50%',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                }}
-              >
+              <span className="tabbar-badge tabular-nums">
                 {totalCount}
               </span>
             )}
           </div>
-          <span>RFQ Basket</span>
+          <span className="tabbar-label">RFQ Cart</span>
         </button>
 
-        <Link
-          to="/get-a-quote"
-          style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            backgroundColor: 'var(--color-ink-navy)',
-            color: '#FFFFFF',
-            padding: '6px 12px',
-            borderRadius: 'var(--radius-xs)',
-            fontSize: '0.75rem',
-            fontWeight: 500,
-          }}
+        <a
+          href="https://wa.me/919727404415?text=Hello%20Aura%20Chemicals%2C%20I%20would%20like%20to%20request%20a%20commercial%20quote."
+          target="_blank"
+          rel="noopener noreferrer"
+          className="tabbar-item tabbar-whatsapp"
+          aria-label="WhatsApp Desk"
         >
-          Get Quote
-        </Link>
-      </div>
+          <MessageCircle size={20} className="tabbar-icon text-whatsapp" />
+          <span className="tabbar-label">WhatsApp</span>
+        </a>
+
+        <button
+          type="button"
+          onClick={() => setIsMobileMenuOpen(true)}
+          className="tabbar-item"
+          aria-label="Open Navigation Menu"
+        >
+          <Menu size={20} className="tabbar-icon" />
+          <span className="tabbar-label">Menu</span>
+        </button>
+      </nav>
     </>
   );
 };
