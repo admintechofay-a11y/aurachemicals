@@ -143,7 +143,7 @@ CAS Number: ${product.cas_number || 'N/A'}
 Quantity Required: ${rfqVolume} ${rfqUnit}
 Grade: ${rfqGrade}
 Documents Needed: ${[reqCoA && 'CoA', reqMSDS && 'MSDS', reqSample && 'Pilot Sample'].filter(Boolean).join(', ')}`;
-    return `https://wa.me/919727404415?text=${encodeURIComponent(text)}`;
+    return `https://wa.me/917220000877?text=${encodeURIComponent(text)}`;
   };
 
   // Structured Data (JSON-LD) for B2B Chemical

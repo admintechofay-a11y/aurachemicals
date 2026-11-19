@@ -156,12 +156,12 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               </a>
               <span>·</span>
               <a
-                href="https://wa.me/919727404415"
+                href="https://wa.me/917220000877"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: '#25D366', fontWeight: 600 }}
               >
-                WhatsApp Desk
+                WhatsApp: +91 7220000877
               </a>
             </div>
           </div>

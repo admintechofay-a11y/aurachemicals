@@ -53,7 +53,17 @@ const LayoutInner: React.FC = () => {
 
   return (
     <>
-      <a href="#content" className="skip-to-content">
+      <a
+        href="#content"
+        className="skip-to-content"
+        style={{
+          position: 'absolute',
+          top: '-9999px',
+          left: '-9999px',
+          zIndex: 10000,
+          opacity: 0,
+        }}
+      >
         {UI_LABELS.SKIP_TO_CONTENT}
       </a>
 
@@ -124,7 +134,7 @@ const LayoutInner: React.FC = () => {
         </button>
 
         <a
-          href="https://wa.me/919727404415?text=Hello%20Aura%20Chemicals%2C%20I%20would%20like%20to%20request%20a%20commercial%20quote."
+          href="https://wa.me/917220000877?text=Hello%20Aura%20Chemicals%2C%20I%20would%20like%20to%20request%20a%20commercial%20quote."
           target="_blank"
           rel="noopener noreferrer"
           className="tabbar-item tabbar-whatsapp"

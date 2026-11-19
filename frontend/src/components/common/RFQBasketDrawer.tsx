@@ -45,7 +45,7 @@ export const RFQBasketDrawer: React.FC = () => {
       msg += `${idx + 1}. ${item.chemical_name} ${item.cas_number ? `(CAS: ${item.cas_number})` : ''} - Vol: ${item.quantity || ''} ${item.unit || 'kg'} - Grade: ${item.grade || 'Standard'}\n`;
     });
     msg += `\nPlease share pricing, current availability, and specification CoAs.`;
-    return `https://wa.me/919727404415?text=${encodeURIComponent(msg)}`;
+    return `https://wa.me/917220000877?text=${encodeURIComponent(msg)}`;
   };
 
   return (

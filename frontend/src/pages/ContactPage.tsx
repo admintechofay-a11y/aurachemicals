@@ -67,7 +67,7 @@ export const ContactPage: React.FC = () => {
   const legalName = 'Aura Space Infra Private Limited';
   const cin = 'U51909GJ2014PTC080340';
   const phone = settings?.company?.phone || '+91 97274 04415';
-  const whatsappNumber = phone.replace(/\D/g, '');
+  const whatsappNumber = '917220000877';
   const email = settings?.company?.email || 'sales@aurachemicals.in';
   const address = settings?.company?.registered_address || 'ROC Ahmedabad, Gujarat, India';
   const businessHours = 'Monday – Saturday: 09:30 AM – 06:30 PM IST';

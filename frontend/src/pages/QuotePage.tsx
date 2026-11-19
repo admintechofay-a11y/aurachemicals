@@ -112,7 +112,7 @@ export const QuotePage: React.FC = () => {
   });
 
   const phone = settings?.company?.phone || '+91 97274 04415';
-  const whatsappNumber = phone.replace(/\D/g, '');
+  const whatsappNumber = '917220000877';
 
   // Determine whether we are in basket mode or single item mode
   const hasBasket = basketItems.length > 0;

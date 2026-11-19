@@ -12,7 +12,7 @@ export const FinalCTA: React.FC = () => {
   });
 
   const phone = settings?.company?.phone || '+91 97274 04415';
-  const whatsappUrl = 'https://wa.me/919727404415?text=Hello%20Aura%20Chemicals%2C%20I%20would%20like%20to%20request%20a%20commercial%20quote.';
+  const whatsappUrl = 'https://wa.me/917220000877?text=Hello%20Aura%20Chemicals%2C%20I%20would%20like%20to%20request%20a%20commercial%20quote.';
 
   return (
     <section className="section" style={{ padding: 'clamp(48px, 6vw, 80px) 0' }}>

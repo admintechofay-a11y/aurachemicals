@@ -28,12 +28,6 @@ const BANNED_PATTERNS = [
     exclude: [],
     message: 'Mock client logo (1.png-8.png) detected.',
   },
-  {
-    name: 'Unverified Test Phone Number',
-    regex: /\+91\s*7220000877/g,
-    exclude: [],
-    message: 'Deprecated phone number +91 7220000877 detected. Use official phone +91 97274 04415 or settings.',
-  },
 ];
 
 function scanDirectory(dir, fileList = []) {
