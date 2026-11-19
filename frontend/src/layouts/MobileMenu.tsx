@@ -98,20 +98,22 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
 
   if (!isOpen) return null;
 
-  const phone = settings?.company?.phone;
-  const email = settings?.company?.email;
+  const phone = settings?.company?.phone || '+91 97274 04415';
+  const email = settings?.company?.email || 'management.aurachemicals@gmail.com';
 
   const rowStyle: React.CSSProperties = {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
-    minHeight: '56px',
+    minHeight: '54px',
     padding: '0 20px',
-    fontSize: '0.9375rem',
-    fontWeight: 500,
-    color: 'var(--color-ink)',
+    fontSize: '1rem',
+    fontFamily: 'var(--font-family-display)',
+    fontWeight: 600,
+    color: 'var(--color-ink-navy)',
     borderBottom: '1px solid var(--color-rule)',
     textDecoration: 'none',
+    transition: 'color 150ms ease, background-color 150ms ease',
   };
 
   return (
@@ -133,22 +135,23 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
         style={{
           position: 'absolute',
           inset: 0,
-          backgroundColor: 'rgba(14, 16, 19, 0.65)',
-          backdropFilter: 'blur(2px)',
+          backgroundColor: 'rgba(6, 20, 42, 0.65)',
+          backdropFilter: 'blur(4px)',
+          WebkitBackdropFilter: 'blur(4px)',
         }}
       />
 
-      {/* Right-side drawer (85% width, max 360px) */}
+      {/* Right-side drawer */}
       <div
         ref={drawerRef}
         tabIndex={-1}
         style={{
           position: 'relative',
-          width: '85%',
-          maxWidth: '360px',
+          width: '88%',
+          maxWidth: '380px',
           height: '100%',
-          backgroundColor: 'var(--color-card)',
-          boxShadow: '-8px 0 24px rgba(22, 25, 29, 0.15)',
+          backgroundColor: 'var(--color-surface-white)',
+          boxShadow: '-12px 0 32px rgba(6, 20, 42, 0.2)',
           display: 'flex',
           flexDirection: 'column',
           zIndex: 2001,
@@ -161,13 +164,13 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            height: '60px',
+            height: '64px',
             padding: '0 20px',
-            backgroundColor: 'var(--color-card)',
+            backgroundColor: 'var(--color-surface-white)',
             borderBottom: '1px solid var(--color-rule)',
           }}
         >
-          <span style={{ fontWeight: 600, color: 'var(--color-ink)', fontSize: '1rem' }}>
+          <span style={{ fontWeight: 700, color: 'var(--color-ink-navy)', fontSize: '1.125rem', fontFamily: 'var(--font-family-display)' }}>
             Menu
           </span>
           <button
@@ -176,16 +179,16 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
             onClick={onClose}
             aria-label={UI_LABELS.CLOSE_MENU}
             style={{
-              width: '36px',
-              height: '36px',
+              width: '38px',
+              height: '38px',
               display: 'inline-flex',
               alignItems: 'center',
               justifyContent: 'center',
-              backgroundColor: 'transparent',
+              backgroundColor: 'var(--color-paper)',
               border: '1px solid var(--color-rule)',
               borderRadius: 'var(--radius-sm)',
               cursor: 'pointer',
-              color: 'var(--color-ink)',
+              color: 'var(--color-ink-navy)',
             }}
           >
             <X size={20} />
@@ -287,18 +290,17 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
           style={{
             padding: '16px 20px calc(16px + env(safe-area-inset-bottom, 12px)) 20px',
             borderTop: '1px solid var(--color-rule)',
-            backgroundColor: 'var(--color-card)',
+            backgroundColor: 'var(--color-surface-white)',
           }}
         >
-          <Button
+          <Link
             to="/get-a-quote"
-            variant="primary"
-            size="lg"
-            style={{ width: '100%', marginBottom: '12px' }}
-            icon={<ArrowRight size={16} />}
+            className="btn btn-primary btn-lg"
+            style={{ width: '100%', marginBottom: '14px', gap: '8px' }}
           >
-            {UI_LABELS.NAV_GET_A_QUOTE}
-          </Button>
+            <span>{UI_LABELS.NAV_GET_A_QUOTE}</span>
+            <ArrowRight size={16} />
+          </Link>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
             {phone && (
@@ -309,11 +311,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
                   alignItems: 'center',
                   gap: '8px',
                   fontSize: '0.875rem',
-                  color: 'var(--color-ink)',
+                  color: 'var(--color-ink-navy)',
                   padding: '6px 0',
+                  fontWeight: 500,
                 }}
               >
-                <Phone size={15} style={{ color: 'var(--color-accent)' }} />
+                <Phone size={15} style={{ color: 'var(--color-teal)' }} />
                 <span>{phone}</span>
               </a>
             )}
@@ -325,11 +328,12 @@ export const MobileMenu: React.FC<MobileMenuProps> = ({ isOpen, onClose, setting
                   alignItems: 'center',
                   gap: '8px',
                   fontSize: '0.875rem',
-                  color: 'var(--color-ink)',
+                  color: 'var(--color-ink-navy)',
                   padding: '6px 0',
+                  fontWeight: 500,
                 }}
               >
-                <Mail size={15} style={{ color: 'var(--color-accent)' }} />
+                <Mail size={15} style={{ color: 'var(--color-teal)' }} />
                 <span>{email}</span>
               </a>
             )}

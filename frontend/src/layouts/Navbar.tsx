@@ -103,34 +103,40 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
     },
   ];
 
+  const isHome = location.pathname === '/';
+  const isTransparent = isHome && !isScrolled;
+
   return (
     <header
       style={{
         position: 'sticky',
         top: 0,
         zIndex: 'var(--z-header)',
-        backgroundColor: 'var(--color-surface-white)',
-        borderBottom: isScrolled ? '1px solid var(--color-rule-strong)' : '1px solid var(--color-rule)',
+        backgroundColor: isTransparent ? 'rgba(6, 20, 42, 0.65)' : 'rgba(255, 255, 255, 0.96)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        borderBottom: isTransparent ? '1px solid rgba(255, 255, 255, 0.12)' : '1px solid var(--color-rule)',
         transition: 'all 200ms ease',
-        boxShadow: isScrolled ? '0 2px 12px rgba(8, 27, 51, 0.06)' : 'none',
+        boxShadow: isScrolled ? '0 4px 20px rgba(10, 31, 60, 0.08)' : 'none',
       }}
     >
       {/* Top Utility Verification Strip */}
       <div
         className="top-utility-strip"
         style={{
-          backgroundColor: 'var(--color-paper-subtle)',
-          borderBottom: '1px solid var(--color-rule)',
+          backgroundColor: isTransparent ? 'rgba(6, 20, 42, 0.45)' : 'var(--color-paper-subtle)',
+          borderBottom: isTransparent ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid var(--color-rule)',
           padding: '4px 0',
           fontSize: '0.6875rem',
           fontFamily: 'var(--font-family-mono)',
-          color: 'var(--color-text-muted)',
+          color: isTransparent ? 'rgba(255, 255, 255, 0.75)' : 'var(--color-text-muted)',
+          transition: 'all 200ms ease',
         }}
       >
         <Container>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '8px' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--color-ink-navy)', fontWeight: 600 }}>
+              <span style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: isTransparent ? '#FFFFFF' : 'var(--color-ink-navy)', fontWeight: 600 }}>
                 <ShieldCheck size={12} color="var(--color-teal)" />
                 AURA SPACE INFRA PVT. LTD.
               </span>
@@ -143,7 +149,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
             <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
               <a
                 href={`tel:${phone.replace(/\s+/g, '')}`}
-                style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: 'var(--color-text-primary)' }}
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '4px', color: isTransparent ? '#FFFFFF' : 'var(--color-text-primary)' }}
               >
                 <Phone size={11} color="var(--color-teal)" />
                 <span>Desk: {phone}</span>
@@ -153,7 +159,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
                 href="https://wa.me/919727404415"
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: '#0F5132', fontWeight: 600 }}
+                style={{ color: '#25D366', fontWeight: 600 }}
               >
                 WhatsApp Desk
               </a>
@@ -202,10 +208,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
                 style={{
                   fontFamily: 'var(--font-family-display)',
                   fontSize: '1.25rem',
-                  fontWeight: 600,
-                  color: 'var(--color-ink-navy)',
+                  fontWeight: 700,
+                  color: isTransparent ? '#FFFFFF' : 'var(--color-ink-navy)',
                   lineHeight: 1.1,
-                  letterSpacing: '-0.01em'
+                  letterSpacing: '-0.01em',
+                  transition: 'color 200ms ease',
                 }}
               >
                 AURA CHEMICALS
@@ -217,7 +224,8 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
                   fontSize: '0.625rem',
                   textTransform: 'uppercase',
                   letterSpacing: '0.08em',
-                  color: 'var(--color-text-muted)'
+                  color: isTransparent ? 'rgba(255, 255, 255, 0.75)' : 'var(--color-text-muted)',
+                  transition: 'color 200ms ease',
                 }}
               >
                 Chemical & API Sourcing
@@ -254,7 +262,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
                   fontFamily: 'var(--font-family-base)',
                   fontSize: '0.9375rem',
                   fontWeight: 500,
-                  color: location.pathname.startsWith('/products') ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+                  color: location.pathname.startsWith('/products')
+                    ? 'var(--color-teal)'
+                    : isTransparent
+                    ? '#FFFFFF'
+                    : 'var(--color-ink-navy)',
                   padding: '8px 0',
                 }}
               >
@@ -341,7 +353,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               style={{
                 fontSize: '0.9375rem',
                 fontWeight: 500,
-                color: location.pathname.startsWith('/industries') ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+                color: location.pathname.startsWith('/industries')
+                  ? 'var(--color-teal)'
+                  : isTransparent
+                  ? '#FFFFFF'
+                  : 'var(--color-ink-navy)',
               }}
             >
               Industries (19)
@@ -352,7 +368,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               style={{
                 fontSize: '0.9375rem',
                 fontWeight: 500,
-                color: location.pathname === '/services' ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+                color: location.pathname === '/services'
+                  ? 'var(--color-teal)'
+                  : isTransparent
+                  ? '#FFFFFF'
+                  : 'var(--color-ink-navy)',
               }}
             >
               Services (Inspection & QA)
@@ -363,7 +383,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               style={{
                 fontSize: '0.9375rem',
                 fontWeight: 500,
-                color: location.pathname === '/about-us' || location.pathname === '/our-mission' ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+                color: location.pathname === '/about-us' || location.pathname === '/our-mission'
+                  ? 'var(--color-teal)'
+                  : isTransparent
+                  ? '#FFFFFF'
+                  : 'var(--color-ink-navy)',
               }}
             >
               About
@@ -374,7 +398,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               style={{
                 fontSize: '0.9375rem',
                 fontWeight: 500,
-                color: location.pathname === '/contact' ? 'var(--color-teal)' : 'var(--color-ink-navy)',
+                color: location.pathname === '/contact'
+                  ? 'var(--color-teal)'
+                  : isTransparent
+                  ? '#FFFFFF'
+                  : 'var(--color-ink-navy)',
               }}
             >
               Contact
@@ -392,13 +420,14 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '8px',
-                padding: '8px 12px',
-                backgroundColor: 'var(--color-paper-subtle)',
-                border: '1px solid var(--color-rule)',
-                borderRadius: 'var(--radius-xs)',
-                color: 'var(--color-text-muted)',
+                padding: '8px 14px',
+                backgroundColor: isTransparent ? 'rgba(255, 255, 255, 0.12)' : 'var(--color-paper-subtle)',
+                border: isTransparent ? '1px solid rgba(255, 255, 255, 0.25)' : '1px solid var(--color-rule)',
+                borderRadius: 'var(--radius-pill)',
+                color: isTransparent ? '#FFFFFF' : 'var(--color-text-muted)',
                 fontSize: '0.8125rem',
                 fontFamily: 'var(--font-family-mono)',
+                transition: 'all 200ms ease',
               }}
               title="Search chemicals (Cmd+K or /)"
               aria-label="Open chemical catalog search"
@@ -408,11 +437,12 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               <kbd
                 className="desktop-only-inline"
                 style={{
-                  backgroundColor: 'var(--color-surface-white)',
-                  border: '1px solid var(--color-rule-strong)',
+                  backgroundColor: isTransparent ? 'rgba(255, 255, 255, 0.2)' : 'var(--color-surface-white)',
+                  border: isTransparent ? '1px solid rgba(255, 255, 255, 0.3)' : '1px solid var(--color-rule-strong)',
                   borderRadius: '2px',
                   padding: '1px 5px',
-                  fontSize: '0.6875rem'
+                  fontSize: '0.6875rem',
+                  color: isTransparent ? '#FFFFFF' : 'inherit',
                 }}
               >
                 ⌘K
@@ -424,6 +454,11 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
               type="button"
               onClick={openDrawer}
               className="rfq-basket-trigger"
+              style={{
+                backgroundColor: isTransparent ? 'rgba(255, 255, 255, 0.12)' : undefined,
+                borderColor: isTransparent ? 'rgba(255, 255, 255, 0.25)' : undefined,
+                color: isTransparent ? '#FFFFFF' : undefined,
+              }}
               aria-label={`View RFQ quotation basket with ${totalCount} items`}
               title="View quotation basket"
             >
@@ -455,7 +490,7 @@ export const Navbar: React.FC<NavbarProps> = ({ settings, onOpenMobileMenu, onOp
                 alignItems: 'center',
                 justifyContent: 'center',
                 padding: '8px',
-                color: 'var(--color-ink-navy)',
+                color: isTransparent ? '#FFFFFF' : 'var(--color-ink-navy)',
               }}
               aria-label="Open mobile menu"
             >

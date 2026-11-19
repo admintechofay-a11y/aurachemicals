@@ -50,8 +50,8 @@ export const Button: React.FC<ButtonProps> = ({
     alignItems: 'center',
     justifyContent: 'center',
     gap: '8px',
-    fontWeight: 500,
-    borderRadius: 'var(--radius-sm)',
+    fontWeight: 600,
+    borderRadius: 'var(--radius-btn)',
     transition: 'background-color var(--motion-duration-fast) var(--motion-ease), border-color var(--motion-duration-fast) var(--motion-ease), color var(--motion-duration-fast) var(--motion-ease), transform 100ms ease',
     cursor: disabled || isLoading ? 'not-allowed' : 'pointer',
     opacity: disabled || isLoading ? 0.65 : 1,
@@ -59,28 +59,25 @@ export const Button: React.FC<ButtonProps> = ({
     textDecoration: 'none',
     border: '1px solid transparent',
     minHeight: size === 'sm' ? '36px' : size === 'lg' ? '50px' : '44px',
-    padding: size === 'sm' ? '6px 14px' : size === 'lg' ? '12px 28px' : '10px 20px',
+    padding: size === 'sm' ? '6px 16px' : size === 'lg' ? '12px 28px' : '10px 22px',
     fontSize: size === 'sm' ? '0.875rem' : size === 'lg' ? '1.0625rem' : '0.9375rem',
   };
 
-  // Graphite & Mineral Button Rules:
-  // Primary: ink background, paper text, hover ink-dark
-  // Secondary: 1px ink outline, ink text, hover surface
   const variantStyles: Record<string, React.CSSProperties> = {
     primary: {
-      backgroundColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
-      color: 'var(--color-paper)',
-      borderColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
+      backgroundColor: isHovered ? 'var(--color-teal-hover)' : 'var(--color-teal)',
+      color: '#FFFFFF',
+      borderColor: isHovered ? 'var(--color-teal-hover)' : 'var(--color-teal)',
     },
     secondary: {
-      backgroundColor: isHovered ? 'var(--color-surface)' : 'transparent',
-      color: 'var(--color-ink)',
-      borderColor: 'var(--color-ink)',
+      backgroundColor: isHovered ? 'var(--color-paper-subtle)' : 'var(--color-surface-white)',
+      color: 'var(--color-ink-navy)',
+      borderColor: 'var(--color-rule-strong)',
     },
     navy: {
-      backgroundColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
-      color: 'var(--color-paper)',
-      borderColor: isHovered ? 'var(--color-ink-dark)' : 'var(--color-ink)',
+      backgroundColor: isHovered ? 'var(--color-ink-deep)' : 'var(--color-ink-navy)',
+      color: '#FFFFFF',
+      borderColor: isHovered ? 'var(--color-ink-deep)' : 'var(--color-ink-navy)',
     },
     outline: {
       backgroundColor: isHovered ? 'var(--color-surface)' : 'transparent',

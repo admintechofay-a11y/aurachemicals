@@ -47,7 +47,7 @@ export const DesignSystemPage: React.FC = () => {
             <span className="eyebrow">Aura Chemicals Brand Architecture</span>
             <h1 style={{ marginBottom: 'var(--space-3)' }}>Direction A: Laboratory Editorial Design System</h1>
             <p className="body-large">
-              A bespoke, content-grounded visual language for industrial chemical procurement. Prioritizes editorial typography (Newsreader + IBM Plex Sans), hairline-ruled specification tables, high-contrast accessible tokens, and exact chemical nomenclature.
+              A bespoke, content-grounded visual language for industrial chemical procurement. Prioritizes modern typography (Plus Jakarta Sans + Inter), specification tables, high-contrast accessible tokens, and exact chemical nomenclature.
             </p>
           </div>
         </Container>
@@ -129,20 +129,20 @@ export const DesignSystemPage: React.FC = () => {
             index="02"
             eyebrow="Typographic Scale"
             title="Editorial & Technical Typography"
-            description="The tripartite hierarchy: Newsreader (editorial serif), IBM Plex Sans (modern body), and IBM Plex Mono (tabular monographs)."
+            description="The tripartite hierarchy: Plus Jakarta Sans (display headings), Inter (clean body), and IBM Plex Mono (tabular CAS monographs)."
           />
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '32px' }}>
             <div className="card" style={{ padding: '32px', backgroundColor: 'var(--color-card)' }}>
-              <span className="eyebrow">Display Optical Serif · Newsreader</span>
+              <span className="eyebrow">Display Bold · Plus Jakarta Sans</span>
               <h1 style={{ margin: '8px 0 12px 0' }}>High-Purity Active Pharmaceutical Ingredients</h1>
               <p style={{ color: 'var(--color-muted)', fontSize: '0.875rem', margin: 0 }}>
-                Used for primary display headings, editorial titles, and section anchors (weights 400, 500, 600).
+                Used for primary display headings, editorial titles, and section anchors (weights 600, 700, 800).
               </p>
             </div>
 
             <div className="card" style={{ padding: '32px', backgroundColor: 'var(--color-card)' }}>
-              <span className="eyebrow">Workhorse Grotesque · IBM Plex Sans</span>
+              <span className="eyebrow">Clean Workhorse · Inter</span>
               <p className="body-large" style={{ margin: '8px 0 12px 0' }}>
                 Aura Space Infra Pvt. Ltd. coordinates primary chemical synthesizers across Gujarat with institutional pharmaceutical formulators worldwide, guaranteeing uninterrupted allocation schedules.
               </p>
